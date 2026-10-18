@@ -1,5 +1,5 @@
 /* The display is rasterized from source geometry, never a made-up flow field. */
-function makeDisplay(mesh,field,river,project,invert,width,height,estuary,simcoe=null){
+function makeDisplay(mesh,field,river,project,invert,width,height,estuary,simcoe=null,outerEstuary=null){
   const cell=2,nx=Math.ceil(width/cell),ny=Math.ceil(height/cell),n=nx*ny;
   const u=new Float32Array(n),v=new Float32Array(n),t=new Float32Array(n),provider=new Uint8Array(n);u.fill(NaN);t.fill(NaN);
   const px=new Float64Array(mesh.lon.length),py=new Float64Array(mesh.lon.length);
@@ -18,7 +18,7 @@ function makeDisplay(mesh,field,river,project,invert,width,height,estuary,simcoe
       if(field.t[a]!==null&&field.t[b]!==null&&field.t[c]!==null)t[k]=field.t[a]*wa+field.t[b]*wb+field.t[c]*wc;
     }
   }
-  const sources=[river,estuary,simcoe];for(let ordinal=0;ordinal<sources.length;ordinal++){const river=sources[ordinal];if(!river)continue;
+  const sources=[river,estuary,simcoe,outerEstuary];for(let ordinal=0;ordinal<sources.length;ordinal++){const river=sources[ordinal];if(!river)continue;
     const ll=project(river.west,river.south),ur=project(river.west+(river.width-1)*river.dx,river.south+(river.height-1)*river.dy);
     const x0=Math.max(0,Math.floor(Math.min(ll[0],ur[0])/cell)),x1=Math.min(nx-1,Math.ceil(Math.max(ll[0],ur[0])/cell));
     const y0=Math.max(0,Math.floor(Math.min(ll[1],ur[1])/cell)),y1=Math.min(ny-1,Math.ceil(Math.max(ll[1],ur[1])/cell));
@@ -27,9 +27,9 @@ function makeDisplay(mesh,field,river,project,invert,width,height,estuary,simcoe
       if(ix<0||iy<0||ix>=river.width||iy>=river.height)continue;
       // A current is painted only within a wet source cell; no wide gap-filling.
       const source=iy*river.width+ix;if(river.u[source]===null||river.v[source]===null)continue;
-      const k=j*nx+i;if(provider[k]===1||(ordinal===2&&provider[k]))continue;u[k]=river.u[source];v[k]=river.v[source];provider[k]=ordinal+2;
+      const k=j*nx+i;if(provider[k]===1||(ordinal>=2&&provider[k]))continue;u[k]=river.u[source];v[k]=river.v[source];provider[k]=ordinal+2;
       // The experimental wind response supplies no water temperature.
-      if(ordinal===2)t[k]=NaN;
+      if(ordinal>=2)t[k]=NaN;
     }
   }
   const valid=[];for(let i=0;i<n;i++)if(provider[i])valid.push(i);

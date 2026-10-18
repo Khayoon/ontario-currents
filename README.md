@@ -27,6 +27,8 @@ The **MP4** is a silent 2560 × 1920 H.264 loop at 30 fps. It traces a fixed vec
 
 **Lake Simcoe's experimental layer** is a fixed-date, unvalidated depth-averaged wind response, present in both website modes and labelled in the film. It is not measured circulation or a surface-current forecast. Its physical assumptions, source data, solver and sensitivity checks are described in the [Simcoe model notes](docs/simcoe-model.md).
 
+The main map uses brighter, longer flowing trails as well as the close-ups. The outer estuary is filled from a broader **DFO STLE500** archive mean for the same 12–17 October period; its fixed dates remain explicit on the website, and existing higher-resolution products retain priority. The tributary network and dashed watershed divide use official **LSRCA and Ontario** geography. These drainage lines carry no invented velocity field. See [Simcoe drainage sources](docs/simcoe-drainage.md) and [outer estuary sources](docs/outer-estuary.md).
+
 ## Run locally
 
 Requires Node.js 22 or newer. No third-party npm packages are needed for the site.
@@ -63,7 +65,7 @@ NOAA LOOFS / ECCC OHPS / DFO STLE200
 
 Lake Ontario uses the LOOFS top sigma layer. The OHPS river field is depth-averaged; STLE200 is a surface estuary product. These layers are not physically interchangeable and remain identified in the interface and documentation.
 
-Complete shoreline geography does **not** imply complete current coverage. The current public edition still has gaps in parts of Kingston–Brockville–Cornwall–Montréal, Montréal's northern channels and the outer estuary/Gulf beyond the supplied current model. Those waters remain visible. Simcoe now has an explicitly experimental wind response; its complete actual circulation remains unresolved. Additional model archives and defensible reconstructions are being investigated; the [research specification](docs/current-data-research.txt) records the exact missing regions and evidence required.
+Complete shoreline geography does **not** imply complete current coverage. The current public edition still has gaps in parts of Kingston–Brockville–Cornwall–Montréal, Montréal's northern channels and portions of the river outside the supplied model domains. The visible outer estuary now has a separately dated STLE500 supplement. Those waters remain visible. Simcoe now has an explicitly experimental wind response; its complete actual circulation remains unresolved. Additional model archives and defensible reconstructions are being investigated; the [research specification](docs/current-data-research.txt) records the exact missing regions and evidence required.
 
 Opposing currents can cancel in a vector average. A weak mean vector does not establish that water was stationary throughout the period. Particle motion illustrates the supplied field and is not a reconstruction of observed water-parcel trajectories.
 

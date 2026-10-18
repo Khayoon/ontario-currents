@@ -158,3 +158,18 @@ The map is rendered from model vectors and sourced geographic geometry with nati
 The speed legend is logarithmic, with ticks at 0, 2, 10, 50 and 150+ cm/s. Colour represents the magnitude of the mean velocity vector. Speeds at or above 1.5 m/s share the top colour. The larger Simcoe close-up uses a separate linear 0–5 cm/s palette with brighter low-speed colours and thicker, longer-persisting trails so the flow remains visible when viewing the entire composition. Its numerical vectors are unchanged. Particle motion is accelerated by a nominal factor of 90,000 in the overview and Montréal detail, and 180,000 in the enlarged Simcoe detail; particle lifetime, shoreline termination and the final loop transition are display choices, so these are illustrative flow traces rather than Lagrangian particle simulations.
 
 The exported video is a silent 20-second H.264 loop, 2560 × 1920 pixels at 30 frames per second, with a two-second crossfade that joins the loop. Rendering is deterministic for the chosen seed.
+
+
+8. Broader outer estuary and drainage revision
+
+The formerly blank outer estuary is supplemented by archived DFO POPS STLE500 surface velocities for the same 23 six-hour samples, 12 October 2026 00:00 UTC through 17 October 12:00 UTC. Both components are averaged separately. The broader product is fill-only: existing NOAA, OHPS, STLE200 and separately identified Simcoe cells retain their vectors. All 89,900 valid full display cells contain all 23 samples. The new field reaches both northeast artwork edges. Coastal cells missing from both products remain absent; no velocity is extrapolated into them.
+
+The full STLE500 model domain is also included on the website, retaining this fixed archived mean and explicitly showing its period separately from the sources that refresh. It does not become a current forecast or a 24-hour mean when those website modes change. See docs/outer-estuary.md for sources, byte-record hashes, component-orientation checks and resampling details.
+
+The main film map uses a brighter low-speed palette, thicker visible trails and a matching logarithmic 0–150+ cm/s legend. These display changes do not alter the current vectors. Narrow fluvial model cells receive additional particle seeding for legibility at the whole-map scale. Particle density is a display choice and does not encode discharge, mass flux or confidence. The enlarged Simcoe inset retains its own linear 0–5 cm/s legend. Motion remains accelerated; the film is a fixed mean, not changing weather replay.
+
+The static drainage overlay uses the official LSRCA scientific Simcoe watershed and 4,050 stream-order-three-or-higher source watercourse segments, grouped into 82 named systems. The gold dashed line is the actual shared boundary of Ontario's Lake Huron and Lake Ontario basin polygons, generalized for this map. Locally near the Oak Ridges Moraine, the northern Simcoe side drains through Lake Couchiching and the Severn to Georgian Bay (Lake Huron), while the southern side drains to Lake Ontario. Farther east, northern moraine catchments can drain via the Trent system to Lake Ontario. The line is not a traced moraine conservation-plan extent. Watercourse vertex order is not asserted to be downstream, and no current speeds or discharge are invented for these tributaries.
+
+Drainage sources and licences: https://gis.lsrca.on.ca/gis/rest/services/OpenData/MapServer/20 ; https://gis.lsrca.on.ca/gis/rest/services/OpenData/MapServer/8 ; https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/MOE/GreatLakes_WS_Bnd/MapServer/1
+Contains Information made available under Lake Simcoe Region Conservation Authority Open Data Licence v1.0.
+Contains information licensed under the Open Government Licence – Ontario.

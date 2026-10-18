@@ -1,11 +1,11 @@
 'use strict';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const base=$('#water'),flow=$('#flow'),label=$('#labels'),bg=base.getContext('2d'),ink=flow.getContext('2d'),type=label.getContext('2d');
-const state={w:0,h:0,dpr:1,k:1,tx:0,ty:0,view:'all',geo:null,mesh:null,field:null,river:null,estuary:null,simcoe:null,mode:'live',savedLive:null,frames:[],index:0,run:null,layer:'temperature',particles:[],playing:false,pending:false,live:false,manifest:null,publishedAvailable:true,cache:new Map(),request:0};
+const state={w:0,h:0,dpr:1,k:1,tx:0,ty:0,view:'all',geo:null,drainage:null,mesh:null,field:null,river:null,estuary:null,outerEstuary:null,simcoe:null,mode:'live',savedLive:null,frames:[],index:0,run:null,layer:'speed',particles:[],playing:false,pending:false,live:false,manifest:null,publishedAvailable:true,cache:new Map(),request:0};
 const views={all:[-80.05,43.03,-75.5,44.93],toronto:[-79.95,43.25,-78.65,44.0],outlet:[-77.1,43.8,-75.5,44.75],simcoe:[-79.78,44.08,-79.1,44.68],river:[-77.0,43.9,-68.5,49.0],montreal:[-74.25,45.27,-73.4,45.82]};
 const places=[['Toronto',-79.3832,43.6532,1],['Hamilton',-79.8711,43.2557,1],['Niagara-on-the-Lake',-79.0713,43.2544,2],['Oshawa',-78.8658,43.8971,2],['Cobourg',-78.1677,43.9598,2],['Belleville',-77.3832,44.1628,2],['Kingston',-76.486,44.2312,1],['Gananoque',-76.1606,44.3306,2],['Brockville',-75.6843,44.5895,2],['Barrie',-79.6903,44.3894,1],['Orillia',-79.418,44.6082,2],['Keswick',-79.466,44.219,3],['Tadoussac',-69.715,48.144,2],['Les Escoumins',-69.405,48.346,1],['Saguenay',-71.06,48.42,2],['Montréal',-73.5673,45.5019,1],['Trois-Rivières',-72.543,46.343,1],['Québec',-71.208,46.8139,1],['Rochester',-77.6109,43.1566,3],['Oswego',-76.5105,43.4553,3]];
 const labels=[['LAKE ONTARIO',-77.95,43.63,13],['LAKE SIMCOE',-79.32,44.48,9],['ST. LAWRENCE',-75.84,44.48,9],['BAY OF QUINTE',-77.25,44.07,8]];
-const stops=[[12,40,87],[9,77,128],[14,125,168],[63,176,178],[215,217,158]];
+const stops=[[30,85,120],[58,148,190],[85,205,216],[160,235,219],[238,241,190]];
 const nominalMotionMultiplier=90000,maxScreenMotion=270;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function projectRaw(lon,lat){const p=lat*Math.PI/180;return [(lon+180)/360,(1-Math.log(Math.tan(Math.PI/4+p/2))/Math.PI)/2];}
@@ -27,12 +27,14 @@ function polygon(rings,ctx){for(const ring of rings){for(let i=0;i<ring.length;i
 function pathFeature(f,ctx){const g=f.geometry;ctx.beginPath();if(g.type==='Polygon')polygon(g.coordinates,ctx);else if(g.type==='MultiPolygon')g.coordinates.forEach(r=>polygon(r,ctx));else{const lines=g.type==='MultiLineString'?g.coordinates:[g.coordinates];for(const line of lines){let started=false;for(const p of line){const s=project(...p);if(!started){ctx.moveTo(...s);started=true;}else ctx.lineTo(...s);}}}}
 let geographyCache=null;
 function projectedGeography(){
-  const key=[state.geo,state.w,state.h,state.dpr,state.k,state.tx,state.ty];
+  const key=[state.geo,state.drainage,state.w,state.h,state.dpr,state.k,state.tx,state.ty];
   if(geographyCache&&key.every((value,i)=>value===geographyCache.key[i]))return geographyCache;
   const paths=(state.geo?.features||[]).map(feature=>{const path=new Path2D(),g=feature.geometry;if(g.type==='Polygon')polygon(g.coordinates,path);else if(g.type==='MultiPolygon')g.coordinates.forEach(r=>polygon(r,path));else{const lines=g.type==='MultiLineString'?g.coordinates:[g.coordinates];for(const line of lines){line.forEach((p,i)=>i?path.lineTo(...project(...p)):path.moveTo(...project(...p)));}}return {feature,path};});
   const background=document.createElement('canvas'),shorelines=document.createElement('canvas');for(const c of [background,shorelines]){c.width=Math.round(state.w*state.dpr);c.height=Math.round(state.h*state.dpr);c.getContext('2d').setTransform(state.dpr,0,0,state.dpr,0,0);}
   const land=background.getContext('2d'),coast=shorelines.getContext('2d');land.fillStyle='#030708';land.fillRect(0,0,state.w,state.h);
   for(const {feature:f,path} of paths){if(f.properties.river){land.lineWidth=f.properties.name==='St. Lawrence'?Math.max(2,Math.min(9,state.k/38000)):2;land.strokeStyle='#0b252f';land.lineJoin='round';land.stroke(path);}else{land.fillStyle=f.properties.name==='Lake Simcoe'?'#07181d':'#092d40';land.fill(path,'evenodd');land.strokeStyle='#224552';land.lineWidth=.8;land.stroke(path);coast.strokeStyle='#326071';coast.lineWidth=.65;coast.stroke(path);}}
+  // Catchment context is drawn on land and never becomes a water/current mask.
+  for(const f of state.drainage?.features||[]){const role=f.properties?.role;if(!['tributary','divide','watershed'].includes(role))continue;pathFeature(f,land);land.strokeStyle=role==='divide'?'#a58c58':role==='tributary'?'#36626c':'#304b4e';land.lineWidth=role==='divide'?1.25:role==='tributary'?.8:.65;land.setLineDash(role==='divide'?[5,4]:[]);land.lineJoin='round';land.stroke();}land.setLineDash([]);
   // One current view is retained: panning or resizing replaces this bounded cache.
   geographyCache={key,paths,background,shorelines,mask:null};return geographyCache;
 }
@@ -55,13 +57,14 @@ function drawLabels(){type.clearRect(0,0,state.w,state.h);if(!state.geo)return;c
   }
   for(const [text,lon,lat] of [['NO CURRENT FEED',-79.32,44.36],['NO VERIFIED CURRENT FIELD',-75.2,44.7]]){if(text==='NO CURRENT FEED'&&state.simcoe)continue;const [x,y]=project(lon,lat);if(x>20&&x<state.w-20&&y>140&&y<state.h-mapBottomReserve()){type.textAlign='center';type.font=`${mobile?6:7}px 'DM Mono',monospace`;type.letterSpacing='1px';type.fillStyle='#617e85';type.fillText(text,x,y);}}
   type.letterSpacing='0px';
+  if(state.k>40000)for(const f of state.drainage?.features||[]){const p=f.properties||{};if(!p.labelPoint||p.role!=='divide'&&state.k<160000)continue;const [x,y]=project(...p.labelPoint);if(x<35||x>state.w-35||y<170||y>state.h-mapBottomReserve())continue;const text=p.role==='divide'?'HURON / ONTARIO DIVIDE':p.name;if(!text)continue;type.textAlign='center';type.font=`${mobile?6:8}px 'DM Mono',monospace`;const width=type.measureText(text).width,rect=[x-width/2,y-5,width,12];if(occupied.some(r=>rect[0]<r[0]+r[2]&&rect[0]+rect[2]>r[0]&&rect[1]<r[1]+r[3]&&rect[1]+rect[3]>r[1]))continue;occupied.push(rect);type.fillStyle=p.role==='divide'?'#bca46d':'#6d99a1';type.shadowColor='#030708';type.shadowBlur=4;type.fillText(text,x,y);type.shadowBlur=0;}
 }
 function sample(lon,lat){const p=project(lon,lat);return displaySample(screenGrid,...p);}
 let screenGrid=null,gridKey=null;
-function buildGrid(){if(!state.mesh)return;const key=[state.mesh,state.field,state.river,state.estuary,state.simcoe,state.geo,state.w,state.h,state.k,state.tx,state.ty];if(screenGrid&&gridKey&&key.every((value,i)=>value===gridKey[i]))return;screenGrid=makeDisplay(state.mesh,state.field,state.river,project,invert,state.w,state.h,state.estuary,state.simcoe);
+function buildGrid(){if(!state.mesh)return;const key=[state.mesh,state.field,state.river,state.estuary,state.simcoe,state.outerEstuary,state.geo,state.w,state.h,state.k,state.tx,state.ty];if(screenGrid&&gridKey&&key.every((value,i)=>value===gridKey[i]))return;screenGrid=makeDisplay(state.mesh,state.field,state.river,project,invert,state.w,state.h,state.estuary,state.simcoe,state.outerEstuary);
   // Preserve exact native Ontario wet triangles; clip disseminated river grids
   // to real water polygons so coarse cells cannot paint over island land.
-  const g=screenGrid,pixels=waterMask(g,projectedGeography());g.valid=g.valid.filter(k=>{if(g.provider[k]!==1&&pixels[k*4+3]<16){g.provider[k]=0;g.u[k]=NaN;return false;}return true;});g.simcoeVisibleCells=0;for(const k of g.valid)if(g.provider[k]===4)g.simcoeVisibleCells++;
+  const g=screenGrid,pixels=waterMask(g,projectedGeography());g.valid=g.valid.filter(k=>{if(g.provider[k]!==1&&pixels[k*4+3]<16){g.provider[k]=0;g.u[k]=NaN;return false;}return true;});g.simcoeVisibleCells=0;g.outerEstuaryVisibleCells=0;for(const k of g.valid){if(g.provider[k]===4)g.simcoeVisibleCells++;if(g.provider[k]===5)g.outerEstuaryVisibleCells++;}const outerStatus=$('#outer-estuary-status');outerStatus.hidden=!g.outerEstuaryVisibleCells;outerStatus.textContent=g.outerEstuaryVisibleCells?'Outer estuary · archived 12–17 Oct 2026 vector mean':'';
   // One shared visual clock preserves relative velocities. At close zooms it
   // slows the entire field so its fastest trace travels about 270 CSS px/s.
   // Source vectors, scalar colours and cursor values remain untouched.
@@ -77,8 +80,8 @@ function updateLayerUI(){const simcoeOnly=state.view==='simcoe'&&Boolean(state.s
 function simcoePeriod(){return state.simcoe?'12 Oct 00:00 – 17 Oct 12:00 UTC · 2026':'';}
 function simcoeMethod(){const method=state.simcoe?.method;return typeof method==='string'?method:[method?.equations,method?.scheme,method?.boundary].filter(value=>typeof value==='string'&&value.trim()).join(' ');}
 function updateCoverage(){const selected=state.view==='simcoe',experimental=Boolean(state.simcoe&&(selected||screenGrid?.simcoeVisibleCells));$('#coverage-note').hidden=!(selected&&!state.simcoe);$('.legend').hidden=selected&&!state.simcoe;$('#experimental-note').hidden=!experimental;$('#atlas').dataset.simcoeExperiment=experimental?'visible':'hidden';$('#simcoe-period').textContent=simcoePeriod();$('#simcoe-model-period').textContent=state.simcoe?simcoePeriod():'No experimental dataset is included.';$('#simcoe-model-method').textContent=state.simcoe?simcoeMethod():'The map remains shoreline only until a separately labelled experimental dataset is supplied.';updateLayerUI();updateFieldSummary();}
-function redraw(reseed=false){if(state.field){buildGrid();if(reseed)seed();}updateCoverage();drawWater();drawLabels();ink.clearRect(0,0,state.w,state.h);if(reduced)for(let i=0;i<35;i++)animateStep(.016);}
-function animateStep(dt){if(!screenGrid?.valid.length)return;ink.globalCompositeOperation='destination-in';ink.fillStyle='rgba(0,0,0,.976)';ink.fillRect(0,0,state.w,state.h);ink.globalCompositeOperation='source-over';ink.lineWidth=state.w<600?.65:.7;
+function redraw(reseed=false){if(state.field){buildGrid();if(reseed)seed();}updateCoverage();const bounds=state.drainage?.bbox;if(bounds){const a=project(bounds[0],bounds[3]),b=project(bounds[2],bounds[1]);$('#drainage-key').hidden=b[0]<0||a[0]>state.w||b[1]<0||a[1]>state.h;}else $('#drainage-key').hidden=true;drawWater();drawLabels();ink.clearRect(0,0,state.w,state.h);if(reduced)for(let i=0;i<35;i++)animateStep(.016);}
+function animateStep(dt){if(!screenGrid?.valid.length)return;ink.globalCompositeOperation='destination-in';ink.fillStyle='rgba(0,0,0,.982)';ink.fillRect(0,0,state.w,state.h);ink.globalCompositeOperation='source-over';ink.lineWidth=state.w<600?.9:1.1;
   const g=screenGrid,seconds=dt*(g.motionMultiplier||nominalMotionMultiplier),metresPerDegree=111320;const buckets=Array.from({length:12},()=>[]);
   const index=(x,y)=>x<0||y<0||x>=state.w||y>=state.h?-1:Math.floor(y/g.cell)*g.nx+Math.floor(x/g.cell);
   for(const p of state.particles){if(p.age++>p.life){resetParticle(p,false);continue;}let remaining=seconds,steps=0;
@@ -87,7 +90,7 @@ function animateStep(dt){if(!screenGrid?.valid.length)return;ink.globalComposite
       const nx=p.x+g.u[mid]*step*scale,ny=p.y-g.v[mid]*step*scale,nk=index(nx,ny);if(nk<0||!Number.isFinite(g.u[nk])){resetParticle(p,false);break;}const speed=Math.hypot(u,v),q=state.layer==='speed'?speed/(g.speedMaximum||.6):Number.isFinite(g.t[k])?g.t[k]/25:.5,bucket=Math.max(0,Math.min(11,Math.floor(q*12)));buckets[bucket].push([p.x,p.y,nx,ny,speed]);p.x=nx;p.y=ny;remaining-=step;
     }
   }
-  for(let i=0;i<12;i++){const rgb=color(i/12);ink.strokeStyle=`rgba(${rgb.join(',')},.64)`;ink.beginPath();for(const p of buckets[i]){if(Math.random()>.45+Math.min(.5,p[4]*3))continue;ink.moveTo(p[0],p[1]);ink.lineTo(p[2],p[3]);}ink.stroke();}
+  for(let i=0;i<12;i++){const rgb=color(i/12);ink.strokeStyle=`rgba(${rgb.join(',')},.88)`;ink.beginPath();for(const p of buckets[i]){ink.moveTo(p[0],p[1]);ink.lineTo(p[2],p[3]);}ink.stroke();}
 }
 let last=0;function animate(now){const dt=Math.min(.035,last?(now-last)/1000:.016);last=now;if(!document.hidden&&!reduced)animateStep(dt);requestAnimationFrame(animate);}
 function notice(text,ms=6000){const el=$('#notice');el.textContent=text;el.style.display='block';clearTimeout(notice.timer);notice.timer=setTimeout(()=>el.style.display='none',ms);}
@@ -127,6 +130,9 @@ function validateSimcoe(f){
 }
 let simcoeRequest=null;
 function loadSimcoe(){if(simcoeRequest)return simcoeRequest;simcoeRequest=(async()=>{try{const response=await fetch('./data/simcoe-experimental.json',{cache:'no-cache',signal:AbortSignal.timeout(15000)});if(!response.ok)throw new Error('Optional experimental field unavailable');state.simcoe=validateSimcoe(await response.json());}catch{state.simcoe=null;}if(state.field&&state.geo&&state.mesh)redraw(true);else updateCoverage();})().finally(()=>{simcoeRequest=null;});return simcoeRequest;}
+async function loadDrainage(){try{const f=await loadJSON('./drainage.json');if(f.type!=='FeatureCollection'||!Array.isArray(f.features)||!f.features.every(x=>['divide','tributary','watershed'].includes(x.properties?.role)&&['LineString','MultiLineString','Polygon','MultiPolygon'].includes(x.geometry?.type)))throw new Error('Invalid drainage geography');state.drainage=f;}catch{state.drainage=null;}$('#drainage-key').hidden=!state.drainage;if(state.geo&&state.field)redraw();}
+function validateOuterEstuary(f){if(f?.kind!=='estuary'||f.mode!=='average'||f.provider!=='DFO POPS STLE500'||f.velocityUnits!=='m/s'||!Number.isInteger(f.width)||!Number.isInteger(f.height)||f.width<2||f.height<2||f.u?.length!==f.width*f.height||f.v?.length!==f.u.length||!Number.isFinite(f.west)||!Number.isFinite(f.south)||!(f.dx>0)||!(f.dy>0)||!Number.isFinite(Date.parse(f.start))||!Number.isFinite(Date.parse(f.end))||Date.parse(f.start)>=Date.parse(f.end)||f.sampleCount!==23)throw new Error('Invalid archived outer estuary field');let wet=0;for(let i=0;i<f.u.length;i++){if((f.u[i]===null)!==(f.v[i]===null)||f.u[i]!==null&&(!Number.isFinite(f.u[i])||!Number.isFinite(f.v[i])))throw new Error('Invalid archived vector');if(f.u[i]!==null)wet++;}if(!wet)throw new Error('Empty archived outer estuary field');return f;}
+async function loadOuterEstuary(){try{state.outerEstuary=validateOuterEstuary(await loadJSON('./data/outer-estuary-mean.json'));}catch{state.outerEstuary=null;}if(state.field&&state.geo)redraw(true);}
 function providerCurrent(name){const p=state.manifest?.providers?.[name];return state.publishedAvailable&&p?.status==='current'&&Date.now()-Date.parse(p.checkedAt)<3*3600000&&Date.now()-Date.parse(p.sourceTime)<18*3600000;}
 function applyFreshness(){
   const p=state.manifest?.providers,feed=$('#feed-status');if(!p){feed.dataset.state='retained';$('#feed-status span').textContent='Dated published data · checking status';return;}
@@ -152,8 +158,8 @@ base.addEventListener('wheel',e=>{e.preventDefault();zoom(Math.exp(-e.deltaY*.00
 function inspect(x,y){
   const [lon,lat]=invert(x,y),s=displaySample(screenGrid,x,y),el=$('#readout');if(y>state.h-mapBottomReserve())return;let html='';
   if(s){const speed=Math.hypot(s[0],s[1])*100,bearing=(Math.atan2(s[0],s[1])*180/Math.PI+360)%360;
-    html=`<small>${lat.toFixed(3)}°N · ${Math.abs(lon).toFixed(3)}°W</small><div class="values">${s[2]!==null?`<div><strong>${s[2].toFixed(1)}°C</strong><small>WATER TEMP.</small></div>`:''}<div><strong>${speed.toFixed(1)}</strong><small>CM/S · ${Math.round(bearing)}° TRUE</small></div></div><small>${s[3]===4?'SIMCOE · UNVALIDATED DEPTH-AVERAGED WIND RESPONSE':s[3]===3?'DFO STLE200 · SURFACE':s[3]===2?'ECCC · DEPTH-AVERAGED':'NOAA · TOP MODEL LAYER'}${s[3]===4?' · FIXED-PERIOD MEAN':state.mode==='average'?' · VECTOR MEAN':''}</small>`;
-    const source=s[3]===3?state.estuary:s[3]===2?state.river:null;if(s[3]===4)html+='<small>'+simcoePeriod()+'</small>';else if(source)html+='<small>'+(state.mode==='average'?dateLabel(source.start,true)+' – '+dateLabel(source.end,true):dateLabel(source.time))+'</small>';
+    html=`<small>${lat.toFixed(3)}°N · ${Math.abs(lon).toFixed(3)}°W</small><div class="values">${s[2]!==null?`<div><strong>${s[2].toFixed(1)}°C</strong><small>WATER TEMP.</small></div>`:''}<div><strong>${speed.toFixed(1)}</strong><small>CM/S · ${Math.round(bearing)}° TRUE</small></div></div><small>${s[3]===5?'DFO STLE500 · SURFACE · ARCHIVED VECTOR MEAN':s[3]===4?'SIMCOE · UNVALIDATED DEPTH-AVERAGED WIND RESPONSE':s[3]===3?'DFO STLE200 · SURFACE':s[3]===2?'ECCC · DEPTH-AVERAGED':'NOAA · TOP MODEL LAYER'}${s[3]===4?' · FIXED-PERIOD MEAN':s[3]!==5&&state.mode==='average'?' · VECTOR MEAN':''}</small>`;
+    const source=s[3]===5?state.outerEstuary:s[3]===3?state.estuary:s[3]===2?state.river:null;if(s[3]===4)html+='<small>'+simcoePeriod()+'</small>';else if(s[3]===5)html+='<small>12 Oct 00:00 – 17 Oct 12:00 UTC · 2026</small>';else if(source)html+='<small>'+(state.mode==='average'?dateLabel(source.start,true)+' – '+dateLabel(source.end,true):dateLabel(source.time))+'</small>';
   }else if(lon>-79.8&&lon<-79.05&&lat>44.1&&lat<44.85)html='<div class="nodata">Lake Simcoe<br>'+(state.simcoe?'No experimental vector in this cell.':'No current field is available in this deployment.')+'</div>';
   else{el.hidden=true;return;}
   el.innerHTML=html;el.hidden=false;el.style.left=Math.max(12,Math.min(state.w-el.offsetWidth-12,x+18))+'px';el.style.top=Math.max(12,Math.min(state.h-el.offsetHeight-mapBottomReserve(),y-30))+'px';
@@ -202,7 +208,7 @@ async function init(){
   try{[state.geo,state.mesh,state.field,state.river,state.estuary]=await Promise.all([loadJSON('./geography.json'),loadJSON('./mesh.json'),loadJSON('./data/snapshot.json'),loadJSON('./data/river.json'),loadJSON('./data/estuary.json')]);
     // Keep the complete union shoreline: it includes both sides of Montréal and the upper river.
     // The Ontario vectors still use the exact native wet triangles.
-    state.manifest=await loadJSON('./data/manifest.json');redraw(true);updateTime();applyFreshness();loadSimcoe();refresh();loadRiver('live');
+    state.manifest=await loadJSON('./data/manifest.json');redraw(true);updateTime();applyFreshness();loadSimcoe();loadDrainage();loadOuterEstuary();refresh();loadRiver('live');
   }catch(e){notice('The map could not load. Refresh to try again.',30000);$('#feed-status span').textContent='Map unavailable';console.error(e);}
   tick();setInterval(()=>{if(state.mode==='live'){refresh();loadRiver('live');}},900000);
 }
