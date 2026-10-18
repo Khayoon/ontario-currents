@@ -153,8 +153,8 @@ This is a display visualization of model results and sourced shorelines; it is n
 
 7. Rendering and media
 
-The map is rendered from model vectors and sourced geographic geometry with native Canvas and FFmpeg. It contains no AI-generated map imagery, website controls or timeline. Both the overview and the Montréal detail animate the same fixed model means.
+The map is rendered from model vectors and sourced geographic geometry with native Canvas and FFmpeg. It contains no AI-generated map imagery, website controls or timeline. The overview, Montréal detail and enlarged Simcoe close-up animate their fixed vector means.
 
-The speed legend is logarithmic, with ticks at 0, 2, 10, 50 and 150+ cm/s. Colour represents the magnitude of the mean velocity vector. Speeds at or above 1.5 m/s share the top colour. Particle motion is accelerated by a nominal factor of 90,000; particle lifetime, shoreline termination and the final loop transition are display choices, so these are illustrative flow traces rather than Lagrangian particle simulations.
+The speed legend is logarithmic, with ticks at 0, 2, 10, 50 and 150+ cm/s. Colour represents the magnitude of the mean velocity vector. Speeds at or above 1.5 m/s share the top colour. The larger Simcoe close-up uses a separate linear 0–5 cm/s palette with brighter low-speed colours and thicker, longer-persisting trails so the flow remains visible when viewing the entire composition. Its numerical vectors are unchanged. Particle motion is accelerated by a nominal factor of 90,000 in the overview and Montréal detail, and 180,000 in the enlarged Simcoe detail; particle lifetime, shoreline termination and the final loop transition are display choices, so these are illustrative flow traces rather than Lagrangian particle simulations.
 
-The exported video is a silent 20-second H.264 loop, 2560 × 1920 pixels at 30 frames per second, with a two-second crossfade that joins the loop. The still is a 3840 × 2880 PNG of the same field and composition. Rendering is deterministic for the chosen seed.
+The exported video is a silent 20-second H.264 loop, 2560 × 1920 pixels at 30 frames per second, with a two-second crossfade that joins the loop. Rendering is deterministic for the chosen seed.
