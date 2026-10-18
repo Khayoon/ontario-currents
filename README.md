@@ -4,6 +4,8 @@ An interactive atlas of modelled water currents from Lake Ontario into the St. L
 
 **[Explore the live atlas](https://khayoon.github.io/ontario-currents/)** · **[Watch the 20-second loop](https://khayoon.github.io/ontario-currents/media/october-current-map.mp4)** · **[Data and methods](docs/data-and-methods.txt)**
 
+[![The live atlas showing Lake Ontario currents, Lake Simcoe and the St. Lawrence shorelines](docs/atlas-preview.jpg)](https://khayoon.github.io/ontario-currents/)
+
 ## What this project demonstrates
 
 - **Scientific data visualization:** rasterizes NOAA's native unstructured mesh of 34,395 nodes and 64,453 triangles, retaining face-centred current vectors and interpolating node temperatures within triangles.
