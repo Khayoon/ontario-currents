@@ -1,0 +1,42 @@
+{
+  "interpretation": "Numerical and assumption sensitivity only; these are not confidence intervals or validation against measured currents.",
+  "baseline": "longer-spinup,500m,dt10s,Cbottom0.0025,history1Oct05Z,mean12Oct00Z\u201317Oct12Z",
+  "comparisons": {
+    "initialHistory48h": {
+      "cells": 2873,
+      "vectorDifferenceRmsMps": 0.004941765076955851,
+      "relativeVectorL2Difference": 0.47486626470163584,
+      "componentCorrelation": 0.8819390822842266,
+      "maxVectorDifferenceMps": 0.028178024986785195
+    },
+    "timeStep5s": {
+      "cells": 2873,
+      "vectorDifferenceRmsMps": 1.631717222572247e-10,
+      "relativeVectorL2Difference": 1.5679568948864727e-08,
+      "componentCorrelation": 1.0,
+      "maxVectorDifferenceMps": 1.8540096935547561e-09
+    },
+    "bottomDrag0.0015": {
+      "cells": 2873,
+      "vectorDifferenceRmsMps": 0.00332054179450735,
+      "relativeVectorL2Difference": 0.31907896352586146,
+      "componentCorrelation": 0.9838985877906009,
+      "maxVectorDifferenceMps": 0.012938878865236939
+    },
+    "bottomDrag0.004": {
+      "cells": 2873,
+      "vectorDifferenceRmsMps": 0.0023810100099359143,
+      "relativeVectorL2Difference": 0.22879706178424103,
+      "componentCorrelation": 0.9883018502437401,
+      "maxVectorDifferenceMps": 0.00937180006067789
+    },
+    "grid600mInterior": {
+      "cells": 2112,
+      "vectorDifferenceRmsMps": 0.002704899837843713,
+      "relativeVectorL2Difference": 0.293015093333074,
+      "componentCorrelation": 0.956174977596181,
+      "maxVectorDifferenceMps": 0.020416709417812005,
+      "selection": "500m wet mask eroded2cells, with all4 coarse interpolation corners wet; excludes shoreline geometry changes."
+    }
+  }
+}

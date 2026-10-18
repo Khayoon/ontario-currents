@@ -1,0 +1,50 @@
+{
+  "algorithm": "SHA256",
+  "scope": "Current public model/simcoe package. files hashes all delivered files except source-hashes.json itself. Original preferred-run source/input/output identities are retained separately below.",
+  "packagingChanges": [
+    "README.md adapted for the public repository, frozen-input offline reproduction, optional network regeneration, omitted caches and retained historical checks.",
+    "source-hashes.json regenerated for this public package; originalRunManifest preserves the development manifest, whose original README hash is historical.",
+    "prepare_grid.py already detects repository src/geography.json and preserves the original workspace fallback; no source or numerical change was required."
+  ],
+  "files": {
+    "compare_runs.py": "11bd07a257c50c6fec6e072187c980082e2e8872dfca8072b46d49a3afa2a09b",
+    "fetch-wind.mjs": "4d27696db2b32ab56696cf73ce95f135daa6b773f6901d3245cb78bedb877d72",
+    "grid-manifest.json": "5820270c4c56b45428c4ebb1aafe8501a584b21e4ee1a30ac15d26b0b2385494",
+    "grid-rebuild-check.json": "432fa2d068e098b40775bcf5168beb1356819716e3c92ed8529586e366a438df",
+    "grid.npz": "65f7db1da66370cfdbc7326b9b624e0ab96895acded7c9956bf53c3b207b0c30",
+    "longer-spinup-diagnostics.json": "cb50433d9267fa435ad7fc96fc475ab1f23453fda3114b00c2eb2eb2f55d756f",
+    "longer-spinup.json": "6639c13356767903bb77f277112a6b7345a902db1f4590f5ace7b9b4f90fbaec",
+    "numerical-checks-numba.json": "f659ce5f87b3b23f7105ae549b3779ac49cd3092df2ffd060cae39ed6eb4c1e3",
+    "numerical-checks.json": "179f2b9438d65cf703d3003d2b8184e971d016095f625c04b3c709eff793ba00",
+    "prepare_grid.py": "d50ebf4c896b34af742496d36a8da061a55a11be48755bf8af6f7b4c32689778",
+    "README.md": "834de2d65074ff3a407af63ca85e66f2e5c033f39f97898e9ed7f9f4ccb3ad20",
+    "requirements.txt": "1b272a67826fbd2accafdf518fdbbde197f59ebe3cef56452f047996d749600d",
+    "sensitivity.json": "e7e21f603fdb0fc035a980087ca9d54decf6d3d0432b31a8b4d40c09db6b1094",
+    "solve.py": "45b9ecc12e85569ed5a3d1332fc3d804ef3e5ea340912395def7427bba018f47",
+    "solver_numba.py": "1f8ebd8b501ecc7ad621fefc32636dbad1dbae0840b239092385ee6668d4e227",
+    "test_solver.py": "a27de4dc30016da1b6cb41b98d74d3f819d3d01065c5318ca35bde9665b34478",
+    "wind.json": "f690d1e1de98f3fc5593f46a54f4b3b1738675f98d9ca3353dd147277ccb3fa1"
+  },
+  "originalRunManifest": {
+    "algorithm": "SHA256",
+    "scope": "Delivered reproducible source, exact frozen grid/wind, and preferred longer-spinup numerical output. solve.py and solver_numba.py match the executed preferred-run kernels; preparation-script CLI/metadata additions were independently checked to rebuild identical grid arrays.",
+    "files": {
+      "solve.py": "45b9ecc12e85569ed5a3d1332fc3d804ef3e5ea340912395def7427bba018f47",
+      "solver_numba.py": "1f8ebd8b501ecc7ad621fefc32636dbad1dbae0840b239092385ee6668d4e227",
+      "test_solver.py": "a27de4dc30016da1b6cb41b98d74d3f819d3d01065c5318ca35bde9665b34478",
+      "prepare_grid.py": "d50ebf4c896b34af742496d36a8da061a55a11be48755bf8af6f7b4c32689778",
+      "compare_runs.py": "11bd07a257c50c6fec6e072187c980082e2e8872dfca8072b46d49a3afa2a09b",
+      "requirements.txt": "1b272a67826fbd2accafdf518fdbbde197f59ebe3cef56452f047996d749600d",
+      "README.md": "8d3e1975e005b125fe81d7c5eaf2c94d8cf0a5664b8ac53605f12a7401665af8",
+      "grid.npz": "65f7db1da66370cfdbc7326b9b624e0ab96895acded7c9956bf53c3b207b0c30",
+      "grid-manifest.json": "5820270c4c56b45428c4ebb1aafe8501a584b21e4ee1a30ac15d26b0b2385494",
+      "wind.json": "f690d1e1de98f3fc5593f46a54f4b3b1738675f98d9ca3353dd147277ccb3fa1",
+      "longer-spinup.json": "6639c13356767903bb77f277112a6b7345a902db1f4590f5ace7b9b4f90fbaec",
+      "longer-spinup-diagnostics.json": "cb50433d9267fa435ad7fc96fc475ab1f23453fda3114b00c2eb2eb2f55d756f",
+      "numerical-checks.json": "179f2b9438d65cf703d3003d2b8184e971d016095f625c04b3c709eff793ba00",
+      "numerical-checks-numba.json": "f659ce5f87b3b23f7105ae549b3779ac49cd3092df2ffd060cae39ed6eb4c1e3",
+      "grid-rebuild-check.json": "432fa2d068e098b40775bcf5168beb1356819716e3c92ed8529586e366a438df",
+      "sensitivity.json": "e7e21f603fdb0fc035a980087ca9d54decf6d3d0432b31a8b4d40c09db6b1094"
+    }
+  }
+}

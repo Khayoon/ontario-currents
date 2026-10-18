@@ -1,0 +1,33 @@
+{
+  "compiledKernelParity": {
+    "maxRhsDifference": 0.0,
+    "maxStepDifference": 0.0
+  },
+  "restPreservation": "Exact rest, zero wind remains exactly at rest on variable bathymetry with island.",
+  "semiDiscreteConservation": {
+    "energyDerivativeJPerSec": 1.3552527156068805e-11,
+    "volumeDerivativeM3PerSec": 0.0,
+    "meaning": "Pressure/Coriolis conserve depth-weighted discrete energy; closed faces conserve volume."
+  },
+  "unforcedIntegration": {
+    "relativeEnergyChange": -0.12735533294103762,
+    "volumeDriftM3": 6.548361852765083e-11,
+    "closedFacesExactlyZero": true,
+    "seconds": 3600
+  },
+  "quadraticDragDissipatesEnergy": {
+    "energyDerivativeJPerSec": -101.06606249613567
+  },
+  "windStressAndFreeSurface": {
+    "downwindMinusUpwindEtaM": 0.011976052593373908,
+    "volumeAnomalyM3": 0.0,
+    "meaning": "Eastward wind first accelerates east; closed-lake pressure builds a higher downwind water surface."
+  },
+  "coriolisSign": {
+    "northAccelerationFromEastFlowMps2": -2.042628077804575e-06
+  },
+  "timeStepComparison": {
+    "dt5versus10MaxAbsoluteStateDifference": 3.2390664069327827e-06,
+    "seconds": 3600
+  }
+}

@@ -76,6 +76,15 @@ function fieldData(field, label, expectedKind, mean = false) {
   }
   if (mean) meanMetadata(field, label);
 }
+function experimentalSimcoe(field,label){
+  if(!field)return;fieldData(field,label,'experimental-grid');
+  check(field.sourceType==='experimental-wind-response'&&field.experimental===true&&field.validated===false,`${label}: must explicitly declare an unvalidated experimental wind response`);
+  check(field.layer==='depth-averaged wind response'&&field.t===null,`${label}: depth-averaged response must have no temperature field`);
+  check((!field.units||field.units==='m/s')&&(!field.velocityUnits||field.velocityUnits==='m/s'),`${label}: experimental velocity units must be metres per second`);
+  check(Date.parse(field.start)===Date.parse('2026-10-12T00:00:00Z')&&Date.parse(field.end)===Date.parse('2026-10-17T12:00:00Z')&&Date.parse(field.time)===Date.parse(field.end),`${label}: fixed experimental period must remain 12 Oct 00Z to 17 Oct 12Z 2026`);
+  check(typeof field.method==='string'?field.method.trim().length>0:Boolean(field.method&&typeof field.method==='object'&&!Array.isArray(field.method)&&typeof field.method.equations==='string'&&field.method.equations.trim()),`${label}: experimental method is required`);
+  check(Boolean(field.provenance)&&(typeof field.provenance==='object'?Object.keys(field.provenance).length>0:typeof field.provenance==='string'&&field.provenance.trim().length>0),`${label}: experimental provenance is required`);
+}
 function polygonGeometry(geometry) {
   if (!geometry || !['Polygon', 'MultiPolygon'].includes(geometry.type)) return false;
   const polygons = geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates;
@@ -110,7 +119,11 @@ async function inspectTree(directory, label) {
     if (!partial) {
       // The build copies curated root/media assets alongside the src tree.
       const sharedMedia = label === 'src' && resolved.startsWith('media/') && await exists(path.join(root, resolved));
-      check(nameSet.has(resolved) || sharedMedia, `${label}/${from}: missing local reference ${reference}`);
+      // This independently dated experiment is optional; the browser retains
+      // government sources when it is unavailable. Validate its schema below
+      // whenever the actual file is included.
+      const optionalExperiment = resolved === 'data/simcoe-experimental.json';
+      check(nameSet.has(resolved) || sharedMedia || optionalExperiment, `${label}/${from}: missing local reference ${reference}`);
     }
   }
   for (const name of names.filter(n => /\.(html|css|js)$/.test(n))) {
@@ -162,6 +175,7 @@ async function inspectTree(directory, label) {
   for (const [name, kind, mean] of [['snapshot','mesh',false], ['average','mesh',true], ['river','river',false],
     ['river-average','river',true], ['estuary','estuary',false], ['estuary-average','estuary',true]])
     fieldData(await json(directory, `data/${name}.json`), `${label}/data/${name}.json`, kind, mean);
+  if(nameSet.has('data/simcoe-experimental.json'))experimentalSimcoe(await json(directory,'data/simcoe-experimental.json'),`${label}/data/simcoe-experimental.json`);
   const manifest = await json(directory, 'data/manifest.json');
   if (manifest) for (const key of ['noaa', 'river', 'estuary']) {
     const provider = manifest.providers?.[key] ?? manifest[key];
@@ -197,6 +211,19 @@ async function fieldFixtures(directory, label) {
     const dry = { ...river, u: Array(25).fill(null), v: Array(25).fill(null) };
     const dryGrid = context.makeDisplay({ lon: [], lat: [], triangles: [] }, null, dry, identity, identity, 8, 8, null);
     assert.equal(dryGrid.valid.length, 0, 'dry grid must not invent water currents');
+    const simcoe={...river,u:Array(25).fill(.04),v:Array(25).fill(.02),t:null};
+    const experimental=context.makeDisplay({lon:[],lat:[],triangles:[]},null,null,identity,identity,8,8,null,simcoe);
+    assert.equal(sample(experimental,1,1)?.[3],4,'Optional Simcoe response must retain provider 4');
+    assert.equal(sample(experimental,1,1)?.[2],null,'Experimental response must not create a temperature');
+    const mixed=context.makeDisplay(mesh,field,river,identity,identity,8,8,estuary,simcoe);
+    assert.equal(sample(mixed,1,1)?.[3],1,'Experiment must not overwrite native lake currents');
+    assert.equal(sample(mixed,5,5)?.[3],3,'Experiment must not overwrite surface estuary currents');
+    assert.equal(sample(mixed,7,7)?.[3],2,'Experiment must not overwrite available depth-averaged river currents');
+    const riverGap={...river,u:[...river.u],v:[...river.v]};riverGap.u[24]=riverGap.v[24]=null;
+    const filled=context.makeDisplay(mesh,field,riverGap,identity,identity,8,8,estuary,simcoe);
+    assert.equal(sample(filled,7,7)?.[3],4,'Experiment may fill a cell with no government vector');
+    assert(Math.abs(sample(filled,7,7)[0]-.04)<1e-6,'Experiment must preserve supplied velocity magnitude');
+    assert.equal(sample(filled,7,7)[2],null,'Filled experimental cell has no supplied temperature');
     reports.push(`${label}: native-edge, clipping, temperature and provider-priority fixtures passed`);
   } catch (error) { errors.push(`${label}: field fixture failed: ${error.message}`); }
 }

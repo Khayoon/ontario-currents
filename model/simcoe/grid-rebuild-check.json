@@ -1,0 +1,13 @@
+{
+  "comparison": "Frozen grid versus current prepare_grid.py rebuilding from retained exact original contour responses",
+  "arraysExactlyEqual": {
+    "H": true,
+    "wet": true,
+    "x": true,
+    "y": true,
+    "lon": true,
+    "lat": true,
+    "dx": true,
+    "dy": true
+  }
+}

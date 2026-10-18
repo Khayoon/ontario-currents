@@ -2,11 +2,13 @@ OCTOBER CURRENTS — LAKE ONTARIO & THE ST. LAWRENCE
 
 Suggested forum caption
 
-A map of mean modelled water motion from Lake Ontario into the St. Lawrence, with Lake Simcoe and the Montréal archipelago included. The field represents 12 October 2026 at 00:00 UTC through 17 October at 12:00 UTC: 23 equally weighted samples, six hours apart. Animated particles follow this fixed average field, with motion accelerated for visibility; they do not replay changing conditions through the week.
+A map of mean modelled water motion from Lake Ontario into the St. Lawrence, with a separately labelled experimental Lake Simcoe wind response and a Montréal detail. The fields represent 12 October 2026 at 00:00 UTC through 17 October at 12:00 UTC. The retrieved government products use 23 equally weighted samples, six hours apart; Simcoe uses a time-integrated numerical experiment over the same period. Animated particles follow these fixed average fields, with motion accelerated for visibility; they do not replay changing conditions through the week.
 
 Lake Ontario uses NOAA surface-layer nowcasts. The Montréal and fluvial-river sections use ECCC depth-averaged analyses, while the downstream estuary uses archived DFO surface forecasts for those same valid times. The average preserves direction, so opposing flows can cancel; it is not the average speed of moving water.
 
-The geography includes the previously missing upper river and water around both sides of Montréal Island. Available velocity products leave gaps in Lake Simcoe, parts of the upper river, and Montréal’s northern channels. Those waters remain visible without invented currents. This is a cartographic visualization of available model coverage, rather than complete current coverage of the river.
+The Simcoe layer is an unvalidated depth-averaged wind response computed from public bathymetry and observed Barrie-Oro winds. It excludes thermal circulation, surface shear and inflow/outlet exchange. It is not a measured or government current field. The Simcoe close-up has its own labelled linear 0–5 cm/s colour scale; the overview uses the logarithmic scale.
+
+The geography includes the previously missing upper river and water around both sides of Montréal Island. Retrieved velocity products still leave gaps in parts of the upper river, Montréal’s northern channels and the outer estuary/Gulf. Those waters remain visible. This is not complete current coverage of the river or a validated estimate of Simcoe's actual circulation.
 
 Geography: © OpenStreetMap contributors · OpenFreeMap · © OpenMapTiles.
 
@@ -17,10 +19,10 @@ SOURCE AND METHODS NOTES
 
 Start: 2026-10-12T00:00:00Z.
 End:   2026-10-17T12:00:00Z.
-Samples: 23, spaced six hours apart.
+Government product samples: 23, spaced six hours apart.
 Times: 12–16 October at 00:00, 06:00, 12:00 and 18:00 UTC; 17 October at 00:00, 06:00 and 12:00 UTC.
 
-This is a sampled mean for the current week to date, using 2026 model fields. It is not an October climatology, a complete seven-day average, or a set of direct current measurements. Every displayed retained velocity cell has all 23 valid samples. Samples receive equal weight, including the endpoints.
+This is a mean for the current week to date, using 2026 model fields. It is not an October climatology, a complete seven-day average, or a set of direct current measurements. Every displayed retained government-product velocity cell has all 23 valid samples. Those samples receive equal weight, including the endpoints. The separate Simcoe experiment integrates u/v at every 10-second solver step; its 23 six-hour snapshots are retained for inspection but are not the averaging weights.
 
 Eastward and northward components are averaged separately:
   mean_u = sum(u) / 23
@@ -101,7 +103,19 @@ The geographic display grid is 1400 × 1100, with 66,334 valid cells drawn from 
 
 The export shows continuous sourced water geography, including Lake Simcoe, the Thousand Islands, the upper river through Brockville and Cornwall, and channels around Montréal Island and Laval. Complete geography does not imply complete velocity coverage.
 
-The retrieved model products leave velocity gaps along parts of the upper river between the Lake Ontario model and the Montréal/fluvial model, including the Brockville–Cornwall corridor. Montréal’s northern channels and Lake Simcoe also lack a retrieved gridded velocity field usable for the selected dates. No synthetic current field fills these gaps.
+The retrieved model products leave velocity gaps along parts of the upper river between the Lake Ontario model and the Montréal/fluvial model, including the Brockville–Cornwall corridor. Montréal’s northern channels also lack a retrieved gridded velocity field usable for the selected dates. No added current field fills those river gaps.
+
+Lake Simcoe has a separately computed experimental, unvalidated depth-averaged wind response. It solves linearized rotating shallow-water equations on a 500 m Arakawa C grid, using historical Ontario depth contours, the mapped shoreline/islands and 408 consecutive ECCC Barrie-Oro hourly wind observations. Wind speed is converted from km/h to m/s, and meteorological direction from (tens of degrees true) is converted to east/north components. The station wind is applied uniformly without an over-water adjustment; nominal 10 m height is assumed rather than verified for this specific instrument.
+
+The preferred run begins at rest on 1 October 2026 at 05:00 UTC, uses 259 hours of wind forcing before the averaging window, and integrates mean u/v over 12 October 00:00–17 October 12:00 UTC. Pressure gradients, Coriolis, wind stress and quadratic bottom drag are included. Atherley Narrows and wet/dry faces are closed; no inflows, outflows, thermal gradients, internal waves or vertical shear are included. Mean-vector maximum is approximately 3.80 cm/s and median 0.735 cm/s for this experiment. These values are not validated observations.
+
+Numerical rest, mass, energy-budget, drag, boundary, direction and timestep tests passed. Shorter forcing history, altered drag and coarser grid change the result materially; these are sensitivity experiments, not confidence intervals. Actual Lake Simcoe circulation remains unresolved. The code, frozen input grid/winds and diagnostics are available at:
+https://github.com/Khayoon/ontario-currents/tree/main/model/simcoe
+https://github.com/Khayoon/ontario-currents/blob/main/docs/simcoe-model.md
+
+Public inputs:
+https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open01/MapServer/30
+https://api.weather.gc.ca/collections/climate-hourly/items?f=json&limit=1000&CLIMATE_IDENTIFIER=6117700&LOCAL_YEAR=2026&LOCAL_MONTH=10
 
 Real Simcoe hydrodynamic studies and current measurements do exist. The public November 2024 WSP Georgina Island Fixed Link report describes a whole-lake Delft3D model, an offshore mesh of about 400 m with finer local cells, and ADCP measurements from 5 October to 30 November 2022. Its public report supplies plots and scenario maps, but a machine-readable October velocity field suitable for this export was not found. A single local profiler or scenario figure would not justify assigning currents throughout the lake.
 
