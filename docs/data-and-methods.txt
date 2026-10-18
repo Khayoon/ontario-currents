@@ -1,0 +1,146 @@
+OCTOBER CURRENTS — LAKE ONTARIO & THE ST. LAWRENCE
+
+Suggested forum caption
+
+A map of mean modelled water motion from Lake Ontario into the St. Lawrence, with Lake Simcoe and the Montréal archipelago included. The field represents 12 October 2026 at 00:00 UTC through 17 October at 12:00 UTC: 23 equally weighted samples, six hours apart. Animated particles follow this fixed average field, with motion accelerated for visibility; they do not replay changing conditions through the week.
+
+Lake Ontario uses NOAA surface-layer nowcasts. The Montréal and fluvial-river sections use ECCC depth-averaged analyses, while the downstream estuary uses archived DFO surface forecasts for those same valid times. The average preserves direction, so opposing flows can cancel; it is not the average speed of moving water.
+
+The geography includes the previously missing upper river and water around both sides of Montréal Island. Available velocity products leave gaps in Lake Simcoe, parts of the upper river, and Montréal’s northern channels. Those waters remain visible without invented currents. This is a cartographic visualization of available model coverage, rather than complete current coverage of the river.
+
+Geography: © OpenStreetMap contributors · OpenFreeMap · © OpenMapTiles.
+
+
+SOURCE AND METHODS NOTES
+
+1. Fixed period and meaning of the average
+
+Start: 2026-10-12T00:00:00Z.
+End:   2026-10-17T12:00:00Z.
+Samples: 23, spaced six hours apart.
+Times: 12–16 October at 00:00, 06:00, 12:00 and 18:00 UTC; 17 October at 00:00, 06:00 and 12:00 UTC.
+
+This is a sampled mean for the current week to date, using 2026 model fields. It is not an October climatology, a complete seven-day average, or a set of direct current measurements. Every displayed retained velocity cell has all 23 valid samples. Samples receive equal weight, including the endpoints.
+
+Eastward and northward components are averaged separately:
+  mean_u = sum(u) / 23
+  mean_v = sum(v) / 23
+  magnitude of the mean vector = sqrt(mean_u² + mean_v²)
+
+That magnitude differs from mean speed:
+  mean_speed = sum(sqrt(u² + v²)) / 23
+
+Reversing tidal or wind-driven currents can yield a small mean vector even when water moved rapidly at individual times. Averaging speed alone would discard this cancellation and would not supply a meaningful mean direction. This export uses the vector mean. Any animated particle motion follows the resulting stationary field and is a visual trace, not the reconstructed path of a water parcel during the sampled period.
+
+2. Lake Ontario — NOAA LOOFS
+
+Product: Lake Ontario Operational Forecast System, native unstructured model mesh, top sigma layer (layer index 0).
+Inputs: 23 completed nowcast fields, one at each selected valid time. The n006 field gives the cycle’s ending nowcast time; it is not a six-hour forecast in this selection.
+Velocity units: metres per second; temperature units: degrees Celsius.
+Native dimensions: 64,453 vector faces and 34,395 temperature nodes. Surface-layer thickness is model-dependent; it is not a fixed one-metre observation depth.
+Temperature, where used, is averaged separately at mesh nodes. It does not supply temperatures for Simcoe or the Canadian river products.
+
+NOAA catalogue:
+https://opendap.co-ops.nos.noaa.gov/thredds/catalog/NOAA/LOOFS/MODELS/2026/10/17/catalog.html
+
+Example first input:
+https://opendap.co-ops.nos.noaa.gov/thredds/dodsC/NOAA/LOOFS/MODELS/2026/10/12/loofs.t00z.20261012.fields.n006.nc
+
+Example final input:
+https://opendap.co-ops.nos.noaa.gov/thredds/dodsC/NOAA/LOOFS/MODELS/2026/10/17/loofs.t12z.20261017.fields.n006.nc
+
+The mesh and model fields provide current coverage for Lake Ontario and the modelled head of the St. Lawrence; they do not include Lake Simcoe.
+
+3. Montréal and fluvial river — ECCC OHPS
+
+Product: Operational Hydrodynamic Prediction System, St. Lawrence River and fluvial estuary, 100-metre native polar-stereographic grid.
+Inputs: 23 zero-hour model analyses at the selected valid times, obtained from ECCC’s retained archive.
+Layer: depth-averaged velocity. This is not directly equivalent to the surface-layer LOOFS or surface STLE200 field.
+
+Native projection x/y components are rotated into geographic east/north using local projection convergence. The projection uses central longitude −433° (equivalent to −73°), pole scale 0.9330127, and spherical radius 6,370,997 m. Rounded projection offsets were anchored to the supplied native longitude/latitude at cell (0,0); remote corner and centre checks agree within 5 metres. Display grids use the nearest native cell, without extending currents into missing regions.
+
+Two display resolutions were prepared from the same fields and period: a 1200 × 900 river overview and a 1000 × 701 Montréal detail. Their respective valid-vector counts are 36,873 and 50,170. All retained cells have 23 valid samples; no erosion of the velocity mask was added.
+
+Official description and licence links:
+https://eccc-msc.github.io/open-data/msc-data/nwp_ohps/readme_ohps_en/
+https://eccc-msc.github.io/open-data/licence/readme_en/
+
+Archive example:
+https://dd.weather.gc.ca/20261012/WXO-DD/model_ohps/slfe/100m/00/000/
+
+The official broader domain description names upstream boundaries at Carillon and Beauharnois. That description must not be read as proof that the retrieved product provides currents in every surrounding channel. Fine fields contain data at Sainte-Anne, Lachine Rapids, Montréal Harbour and downstream. Checks within the Rivière des Prairies and Rivière des Mille Îles found no nearby valid velocity cells; these northern channels remain geographical water only in this export.
+
+4. Downstream estuary — DFO POPS STLE200
+
+Product: Fisheries and Oceans Canada Port Ocean Prediction Systems, STLE200 surface currents. This high-resolution domain covers the estuary from the Trois-Rivières area toward Les Escoumins and includes the Saguenay Fjord; it does not model the entire St. Lawrence River.
+Inputs: archived short-range surface forecasts for the same 23 valid times. For 06:00, 12:00 and 18:00 UTC, the selected fields use that day’s +6, +12 and +18-hour forecasts. A 00:00 UTC field uses the preceding day’s +24-hour forecast.
+
+These are forecasts retained from those dates, not retrospective analyses or direct observations. DFO describes the HPFX delivery as best-effort and its results as experimental.
+
+Official model descriptions:
+https://dfo-ocean-navigator.github.io/Dataset-Descriptions/
+
+Archive and distribution readme:
+https://hpfx.collab.science.gc.ca/dfo/pops_model/20261012/stle200/
+https://hpfx.collab.science.gc.ca/dfo/pops_model/README
+
+Published model assessment:
+https://publications.gc.ca/collections/collection_2026/mpo-dfo/fs70-5/Fs70-5-2026-004-eng.pdf
+
+STLE component-orientation audit
+
+The distributed NetCDF variables are called uos/vos and have generic sea-water x/y velocity labels. Their supplied coordinates form a rotated curvilinear grid. Those labels alone do not conclusively document whether distribution preprocessing already converted the components into geographic east/north.
+
+An additional native-grid rotation was tested and rejected. Across 11,489 faster cells in narrow channels, treating the supplied components as east/north aligned with the local wet-channel principal axis with mean absolute dot product 0.98195 and median 0.99442. Applying a further approximately 37.8° grid rotation reduced these to 0.77789 and 0.79014, producing cross-channel directions in places such as Trois-Rivières. The export therefore retains the distributed components as supplied and interprets them as east/north.
+
+This is an empirical orientation check against channel geometry, not documentary confirmation of the distributor’s preprocessing, nor validation against observed currents. The remaining metadata ambiguity is recorded here rather than presented as conclusively resolved by the source labels.
+
+The geographic display grid is 1400 × 1100, with 66,334 valid cells drawn from 112,532 native wet cells. All retained native and display cells have 23 valid samples. Nearest-cell resampling includes native land nodes, preserving the available wet/dry mask instead of drawing currents across land.
+
+5. Geographic gaps and Lake Simcoe
+
+The export shows continuous sourced water geography, including Lake Simcoe, the Thousand Islands, the upper river through Brockville and Cornwall, and channels around Montréal Island and Laval. Complete geography does not imply complete velocity coverage.
+
+The retrieved model products leave velocity gaps along parts of the upper river between the Lake Ontario model and the Montréal/fluvial model, including the Brockville–Cornwall corridor. Montréal’s northern channels and Lake Simcoe also lack a retrieved gridded velocity field usable for the selected dates. No synthetic current field fills these gaps.
+
+Real Simcoe hydrodynamic studies and current measurements do exist. The public November 2024 WSP Georgina Island Fixed Link report describes a whole-lake Delft3D model, an offshore mesh of about 400 m with finer local cells, and ADCP measurements from 5 October to 30 November 2022. Its public report supplies plots and scenario maps, but a machine-readable October velocity field suitable for this export was not found. A single local profiler or scenario figure would not justify assigning currents throughout the lake.
+
+WSP study:
+https://cdn.prod.website-files.com/64e5071b798e46ba8cbf81d3/674f66d12ef54c35a2d70f06_Coastal_Eng_Report_Final_20241125.pdf
+
+Earlier LSRCA hydrodynamic/current study:
+https://ourwatershed.ca/assets/uploads/2017/11/imported/Lake%20Simcoe%20Chapter%2012%20Appendix.pdf
+
+Ontario’s public Simcoe monitoring catalogue lists water-quality and physical measurements, rather than a whole-lake gridded current product:
+https://data.ontario.ca/dataset/lake-simcoe-monitoring
+
+6. Shoreline geography and attribution
+
+Artwork attribution:
+© OpenStreetMap contributors · OpenFreeMap · © OpenMapTiles
+
+OpenStreetMap relation geometry was retrieved on 17 October 2026 through Overpass. It restores Lake Simcoe, the previously omitted upper-river polygons, Lac des Deux-Montagnes, Lac Saint-Louis, Rivière des Prairies, Rivière des Mille Îles, and water around Montréal and Laval. Relation member ways were joined only at matching source endpoints; island holes remain land.
+
+OpenFreeMap/OpenMapTiles source water polygons supply the remaining display outlines. Tile dataset: 20261011_080001_pt. Tiles were clipped to their actual tile rectangles, transformed to geographic coordinates and unioned with the exact selected OSM geometry. No channel was drawn by buffering a centreline. This geographic processing adds no velocity measurements or inferred current coverage. Precision varies between exact OSM relation vertices and tile-generalized outlines.
+
+OpenStreetMap copyright and licence:
+https://www.openstreetmap.org/copyright
+https://opendatacommons.org/licenses/odbl/1-0/
+
+Lake Simcoe relation:
+https://www.openstreetmap.org/relation/9984807
+
+OpenFreeMap sources and documentation:
+https://tiles.openfreemap.org/planet
+https://github.com/hyperknot/openfreemap
+
+This is a display visualization of model results and sourced shorelines; it is not a survey or navigation chart.
+
+
+7. Rendering and media
+
+The map is rendered from model vectors and sourced geographic geometry with native Canvas and FFmpeg. It contains no AI-generated map imagery, website controls or timeline. Both the overview and the Montréal detail animate the same fixed model means.
+
+The speed legend is logarithmic, with ticks at 0, 2, 10, 50 and 150+ cm/s. Colour represents the magnitude of the mean velocity vector. Speeds at or above 1.5 m/s share the top colour. Particle motion is accelerated by a nominal factor of 90,000; particle lifetime, shoreline termination and the final loop transition are display choices, so these are illustrative flow traces rather than Lagrangian particle simulations.
+
+The exported video is a silent 20-second H.264 loop, 2560 × 1920 pixels at 30 frames per second, with a two-second crossfade that joins the loop. The still is a 3840 × 2880 PNG of the same field and composition. Rendering is deterministic for the chosen seed.

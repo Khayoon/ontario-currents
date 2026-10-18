@@ -1,0 +1,4 @@
+dist/
+.refresh-work/
+node_modules/
+*.log

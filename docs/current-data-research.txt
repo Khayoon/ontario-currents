@@ -1,0 +1,77 @@
+Find usable current data and defensible ways to reconstruct missing currents for a Lake Ontario–St. Lawrence MP4 map
+
+Act as a hydrodynamic data researcher. I am making a silent MP4 loop for specialist mapping/cartography forums. It shows moving particles in a fixed period's water-velocity field. The map already exists; this research must fill its missing current coverage. The MP4 is the only map deliverable: no PNG, website, timeline or interactive controls.
+
+Research both existing numerical velocity data and the underlying information needed to run a defensible hydrodynamic reconstruction. Search English and French sources, government archives, university repositories, consultancy reports and their appendices, publications, retired operational systems and data-owner routes. Follow references to original model projects. A missing public API is not evidence that a usable model or dataset does not exist.
+
+GEOGRAPHY — address every region separately
+
+1. Lake Simcoe, Ontario: the entire lake, including its bays and island channels.
+2. Lake Ontario's outlet and the full upper St. Lawrence corridor: Kingston, the Thousand Islands, Gananoque, Brockville, Prescott, Iroquois, Lake St. Lawrence, the Moses–Saunders/Cornwall area, Lac Saint-François, Valleyfield/Beauharnois, Lac Saint-Louis and Montréal. Do not skip Kingston–Brockville, Brockville–Cornwall or Cornwall–Montréal.
+3. The complete Montréal/Laval archipelago: Lac des Deux-Montagnes; channels around Île Perrot and Île Bizard; the western and northern shores of Île de Montréal; Rivière des Prairies between Montréal and Laval/Île Jésus; and Rivière des Mille Îles north of Laval, including connections to the main St. Lawrence. Include relevant dams, control structures, rapids, side channels and flow splits.
+4. The lower estuary and Gulf of St. Lawrence water already visible in the upper-right of the MP4, beyond Les Escoumins. Find broader-domain ocean currents and subset them to the frame. The approximate search envelope for the existing artwork is 80.3°W–67°W, 43°N–50°N. Do not confuse the fitting bounds used by a renderer with the full visible viewport. It is useful to locate models for the entire Gulf even though the export uses only its visible portion.
+
+PERIOD AND MEANING
+
+First seek 12 October 2026 00:00 UTC through 17 October 2026 12:00 UTC, matching the existing map's 23 six-hourly samples. Denser original data are welcome. If that period is unavailable, locate other October records, hindcasts, representative October scenarios or multi-year October climatologies. Explicitly identify their dates and meaning. Recommend a common alternative period where feasible; never silently label older or mixed-period data as the 2026 week.
+
+The current map averages east/north velocity components separately. Distinguish magnitude of mean velocity, mean speed and tidal variability: reversing flows may cancel in a weekly vector mean. Explain what each available product supports and how an honest fixed-period animation can retain useful information about energetic tidal currents. Do not assign mean speed or RMS speed to an invented direction.
+
+WHAT IS ALREADY USED — do not treat these as complete coverage
+
+- NOAA LOOFS, native mesh, top sigma layer: Lake Ontario and its modelled outlet.
+- ECCC OHPS/SHOP SLFE, native 100 m, depth-averaged analyses: some western/southern Montréal channels, harbour and downstream river. The fields retrieved for the current export did not provide velocities at sampled Prairies/Mille Îles locations. Check native products, all relevant domains and archives before concluding the channels are unavailable.
+- DFO POPS STLE200: surface estuary currents toward Les Escoumins, with limited geographic extent. It does not fill the visible outer-estuary/Gulf area.
+
+CONCRETE LEADS TO PURSUE
+
+A. Gulf and lower estuary
+Investigate CIOPS-East, RIOPS, WCPS, DFO/Ocean Navigator, OGSL/SLGO, CIOOS/SIOOC and CHS products. CIOPS-East is documented as covering the Gulf at approximately 2 km, so investigate actual wet-cell coverage and archival availability, then use higher-resolution estuary products where appropriate. Check velocity components, rather than wave or sea-ice motion.
+https://dfo-ocean-navigator.github.io/Dataset-Descriptions/
+https://eccc-msc.github.io/open-data/
+https://hpfx.collab.science.gc.ca/
+
+B. Upper St. Lawrence
+Recover the NOAA/GLERL Upper St. Lawrence River Forecasting System and River2D model: historical numerical fields, mesh, bathymetry, roughness, boundary conditions, code and current custodians. Investigate retired GLERL/GLCFS and GLOS endpoints as well as current catalogues. A 2026 paper describes three-hourly model currents and a data-request route; establish exactly which reaches and periods its assets cover.
+https://www.frontiersin.org/journals/water/articles/10.3389/frwa.2026.1712263/full
+https://ciglr.seas.umich.edu/wp-content/uploads/2016/10/2012-2013_ciler_annual_report_closeout.pdf
+Historical endpoint leads, not confirmed working downloads: glerl.noaa.gov/res/usl and data.glos.us/boaters/slr.
+Also investigate NRC/Cornett/Faure TELEMAC hydrokinetic models and numerical outputs for Cornwall and the St. Lawrence river/estuary:
+https://www.oceanenergysystems.org/publications/icoe/icoe-2014/document/hydrokinetic-energy-resources-in-the-st-lawrence-river-and-estuary/
+Locate the actual data behind ECCC's 2022 Cornwall ADCP collection, including velocities, bin depths and positioning, and assess its use for model validation rather than assuming point measurements cover the whole river:
+https://open.canada.ca/data/en/dataset/e802b0ec-fd4b-4b64-94a3-365fe5864a0d
+
+C. Montréal's missing channels
+Investigate CEHQ/MELCCFP, CMM, Laval, INRS, Hydro-Québec, Ouranos and Polytechnique model assets. Follow Modeleur/Hydrosim/H2D2 projects and names such as RDP_2010, RMI_2010, RDPamont and RMI-RDPaval. Establish their current owners and successors. Seek meshes, bathymetry, roughness, hydraulic structures, calibration observations, boundary conditions and numerical velocities, including normal-flow and October conditions rather than only extreme-flood maps.
+WSP, Révision des cotes de crues, Ville de Laval, report 141-16788-00, December 2014:
+https://cmm.qc.ca/rci-2019-78/2014_WSP_141-16788-00.pdf
+Ouranos/Polytechnique Prairies model report:
+https://www.ouranos.ca/sites/default/files/2023-05/proj-ant-thant-dorner-rapport.pdf
+Existing OHPS documentation:
+https://eccc-msc.github.io/open-data/msc-data/nwp_ohps/readme_ohps_en/
+
+D. Lake Simcoe
+Pursue LSRCA/MECP studies, university models and the whole-lake Delft3D model behind WSP's November 2024 Georgina Island Fixed Link coastal report. Seek its native mesh, bathymetry, model setup, forcing, calibration and ADCP observations from 5 October–30 November 2022. Determine whether October fields can be recovered or a documented model rerun. Earlier research models, archived outputs and supplemental datasets are also useful.
+https://cdn.prod.website-files.com/64e5071b798e46ba8cbf81d3/674f66d12ef54c35a2d70f06_Coastal_Eng_Report_Final_20241125.pdf
+https://ourwatershed.ca/assets/uploads/2017/11/imported/Lake%20Simcoe%20Chapter%2012%20Appendix.pdf
+https://data.ontario.ca/dataset/lake-simcoe-monitoring
+These reports are leads to numerical assets; published figures alone do not establish a downloadable lake-wide October velocity field.
+
+IF DIRECT VELOCITY FIELDS CANNOT BE OBTAINED
+
+For each missing region, design the most defensible reconstruction that available inputs actually support. Prefer recovery/rerunning of an existing calibrated model, but investigate a new reproducible model where necessary. Identify exact data sources for bathymetry, bed roughness, stage/water levels, upstream and tributary discharge, dam/gate operations, shoreline/structures, atmospheric forcing and validation measurements. Verify horizontal/vertical datums and units. CHS NONNA, HYDAT/Water Survey of Canada, USGS, Hydro-Québec, OPG/NYPA and local surveys are possible leads, not assumed complete coverage.
+
+For Simcoe, assess whether surface circulation requires a three-dimensional thermal model with wind stress, stratification, heat exchange, rotation, vertical mixing, inflows and outflows. For the river network, assess a suitable two-dimensional hydraulic model with correctly partitioned flow and hydraulic structures. Explain whether a depth-averaged estimate can represent the intended surface layer and label the difference.
+
+Evaluate satellite feature tracking, drifters, ADCP, radar or inverse methods where regionally supported. Explain identifiability, sampling limits and validation; do not claim temperature imagery alone gives full-depth currents. Do not fill gaps with shoreline-following arrows, a uniform downstream speed, a fixed fraction of wind speed or unvalidated extrapolation from a distant grid. Clearly distinguish interpolation inside an existing wet model domain from solving for currents outside that domain.
+
+REQUIRED OUTPUT
+
+1. A coverage matrix for every named region: best direct dataset, alternative sources, reconstruction route, remaining gaps and confidence.
+2. For each source: custodian, exact product/project identifier, direct download/API/catalogue URL, example file or subset request, format, native mesh/grid and wet mask, resolution, velocity layer/depth, variables, units, coordinate system, component orientation/staggering, timestamps, available dates, licence/attribution and access status.
+3. Separate verified numerical downloads, metadata-only findings, documented but inaccessible assets, owner-request leads and proposed new simulations. Where possible verify an actual file and representative wet cells in each missing reach. If your tools cannot inspect binaries, state that clearly; do not report retrieval or coverage as tested.
+4. For reconstruction: a concrete input-to-model-to-validated-u/v workflow, available software/setup, missing inputs, validation evidence and uncertainty. Explain what cannot be determined from the available information.
+5. An integration plan for combining the chosen products across this MP4 frame while preserving islands, narrow channels, model limits, layer/period differences and all valid shoreline cells. Do not stretch a coarse ocean grid through unresolved river channels or hide valid data with an eroded coastal mask.
+6. A prioritized action list with the next exact downloads or asset requests. When data require owner cooperation, identify the custodian and draft a request naming the required files; do not contact anyone.
+
+Use primary sources and cite the exact evidence. Distinguish “not found” from “does not exist.” Do not stop at generic portal lists, screenshots or papers that never lead to numerical data or a defensible reconstruction. Do not omit a valid route merely because it requires substantial engineering or an owner request.

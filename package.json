@@ -1,0 +1,12 @@
+{
+  "name": "ontario-current-atlas",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "build": "node scripts/static-build.mjs",
+    "refresh-data": "node scripts/refresh-data.mjs",
+    "check": "node scripts/check-pages.mjs && node scripts/test-redraw-cache.mjs",
+    "preview": "node scripts/preview.mjs"
+  }
+}
