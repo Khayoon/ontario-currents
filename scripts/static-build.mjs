@@ -22,6 +22,8 @@ const filmManifestPath=path.join(root,'media-source/ontario-closeup.json');
   }
   const film=Buffer.concat(parts);
   if(film.length!==manifest.bytes||createHash('sha256').update(film).digest('hex')!==manifest.sha256)throw new Error('Assembled film failed verification');
+  await mkdir(path.join(root,'media'),{recursive:true});
+  await writeFile(path.join(root,'media/lake-ontario-closeup.mp4'),film);
   await mkdir(path.join(dist,'media'),{recursive:true});
   await writeFile(path.join(dist,'media/lake-ontario-closeup.mp4'),film);
 }
