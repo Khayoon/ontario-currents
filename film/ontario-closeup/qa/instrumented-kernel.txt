@@ -1,0 +1,19 @@
+    for(const p of particles){if(p.terminated)continue;if(p.age++>p.life){reset(p,"age");continue;}let remaining=seconds,substeps=0;
+      while(remaining>1e-6&&substeps++<250){
+        const z=index(p.x,p.y);if(z<0||!P[z]){reset(p,"invalid-start");break;}
+        const lat=invert(p.x,p.y)[1],scale=k/(360*111320*Math.cos(lat*Math.PI/180)),screenSpeed=Math.hypot(U[z],V[z])*scale,boost=displayBoost(screenSpeed);
+        const limit=cfg.maxParticleStep||.75,ox=p.x,oy=p.y;
+        let stepTime=Math.min(remaining,limit/Math.max(1e-12,screenSpeed*boost));
+        let mid=index(ox+U[z]*boost*stepTime*scale*.5,oy-V[z]*boost*stepTime*scale*.5);if(mid<0||!P[mid]){reset(p,mid<0?"crop-exit-mid":"invalid-mid");break;}
+        // Midpoint integration resamples direction at every small screen step.
+        let midSpeed=Math.hypot(U[mid],V[mid])*scale,midBoost=displayBoost(midSpeed);
+        if(midSpeed*midBoost*stepTime>limit){stepTime=limit/(midSpeed*midBoost);mid=index(ox+U[z]*boost*stepTime*scale*.5,oy-V[z]*boost*stepTime*scale*.5);if(mid<0||!P[mid]){reset(p,mid<0?"crop-exit-mid":"invalid-mid");break;}midSpeed=Math.hypot(U[mid],V[mid])*scale;midBoost=displayBoost(midSpeed);}
+        // A sharp cell transition must not defeat the spatial step bound.
+        stepTime=Math.min(stepTime,limit/Math.max(1e-12,midSpeed*midBoost));
+        const nx=ox+U[mid]*midBoost*stepTime*scale,ny=oy-V[mid]*midBoost*stepTime*scale,nz=index(nx,ny);
+        if(nz<0||!P[nz]){reset(p,nz<0?"crop-exit-end":"invalid-end");break;}record(p,ox,oy,nx,ny);p.x=nx;p.y=ny;remaining-=stepTime;
+        // Round caps paint a dot even for a zero-length stroke. Do not make
+        // a zero vector flicker as stationary particles are reseeded.
+        if(p.x!==ox||p.y!==oy){const q=useTemperature&&Number.isFinite(T[z])?T[z]/(cfg.temperatureMax||25):speedRatio(Math.hypot(U[z],V[z])),b=Math.max(0,Math.min(23,Math.floor(q*24)));buckets[b].push(ox,oy,p.x,p.y);}
+      }
+    }

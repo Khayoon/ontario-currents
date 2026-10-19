@@ -227,7 +227,7 @@
   "trailRetention": 0.971,
   "particleWidth": 0.78,
   "particleOpacity": 0.94,
-  "gridCell": 0.5,
+  "gridCell": 0.25,
   "maxParticleStep": 0.2,
   "motionAcceleration": 70000,
   "seed": 74129,

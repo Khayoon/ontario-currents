@@ -19,8 +19,7 @@ TF = Transformer.from_crs(4326, 32618, always_xy=True)
 
 def stages():
     package_input=ROOT/'inputs/hourly-stage-boundaries-igld85.csv'
-    original_input=ROOT.parent/'upper-river-research/hourly-stage-boundaries-igld85.csv'
-    path=package_input if package_input.exists() else original_input
+    path=package_input
     rows = list(csv.DictReader(path.open(encoding='utf-8')))
     k=np.array([float(r['kingston_stage_igld85_m']) for r in rows])
     b=np.array([float(r['brockville_stage_igld85_m']) for r in rows])

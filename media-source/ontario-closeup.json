@@ -1,22 +1,27 @@
 {
-  "bytes": 47762576,
-  "sha256": "e802a0f72fb171ae42eece94d163b12c66dfdb89110c917caa883a81b46ec87c",
-  "edition": "Finer channels and visible slow trails, 19 October 2026",
+  "bytes": 77927515,
+  "sha256": "83a86ab073660d438e9841a31c42a33b915415339e6cb3bf6f5feb9ca858949e",
+  "edition": "Wolfe\u2013Carleton local-stage correction, 19 October 2026",
   "parts": [
     {
       "file": "ontario-closeup.part0",
       "bytes": 22000000,
-      "sha256": "25e82fb8a61670f39cd0193308bea8bf4001fb6a6116820d1a4b041fc14c42b8"
+      "sha256": "70b425ef2c689a0e2a2ffe33ea18bd6d95ae8195db7028d3ea76e39398fe5b3d"
     },
     {
       "file": "ontario-closeup.part1",
       "bytes": 22000000,
-      "sha256": "da6406ec8ee2dbfde5cb8a6d3bcd1e88677dc7a90ed2588deb8f490fa0f0103f"
+      "sha256": "ed2cdd24c0dad977a1ad89f5f3d6034cc9f272cebdd33e635e40a3e05b390116"
     },
     {
       "file": "ontario-closeup.part2",
-      "bytes": 3762576,
-      "sha256": "46535b22c9291486ebc078265768d43b6e177f827143dba3e1c8f23df384ac4b"
+      "bytes": 22000000,
+      "sha256": "e53306491754cb47c27c0c3baaf003831270b57a057aadf8b6655faf2244cf91"
+    },
+    {
+      "file": "ontario-closeup.part3",
+      "bytes": 11927515,
+      "sha256": "99686de8d884170bce5d2c4547793ddbaa55ee4b7fe4e34cd8af60151cdab3e9"
     }
   ]
 }

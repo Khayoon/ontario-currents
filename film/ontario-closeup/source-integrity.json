@@ -1,10 +1,17 @@
 {
-  "frozen_source_renderer_sha256": "b4cf016ea085fae4b971b0288787a92b1d29318f92766440a89e32e89b67dc61",
-  "frozen_source_config_sha256": "925180acb4be31d5d2befca6c1bd109bcb2ab950963c36cb7107a56308b1138c",
+  "frozen_source_renderer_sha256": "50c99c2c2c9aff0ca2704ac5f26f2ddfa0954ad71ee4ddd939b2e60c1a474ce1",
+  "frozen_source_config_sha256": "bf24846b0bd7495309672a5494fe326f1de02240cdc6cab0448965525b67ef64",
   "portable_renderer_changes": [
     "Canvas dependency default resolves this bundle package.json; relative override resolved from config directory.",
     "FFmpeg default is FFMPEG_BINARY environment variable or ffmpeg on PATH.",
     "Line endings normalized to LF; renderer flow logic otherwise identical."
+  ],
+  "edition_changes": [
+    "River source recomputed using stable local-stage wet/dry cells, with source bed and geometry unchanged.",
+    "Zero-length particle segments are not stroked; round caps previously painted misleading stationary dots.",
+    "Display raster reduced from .5px to .25px to retain both actual Bayfield mouth paths; source numerical fields unchanged.",
+    "Framing, seeding weights, colour mapping, motion scaling and integration step settings unchanged.",
+    "Final join/body encodes use CRF16; the earlier CRF21 candidate failed the unchanged loop-seam check because of differential compression error."
   ],
   "inputs": [
     {
@@ -26,30 +33,25 @@
     {
       "path": "../../src/mesh.json",
       "sha256": "d5720f28802855db79f088946e359e75554ad64f432a048e7df06f45832471cf",
-      "purpose": "Native NOAA LOOFS mesh; already supplied with repository."
+      "purpose": "NOAA LOOFS native mesh."
     },
     {
       "path": "../../model/upper-river/display-field.json",
-      "sha256": "576488437490a7c0ddc0387181eb63d8c147ddb6e626c77ae50839316c773654",
-      "purpose": "Selected river-estimate field; model companion remains separate."
+      "sha256": "6af379480059a1611ddbd49a6cbb784186fbcb50e5ec0b24979e22bdc5426e41",
+      "purpose": "Corrected local-stage river estimate."
     }
   ],
   "render_logic_copied_without_changes": true,
   "files": [
     {
-      "name": ".gitignore",
-      "bytes": 37,
-      "sha256": "1df126bfa335ce3735ae86c154a032e9a4fcdc739cbf12868c7778369c459718"
+      "name": "render.mjs",
+      "bytes": 24818,
+      "sha256": "00f89f0f6e841b6e54a5135f33be6f89f8d21b27e015537c0232c794027126fd"
     },
     {
       "name": "config.json",
-      "bytes": 5851,
-      "sha256": "cfc048748871603746a3607228996e99080f4e73f56e3876deb9926ecca13b17"
-    },
-    {
-      "name": "finish.py",
-      "bytes": 3551,
-      "sha256": "f86b7d381c53c43e54e32598d011d323e9220de7407663debcfc7e2e8844352a"
+      "bytes": 5852,
+      "sha256": "1553d4c12c8294720c5636b23bd54f4b92d4ccd0eba800bbc99f4d3e5d9149f7"
     },
     {
       "name": "package.json",
@@ -57,30 +59,39 @@
       "sha256": "d9c50b7225dff859b31ef971959f01232b3f634f781e03517067dd49cec9048d"
     },
     {
-      "name": "README.md",
-      "bytes": 6366,
-      "sha256": "22438f8cdba43679f961dd9702e106ba886fc95e974d084ab0301097e3e84510"
+      "name": "finish.py",
+      "bytes": 3551,
+      "sha256": "b510f8caa2e300efbcd2f663807bb7c956bd1fbdd3b5238749a86d2c5b4d289a"
     },
     {
-      "name": "render.mjs",
-      "bytes": 24646,
-      "sha256": "8e901276b10e7cf794ed99480828439aafc5c01d87f254ac57901cf333704fcc"
+      "name": "qa/coarse-grid-failed.json",
+      "bytes": 5129,
+      "sha256": "ea2d825e2539fe740b3a1bb2aeee2d260e41b9288fc2e137c60851a3bc5c088d"
+    },
+    {
+      "name": "qa/fine-grid-passed.json",
+      "bytes": 15439,
+      "sha256": "6899309ad1c354707a0f311a5c4b5ef14234fa6b6b7f465d38ee8d5ce704fa0f"
+    },
+    {
+      "name": "qa/instrumented-kernel.txt",
+      "bytes": 1952,
+      "sha256": "ee636ce08a9e10d615fbd1a511c7513a953fdc8692986339e974be5209e95a9b"
+    },
+    {
+      "name": "qa/README.md",
+      "bytes": 1886,
+      "sha256": "84db0c46265018748b24f046e029a1cad5e004d0802c0437173e41fd2133bf66"
+    },
+    {
+      "name": "qa/targeted-advection.json",
+      "bytes": 731450,
+      "sha256": "8aaf8dd3f32ad34644c87af8cec18ec5b7badfbff5b8dbaa2384fbd4eed90c3d"
+    },
+    {
+      "name": "qa/trajectory-water-check.json",
+      "bytes": 2812,
+      "sha256": "fff9ab567428e5df2adabb33d6115b0502306dc228851c53743fd2d826169fdd"
     }
-  ],
-  "verification": {
-    "renderer_syntax": "node --check passed",
-    "finalizer_syntax": "Python ast.parse passed; finish.py --help passed from outside bundle directory",
-    "render_smoke": "One H.264 frame at 320x180 rendered successfully using the own-package Canvas default, NODE_PATH for the installed dependency, and FFMPEG_BINARY. All test configs/media were outside the bundle.",
-    "production_renderer_still_matches_frozen_sha256": true,
-    "config_changes_only_normalized_paths": [
-      "field",
-      "geography",
-      "manifest",
-      "mesh",
-      "poster",
-      "rivers",
-      "video"
-    ],
-    "no_personal_windows_paths_or_authentication_strings": true
-  }
+  ]
 }

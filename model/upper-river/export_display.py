@@ -5,7 +5,7 @@ import numpy as np
 from scipy.ndimage import map_coordinates
 from pyproj import Transformer
 
-p=argparse.ArgumentParser();p.add_argument('solution');p.add_argument('--out',default='work/upper-river-model/estimated-river-field.json')
+p=argparse.ArgumentParser();p.add_argument('solution');p.add_argument('--out',default='display-field.json')
 p.add_argument('--method',default='Simplified unvalidated nonlinear Manning diffusion-wave estimate, omitting momentum inertia and inertial eddies');args=p.parse_args()
 a=np.load(args.solution); wet=a['wet']; x=a['x'];y=a['y']; xx,yy=np.meshgrid(x,y)
 to_ll=Transformer.from_crs(32618,4326,always_xy=True); to_xy=Transformer.from_crs(4326,32618,always_xy=True)

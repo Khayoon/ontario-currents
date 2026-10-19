@@ -1,6 +1,6 @@
 {
-  "title": "Illustrative Kingston\u2013Brockville through-flow estimates, western inlet extension",
-  "model_version": "50m-DWE-inlet-pad1000m-open-bed",
+  "title": "Kingston\u2013Brockville illustrative hydraulic estimates: local-stage wet-mask correction",
+  "model_version": "50m-DWE-inlet1000m-local-stage-active-set",
   "selected_method": "Simplified, unvalidated steady nonlinear Manning diffusion-wave approximation",
   "model_period": {
     "from": "2026-10-12T00:00:00Z",
@@ -9,20 +9,59 @@
   },
   "selected": {
     "cell_size_m": 50,
-    "wet_cells": 169950,
-    "effective_uniform_manning_n": 0.028916660030499988,
+    "wet_cells": 171786,
+    "effective_uniform_manning_n": 0.028923628044987035,
     "inlet_padding_metres": 1000,
     "boundary_stages_igld85_m": [
       74.80174436090226,
       74.5217067669173
     ],
     "discharge_scenario_m3s": 7377.58,
-    "discharge_in_m3s": 7377.580000000001,
-    "discharge_out_m3s": 7377.5780260339325,
-    "relative_boundary_flux_error": 2.6756281437912717e-07,
-    "maximum_cell_continuity_residual_m3s": 0.00010086552162318404,
-    "min_actual_depth_m": 0.21056875423280985,
+    "discharge_in_m3s": 7377.58,
+    "discharge_out_m3s": 7377.57816914612,
+    "relative_boundary_flux_error": 2.481645580997441e-07,
+    "maximum_cell_continuity_residual_m3s": 0.00010890131904419191,
+    "min_actual_depth_m": 0.12202174107548558,
     "cells_using_depth_floor": 0
+  },
+  "correction": {
+    "problem": "A global minimum Brockville-stage wetting test wrongly removed shallow water at upstream local stages, including Bayfield southern mouth.",
+    "method": "Start a maximum possible upstream-stage wet candidate; repeatedly solve, prune at local actual depth < 0.12 m and activate through orthogonal wet-neighbour faces above 0.13 m; preserve stage-anchored components; require a fixed mask and zero floor cells.",
+    "fixed_source_geometry_and_prepared_bed": true,
+    "wet_margin_m": 0.12,
+    "rewet_margin_m": 0.13,
+    "active_set_history": {
+      "history": [
+        {
+          "iteration": 0,
+          "wet_cells": 171886,
+          "removed_shallow_cells": 97,
+          "activated_connected_cells": 0,
+          "mask_changed_cells": 100,
+          "minimum_actual_depth_m": -0.05306606362385935,
+          "cells_using_floor": 97,
+          "max_depth_of_inactive_adjacent_candidate_m": null,
+          "discharge_m3s": 7112.544688618499,
+          "boundary_flux_error": 2.670686875426364e-07
+        },
+        {
+          "iteration": 1,
+          "wet_cells": 171786,
+          "removed_shallow_cells": 0,
+          "activated_connected_cells": 0,
+          "mask_changed_cells": 0,
+          "minimum_actual_depth_m": 0.12202174107548558,
+          "cells_using_floor": 0,
+          "max_depth_of_inactive_adjacent_candidate_m": 0.12900883101922034,
+          "discharge_m3s": 7112.879326404515,
+          "boundary_flux_error": 2.481645580997441e-07
+        }
+      ],
+      "source_sha256": "d0c2b6ae3ec44203cda5ff2318b8399566abce300795c1b7348a8501c88731b9",
+      "prepared_bed_sha256": "c5a97d35fc558397cfd9da6e908faf361ec1a8f9a6f126b21766d8d84d43de09",
+      "wall_seconds": 193.40231657028198
+    },
+    "shallow_southern_mouth_caveat": "The 0.342 m maximum-clearance-path bottleneck uses inferred bed. Raising only physical southern-mouth bed by 0.25 m at fixed solved stage closes that path; this is a topology diagnostic, not a recomputed flow scenario."
   },
   "held_out_stage": {
     "station": "NOAA8311062",
@@ -31,305 +70,288 @@
       44.3311
     ],
     "nearest_wet_cell_distance_m": 29.941589301463875,
-    "predicted_igld85_stage_m": 74.69156751170058,
+    "predicted_igld85_stage_m": 74.69162942244728,
     "observed_time_weighted_mean_m": 74.66782083333334,
-    "stage_residual_m": 0.023746678367245977,
+    "stage_residual_m": 0.02380858911394057,
     "observation_quality": "preliminary, one missing six-minute value interpolated only for time-weighted stage mean"
   },
-  "bank_bed_estimated_area_fraction": 0.17145631067961165,
+  "bank_bed_estimated_area_fraction": 0.1767606207723563,
   "cross_sections": [
     {
-      "distance_from_inlet_km": 1.5126242570120454,
-      "net_discharge_m3s": 7377.579827326483,
-      "absolute_crossing_flux_m3s": 7497.090231572194,
-      "estimated_bed_face_flux_share": 3.9502462549752264e-10
+      "distance_from_inlet_km": 1.454971576112454,
+      "net_discharge_m3s": 7377.580011447113,
+      "absolute_crossing_flux_m3s": 7475.946298594014,
+      "estimated_bed_face_flux_share": 1.3164466891617354e-10
     },
     {
-      "distance_from_inlet_km": 7.063187604145233,
-      "net_discharge_m3s": 7377.579467672211,
-      "absolute_crossing_flux_m3s": 8094.098704042519,
-      "estimated_bed_face_flux_share": 0.06103584813582735
+      "distance_from_inlet_km": 7.004474756493272,
+      "net_discharge_m3s": 7377.579523598293,
+      "absolute_crossing_flux_m3s": 8084.770015528966,
+      "estimated_bed_face_flux_share": 0.04591888671858305
     },
     {
-      "distance_from_inlet_km": 12.61375095127842,
-      "net_discharge_m3s": 7377.579819396408,
-      "absolute_crossing_flux_m3s": 7826.010662927603,
-      "estimated_bed_face_flux_share": 0.30953662584338903
+      "distance_from_inlet_km": 12.553977936874087,
+      "net_discharge_m3s": 7377.580072797537,
+      "absolute_crossing_flux_m3s": 7724.870083787364,
+      "estimated_bed_face_flux_share": 0.321140270782445
     },
     {
-      "distance_from_inlet_km": 18.164314298411604,
-      "net_discharge_m3s": 7377.579201532831,
-      "absolute_crossing_flux_m3s": 7410.047014403533,
-      "estimated_bed_face_flux_share": 0.0010200269541780656
+      "distance_from_inlet_km": 18.103481117254905,
+      "net_discharge_m3s": 7377.5793725343365,
+      "absolute_crossing_flux_m3s": 7513.817954219344,
+      "estimated_bed_face_flux_share": 0.00016815601867905194
     },
     {
-      "distance_from_inlet_km": 23.714877645544796,
-      "net_discharge_m3s": 7377.578956922556,
-      "absolute_crossing_flux_m3s": 7641.339921153503,
-      "estimated_bed_face_flux_share": 0.2296369235916562
+      "distance_from_inlet_km": 23.652984297635722,
+      "net_discharge_m3s": 7377.579210979346,
+      "absolute_crossing_flux_m3s": 7582.232498620577,
+      "estimated_bed_face_flux_share": 0.21442791025512511
     },
     {
-      "distance_from_inlet_km": 29.265440992677984,
-      "net_discharge_m3s": 7377.578587314709,
-      "absolute_crossing_flux_m3s": 7534.142428527135,
-      "estimated_bed_face_flux_share": 0.2633517463486362
+      "distance_from_inlet_km": 29.202487478016536,
+      "net_discharge_m3s": 7377.578919765273,
+      "absolute_crossing_flux_m3s": 7964.345329646909,
+      "estimated_bed_face_flux_share": 0.4554990787542275
     },
     {
-      "distance_from_inlet_km": 34.816004339811165,
-      "net_discharge_m3s": 7377.578018534904,
-      "absolute_crossing_flux_m3s": 7392.552438983585,
-      "estimated_bed_face_flux_share": 0.0
+      "distance_from_inlet_km": 34.751990658397354,
+      "net_discharge_m3s": 7377.578276900924,
+      "absolute_crossing_flux_m3s": 7392.641564267187,
+      "estimated_bed_face_flux_share": 0.020411690571405284
     },
     {
-      "distance_from_inlet_km": 40.36656768694436,
-      "net_discharge_m3s": 7377.57755717556,
-      "absolute_crossing_flux_m3s": 7380.786756308591,
-      "estimated_bed_face_flux_share": 0.0033731609276170644
+      "distance_from_inlet_km": 40.30149383877817,
+      "net_discharge_m3s": 7377.577557621338,
+      "absolute_crossing_flux_m3s": 7409.43271540487,
+      "estimated_bed_face_flux_share": 0.002416831271502463
     },
     {
-      "distance_from_inlet_km": 45.91713103407754,
-      "net_discharge_m3s": 7377.57881500892,
-      "absolute_crossing_flux_m3s": 7392.611326266593,
-      "estimated_bed_face_flux_share": 0.004666264629134056
+      "distance_from_inlet_km": 45.85099701915899,
+      "net_discharge_m3s": 7377.579063457889,
+      "absolute_crossing_flux_m3s": 7378.270004604419,
+      "estimated_bed_face_flux_share": 0.009926314978073718
     },
     {
-      "distance_from_inlet_km": 51.467694381210734,
-      "net_discharge_m3s": 7377.578615513881,
-      "absolute_crossing_flux_m3s": 7416.254138695818,
-      "estimated_bed_face_flux_share": 0.11830160745645495
+      "distance_from_inlet_km": 51.400500199539806,
+      "net_discharge_m3s": 7377.578961257714,
+      "absolute_crossing_flux_m3s": 7379.444640711143,
+      "estimated_bed_face_flux_share": 0.07812748339445173
     },
     {
-      "distance_from_inlet_km": 57.018257728343926,
-      "net_discharge_m3s": 7377.578633073706,
-      "absolute_crossing_flux_m3s": 8042.908144660048,
-      "estimated_bed_face_flux_share": 0.025256045017625028
+      "distance_from_inlet_km": 56.950003379920624,
+      "net_discharge_m3s": 7377.5788838667795,
+      "absolute_crossing_flux_m3s": 8022.363817070882,
+      "estimated_bed_face_flux_share": 0.03717146146940129
     },
     {
-      "distance_from_inlet_km": 62.5688210754771,
-      "net_discharge_m3s": 7377.578545709765,
-      "absolute_crossing_flux_m3s": 7496.948866854877,
+      "distance_from_inlet_km": 62.499506560301434,
+      "net_discharge_m3s": 7377.578765941013,
+      "absolute_crossing_flux_m3s": 7575.473431860585,
       "estimated_bed_face_flux_share": 0.0
     }
   ],
-  "inlet_extension": {
-    "native_wet_cells": 169950,
-    "newly_solved_cells": 3118,
-    "newly_solved_area_km2": 7.795,
-    "newly_solved_cells_with_retrieved_bed": 3082,
-    "newly_solved_fraction_with_retrieved_bed": 0.9884541372674791,
-    "common_prior_wet_cells": 166832,
-    "removed_prior_wet_cells": 0,
-    "downstream_2km_comparison": {
-      "cells": 159864,
-      "rms_vector_change_mps": 0.0025450366667949934,
-      "vector_change_mps_p50_p95_max": [
-        7.14485765007629e-05,
-        0.002291842527483003,
-        0.04765420530165568
-      ],
-      "stage_change_m_p50_p95_max": [
-        0.0002844775965584745,
-        0.0004184756597361172,
-        0.0006717438158574396
-      ]
-    },
-    "actual_source_bed_change_on_measured_cells_max_m": 0.0,
-    "cape_vincent_gap": {
-      "point": [
-        -76.3441,
-        44.1284
-      ],
-      "prior_wet": false,
-      "new_wet": true,
-      "source_measured": true,
-      "retrieved_bed_igld85_estimated_m": 60.49022140209978,
-      "new_depth_m": 14.311410895014518,
-      "new_utm_velocity_mps": [
-        0.0734941847929547,
-        0.06389355720585449
-      ],
-      "new_speed_mps": 0.09738471055971146
-    },
-    "field_sha256": "576488437490a7c0ddc0387181eb63d8c147ddb6e626c77ae50839316c773654",
-    "solution_sha256": "7997df3b41c55f7f33bbdd221d551cd188dcc1c4ff2c4715e21d4f22dfb17431",
-    "frozen_prior_field_sha256": "adb561fe8e65b97433ff22630d9bf24faaa1804b15cc92f2c004c92d25c8489c"
-  },
-  "bank_preparation": {
-    "method": "harmonic",
-    "wet_cells": 173036,
-    "measured_bed_cells": 142493,
-    "estimated_bed_cells": 30543,
-    "estimated_bed_area_fraction": 0.1765124020435054,
-    "shoreline_depth_constraint_m": 0.2,
-    "open_cut_missing_bed_neighbour_faces_with_retrieved_depth": 0,
-    "open_cut_missing_bed_neighbour_faces_zero_gradient": 1,
-    "open_boundary_handling": "Actual land alone receives shallow-bank constraint. Artificial cuts use neighbouring retrieved bed if finite, otherwise zero normal interpolation gradient.",
-    "caveat": "Inferred bed and interpolated vertical-datum separation remain estimates; measured source bed is unchanged."
-  },
-  "prior_domain_sensitivity": {
-    "scope": "Retained checks on the original inlet location; these are NOT newly run validation of the padded domain.",
-    "sensitivities": {
-      "bed_raised025m": {
-        "discharge_m3s": 7055.03885225888,
-        "relative_change_from_mean_case": -0.04371909863954304,
-        "head_drop_m": 0.2800375939849573,
-        "effective_manning_n": 0.03065938233
+  "earlier_configuration_diagnostics": {
+    "scope": "Retained checks from earlier inlet/wet-mask configurations. Not newly run validation of this local-stage correction.",
+    "prior_domain_sensitivity": {
+      "scope": "Retained checks on the original inlet location; these are NOT newly run validation of the padded domain.",
+      "sensitivities": {
+        "bed_raised025m": {
+          "discharge_m3s": 7055.03885225888,
+          "relative_change_from_mean_case": -0.04371909863954304,
+          "head_drop_m": 0.2800375939849573,
+          "effective_manning_n": 0.03065938233
+        },
+        "bed_lowered025m": {
+          "discharge_m3s": 7710.385770897363,
+          "relative_change_from_mean_case": 0.04511042522037889,
+          "head_drop_m": 0.2800375939849573,
+          "effective_manning_n": 0.03065938233
+        },
+        "nearest_bank_bed": {
+          "discharge_m3s": 7395.048436310739,
+          "relative_change_from_mean_case": 0.002367773214351887,
+          "head_drop_m": 0.2800375939849573,
+          "effective_manning_n": 0.03065938233
+        },
+        "head_observed_p05": {
+          "discharge_m3s": 6651.078880395884,
+          "relative_change_from_mean_case": -0.09847417711554685,
+          "head_drop_m": 0.2296000000000049,
+          "effective_manning_n": 0.03065938233
+        },
+        "head_observed_p95": {
+          "discharge_m3s": 8239.910341818008,
+          "relative_change_from_mean_case": 0.1168852580138755,
+          "head_drop_m": 0.34539999999999793,
+          "effective_manning_n": 0.03065938233
+        },
+        "roughness_m20percent": {
+          "discharge_scale": 1.25,
+          "calculation": "Exact inverse-n scaling at constant imposed stages, global uniform resistance only."
+        },
+        "roughness_p20percent": {
+          "discharge_scale": 0.8333333333333334,
+          "calculation": "Exact inverse-n scaling at constant imposed stages, global uniform resistance only."
+        }
       },
-      "bed_lowered025m": {
-        "discharge_m3s": 7710.385770897363,
-        "relative_change_from_mean_case": 0.04511042522037889,
-        "head_drop_m": 0.2800375939849573,
-        "effective_manning_n": 0.03065938233
+      "grid_sensitivity": {
+        "common_wet_cells": 161201,
+        "fraction_fine_wet_with_common_coarse_wet": 0.9662474824973626,
+        "rms_vector_difference_mps": 0.04975297724148752,
+        "rms_speed_difference_mps": 0.04055134315073642,
+        "moving_cells_for_direction": 86109,
+        "moving_direction_difference_deg_percentiles": {
+          "50": 3.092932801834404,
+          "90": 14.488984412351995,
+          "95": 20.995093596271143,
+          "99": 38.57671147567368
+        },
+        "moving_speed_ratio_fine_over_coarse_percentiles": {
+          "10": 0.8112606816765,
+          "50": 0.9927858372987742,
+          "90": 1.2008050046034602
+        },
+        "absolute_stage_difference_m_percentiles": {
+          "50": 0.0009601089675896901,
+          "90": 0.004852862985458728,
+          "95": 0.005236427612317129,
+          "99": 0.0063729282185533975
+        },
+        "scope": "Both runs independently calibrated to the same total regulation-Q scenario. Nearest coarse cell to each fine centroid; statistics exclude noncommon wet cells. This is a grid sensitivity check, not formal asymptotic convergence or validation."
       },
-      "nearest_bank_bed": {
-        "discharge_m3s": 7395.048436310739,
-        "relative_change_from_mean_case": 0.002367773214351887,
-        "head_drop_m": 0.2800375939849573,
-        "effective_manning_n": 0.03065938233
+      "momentum_comparison": {
+        "used_in_movie": false,
+        "method": "experimental semi-implicit full-momentum depth-averaged shallow-water estimate",
+        "final": {
+          "q_in": 2858.6436738398297,
+          "q_out": 2886.1886570627425,
+          "net_volume_rate": -27.544983222912833,
+          "interior_continuity_l1": 33.45323288267171,
+          "max_stage": 74.80174436090226,
+          "min_stage": 74.51805117079157,
+          "minimum_actual_depth_m": 0.20248318940447518,
+          "cells_requiring_depth_floor": 0,
+          "kinetic_energy_m5s2": 11557688.42632249,
+          "max_face_speed": 0.7551333246368301,
+          "speed_percentiles": [
+            0.026674691108006236,
+            0.13163544346029632,
+            0.2684448300191156,
+            0.9653546143449223
+          ],
+          "simulated_seconds": 86400.0,
+          "maximum_stage_change_last_checkpoint_m": 0.00022738452062753822,
+          "rms_face_speed_change_last_checkpoint_mps": 0.00011819249129395537,
+          "advection_cfl": 0.15102666492736602,
+          "wall_seconds": 382.1357934474945,
+          "relative_boundary_flux_error": 0.009635682640331824
+        },
+        "reason_rejected": "The full-momentum experimental solver strongly disagreed with the regulated discharge at the selected resistance and retained residual boundary seiche. Advection/grid losses are unresolved; it is not an accuracy upgrade.",
+        "no_advection_friction_check_final": {
+          "q_in": 7580.332276380942,
+          "q_out": 7576.062301331944,
+          "net_volume_rate": 4.269975048998276,
+          "interior_continuity_l1": 4.621108395325579,
+          "max_stage": 74.80174436090226,
+          "min_stage": 74.5217067669173,
+          "minimum_actual_depth_m": 0.22274854394484578,
+          "cells_requiring_depth_floor": 0,
+          "kinetic_energy_m5s2": 84821280.26915239,
+          "max_face_speed": 2.390695181676043,
+          "speed_percentiles": [
+            0.061392511722367434,
+            0.3029530304091841,
+            0.5777169747893319,
+            2.0535621532507156
+          ],
+          "simulated_seconds": 27000.0,
+          "global_step_mass_balance_error_m3s": 1.1974826366056845e-06,
+          "flux_depth_linearization_relative_difference": 1.1612227361681118e-07,
+          "maximum_stage_change_last_checkpoint_m": 7.991213125535523e-05,
+          "rms_face_speed_change_last_checkpoint_mps": 6.634567268058875e-05,
+          "advection_cfl": 2.8688342939238947,
+          "wall_seconds": 38.09622526168823,
+          "relative_boundary_flux_error": 0.0005632965539390417
+        }
       },
-      "head_observed_p05": {
-        "discharge_m3s": 6651.078880395884,
-        "relative_change_from_mean_case": -0.09847417711554685,
-        "head_drop_m": 0.2296000000000049,
-        "effective_manning_n": 0.03065938233
-      },
-      "head_observed_p95": {
-        "discharge_m3s": 8239.910341818008,
-        "relative_change_from_mean_case": 0.1168852580138755,
-        "head_drop_m": 0.34539999999999793,
-        "effective_manning_n": 0.03065938233
-      },
-      "roughness_m20percent": {
-        "discharge_scale": 1.25,
-        "calculation": "Exact inverse-n scaling at constant imposed stages, global uniform resistance only."
-      },
-      "roughness_p20percent": {
-        "discharge_scale": 0.8333333333333334,
-        "calculation": "Exact inverse-n scaling at constant imposed stages, global uniform resistance only."
+      "inertia_and_energy_diagnostics": {
+        "solution": "dwe-calibrated-50m.npz",
+        "wet_cells": 166832,
+        "inlet_flux_m3s": 7377.579999999998,
+        "outlet_flux_m3s": 7377.578199974462,
+        "relative_boundary_flux_error": 2.4398590538979617e-07,
+        "max_interior_cell_flux_residual_m3s": 9.859961528491112e-05,
+        "interior_L1_flux_residual_relative_to_inflow": 1.1314399148145924e-05,
+        "actual_minimum_depth_m": 0.21058635820772054,
+        "cells_at_or_below_numerical_floor": 0,
+        "max_inlet_static_stage_m_igld85": 74.80174436090226,
+        "moving_cells_for_inertia_diagnostic": 90492,
+        "ratio_advective_to_pressure_acceleration_percentiles": {
+          "50": 4.249529980203522,
+          "90": 15.491798422590316,
+          "95": 21.28373496895195,
+          "99": 38.369120593664334
+        },
+        "moving_fraction_ratio_above_point2": 0.9923197630729789,
+        "moving_fraction_ratio_above1": 0.8890288644300048,
+        "fraction_wet_cells_total_head_exceeds_inlet_static_stage_by_1cm": 0.0009110961925769636,
+        "worst_kinetic_head_cell": {
+          "utm18n": [
+            420425.0,
+            4911825.0
+          ],
+          "speed_mps": 2.3827990008275384,
+          "stage_m_igld85": 74.73619250928627,
+          "total_kinetic_plus_static_head_m_igld85": 75.0256762309621,
+          "excess_over_inlet_static_stage_m": 0.22393187005984316
+        },
+        "interpretation": "Conservation is a numerical property, not field validation. DWE omits inertia and cannot enforce full kinetic-energy/momentum balances; local fast jets and island wakes are uncertain. Acceleration ratios and kinetic head are diagnostics only, not clipping/correction rules. Inlet kinetic energy and unresolved subcell velocities are not measured."
       }
     },
-    "grid_sensitivity": {
-      "common_wet_cells": 161201,
-      "fraction_fine_wet_with_common_coarse_wet": 0.9662474824973626,
-      "rms_vector_difference_mps": 0.04975297724148752,
-      "rms_speed_difference_mps": 0.04055134315073642,
-      "moving_cells_for_direction": 86109,
-      "moving_direction_difference_deg_percentiles": {
-        "50": 3.092932801834404,
-        "90": 14.488984412351995,
-        "95": 20.995093596271143,
-        "99": 38.57671147567368
-      },
-      "moving_speed_ratio_fine_over_coarse_percentiles": {
-        "10": 0.8112606816765,
-        "50": 0.9927858372987742,
-        "90": 1.2008050046034602
-      },
-      "absolute_stage_difference_m_percentiles": {
-        "50": 0.0009601089675896901,
-        "90": 0.004852862985458728,
-        "95": 0.005236427612317129,
-        "99": 0.0063729282185533975
-      },
-      "scope": "Both runs independently calibrated to the same total regulation-Q scenario. Nearest coarse cell to each fine centroid; statistics exclude noncommon wet cells. This is a grid sensitivity check, not formal asymptotic convergence or validation."
-    },
-    "momentum_comparison": {
-      "used_in_movie": false,
-      "method": "experimental semi-implicit full-momentum depth-averaged shallow-water estimate",
-      "final": {
-        "q_in": 2858.6436738398297,
-        "q_out": 2886.1886570627425,
-        "net_volume_rate": -27.544983222912833,
-        "interior_continuity_l1": 33.45323288267171,
-        "max_stage": 74.80174436090226,
-        "min_stage": 74.51805117079157,
-        "minimum_actual_depth_m": 0.20248318940447518,
-        "cells_requiring_depth_floor": 0,
-        "kinetic_energy_m5s2": 11557688.42632249,
-        "max_face_speed": 0.7551333246368301,
-        "speed_percentiles": [
-          0.026674691108006236,
-          0.13163544346029632,
-          0.2684448300191156,
-          0.9653546143449223
+    "prior_inlet_extension": {
+      "native_wet_cells": 169950,
+      "newly_solved_cells": 3118,
+      "newly_solved_area_km2": 7.795,
+      "newly_solved_cells_with_retrieved_bed": 3082,
+      "newly_solved_fraction_with_retrieved_bed": 0.9884541372674791,
+      "common_prior_wet_cells": 166832,
+      "removed_prior_wet_cells": 0,
+      "downstream_2km_comparison": {
+        "cells": 159864,
+        "rms_vector_change_mps": 0.0025450366667949934,
+        "vector_change_mps_p50_p95_max": [
+          7.14485765007629e-05,
+          0.002291842527483003,
+          0.04765420530165568
         ],
-        "simulated_seconds": 86400.0,
-        "maximum_stage_change_last_checkpoint_m": 0.00022738452062753822,
-        "rms_face_speed_change_last_checkpoint_mps": 0.00011819249129395537,
-        "advection_cfl": 0.15102666492736602,
-        "wall_seconds": 382.1357934474945,
-        "relative_boundary_flux_error": 0.009635682640331824
+        "stage_change_m_p50_p95_max": [
+          0.0002844775965584745,
+          0.0004184756597361172,
+          0.0006717438158574396
+        ]
       },
-      "reason_rejected": "The full-momentum experimental solver strongly disagreed with the regulated discharge at the selected resistance and retained residual boundary seiche. Advection/grid losses are unresolved; it is not an accuracy upgrade.",
-      "no_advection_friction_check_final": {
-        "q_in": 7580.332276380942,
-        "q_out": 7576.062301331944,
-        "net_volume_rate": 4.269975048998276,
-        "interior_continuity_l1": 4.621108395325579,
-        "max_stage": 74.80174436090226,
-        "min_stage": 74.5217067669173,
-        "minimum_actual_depth_m": 0.22274854394484578,
-        "cells_requiring_depth_floor": 0,
-        "kinetic_energy_m5s2": 84821280.26915239,
-        "max_face_speed": 2.390695181676043,
-        "speed_percentiles": [
-          0.061392511722367434,
-          0.3029530304091841,
-          0.5777169747893319,
-          2.0535621532507156
+      "actual_source_bed_change_on_measured_cells_max_m": 0.0,
+      "cape_vincent_gap": {
+        "point": [
+          -76.3441,
+          44.1284
         ],
-        "simulated_seconds": 27000.0,
-        "global_step_mass_balance_error_m3s": 1.1974826366056845e-06,
-        "flux_depth_linearization_relative_difference": 1.1612227361681118e-07,
-        "maximum_stage_change_last_checkpoint_m": 7.991213125535523e-05,
-        "rms_face_speed_change_last_checkpoint_mps": 6.634567268058875e-05,
-        "advection_cfl": 2.8688342939238947,
-        "wall_seconds": 38.09622526168823,
-        "relative_boundary_flux_error": 0.0005632965539390417
-      }
-    },
-    "inertia_and_energy_diagnostics": {
-      "solution": "dwe-calibrated-50m.npz",
-      "wet_cells": 166832,
-      "inlet_flux_m3s": 7377.579999999998,
-      "outlet_flux_m3s": 7377.578199974462,
-      "relative_boundary_flux_error": 2.4398590538979617e-07,
-      "max_interior_cell_flux_residual_m3s": 9.859961528491112e-05,
-      "interior_L1_flux_residual_relative_to_inflow": 1.1314399148145924e-05,
-      "actual_minimum_depth_m": 0.21058635820772054,
-      "cells_at_or_below_numerical_floor": 0,
-      "max_inlet_static_stage_m_igld85": 74.80174436090226,
-      "moving_cells_for_inertia_diagnostic": 90492,
-      "ratio_advective_to_pressure_acceleration_percentiles": {
-        "50": 4.249529980203522,
-        "90": 15.491798422590316,
-        "95": 21.28373496895195,
-        "99": 38.369120593664334
-      },
-      "moving_fraction_ratio_above_point2": 0.9923197630729789,
-      "moving_fraction_ratio_above1": 0.8890288644300048,
-      "fraction_wet_cells_total_head_exceeds_inlet_static_stage_by_1cm": 0.0009110961925769636,
-      "worst_kinetic_head_cell": {
-        "utm18n": [
-          420425.0,
-          4911825.0
+        "prior_wet": false,
+        "new_wet": true,
+        "source_measured": true,
+        "retrieved_bed_igld85_estimated_m": 60.49022140209978,
+        "new_depth_m": 14.311410895014518,
+        "new_utm_velocity_mps": [
+          0.0734941847929547,
+          0.06389355720585449
         ],
-        "speed_mps": 2.3827990008275384,
-        "stage_m_igld85": 74.73619250928627,
-        "total_kinetic_plus_static_head_m_igld85": 75.0256762309621,
-        "excess_over_inlet_static_stage_m": 0.22393187005984316
+        "new_speed_mps": 0.09738471055971146
       },
-      "interpretation": "Conservation is a numerical property, not field validation. DWE omits inertia and cannot enforce full kinetic-energy/momentum balances; local fast jets and island wakes are uncertain. Acceleration ratios and kinetic head are diagnostics only, not clipping/correction rules. Inlet kinetic energy and unresolved subcell velocities are not measured."
+      "field_sha256": "576488437490a7c0ddc0387181eb63d8c147ddb6e626c77ae50839316c773654",
+      "solution_sha256": "7997df3b41c55f7f33bbdd221d551cd188dcc1c4ff2c4715e21d4f22dfb17431",
+      "frozen_prior_field_sha256": "adb561fe8e65b97433ff22630d9bf24faaa1804b15cc92f2c004c92d25c8489c"
     }
   },
-  "major_limitations": [
-    "No momentum inertia, inertial wakes, wind, Coriolis, thermal density stratification or surface shear.",
-    "A global discharge fit plus one held-out stage does not validate local current vectors or channel flow splits.",
-    "The DWE permits a small number of energetically suspect fast jets; their speeds are not quantitatively trustworthy. Do not use this for navigation.",
-    "NONNA source survey datums are heterogeneous; the interpolated Kingston/Brockville chart-datum separation is estimated, not authoritative.",
-    "About 17.15% of the selected wet-cell bed is inferred near banks; some channel sections have substantial flux adjacent to inferred bed.",
-    "Two-grid sensitivity checks do not establish strict asymptotic convergence."
-  ],
   "numerical_environment": {
     "python": "3.13.15",
     "numpy": "2.2.0",
@@ -337,16 +359,1582 @@
     "pyamg": "5.3.0",
     "pyproj": "3.8.0"
   },
+  "major_limitations": [
+    "No momentum inertia, inertial wakes, wind, Coriolis, thermal density stratification or surface shear.",
+    "A global discharge fit plus one held-out stage does not validate local current vectors or channel flow splits.",
+    "The DWE permits a small number of energetically suspect fast jets; their speeds are not quantitatively trustworthy. Do not use this for navigation.",
+    "NONNA source survey datums are heterogeneous; the interpolated Kingston/Brockville chart-datum separation is estimated, not authoritative.",
+    "About 17.68% of the selected wet-cell bed is inferred near banks; some channel sections have substantial flux adjacent to inferred bed.",
+    "Two-grid sensitivity checks do not establish strict asymptotic convergence."
+  ],
+  "independent_current_review": {
+    "case": "local-stage-active-set",
+    "file_sha256": "82ea22e673fcc72a7bf2352b1de33e973413da6c7d32d27ce2023239d5573101",
+    "wet_cells": 171786,
+    "added_wet_cells": 1836,
+    "removed_wet_cells": 0,
+    "raw_retrieved_bed_max_abs_change_m": 0.0,
+    "prepared_full_bed_max_abs_change_m": 0.0,
+    "prepared_full_bed_equal_including_nan_layout": true,
+    "minimum_actual_depth_m": 0.12202174107548558,
+    "wet_below_012m": 0,
+    "actual_vs_saved_depth_max_error_m": 0.0,
+    "any_wet_outside_source_geometry": false,
+    "minimum_eta_m": 74.5217067669173,
+    "maximum_eta_m": 74.80174436090226,
+    "inflow_m3s": 7377.579999999999,
+    "outflow_m3s": 7377.57816914612,
+    "relative_boundary_flux_error": 2.481645579248617e-07,
+    "maximum_interior_continuity_residual_m3s": 0.00010890131852647755,
+    "inactive_adjacent_locally_wet_over013m": 0,
+    "inactive_adjacent_depth_max_m": 0.12900883101922034,
+    "common_vector_rms_change_mps": 0.0014035481902639796,
+    "common_moving_angle_change_deg_percentiles": [
+      0.0008291175186052825,
+      0.04158688408211184,
+      0.12689144767568925,
+      1.0984885043719048
+    ],
+    "regions": {
+      "bayfield_interior": {
+        "bounds": [
+          -76.365,
+          44.184,
+          -76.337,
+          44.2
+        ],
+        "wet_cells": 1383,
+        "added_wet_cells": 51,
+        "retrieved_bed_fraction": 0.10339840925524223,
+        "inferred_bed_wet_cells": 1240,
+        "depth_percentiles_m": [
+          0.12705715427946984,
+          0.8289271692911855,
+          2.050733331994337,
+          2.5068572343829603,
+          3.0330058514743996
+        ],
+        "speed_percentiles_mps": [
+          0.0,
+          3.517850420744812e-05,
+          0.0002589738791025373,
+          0.0008634358720316247,
+          0.0567705601354663
+        ],
+        "old_speed_percentiles_mps": [
+          0.0,
+          3.896602945906429e-08,
+          1.7854702030361288e-07,
+          5.6716318321866525e-06,
+          3.383997679855779e-05
+        ]
+      },
+      "north_mouth": {
+        "bounds": [
+          -76.335,
+          44.194,
+          -76.324,
+          44.201
+        ],
+        "wet_cells": 250,
+        "added_wet_cells": 16,
+        "retrieved_bed_fraction": 0.9,
+        "inferred_bed_wet_cells": 25,
+        "depth_percentiles_m": [
+          0.15596421608763933,
+          0.7275641167759034,
+          1.5746869900895675,
+          1.9722673801017478,
+          2.941550704643859
+        ],
+        "speed_percentiles_mps": [
+          0.0,
+          0.0006322280461657534,
+          0.001528751426251715,
+          0.015658511946213562,
+          0.026950869492038683
+        ],
+        "old_speed_percentiles_mps": [
+          2.316058141549668e-05,
+          4.409461907055608e-05,
+          0.0005024424315333528,
+          0.01616024786558265,
+          0.027155959409597134
+        ]
+      },
+      "south_mouth": {
+        "bounds": [
+          -76.336,
+          44.182,
+          -76.324,
+          44.193
+        ],
+        "wet_cells": 346,
+        "added_wet_cells": 20,
+        "retrieved_bed_fraction": 0.8641618497109826,
+        "inferred_bed_wet_cells": 47,
+        "depth_percentiles_m": [
+          0.17476563021877212,
+          0.634131806251446,
+          1.4950505974361974,
+          3.4467795122774163,
+          18.261103659657493
+        ],
+        "speed_percentiles_mps": [
+          0.0,
+          0.00037091754567273905,
+          0.024987041615119124,
+          0.048799402952480544,
+          0.12251556339182267
+        ],
+        "old_speed_percentiles_mps": [
+          0.0,
+          1.61394331901475e-05,
+          0.026521220621639054,
+          0.04968809968432225,
+          0.12256791587087688
+        ]
+      },
+      "north_carleton": {
+        "bounds": [
+          -76.31,
+          44.19,
+          -76.255,
+          44.215
+        ],
+        "wet_cells": 3171,
+        "added_wet_cells": 39,
+        "retrieved_bed_fraction": 0.663197729422895,
+        "inferred_bed_wet_cells": 1068,
+        "depth_percentiles_m": [
+          0.12202174107548558,
+          5.130924156791835,
+          18.111053498606637,
+          28.256326197985487,
+          36.665659036377015
+        ],
+        "speed_percentiles_mps": [
+          0.0,
+          0.05560203705566238,
+          0.12055071491649474,
+          0.17605206253300137,
+          0.24403848825846006
+        ],
+        "old_speed_percentiles_mps": [
+          0.0,
+          0.05912397343011392,
+          0.12100606911066025,
+          0.17687368572745105,
+          0.24405016414185898
+        ]
+      }
+    },
+    "paths": {
+      "south_mouth_only": {
+        "localized_bed_shift_bounds": [
+          -76.344,
+          44.181,
+          -76.321,
+          44.194
+        ],
+        "widest_baseline_path": {
+          "path_cells": 87,
+          "maximum_achievable_minimum_depth_m": 0.34224766891200886,
+          "retrieved_cells": 60,
+          "estimated_bed_cells": 27,
+          "mouth_window_path_cells": 39,
+          "mouth_window_retrieved_cells": 34,
+          "mouth_window_estimated_cells": 5,
+          "limiting_depth_cell_lonlat": [
+            -76.33597124474483,
+            44.18622945188483
+          ],
+          "limiting_depth_retrieved": false,
+          "note": "One highest-clearance face-connected path, not a measured transport corridor or count of all cells carrying discharge."
+        },
+        "-0.25": {
+          "local_bed_shift_m": -0.25,
+          "connected": true,
+          "path_cells": 61,
+          "path_minimum_depth_m": 0.14892597853216216,
+          "path_retrieved_cells": 40,
+          "path_estimated_bed_cells": 21,
+          "path_coordinates_lonlat": [
+            [
+              -76.32218148893357,
+              44.185039437584976
+            ],
+            [
+              -76.32219155000288,
+              44.185489478348934
+            ],
+            [
+              -76.32281697804768,
+              44.18548223688686
+            ],
+            [
+              -76.32344240585799,
+              44.18547499200176
+            ],
+            [
+              -76.32406783343366,
+              44.18546774369363
+            ],
+            [
+              -76.3246932607746,
+              44.18546049196245
+            ],
+            [
+              -76.3253186878807,
+              44.18545323680828
+            ],
+            [
+              -76.32594411475183,
+              44.185445978231066
+            ],
+            [
+              -76.32656954138791,
+              44.185438716230834
+            ],
+            [
+              -76.32719496778881,
+              44.18543145080759
+            ],
+            [
+              -76.32782039395444,
+              44.18542418196134
+            ],
+            [
+              -76.32844581988465,
+              44.18541690969208
+            ],
+            [
+              -76.32907124557936,
+              44.18540963399982
+            ],
+            [
+              -76.32969667103846,
+              44.18540235488456
+            ],
+            [
+              -76.33032209626181,
+              44.1853950723463
+            ],
+            [
+              -76.33094752124934,
+              44.18538778638505
+            ],
+            [
+              -76.33157294600092,
+              44.185380497000814
+            ],
+            [
+              -76.33219837051642,
+              44.18537320419359
+            ],
+            [
+              -76.33282379479577,
+              44.18536590796337
+            ],
+            [
+              -76.33344921883882,
+              44.18535860831018
+            ],
+            [
+              -76.33407464264549,
+              44.185351305234015
+            ],
+            [
+              -76.33470006621565,
+              44.18534399873488
+            ],
+            [
+              -76.33532548954919,
+              44.185336688812775
+            ],
+            [
+              -76.33595091264601,
+              44.18532937546772
+            ],
+            [
+              -76.336576335506,
+              44.185322058699676
+            ],
+            [
+              -76.33658650619269,
+              44.18577209681275
+            ],
+            [
+              -76.33721193357144,
+              44.1857647765075
+            ],
+            [
+              -76.3378373607131,
+              44.18575745277922
+            ],
+            [
+              -76.33846278761762,
+              44.18575012562795
+            ],
+            [
+              -76.33908821428481,
+              44.18574279505368
+            ],
+            [
+              -76.33971364071463,
+              44.18573546105641
+            ],
+            [
+              -76.34033906690695,
+              44.185728123636146
+            ],
+            [
+              -76.34096449286163,
+              44.18572078279289
+            ],
+            [
+              -76.3415899185786,
+              44.18571343852664
+            ],
+            [
+              -76.34160012754856,
+              44.18616347568659
+            ],
+            [
+              -76.34161033675637,
+              44.18661351280905
+            ],
+            [
+              -76.34162054620201,
+              44.18706354989405
+            ],
+            [
+              -76.34224598594875,
+              44.187056201860734
+            ],
+            [
+              -76.34225620038835,
+              44.18750623879354
+            ],
+            [
+              -76.34226641506594,
+              44.18795627568889
+            ],
+            [
+              -76.34227662998151,
+              44.18840631254675
+            ],
+            [
+              -76.34228684513506,
+              44.18885634936717
+            ],
+            [
+              -76.34229706052662,
+              44.1893063861501
+            ],
+            [
+              -76.34230727615618,
+              44.18975642289554
+            ],
+            [
+              -76.34231749202374,
+              44.19020645960352
+            ],
+            [
+              -76.34232770812933,
+              44.19065649627402
+            ],
+            [
+              -76.34233792447294,
+              44.19110653290705
+            ],
+            [
+              -76.34234814105457,
+              44.19155656950261
+            ],
+            [
+              -76.34235835787423,
+              44.19200660606069
+            ],
+            [
+              -76.34298384970603,
+              44.191999253341784
+            ],
+            [
+              -76.34360934129965,
+              44.19199189719916
+            ],
+            [
+              -76.34423483265503,
+              44.19198453763281
+            ],
+            [
+              -76.34486032377201,
+              44.19197717464275
+            ],
+            [
+              -76.34548581465052,
+              44.19196980822897
+            ],
+            [
+              -76.34611130529042,
+              44.191962438391485
+            ],
+            [
+              -76.34673679569163,
+              44.19195506513029
+            ],
+            [
+              -76.34736228585399,
+              44.1919476884454
+            ],
+            [
+              -76.34798777577744,
+              44.1919403083368
+            ],
+            [
+              -76.34861326546185,
+              44.19193292480451
+            ],
+            [
+              -76.3492387549071,
+              44.191925537848526
+            ],
+            [
+              -76.34986424411309,
+              44.19191814746885
+            ]
+          ]
+        },
+        "0": {
+          "local_bed_shift_m": 0,
+          "connected": true,
+          "path_cells": 61,
+          "path_minimum_depth_m": 0.14892597853216216,
+          "path_retrieved_cells": 40,
+          "path_estimated_bed_cells": 21,
+          "path_coordinates_lonlat": [
+            [
+              -76.32218148893357,
+              44.185039437584976
+            ],
+            [
+              -76.32219155000288,
+              44.185489478348934
+            ],
+            [
+              -76.32281697804768,
+              44.18548223688686
+            ],
+            [
+              -76.32344240585799,
+              44.18547499200176
+            ],
+            [
+              -76.32406783343366,
+              44.18546774369363
+            ],
+            [
+              -76.3246932607746,
+              44.18546049196245
+            ],
+            [
+              -76.3253186878807,
+              44.18545323680828
+            ],
+            [
+              -76.32594411475183,
+              44.185445978231066
+            ],
+            [
+              -76.32656954138791,
+              44.185438716230834
+            ],
+            [
+              -76.32719496778881,
+              44.18543145080759
+            ],
+            [
+              -76.32782039395444,
+              44.18542418196134
+            ],
+            [
+              -76.32844581988465,
+              44.18541690969208
+            ],
+            [
+              -76.32907124557936,
+              44.18540963399982
+            ],
+            [
+              -76.32969667103846,
+              44.18540235488456
+            ],
+            [
+              -76.33032209626181,
+              44.1853950723463
+            ],
+            [
+              -76.33094752124934,
+              44.18538778638505
+            ],
+            [
+              -76.33157294600092,
+              44.185380497000814
+            ],
+            [
+              -76.33219837051642,
+              44.18537320419359
+            ],
+            [
+              -76.33282379479577,
+              44.18536590796337
+            ],
+            [
+              -76.33344921883882,
+              44.18535860831018
+            ],
+            [
+              -76.33407464264549,
+              44.185351305234015
+            ],
+            [
+              -76.33470006621565,
+              44.18534399873488
+            ],
+            [
+              -76.33532548954919,
+              44.185336688812775
+            ],
+            [
+              -76.33595091264601,
+              44.18532937546772
+            ],
+            [
+              -76.336576335506,
+              44.185322058699676
+            ],
+            [
+              -76.33658650619269,
+              44.18577209681275
+            ],
+            [
+              -76.33721193357144,
+              44.1857647765075
+            ],
+            [
+              -76.3378373607131,
+              44.18575745277922
+            ],
+            [
+              -76.33846278761762,
+              44.18575012562795
+            ],
+            [
+              -76.33908821428481,
+              44.18574279505368
+            ],
+            [
+              -76.33971364071463,
+              44.18573546105641
+            ],
+            [
+              -76.34033906690695,
+              44.185728123636146
+            ],
+            [
+              -76.34096449286163,
+              44.18572078279289
+            ],
+            [
+              -76.3415899185786,
+              44.18571343852664
+            ],
+            [
+              -76.34160012754856,
+              44.18616347568659
+            ],
+            [
+              -76.34161033675637,
+              44.18661351280905
+            ],
+            [
+              -76.34162054620201,
+              44.18706354989405
+            ],
+            [
+              -76.34224598594875,
+              44.187056201860734
+            ],
+            [
+              -76.34225620038835,
+              44.18750623879354
+            ],
+            [
+              -76.34226641506594,
+              44.18795627568889
+            ],
+            [
+              -76.34227662998151,
+              44.18840631254675
+            ],
+            [
+              -76.34228684513506,
+              44.18885634936717
+            ],
+            [
+              -76.34229706052662,
+              44.1893063861501
+            ],
+            [
+              -76.34230727615618,
+              44.18975642289554
+            ],
+            [
+              -76.34231749202374,
+              44.19020645960352
+            ],
+            [
+              -76.34232770812933,
+              44.19065649627402
+            ],
+            [
+              -76.34233792447294,
+              44.19110653290705
+            ],
+            [
+              -76.34234814105457,
+              44.19155656950261
+            ],
+            [
+              -76.34235835787423,
+              44.19200660606069
+            ],
+            [
+              -76.34298384970603,
+              44.191999253341784
+            ],
+            [
+              -76.34360934129965,
+              44.19199189719916
+            ],
+            [
+              -76.34423483265503,
+              44.19198453763281
+            ],
+            [
+              -76.34486032377201,
+              44.19197717464275
+            ],
+            [
+              -76.34548581465052,
+              44.19196980822897
+            ],
+            [
+              -76.34611130529042,
+              44.191962438391485
+            ],
+            [
+              -76.34673679569163,
+              44.19195506513029
+            ],
+            [
+              -76.34736228585399,
+              44.1919476884454
+            ],
+            [
+              -76.34798777577744,
+              44.1919403083368
+            ],
+            [
+              -76.34861326546185,
+              44.19193292480451
+            ],
+            [
+              -76.3492387549071,
+              44.191925537848526
+            ],
+            [
+              -76.34986424411309,
+              44.19191814746885
+            ]
+          ]
+        },
+        "0.25": {
+          "local_bed_shift_m": 0.25,
+          "connected": false
+        }
+      },
+      "north_mouth_only": {
+        "localized_bed_shift_bounds": [
+          -76.335,
+          44.194,
+          -76.324,
+          44.201
+        ],
+        "widest_baseline_path": {
+          "path_cells": 120,
+          "maximum_achievable_minimum_depth_m": 1.2317485268347639,
+          "retrieved_cells": 79,
+          "estimated_bed_cells": 41,
+          "mouth_window_path_cells": 40,
+          "mouth_window_retrieved_cells": 37,
+          "mouth_window_estimated_cells": 3,
+          "limiting_depth_cell_lonlat": [
+            -76.3274980506791,
+            44.19893262914586
+          ],
+          "limiting_depth_retrieved": true,
+          "note": "One highest-clearance face-connected path, not a measured transport corridor or count of all cells carrying discharge."
+        },
+        "-0.25": {
+          "local_bed_shift_m": -0.25,
+          "connected": true,
+          "path_cells": 66,
+          "path_minimum_depth_m": 0.19707815428182585,
+          "path_retrieved_cells": 47,
+          "path_estimated_bed_cells": 19,
+          "path_coordinates_lonlat": [
+            [
+              -76.32001130452734,
+              44.19991970911213
+            ],
+            [
+              -76.32000125499115,
+              44.19946966909374
+            ],
+            [
+              -76.31999120568913,
+              44.199019629037934
+            ],
+            [
+              -76.31998115662127,
+              44.19856958894472
+            ],
+            [
+              -76.31997110778754,
+              44.1981195488141
+            ],
+            [
+              -76.31996105918796,
+              44.19766950864605
+            ],
+            [
+              -76.31995101082252,
+              44.1972194684406
+            ],
+            [
+              -76.31994096269119,
+              44.196769428197726
+            ],
+            [
+              -76.32056651060317,
+              44.19676219760662
+            ],
+            [
+              -76.32119205828091,
+              44.196754963591104
+            ],
+            [
+              -76.32181760572429,
+              44.19674772615123
+            ],
+            [
+              -76.32244315293323,
+              44.196740485286966
+            ],
+            [
+              -76.3230686999076,
+              44.196733240998334
+            ],
+            [
+              -76.3236942466473,
+              44.19672599328533
+            ],
+            [
+              -76.32431979315221,
+              44.196718742147965
+            ],
+            [
+              -76.32494533942223,
+              44.19671148758622
+            ],
+            [
+              -76.32557088545724,
+              44.19670422960013
+            ],
+            [
+              -76.32619643125713,
+              44.196696968189684
+            ],
+            [
+              -76.32682197682179,
+              44.196689703354885
+            ],
+            [
+              -76.32744752215109,
+              44.19668243509573
+            ],
+            [
+              -76.32807306724497,
+              44.19667516341224
+            ],
+            [
+              -76.32869861210327,
+              44.196667888304404
+            ],
+            [
+              -76.3293241567259,
+              44.19666060977222
+            ],
+            [
+              -76.32994970111275,
+              44.19665332781571
+            ],
+            [
+              -76.32993957707973,
+              44.19620328934775
+            ],
+            [
+              -76.3299294532826,
+              44.19575325084234
+            ],
+            [
+              -76.32991932972135,
+              44.19530321229948
+            ],
+            [
+              -76.32990920639597,
+              44.19485317371921
+            ],
+            [
+              -76.32989908330647,
+              44.194403135101474
+            ],
+            [
+              -76.32988896045282,
+              44.193953096446315
+            ],
+            [
+              -76.32987883783504,
+              44.1935030577537
+            ],
+            [
+              -76.3305043486793,
+              44.19349577316889
+            ],
+            [
+              -76.33112985928759,
+              44.19348848516012
+            ],
+            [
+              -76.33175536965979,
+              44.1934811937274
+            ],
+            [
+              -76.33174523300491,
+              44.19303115533866
+            ],
+            [
+              -76.33173509658619,
+              44.19258111691246
+            ],
+            [
+              -76.33236059720707,
+              44.192573822283535
+            ],
+            [
+              -76.3323504562671,
+              44.19212378393375
+            ],
+            [
+              -76.33297595189428,
+              44.19211648599493
+            ],
+            [
+              -76.33360144728509,
+              44.1921091846323
+            ],
+            [
+              -76.33422694243941,
+              44.192101879845914
+            ],
+            [
+              -76.33485243735711,
+              44.19209457163575
+            ],
+            [
+              -76.33547793203812,
+              44.192087260001806
+            ],
+            [
+              -76.3361034264823,
+              44.192079944944105
+            ],
+            [
+              -76.33672892068951,
+              44.192072626462625
+            ],
+            [
+              -76.33735441465971,
+              44.19206530455741
+            ],
+            [
+              -76.33797990839274,
+              44.19205797922843
+            ],
+            [
+              -76.3386054018885,
+              44.19205065047569
+            ],
+            [
+              -76.33923089514688,
+              44.192043318299206
+            ],
+            [
+              -76.33985638816777,
+              44.19203598269899
+            ],
+            [
+              -76.34048188095107,
+              44.19202864367501
+            ],
+            [
+              -76.34110737349665,
+              44.1920213012273
+            ],
+            [
+              -76.34173286580442,
+              44.19201395535586
+            ],
+            [
+              -76.34235835787423,
+              44.19200660606069
+            ],
+            [
+              -76.34298384970603,
+              44.191999253341784
+            ],
+            [
+              -76.34360934129965,
+              44.19199189719916
+            ],
+            [
+              -76.34423483265503,
+              44.19198453763281
+            ],
+            [
+              -76.34486032377201,
+              44.19197717464275
+            ],
+            [
+              -76.34548581465052,
+              44.19196980822897
+            ],
+            [
+              -76.34611130529042,
+              44.191962438391485
+            ],
+            [
+              -76.34673679569163,
+              44.19195506513029
+            ],
+            [
+              -76.34736228585399,
+              44.1919476884454
+            ],
+            [
+              -76.34798777577744,
+              44.1919403083368
+            ],
+            [
+              -76.34861326546185,
+              44.19193292480451
+            ],
+            [
+              -76.3492387549071,
+              44.191925537848526
+            ],
+            [
+              -76.34986424411309,
+              44.19191814746885
+            ]
+          ]
+        },
+        "0": {
+          "local_bed_shift_m": 0,
+          "connected": true,
+          "path_cells": 66,
+          "path_minimum_depth_m": 0.19707815428182585,
+          "path_retrieved_cells": 47,
+          "path_estimated_bed_cells": 19,
+          "path_coordinates_lonlat": [
+            [
+              -76.32001130452734,
+              44.19991970911213
+            ],
+            [
+              -76.32000125499115,
+              44.19946966909374
+            ],
+            [
+              -76.31999120568913,
+              44.199019629037934
+            ],
+            [
+              -76.31998115662127,
+              44.19856958894472
+            ],
+            [
+              -76.31997110778754,
+              44.1981195488141
+            ],
+            [
+              -76.31996105918796,
+              44.19766950864605
+            ],
+            [
+              -76.31995101082252,
+              44.1972194684406
+            ],
+            [
+              -76.31994096269119,
+              44.196769428197726
+            ],
+            [
+              -76.32056651060317,
+              44.19676219760662
+            ],
+            [
+              -76.32119205828091,
+              44.196754963591104
+            ],
+            [
+              -76.32181760572429,
+              44.19674772615123
+            ],
+            [
+              -76.32244315293323,
+              44.196740485286966
+            ],
+            [
+              -76.3230686999076,
+              44.196733240998334
+            ],
+            [
+              -76.3236942466473,
+              44.19672599328533
+            ],
+            [
+              -76.32431979315221,
+              44.196718742147965
+            ],
+            [
+              -76.32494533942223,
+              44.19671148758622
+            ],
+            [
+              -76.32557088545724,
+              44.19670422960013
+            ],
+            [
+              -76.32619643125713,
+              44.196696968189684
+            ],
+            [
+              -76.32682197682179,
+              44.196689703354885
+            ],
+            [
+              -76.32744752215109,
+              44.19668243509573
+            ],
+            [
+              -76.32807306724497,
+              44.19667516341224
+            ],
+            [
+              -76.32869861210327,
+              44.196667888304404
+            ],
+            [
+              -76.3293241567259,
+              44.19666060977222
+            ],
+            [
+              -76.32994970111275,
+              44.19665332781571
+            ],
+            [
+              -76.32993957707973,
+              44.19620328934775
+            ],
+            [
+              -76.3299294532826,
+              44.19575325084234
+            ],
+            [
+              -76.32991932972135,
+              44.19530321229948
+            ],
+            [
+              -76.32990920639597,
+              44.19485317371921
+            ],
+            [
+              -76.32989908330647,
+              44.194403135101474
+            ],
+            [
+              -76.32988896045282,
+              44.193953096446315
+            ],
+            [
+              -76.32987883783504,
+              44.1935030577537
+            ],
+            [
+              -76.3305043486793,
+              44.19349577316889
+            ],
+            [
+              -76.33112985928759,
+              44.19348848516012
+            ],
+            [
+              -76.33175536965979,
+              44.1934811937274
+            ],
+            [
+              -76.33174523300491,
+              44.19303115533866
+            ],
+            [
+              -76.33173509658619,
+              44.19258111691246
+            ],
+            [
+              -76.33236059720707,
+              44.192573822283535
+            ],
+            [
+              -76.3323504562671,
+              44.19212378393375
+            ],
+            [
+              -76.33297595189428,
+              44.19211648599493
+            ],
+            [
+              -76.33360144728509,
+              44.1921091846323
+            ],
+            [
+              -76.33422694243941,
+              44.192101879845914
+            ],
+            [
+              -76.33485243735711,
+              44.19209457163575
+            ],
+            [
+              -76.33547793203812,
+              44.192087260001806
+            ],
+            [
+              -76.3361034264823,
+              44.192079944944105
+            ],
+            [
+              -76.33672892068951,
+              44.192072626462625
+            ],
+            [
+              -76.33735441465971,
+              44.19206530455741
+            ],
+            [
+              -76.33797990839274,
+              44.19205797922843
+            ],
+            [
+              -76.3386054018885,
+              44.19205065047569
+            ],
+            [
+              -76.33923089514688,
+              44.192043318299206
+            ],
+            [
+              -76.33985638816777,
+              44.19203598269899
+            ],
+            [
+              -76.34048188095107,
+              44.19202864367501
+            ],
+            [
+              -76.34110737349665,
+              44.1920213012273
+            ],
+            [
+              -76.34173286580442,
+              44.19201395535586
+            ],
+            [
+              -76.34235835787423,
+              44.19200660606069
+            ],
+            [
+              -76.34298384970603,
+              44.191999253341784
+            ],
+            [
+              -76.34360934129965,
+              44.19199189719916
+            ],
+            [
+              -76.34423483265503,
+              44.19198453763281
+            ],
+            [
+              -76.34486032377201,
+              44.19197717464275
+            ],
+            [
+              -76.34548581465052,
+              44.19196980822897
+            ],
+            [
+              -76.34611130529042,
+              44.191962438391485
+            ],
+            [
+              -76.34673679569163,
+              44.19195506513029
+            ],
+            [
+              -76.34736228585399,
+              44.1919476884454
+            ],
+            [
+              -76.34798777577744,
+              44.1919403083368
+            ],
+            [
+              -76.34861326546185,
+              44.19193292480451
+            ],
+            [
+              -76.3492387549071,
+              44.191925537848526
+            ],
+            [
+              -76.34986424411309,
+              44.19191814746885
+            ]
+          ]
+        },
+        "0.25": {
+          "local_bed_shift_m": 0.25,
+          "connected": true,
+          "path_cells": 66,
+          "path_minimum_depth_m": 0.19707815428182585,
+          "path_retrieved_cells": 47,
+          "path_estimated_bed_cells": 19,
+          "path_coordinates_lonlat": [
+            [
+              -76.32001130452734,
+              44.19991970911213
+            ],
+            [
+              -76.32000125499115,
+              44.19946966909374
+            ],
+            [
+              -76.31999120568913,
+              44.199019629037934
+            ],
+            [
+              -76.31998115662127,
+              44.19856958894472
+            ],
+            [
+              -76.31997110778754,
+              44.1981195488141
+            ],
+            [
+              -76.31996105918796,
+              44.19766950864605
+            ],
+            [
+              -76.32058661661735,
+              44.197662277829195
+            ],
+            [
+              -76.32121217381247,
+              44.19765504358784
+            ],
+            [
+              -76.32183773077325,
+              44.197647805922
+            ],
+            [
+              -76.32246328749956,
+              44.19764056483168
+            ],
+            [
+              -76.32308884399129,
+              44.197633320316875
+            ],
+            [
+              -76.32371440024832,
+              44.197626072377595
+            ],
+            [
+              -76.32433995627056,
+              44.19761882101384
+            ],
+            [
+              -76.32496551205789,
+              44.19761156622561
+            ],
+            [
+              -76.3255910676102,
+              44.19760430801293
+            ],
+            [
+              -76.32621662292738,
+              44.197597046375776
+            ],
+            [
+              -76.32684217800931,
+              44.19758978131416
+            ],
+            [
+              -76.3274677328559,
+              44.197582512828085
+            ],
+            [
+              -76.32809328746701,
+              44.197575240917566
+            ],
+            [
+              -76.3280831772382,
+              44.19712520218362
+            ],
+            [
+              -76.32870872685507,
+              44.197117926962214
+            ],
+            [
+              -76.32933427623627,
+              44.19711064831642
+            ],
+            [
+              -76.3293241567259,
+              44.19666060977222
+            ],
+            [
+              -76.32994970111275,
+              44.19665332781571
+            ],
+            [
+              -76.32993957707973,
+              44.19620328934775
+            ],
+            [
+              -76.3299294532826,
+              44.19575325084234
+            ],
+            [
+              -76.32991932972135,
+              44.19530321229948
+            ],
+            [
+              -76.32990920639597,
+              44.19485317371921
+            ],
+            [
+              -76.32989908330647,
+              44.194403135101474
+            ],
+            [
+              -76.32988896045282,
+              44.193953096446315
+            ],
+            [
+              -76.32987883783504,
+              44.1935030577537
+            ],
+            [
+              -76.3305043486793,
+              44.19349577316889
+            ],
+            [
+              -76.33112985928759,
+              44.19348848516012
+            ],
+            [
+              -76.33175536965979,
+              44.1934811937274
+            ],
+            [
+              -76.33174523300491,
+              44.19303115533866
+            ],
+            [
+              -76.33173509658619,
+              44.19258111691246
+            ],
+            [
+              -76.33236059720707,
+              44.192573822283535
+            ],
+            [
+              -76.3323504562671,
+              44.19212378393375
+            ],
+            [
+              -76.33297595189428,
+              44.19211648599493
+            ],
+            [
+              -76.33360144728509,
+              44.1921091846323
+            ],
+            [
+              -76.33422694243941,
+              44.192101879845914
+            ],
+            [
+              -76.33485243735711,
+              44.19209457163575
+            ],
+            [
+              -76.33547793203812,
+              44.192087260001806
+            ],
+            [
+              -76.3361034264823,
+              44.192079944944105
+            ],
+            [
+              -76.33672892068951,
+              44.192072626462625
+            ],
+            [
+              -76.33735441465971,
+              44.19206530455741
+            ],
+            [
+              -76.33797990839274,
+              44.19205797922843
+            ],
+            [
+              -76.3386054018885,
+              44.19205065047569
+            ],
+            [
+              -76.33923089514688,
+              44.192043318299206
+            ],
+            [
+              -76.33985638816777,
+              44.19203598269899
+            ],
+            [
+              -76.34048188095107,
+              44.19202864367501
+            ],
+            [
+              -76.34110737349665,
+              44.1920213012273
+            ],
+            [
+              -76.34173286580442,
+              44.19201395535586
+            ],
+            [
+              -76.34235835787423,
+              44.19200660606069
+            ],
+            [
+              -76.34298384970603,
+              44.191999253341784
+            ],
+            [
+              -76.34360934129965,
+              44.19199189719916
+            ],
+            [
+              -76.34423483265503,
+              44.19198453763281
+            ],
+            [
+              -76.34486032377201,
+              44.19197717464275
+            ],
+            [
+              -76.34548581465052,
+              44.19196980822897
+            ],
+            [
+              -76.34611130529042,
+              44.191962438391485
+            ],
+            [
+              -76.34673679569163,
+              44.19195506513029
+            ],
+            [
+              -76.34736228585399,
+              44.1919476884454
+            ],
+            [
+              -76.34798777577744,
+              44.1919403083368
+            ],
+            [
+              -76.34861326546185,
+              44.19193292480451
+            ],
+            [
+              -76.3492387549071,
+              44.191925537848526
+            ],
+            [
+              -76.34986424411309,
+              44.19191814746885
+            ]
+          ]
+        }
+      }
+    },
+    "path_sensitivity_note": "Topology-only diagnostic with fixed solved levels and selected wet footprint. Bed changes apply only inside the named mouth rectangle, leaving bay interior and main channel unchanged. Positive shift raises bed; negative shift cannot delete a previously wet connection. No revised currents are inferred. Separate path windows isolate each mouth, and threshold remains0.12m.",
+    "active_set_final": {
+      "iteration": 1,
+      "wet_cells": 171786,
+      "removed_shallow_cells": 0,
+      "activated_connected_cells": 0,
+      "mask_changed_cells": 0,
+      "minimum_actual_depth_m": 0.12202174107548558,
+      "cells_using_floor": 0,
+      "max_depth_of_inactive_adjacent_candidate_m": 0.12900883101922034,
+      "discharge_m3s": 7112.879326404515,
+      "boundary_flux_error": 2.481645580997441e-07
+    }
+  },
   "frozen_current_files": [
     {
       "path": "dwe-calibrated-50m.npz",
-      "bytes": 8782949,
-      "sha256": "7997df3b41c55f7f33bbdd221d551cd188dcc1c4ff2c4715e21d4f22dfb17431"
+      "bytes": 8842963,
+      "sha256": "82ea22e673fcc72a7bf2352b1de33e973413da6c7d32d27ce2023239d5573101"
     },
     {
       "path": "display-field.json",
-      "bytes": 9994334,
-      "sha256": "576488437490a7c0ddc0387181eb63d8c147ddb6e626c77ae50839316c773654"
+      "bytes": 10002198,
+      "sha256": "6af379480059a1611ddbd49a6cbb784186fbcb50e5ec0b24979e22bdc5426e41"
     },
     {
       "path": "inputs/bathymetry-grid-50m.npz",
@@ -359,81 +1947,62 @@
       "sha256": "3180c0f1bf2e515b13efd89853538e859e9884ec3eb45c6d010b22c01ca0aba0"
     }
   ],
-  "portable_reproduction_check": {
+  "portable_reproduction": {
     "passed": true,
-    "command": "python solve_inlet_extension.py --inlet-pad-m 1000 --input inputs/bathymetry-grid-50m.npz --out-dir regenerated",
     "isolated_package_only": true,
+    "command": "solve_local_wetness.py --inlet-pad-m 1000 --source inputs/bathymetry-grid-50m.npz --out-dir regenerated",
     "maximum_absolute_differences": {
-      "eta": 4.831690603168681e-12,
-      "depth": 4.831690603168681e-12,
-      "u": 5.966325922895921e-10,
-      "v": 6.385827977517522e-10,
-      "face_flux": 2.9105997327860678e-06
+      "eta": 7.291589554370148e-11,
+      "depth": 7.291589554370148e-11,
+      "u": 5.819506432303001e-09,
+      "v": 6.3141278872080875e-09,
+      "face_flux": 1.0375835245213239e-05
     },
-    "wall_seconds": 109.64162540435791,
-    "frozen_field_sha256": "576488437490a7c0ddc0387181eb63d8c147ddb6e626c77ae50839316c773654",
-    "note": "No original work-tree files available to script imports/default boundary lookup. Byte-identical files are not required because iterative floating-point tolerances/source-solution SHA metadata can differ."
-  },
-  "independent_current_domain_review": {
-    "case": "work\\dead-zone-review\\inlet-pad-1000m-open",
-    "selected_new_file_sha256": "7997df3b41c55f7f33bbdd221d551cd188dcc1c4ff2c4715e21d4f22dfb17431",
-    "connected_components": 1,
-    "wet_cells": 169950,
-    "added_wet_cells": 3118,
-    "removed_old_wet_cells": 0,
-    "added_retrieved_depth_fraction": 0.9884541372674791,
-    "original_retrieved_bed_max_abs_difference_m": 0.0,
-    "estimated_bed_fraction": 0.17145631067961165,
-    "inflow_m3s": 7377.580000000001,
-    "outflow_m3s": 7377.5780260339325,
-    "relative_boundary_flux_error": 2.675628144137566e-07,
-    "maximum_interior_cell_continuity_residual_m3s": 0.00010086552174470853,
-    "minimum_actual_depth_m": 0.21056875423280985,
-    "common_rms_vector_difference_mps": 0.005357720527054488,
-    "moving_common_direction_difference_deg_percentiles": [
-      0.0006465023005594226,
-      0.13286449077408322,
-      0.7994974119725372,
-      8.000397090532944
-    ],
-    "common_absolute_stage_difference_m_percentiles": [
-      0.0002836011153206641,
-      0.0004001944095151089,
-      0.000430047912196585,
-      0.0006119219145794831
-    ],
-    "cape_vincent_probe": {
-      "lonlat": [
-        -76.3441,
-        44.1284
-      ],
-      "old_wet": false,
-      "new_wet": true,
-      "east_grid_u_mps": 0.0734941847929547,
-      "north_grid_v_mps": 0.06389355720585449,
-      "retrieved_bed": true
+    "wall_seconds": 218.88769221305847,
+    "frozen_field_sha256": "6af379480059a1611ddbd49a6cbb784186fbcb50e5ec0b24979e22bdc5426e41",
+    "note": "Imports, boundary CSV, source arrays and bed preparation are package-local. Numerical tolerances, not byte-identical output containers, define reproduction.",
+    "regenerated_prepared_bed_arrays_identical_including_nan_layout": {
+      "x": true,
+      "y": true,
+      "bed_igld85_estimated": true,
+      "wet_geometry": true,
+      "measured_bathy": true,
+      "mean_stage_igld85_estimated": true,
+      "bathy_source_product": true,
+      "source_subsample_count": true,
+      "proposed_active_corridor": true,
+      "bed_igld85_estimated_raw": true,
+      "estimated_bank_bed": true,
+      "bed_valid": true
     },
-    "assumption": "The measured mean Kingston stage is now imposed1000m farther west; this is a separately solved boundary-placement approximation, not vector extrapolation. Physics omissions remain identical."
-  },
-  "independent_current_display_review": {
-    "file_sha256": "576488437490a7c0ddc0387181eb63d8c147ddb6e626c77ae50839316c773654",
-    "source_sha256": "7997df3b41c55f7f33bbdd221d551cd188dcc1c4ff2c4715e21d4f22dfb17431",
-    "cells": 933510,
-    "valid_cells": 116338,
-    "matched_null_masks": true,
-    "all_valid_cells_map_to_solved_native_wet": true,
-    "maximum_vector_error_vs_independent_convergence_rotation_mps": 0.00010355033326115683,
-    "error_percentiles_mps": [
-      4.919888087155742e-06,
-      1.2565770799656774e-05,
-      2.1000830728398986e-05,
-      0.00010355033326115683
-    ],
-    "maximum_speed_mps": 2.3832611460979263,
-    "max_speed_difference_due_to_rotation_mps": 0.00010351093575211578,
-    "metadata_preserves_estimate_depth_average_and_NOAA_priority": true,
-    "note": "Small differences include 5-decimal export rounding and spherical cos(latitude) approximation in exporter unit bases; no vectors were edited.",
-    "rotation_comparison_bound": "1e-5 m/s export rounding plus 5e-5 times native speed for the documented spherical-unit-basis approximation; a numerical check, not physical uncertainty.",
-    "rotation_comparison_within_stated_bound": true
+    "package_local_generic_numerics": {
+      "analytic_channel_expected_discharge_m3s": 1864.434188678917,
+      "dwe_discharge_m3s": 1864.3920632160132,
+      "dwe_relative_error": 2.2594234304285088e-05,
+      "swe_600s_discharge_m3s": 1834.8366186853814,
+      "lake_at_rest_maximum_speed_mps": 0.0,
+      "passed": true
+    },
+    "packaged_script_sha256": {
+      "audit_solution.py": "0d3f8b61350ee660f4c03546f36396d67b6cbfcfcd3235dd4162c735c20f6019",
+      "calibrate_uniform_roughness.py": "a6d05ec02346194139e62e998212838b9b90fd83bacfba731c1eeef475567a88",
+      "check_numerics.py": "96f31a8a86c6dddd91199b9ad2276c526e53442d16b602d8df04928a028eb421",
+      "compare_full_momentum.py": "67b678d7e7addc448f8767dab987db1fc7e1a7a6bbb9428a8fd272adb22a7b43",
+      "estimate_bank_bed.py": "58e8e605e0bb0ae5ed792e9ea7f8276562c3b2fd50fe78c865f1e406474dc0b7",
+      "estimate_bank_bed_open.py": "bb6325fe30c915480ea385426b1e6c62202e8d61faebf76f321216da1b6c93e9",
+      "export_display.py": "919367dd35177ffb6d4c6a4ae25092b343f4757f3be9ad7a3fa77554bf7466b4",
+      "solve_hydraulics.py": "164221c4c5c6e3748df01f9a251df6cf7d82eed3942df79db8a69b334a79d488",
+      "solve_inlet_extension.py": "d5021256c6bd84ead7eb718829772942d1b75382c66dd4fbb2b44533c303de6f",
+      "solve_local_wetness.py": "eab93eecf1a140519c3e1573b803ed94cc215804e87840bfaa376ebef6cec165",
+      "solve_semiimplicit_momentum.py": "63058772db045319ace421679c564a421ed78eba4eb278091cdb438bcfb35c00"
+    },
+    "encoding_correction_check": {
+      "utf8_and_lf_all_packaged_scripts": true,
+      "all_scripts_compile": true,
+      "correct_label": "Kingston\u2013Brockville current estimates",
+      "corrected_script_frozen_solution_reexport_byte_identical": true,
+      "reexport_sha256": "6af379480059a1611ddbd49a6cbb784186fbcb50e5ec0b24979e22bdc5426e41",
+      "scope": "Only UTF-8 label correction and LF normalization after the full isolated numerical rebuild; re-export exactly reproduces the frozen original field. Numerical solver content and all numerical data are unchanged."
+    }
   }
 }

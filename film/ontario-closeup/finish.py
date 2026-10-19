@@ -27,7 +27,7 @@ def main():
     graph=('[0:v]trim=duration=2,setpts=PTS-STARTPTS,fps=30,settb=AVTB[t];'
            '[1:v]trim=duration=2,setpts=PTS-STARTPTS,fps=30,settb=AVTB[h];'
            '[t][h]xfade=transition=fade:duration=2:offset=0,format=yuv420p[out]')
-    codec=['-an','-c:v','libx264','-crf','21','-preset','medium','-pix_fmt','yuv420p','-threads','2','-r','30','-movflags','+faststart']
+    codec=['-an','-c:v','libx264','-crf','16','-preset','medium','-pix_fmt','yuv420p','-threads','2','-r','30','-movflags','+faststart']
     join=scratch/'loop-join.mp4';body=scratch/'loop-body.mp4'
     encode(['-ss','20','-t','2','-i',str(master),'-t','2','-i',str(master),'-filter_complex_threads','1',
             '-filter_complex',graph,'-map','[out]',*codec,'-t','2',str(join)])

@@ -15,7 +15,7 @@ node render.mjs config.json --no-poster
 python finish.py
 ```
 
-The first render command writes a still review frame. The second writes a **22-second master**. The finalizer crossfades the final two master seconds into the first two, then appends seconds 2–20. It writes a **20-second silent loop**, 600 frames at 30 fps, H.264/yuv420p, with MP4 fast-start metadata:
+The first render command writes a still review frame. The second writes a **22-second master**. The finalizer crossfades the final two master seconds into the first two, then appends seconds 2–20. It writes a **20-second silent loop**, 600 frames at 30 fps, H.264/yuv420p, with MP4 fast-start metadata. The final join/body encodes use CRF 16 to retain fine trails and reduce differential compression error at the wrap point:
 
 - `rendered/review.png`
 - `rendered/master.mp4`
@@ -28,13 +28,19 @@ FFmpeg uses `FFMPEG_BINARY` or `ffmpeg` on PATH. The Python finalizer accepts `F
 
 ## Presentation settings and interpretation
 
-The final config uses 2560×1440 output, Web Mercator bounds −80.03..−75.60°, 43.10..44.66°, deterministic seed 74129, 220 warm-up frames, 0.5-pixel field raster cells and a maximum particle integration step of **0.2 output pixels**. Midpoint re-sampling is followed by a final step-bound check, including across sharp source-cell transitions. Island/land masks clip the drawing. Particle density is raised in selected narrow/slow-water regions, without changing the numerical vector fields.
+The final config uses 2560×1440 output, Web Mercator bounds −80.03..−75.60°, 43.10..44.66°, deterministic seed 74129, 220 warm-up frames, 0.25-pixel field raster cells and a maximum particle integration step of **0.2 output pixels**. Midpoint re-sampling is followed by a final step-bound check, including across sharp source-cell transitions. Island/land masks clip the drawing. Particle density is raised in selected narrow/slow-water regions, without changing the numerical vector fields.
 
 **Motion is not a uniform clock.** The renderer first accelerates flow for readability, then applies an optional bounded, display-only boost to weak nonzero velocities. `minDisplaySpeed: 8` targets **8 design pixels per second**, subject to `maxDisplayBoost: 8`—at most an additional **8×** boost. The target is not a guaranteed lower speed where the cap prevents reaching it. True zero vectors stay zero. Numerical vector direction, stored physical velocities and speed-colour lookup values remain unchanged. The visible speed legend represents physical source speed, not the boosted screen-motion speed. The film footer says motion is scaled for legibility; this note records the nonuniform scaling explicitly.
 
 The separate lake source is an average of 23 six-hourly NOAA surface-vector fields for 12–17 October 2026. The river source is a **simplified, unvalidated depth-averaged steady mean-condition estimate**, with an estimates disclaimer retained in the film. It is not a mean of hourly river-current simulations. Local jets and inertial eddies are not quantitatively recovered. The NOAA field keeps priority where it has coverage; this bundle does not replace scientific vectors with hand-drawn paths. See the model companion's methods and source documentation for numerical assumptions and the upstream boundary extension.
 
 The random seed and input fields are frozen, but identical PNG/MP4 hashes are not promised across platforms. Georgia/Consolas are requested as native fonts; available fonts and fallback glyph metrics can change layout. Fonts are not bundled. Native Canvas, FFmpeg versions and system libraries can also affect rasterisation/encoding. If needed, supply properly licensed local `fontFiles` entries in the config to register the intended fonts.
+
+The current river field uses a stable **local-stage wet/dry mask**. The previous global lower-endpoint cutoff falsely dried upstream shoals beside Bayfield Island. Retrieved bed elevations and source water polygons remain unchanged; the channel is recalculated, not painted in. The model companion records the corrected connection and its depth uncertainty. Bayfield Bay still has weak modeled through-flow; wind and inertial circulation remain unresolved.
+
+The renderer skips **exactly zero-length segments**. Round line caps otherwise paint stationary dots, whose particle reseeding could flicker without any travel. Image-to-image pixel differences alone are not evidence of physical flow.
+
+The display field raster is **0.25 output pixels** (about 36 m at this framing). The preceding 0.5-pixel raster could close the newly reopened southern mouth again. Both northern and southern paths now remain connected in the actual renderer raster, with every checked edge inside sourced water. A targeted integration trace also crosses the southern opening continuously into the bay. The [display and trajectory evidence](qa/) retains both the failed coarser grid and accepted finer grid. This finer drawing grid samples the same numerical vectors; it does not increase hydraulic-model resolution or accuracy.
 
 ## Frozen inputs and provenance
 

@@ -3,8 +3,7 @@ from pathlib import Path
 import argparse,sys,subprocess,json,hashlib
 import numpy as np
 from scipy import ndimage
-ROOT=Path(__file__).resolve().parent;PROJECT=ROOT.parents[1]
-MODEL=ROOT if (ROOT/'solve_hydraulics.py').exists() else PROJECT/'work/upper-river-model'
+ROOT=Path(__file__).resolve().parent;MODEL=ROOT
 sys.path.insert(0,str(MODEL))
 from solve_hydraulics import TF,stages,solve,save
 

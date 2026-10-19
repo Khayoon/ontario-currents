@@ -1,8 +1,5 @@
 {
-  "scope": "Current expanded input. Raw source arrays are unchanged; proposed_active_corridor intentionally follows the new inlet cut.",
-  "intentionally_changed_arrays": [
-    "proposed_active_corridor"
-  ],
+  "scope": "All input source arrays and masks are unchanged from the previous1km-open package; only solver wet activation changes.",
   "arrays": [
     {
       "key": "x",
@@ -10,8 +7,8 @@
         1644
       ],
       "dtype": "float64",
-      "sha256_c_order": "6b4c6c2a7c392b99c2f456c5c9b40721b957164cb2807919f3c4f6e066d90d90",
-      "unchanged_vs_prior": true
+      "unchanged_vs_previous": true,
+      "sha256_c_order": "6b4c6c2a7c392b99c2f456c5c9b40721b957164cb2807919f3c4f6e066d90d90"
     },
     {
       "key": "y",
@@ -19,8 +16,8 @@
         1297
       ],
       "dtype": "float64",
-      "sha256_c_order": "397d9d5228b08935beec2e17fcae78778adaff07ff23e9223d321b56dbf551e5",
-      "unchanged_vs_prior": true
+      "unchanged_vs_previous": true,
+      "sha256_c_order": "397d9d5228b08935beec2e17fcae78778adaff07ff23e9223d321b56dbf551e5"
     },
     {
       "key": "bed_igld85_estimated",
@@ -29,8 +26,8 @@
         1644
       ],
       "dtype": "float64",
-      "sha256_c_order": "89af99815e33d20001fefbaa60bf0a348b2d0b6374d33cf5e6c47b0c04196d32",
-      "unchanged_vs_prior": true
+      "unchanged_vs_previous": true,
+      "sha256_c_order": "89af99815e33d20001fefbaa60bf0a348b2d0b6374d33cf5e6c47b0c04196d32"
     },
     {
       "key": "wet_geometry",
@@ -39,8 +36,8 @@
         1644
       ],
       "dtype": "bool",
-      "sha256_c_order": "a3518470602d93dfb9db17950088e12c0b492016ee2272500a4a8c1930479c8e",
-      "unchanged_vs_prior": true
+      "unchanged_vs_previous": true,
+      "sha256_c_order": "a3518470602d93dfb9db17950088e12c0b492016ee2272500a4a8c1930479c8e"
     },
     {
       "key": "measured_bathy",
@@ -49,8 +46,8 @@
         1644
       ],
       "dtype": "bool",
-      "sha256_c_order": "963e83f19646aab57e9588d03a4b6034e5b5466118a19c2e3032590fbbd5b4e8",
-      "unchanged_vs_prior": true
+      "unchanged_vs_previous": true,
+      "sha256_c_order": "963e83f19646aab57e9588d03a4b6034e5b5466118a19c2e3032590fbbd5b4e8"
     },
     {
       "key": "mean_stage_igld85_estimated",
@@ -59,8 +56,8 @@
         1644
       ],
       "dtype": "float64",
-      "sha256_c_order": "f0abfbe5b96e53c4b958d9e85a9bb9ec377c6e19dc8875f4ea4682bd10e2949c",
-      "unchanged_vs_prior": true
+      "unchanged_vs_previous": true,
+      "sha256_c_order": "f0abfbe5b96e53c4b958d9e85a9bb9ec377c6e19dc8875f4ea4682bd10e2949c"
     },
     {
       "key": "bathy_source_product",
@@ -69,8 +66,8 @@
         1644
       ],
       "dtype": "uint8",
-      "sha256_c_order": "9d1c446dc32a3b2247e73d92de069a7e72cbb78fd47888d60fdb4bfbd28a1b9f",
-      "unchanged_vs_prior": true
+      "unchanged_vs_previous": true,
+      "sha256_c_order": "9d1c446dc32a3b2247e73d92de069a7e72cbb78fd47888d60fdb4bfbd28a1b9f"
     },
     {
       "key": "source_subsample_count",
@@ -79,8 +76,8 @@
         1644
       ],
       "dtype": "uint16",
-      "sha256_c_order": "e48a3737e3fb64ccf9f4f16e5e687c557e9556ec6833b3e2ba0b17331cc95010",
-      "unchanged_vs_prior": true
+      "unchanged_vs_previous": true,
+      "sha256_c_order": "e48a3737e3fb64ccf9f4f16e5e687c557e9556ec6833b3e2ba0b17331cc95010"
     },
     {
       "key": "proposed_active_corridor",
@@ -89,8 +86,8 @@
         1644
       ],
       "dtype": "bool",
-      "sha256_c_order": "061b81fa0bc310fb0c36b2d0aebec4eeab292e292c662081bfa879ac75af7d87",
-      "unchanged_vs_prior": false
+      "unchanged_vs_previous": true,
+      "sha256_c_order": "061b81fa0bc310fb0c36b2d0aebec4eeab292e292c662081bfa879ac75af7d87"
     }
   ]
 }

@@ -153,7 +153,9 @@ function renderer(W,H,cfg=globalConfig){
         stepTime=Math.min(stepTime,limit/Math.max(1e-12,midSpeed*midBoost));
         const nx=ox+U[mid]*midBoost*stepTime*scale,ny=oy-V[mid]*midBoost*stepTime*scale,nz=index(nx,ny);
         if(nz<0||!P[nz]){reset(p);break;}p.x=nx;p.y=ny;remaining-=stepTime;
-        const q=useTemperature&&Number.isFinite(T[z])?T[z]/(cfg.temperatureMax||25):speedRatio(Math.hypot(U[z],V[z])),b=Math.max(0,Math.min(23,Math.floor(q*24)));buckets[b].push(ox,oy,p.x,p.y);
+        // Round caps paint a dot even for a zero-length stroke. Do not make
+        // a zero vector flicker as stationary particles are reseeded.
+        if(p.x!==ox||p.y!==oy){const q=useTemperature&&Number.isFinite(T[z])?T[z]/(cfg.temperatureMax||25):speedRatio(Math.hypot(U[z],V[z])),b=Math.max(0,Math.min(23,Math.floor(q*24)));buckets[b].push(ox,oy,p.x,p.y);}
       }
     }
     ink.lineWidth=(cfg.particleWidth||.72)*S;ink.lineCap='round';
