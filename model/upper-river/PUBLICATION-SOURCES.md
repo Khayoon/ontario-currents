@@ -1,12 +1,10 @@
-> Current correction: the source geometry, prepared bed, datum assumptions and 1 km upstream inlet are unchanged. A global minimum-stage wetting shortcut has been replaced by a self-consistent local-stage active set. Bayfield's shallow southern mouth is now wet under its actual solved upstream level; detailed checks and sensitivity are in model-report.json. Earlier configuration tests are retained as historical sensitivity, not new validation.
-
 # Kingston–Brockville current estimates: sources and reproduction
 
 Prepared 19 October 2026. Target forcing interval: **12 October 2026 00:00 UTC–17 October 2026 12:00 UTC**.
 
 The added river trails are an **illustrative, simplified, unvalidated steady depth-averaged through-flow estimate**. They use actual numerical bathymetry, observed endpoint water levels and a published regulation-flow scenario. The calculation solves continuity around mapped islands. It does **not** recover reliable local jet speeds, surface-layer currents or inertial eddies, and it is not an observed-current product or an operational forecast.
 
-Suggested compact film label: **“ESTIMATES · Kingston–Brockville: simplified depth-averaged flow, unvalidated.”** The existing Lake Ontario layer retains its separate [NOAA LOOFS provenance](https://tidesandcurrents.noaa.gov/ofs/loofs/loofs_info.html); this estimate fills only its upper-river coverage gap.
+Suggested compact film label: **“ESTIMATES · Kingston–Brockville: simplified depth-averaged flow, unvalidated.”** The separate lake field retains its [NOAA LOOFS provenance](https://tidesandcurrents.noaa.gov/ofs/loofs/loofs_info.html). The raw river JSON retains its reusable fallback default, while the featured film explicitly selects the regional model throughout its solved domain and NOAA elsewhere.
 
 ## Primary sources actually used
 
@@ -52,46 +50,34 @@ The existing map's omitted Thousand Islands sectors were restored from **actual 
 - [NOAA Alexandria Bay 8311062, exact water-level request in metres IGLD and UTC](https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=water_level&application=OntarioCurrentsResearch&begin_date=20261012%2000:00&end_date=20261017%2012:06&datum=IGLD&station=8311062&time_zone=gmt&units=metric&format=json).
 - [NOAA Great Lakes low-water datums](https://www.tidesandcurrents.noaa.gov/gldatums.html).
 
-Alexandria Bay was not an imposed stage boundary or a velocity-calibration target. Its observations are preliminary. One missing six-minute value was interpolated only to calculate the time-weighted stage mean over the exact target interval. The 50 m estimate is approximately **2.38 cm above** that independent mean stage. This checks one water level; it does **not validate island-channel velocities or flow splits**.
+Alexandria Bay was not an imposed stage boundary or a velocity-calibration target. Its observations are preliminary. One missing six-minute value was interpolated only to calculate the time-weighted stage mean over the exact target interval. The 50 m estimate is approximately **2.35 cm above** that independent mean stage. This checks one water level; it does **not validate island-channel velocities or flow splits**.
 
-## Coverage and model interpretation
+## Current 3 km domain and model interpretation
 
-The proposed 50 m active corridor has **173,036 connected cells** between an inlet cut relocated 1,000 m upstream of the original Kingston–Cape Vincent cross-section and the unchanged Brockville outlet cut. **82.3488% have numerical source-depth support; 30,543 cells, or 17.6512%, lack source bed.** Missing bank/bay-margin bed is explicitly estimated by harmonic interpolation, with a 0.20 m depth constraint only at actual mapped shoreline. Artificial open cuts use adjoining retrieved bed when available or a zero-gradient continuation. Raw source-bed NaNs and the estimated-bed mask remain distinct. In the earlier 1 km inlet-extension comparison, 3,118 wet cells were added, of which 3,082 (98.8454%) had retrieved bed support. Those are historical inlet-extension figures, not coverage of this Bayfield repair. The present local-stage correction adds 1,836 wet cells relative to the immediately preceding extended-inlet mask, with no cells removed. The broader source box also contains unrelated inland water excluded from the hydraulic solve.
+The geometric corridor has **179,112 cells**, with the inlet 3,000 m upstream of the original Kingston–Cape Vincent cross-section and the unchanged Brockville outlet. It adds 6,076 geometric cells relative to the immediately previous 1 km case; 6,010 added cells have numerical source bed. All other input arrays are unchanged, including raw bed NaNs and source water geometry.
 
-After the corrected local-stage active-set solver converges, **171,786 cells** remain in the final hydraulic domain; **17.68%** of that solved area uses estimated bank bed. Global area coverage does not measure its hydraulic importance: some transects carry a substantial fraction of their modelled flux through estimated-bed cells.
+The local-stage wet/dry calculation selects **177,775 cells**; **17.12%** use inferred bank bed. Missing bank bed is harmonically inferred, with a 0.20 m shallow-bank constraint at actual mapped shore, not at artificial open cuts. Source-depth support is much lower in parts of eastern Carleton than the domain-wide percentage. The 274-cell western patch now has 193 solved wet cells; remaining cells comprise 57 with insufficient retrieved depth at the upstream mean stage, 23 stage-unanchored shallow fragments and one unknown source bed.
 
-The selected calculation is a steady nonlinear Manning **diffusion-wave approximation** on wet faces, with impermeable island/land faces. Effective uniform Manning roughness is calibrated to the explicit regulation-flow scenario; the final 50 m value is approximately **0.02892363 s/m^(1/3)**. Uniform roughness rescales the conservative field's flux magnitude, rather than adding currents by hand.
+Retrieved bed values remain exact. The recomputed expanded bank interpolation changes common-domain inferred bed by up to 0.404 m relative to the prior prepared input. That derived-bed change is explicit in the comparison audit; the previous prepared-bed array is not claimed unchanged.
 
-The field conserves its numerical discharge: final inlet/outlet differ by about **0.001831 m³/s**, roughly **0.00002482%** of inflow. No final cell requires the numerical minimum-depth floor. These are numerical checks, not accuracy bounds. A retained prior-domain 100 m comparison supports broad directional consistency but is a grid-sensitivity exercise, not formal convergence or field-current validation.
+The selected effective uniform Manning n is **0.02889393 s/m^(1/3)**. It is calibrated to the explicitly assumed regulation-flow scenario. Inlet/outlet mismatch is **0.001654 m³/s**, with zero depth-floor cells. These are numerical checks, not accuracy bounds or local velocity validation.
 
-This approximation omits local and advective momentum acceleration, inertial eddies, wind forcing, density stratification and vertical surface shear. It is unsuitable for quantitatively interpreting local jets. The failed or unsettled more complex experimental runs are not substituted into the film. [USACE's equation-choice guidance](https://www.hec.usace.army.mil/confluence/rasdocs/r2dum/latest/running-a-model-with-2d-flow-areas/shallow-water-or-diffusion-wave-equations) explains why momentum terms matter in constrictions, bends and detailed local flow.
+The simplified nonlinear diffusion-wave method omits local/advective momentum acceleration, wind, Coriolis, density stratification and vertical shear. It is unsuitable for quantitative interpretation of local jets or island wakes. [USACE equation-choice guidance](https://www.hec.usace.army.mil/confluence/rasdocs/r2dum/latest/running-a-model-with-2d-flow-areas/shallow-water-or-diffusion-wave-equations) explains why full momentum matters in flat rivers and contractions. Earlier sensitivity and experimental momentum calculations are retained as prior-configuration evidence, not claimed as new validation of this domain.
 
-The forcing uses interval-mean endpoint levels and a representative flow target. **A steady calculation at mean forcing is not the time-average of hourly current fields.** Near Kingston it particularly misses wind-driven lake–river exchange. These vectors are **depth-averaged estimates**, while the separate NOAA Lake Ontario vectors represent their documented surface model layer. The display preserves the NOAA field wherever that source has coverage and applies this river estimate as fallback only.
+This is a steady scenario forced by mean endpoint levels, not a temporal vector average. Raw display metadata retains `fallbackOnly: true` as a reusable default. The featured film explicitly sets `riverSourcePriority: "model"`: regional depth-averaged vectors cover their whole solved domain and NOAA's distinct surface vectors apply elsewhere. This does not establish a physically matched or same-depth source handoff.
 
-## Local-stage correction and shallow-mouth sensitivity
-
-The active-set calculation starts from a maximum-upstream-stage wet candidate, enforces the downstream boundary at its observed mean level, and repeatedly solves the conservative field. It removes cells with locally solved depth below 0.12 m and activates only real, connected orthogonal water faces supporting more than 0.13 m depth. The 0.01 m hysteresis is a numerical shoreline assumption. Final selection requires a fixed wet mask and zero cells using the depth floor. The selected minimum actual depth is 0.12202 m; the largest potential depth at an inactive adjacent candidate is 0.12901 m.
-
-The recovered southern Bayfield connection is conditional on shallow bed and datum estimates. Its highest-clearance representative path includes 27 inferred-bed cells among 87 cells, with the 0.342 m limiting depth at an inferred-bed cell. A topology-only diagnostic raises bed 0.25 m within the southern-mouth rectangle (longitude −76.344 to −76.321°, latitude 44.181 to 44.194°), keeping solved stage and bed elsewhere unchanged. That closes the route under the 0.12 m threshold; it is not a recomputed-current scenario. The separate northern-mouth diagnostic remains connected. Detailed results and unchanged-source checks are in `diagnostics/local-candidate-independent-review.json`.
-
-## Reproduce the compact-input calculation
-
-From the published model-package directory, which contains the scripts at its root and compact inputs under `inputs/`:
+## Portable reproduction and exact inputs
 
 ```powershell
 python -m pip install -r requirements.txt
-python solve_local_wetness.py --inlet-pad-m 1000 --source inputs/bathymetry-grid-50m.npz --out-dir regenerated
+python prepare_source_domain.py --input inputs/bathymetry-grid-50m.npz --inlet-pad-m 3000 --check
+python solve_local_wetness.py --inlet-pad-m 3000 --source inputs/bathymetry-grid-50m.npz --out-dir regenerated
 ```
 
-The portable solver reads `inputs/hourly-stage-boundaries-igld85.csv`. The 100 m dataset is retained for the explicitly labelled prior-domain sensitivity. Running a new padded 100 m experiment would require its own checks and is not claimed as completed here. The selected 50 m NPZ uses lossless ZIP-DEFLATE, while the retained 100 m input uses ZIP-LZMA; both are readable with standard Python/NumPy. Re-running can change iteration timing, numerical last bits and output-container hashes across dependency/platform versions. The packaged input arrays themselves are exact, with no rounding or downcasting. The package's requirements and final run report record the actual solver environment.
+The prescribed endpoint CSV, compact source arrays and all required helpers are package-local. The selected 50 m NPZ uses ZIP-DEFLATE and is 14,171,747 bytes, SHA-256 `ba5120a30dbbb397327de31ec18176dc1798a746e48e962d0374b8a4fcf31b47`. The retained 100 m historical input uses ZIP-LZMA. Both are readable by Python/NumPy. Per-array integrity and the changed corridor mask are explicit in `inputs/array-integrity-manifest.json`; no rounded source values replace the original arrays.
 
-| Compact input | Bytes | SHA-256 |
-|---|---:|---|
-| `inputs/bathymetry-grid-50m.npz` | 14,171,483 | `d0c2b6ae3ec44203cda5ff2318b8399566abce300795c1b7348a8501c88731b9` |
-| `inputs/bathymetry-grid-100m.npz` | 2,747,179 | `b0c6b56f9ba28f9aea40e585e9fa53c0c1c55b3759d945b6731c342e6bbf0843` |
+Large original source TIFFs are not bundled. Exact request URLs/hashes remain in download manifests. The prepared-bank-bed NPZ regenerates from the included inputs. Historical cache paths are provenance records, not current dependencies. Numerical last bits and output-container hashes can differ across runs/platforms; isolated reproduction checks numerical agreement.
 
-`inputs/array-integrity-manifest.json` records current per-array hashes. Every retained input array, including `proposed_active_corridor`, is byte-identical to the immediately preceding 1 km inlet-extension package. That geometric corridor had changed during the earlier inlet-extension work; it does not change in this local-stage correction. An actual compact-input 100 m bank-bed run also reproduced the corresponding full-input bed and masks byte-for-byte on the development platform. The inputs README explains omitted raw source files and historical cache-path references.
+## Attribution and licences
 
-## Attribution and data licences
-
-Bathymetry: **Canadian Hydrographic Service NONNA. Contains information licensed under the [Open Government Licence – Canada](https://open.canada.ca/en/open-government-licence-canada).** The official catalogue metadata records that licence. Water geometry and derived shoreline/wet-mask database: **© OpenStreetMap contributors, [Open Database Licence (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1-0/), via OpenFreeMap/OpenMapTiles**. Retain those notices and the corresponding data licences when redistributing the source-derived inputs. Agency names identify provenance and do not imply agency endorsement of this estimate.
+Canadian Hydrographic Service NONNA: contains information licensed under the [Open Government Licence – Canada](https://open.canada.ca/en/open-government-licence-canada). Water geometry and source-derived wet-mask database: © OpenStreetMap contributors, [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/), via OpenFreeMap/OpenMapTiles. Retain those notices and applicable licences when redistributing source-derived inputs. Agency names identify provenance and do not imply endorsement.

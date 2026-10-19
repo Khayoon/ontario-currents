@@ -31,7 +31,7 @@ def build_domain(base,bed,mask):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--wet-depth-m',type=float,default=.12);p.add_argument('--rewet-hysteresis-m',type=float,default=.01)
-    p.add_argument('--max-active-iterations',type=int,default=12);p.add_argument('--inlet-pad-m',type=float,default=1000)
+    p.add_argument('--max-active-iterations',type=int,default=12);p.add_argument('--inlet-pad-m',type=float,default=3000)
     p.add_argument('--source',default=None);p.add_argument('--prepared-bed',default=None);p.add_argument('--out-dir',default=None);args=p.parse_args()
     if args.wet_depth_m<.12:raise ValueError('Wet threshold cannot be lower than the core solver .12m depth regularization')
     CASE=Path(args.out_dir)if args.out_dir else ROOT/'local-stage-active-set';CASE.mkdir(exist_ok=True)

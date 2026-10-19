@@ -1,27 +1,27 @@
 {
-  "bytes": 77927515,
-  "sha256": "83a86ab073660d438e9841a31c42a33b915415339e6cb3bf6f5feb9ca858949e",
-  "edition": "Wolfe\u2013Carleton local-stage correction, 19 October 2026",
+  "bytes": 69489087,
+  "sha256": "cb69e2e24851e1f195a3b062a19c5c69fa3f3c44fe793c9301a6405a60a112c5",
+  "edition": "Carleton-Wolfe coherent source and visible trails, 19 October 2026",
   "parts": [
     {
       "file": "ontario-closeup.part0",
       "bytes": 22000000,
-      "sha256": "70b425ef2c689a0e2a2ffe33ea18bd6d95ae8195db7028d3ea76e39398fe5b3d"
+      "sha256": "650d40ec3d01cffdf7e680541e4030be881f7267447cfb614dbc79fa09c9774b"
     },
     {
       "file": "ontario-closeup.part1",
       "bytes": 22000000,
-      "sha256": "ed2cdd24c0dad977a1ad89f5f3d6034cc9f272cebdd33e635e40a3e05b390116"
+      "sha256": "10f13424493899bb57c0850cc69369c9cd3c6d20040c53fad47355638b42447b"
     },
     {
       "file": "ontario-closeup.part2",
       "bytes": 22000000,
-      "sha256": "e53306491754cb47c27c0c3baaf003831270b57a057aadf8b6655faf2244cf91"
+      "sha256": "5fcb46e9cf140e230f43724ba8d72654be88e99fa8dcce570d357d67b5e1606b"
     },
     {
       "file": "ontario-closeup.part3",
-      "bytes": 11927515,
-      "sha256": "99686de8d884170bce5d2c4547793ddbaa55ee4b7fe4e34cd8af60151cdab3e9"
+      "bytes": 3489087,
+      "sha256": "3b0f98d37dac0e1cc22848a8d1c87fe165ee7063be51aa29d15113ee161bbc37"
     }
   ]
 }

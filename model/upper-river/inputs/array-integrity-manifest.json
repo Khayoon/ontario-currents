@@ -1,5 +1,7 @@
 {
-  "scope": "All input source arrays and masks are unchanged from the previous1km-open package; only solver wet activation changes.",
+  "scope": "The 3 km corridor is recomputed from the unchanged real-water geometry. Every other source array is byte-identical to the previous 1 km input, including raw depth NaNs.",
+  "previous_input_sha256": "d0c2b6ae3ec44203cda5ff2318b8399566abce300795c1b7348a8501c88731b9",
+  "selected_input_sha256": "ba5120a30dbbb397327de31ec18176dc1798a746e48e962d0374b8a4fcf31b47",
   "arrays": [
     {
       "key": "x",
@@ -86,8 +88,8 @@
         1644
       ],
       "dtype": "bool",
-      "unchanged_vs_previous": true,
-      "sha256_c_order": "061b81fa0bc310fb0c36b2d0aebec4eeab292e292c662081bfa879ac75af7d87"
+      "unchanged_vs_previous": false,
+      "sha256_c_order": "843fdc60ba550d0b9fbfd20f6feb3fd54f92afa38cf9792eb651d54a868f38f3"
     }
   ]
 }

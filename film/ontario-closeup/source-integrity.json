@@ -1,97 +1,112 @@
 {
-  "frozen_source_renderer_sha256": "50c99c2c2c9aff0ca2704ac5f26f2ddfa0954ad71ee4ddd939b2e60c1a474ce1",
-  "frozen_source_config_sha256": "bf24846b0bd7495309672a5494fe326f1de02240cdc6cab0448965525b67ef64",
-  "portable_renderer_changes": [
-    "Canvas dependency default resolves this bundle package.json; relative override resolved from config directory.",
-    "FFmpeg default is FFMPEG_BINARY environment variable or ffmpeg on PATH.",
-    "Line endings normalized to LF; renderer flow logic otherwise identical."
+  "source_renderer_sha256": "fb4122951aa91806d9cd9e0dd7d3c382751b971572ddb3d9c075f982b1716f9f",
+  "source_config_sha256": "26edc44cbbe176a89d51f7378c06ee9e9f544cbc09ee6e731b4927a51af32a50",
+  "portable_changes": [
+    "Canvas dependency and FFmpeg executable resolution",
+    "LF normalization"
   ],
-  "edition_changes": [
-    "River source recomputed using stable local-stage wet/dry cells, with source bed and geometry unchanged.",
-    "Zero-length particle segments are not stroked; round caps previously painted misleading stationary dots.",
-    "Display raster reduced from .5px to .25px to retain both actual Bayfield mouth paths; source numerical fields unchanged.",
-    "Framing, seeding weights, colour mapping, motion scaling and integration step settings unchanged.",
-    "Final join/body encodes use CRF16; the earlier CRF21 candidate failed the unchanged loop-seam check because of differential compression error."
-  ],
-  "inputs": [
-    {
-      "name": "inputs/noaa-week-mean.json",
-      "source_work_path": "forum-data/ontario-october-week-mean-23.json",
-      "bytes": 2033047,
-      "sha256": "bd13fb67dcae1b11828bf8efc31b60dca4059265fea63978811cfda5c0a9c7c0",
-      "byte_identical_copy": true
-    },
-    {
-      "name": "inputs/water.geojson",
-      "source_work_path": "forum-geography/ontario-estimates-water.geojson",
-      "bytes": 3677177,
-      "sha256": "abba152ec2676c644b9c2c42dba5b5a998b2c7bef15fb22c2891f08b2d33c381",
-      "byte_identical_copy": true
-    }
-  ],
+  "render_logic_copied_without_changes": true,
+  "field_selection": "Regional hydraulic estimate throughout solved river domain; NOAA surface mean elsewhere.",
   "external_inputs": [
     {
       "path": "../../src/mesh.json",
-      "sha256": "d5720f28802855db79f088946e359e75554ad64f432a048e7df06f45832471cf",
-      "purpose": "NOAA LOOFS native mesh."
+      "sha256": "d5720f28802855db79f088946e359e75554ad64f432a048e7df06f45832471cf"
     },
     {
       "path": "../../model/upper-river/display-field.json",
-      "sha256": "6af379480059a1611ddbd49a6cbb784186fbcb50e5ec0b24979e22bdc5426e41",
-      "purpose": "Corrected local-stage river estimate."
+      "sha256": "653d31ac284a724bd83d000064f19d375d5e6a8dd14a320fb48a4f0eef3904bb"
     }
   ],
-  "render_logic_copied_without_changes": true,
   "files": [
     {
-      "name": "render.mjs",
-      "bytes": 24818,
-      "sha256": "00f89f0f6e841b6e54a5135f33be6f89f8d21b27e015537c0232c794027126fd"
+      "path": "config.json",
+      "bytes": 5874,
+      "sha256": "6385b428f023e579d2a00553a907c2fd630ae5686e422ab27481bd86303e8bc1"
     },
     {
-      "name": "config.json",
-      "bytes": 5852,
-      "sha256": "1553d4c12c8294720c5636b23bd54f4b92d4ccd0eba800bbc99f4d3e5d9149f7"
-    },
-    {
-      "name": "package.json",
-      "bytes": 429,
-      "sha256": "d9c50b7225dff859b31ef971959f01232b3f634f781e03517067dd49cec9048d"
-    },
-    {
-      "name": "finish.py",
+      "path": "finish.py",
       "bytes": 3551,
       "sha256": "b510f8caa2e300efbcd2f663807bb7c956bd1fbdd3b5238749a86d2c5b4d289a"
     },
     {
-      "name": "qa/coarse-grid-failed.json",
-      "bytes": 5129,
-      "sha256": "ea2d825e2539fe740b3a1bb2aeee2d260e41b9288fc2e137c60851a3bc5c088d"
+      "path": "inputs/noaa-week-mean.json",
+      "bytes": 2033047,
+      "sha256": "bd13fb67dcae1b11828bf8efc31b60dca4059265fea63978811cfda5c0a9c7c0"
     },
     {
-      "name": "qa/fine-grid-passed.json",
-      "bytes": 15439,
-      "sha256": "6899309ad1c354707a0f311a5c4b5ef14234fa6b6b7f465d38ee8d5ce704fa0f"
+      "path": "inputs/water.geojson",
+      "bytes": 3677177,
+      "sha256": "abba152ec2676c644b9c2c42dba5b5a998b2c7bef15fb22c2891f08b2d33c381"
     },
     {
-      "name": "qa/instrumented-kernel.txt",
-      "bytes": 1952,
-      "sha256": "ee636ce08a9e10d615fbd1a511c7513a953fdc8692986339e974be5209e95a9b"
+      "path": "package.json",
+      "bytes": 429,
+      "sha256": "d9c50b7225dff859b31ef971959f01232b3f634f781e03517067dd49cec9048d"
     },
     {
-      "name": "qa/README.md",
-      "bytes": 1886,
-      "sha256": "84db0c46265018748b24f046e029a1cad5e004d0802c0437173e41fd2133bf66"
+      "path": "qa/candidate-encoded-report.json",
+      "bytes": 91371,
+      "sha256": "e46fbe5003fecf85dffc90b00e15e86cd207e07e7d2c3c41333315962e60c9b5"
     },
     {
-      "name": "qa/targeted-advection.json",
-      "bytes": 731450,
-      "sha256": "8aaf8dd3f32ad34644c87af8cec18ec5b7badfbff5b8dbaa2384fbd4eed90c3d"
+      "path": "qa/candidate-package-review.json",
+      "bytes": 2024,
+      "sha256": "f8770947a51c4d1a0ef2eb55c461bad0430b7d771a95e020a46e9be7226b97d1"
     },
     {
-      "name": "qa/trajectory-water-check.json",
-      "bytes": 2812,
-      "sha256": "fff9ab567428e5df2adabb33d6115b0502306dc228851c53743fd2d826169fdd"
+      "path": "qa/candidate-raster-mouth-review.json",
+      "bytes": 16090,
+      "sha256": "fb36e398b1df4a81b13444759424aac438a5d886ab0dbc0252995bd4ab4c5b50"
+    },
+    {
+      "path": "qa/candidate-seam-review.json",
+      "bytes": 1148,
+      "sha256": "971eb813024cb3b44f5e6afa7ee9254bc61b1315b821c26d7d5bb0c4bbf34846"
+    },
+    {
+      "path": "qa/candidate-trace-result.json",
+      "bytes": 4854014,
+      "sha256": "765b952f08830ddc658e481d11e1673f3a576a54fb9036754969251d52a09f20"
+    },
+    {
+      "path": "qa/geometry-expanded-final-audit.json",
+      "bytes": 3112,
+      "sha256": "d1406d2d6fb2f2083a618160ce45920b1089efd6c9e131e978c7d70744aac99d"
+    },
+    {
+      "path": "qa/geometry-expanded-source-audit.json",
+      "bytes": 4067,
+      "sha256": "7c097b988716453d48bd4a3365dd4af9115471b17ddd9d55a3275a4d5808d427"
+    },
+    {
+      "path": "qa/geometry-native-report.json",
+      "bytes": 39206,
+      "sha256": "efa98b46cb6aecb2edf28c7a670b7c63b69d4118b150c15cda67f46d8f570e6c"
+    },
+    {
+      "path": "qa/interface-kernel.txt",
+      "bytes": 1978,
+      "sha256": "531987864b4a930baa516f354b1125d9ddf74966cf8cd7105014b1208acdb4e6"
+    },
+    {
+      "path": "qa/interface-trace-result.json",
+      "bytes": 972555,
+      "sha256": "3066d471135f14dbbb4a449dbf8125b6ed2b09a1dd38681f50bc83052803f25e"
+    },
+    {
+      "path": "qa/README.md",
+      "bytes": 2367,
+      "sha256": "0bd2829d38b0642f083eb57617c4ee2f3531d866440ae973cba3911bb6c53735"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3875,
+      "sha256": "aa04cd4ee52728faf8543dce91cb238428dff3d0930409be049195147a983b60"
+    },
+    {
+      "path": "render.mjs",
+      "bytes": 25085,
+      "sha256": "1c7ab5fda5d0c6e16c07a2e171e16f3e4c07f663c3efabed6962030bf4882300"
     }
   ]
 }

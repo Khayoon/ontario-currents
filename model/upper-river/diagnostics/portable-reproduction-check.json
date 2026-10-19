@@ -1,18 +1,20 @@
 {
   "passed": true,
   "isolated_package_only": true,
-  "command": "solve_local_wetness.py --inlet-pad-m 1000 --source inputs/bathymetry-grid-50m.npz --out-dir regenerated",
+  "commands": [
+    "check_numerics.py",
+    "prepare_source_domain.py --input inputs/bathymetry-grid-50m.npz --inlet-pad-m 3000 --check",
+    "solve_local_wetness.py --inlet-pad-m 3000 --source inputs/bathymetry-grid-50m.npz --out-dir regenerated"
+  ],
+  "wet_mask_exact": true,
   "maximum_absolute_differences": {
-    "eta": 7.291589554370148e-11,
-    "depth": 7.291589554370148e-11,
-    "u": 5.819506432303001e-09,
-    "v": 6.3141278872080875e-09,
-    "face_flux": 1.0375835245213239e-05
+    "eta": 5.243805389909539e-12,
+    "depth": 5.243805389909539e-12,
+    "u": 7.99925459205042e-10,
+    "v": 8.400191653379352e-10,
+    "face_flux": 3.100995286331454e-06
   },
-  "wall_seconds": 218.88769221305847,
-  "frozen_field_sha256": "6af379480059a1611ddbd49a6cbb784186fbcb50e5ec0b24979e22bdc5426e41",
-  "note": "Imports, boundary CSV, source arrays and bed preparation are package-local. Numerical tolerances, not byte-identical output containers, define reproduction.",
-  "regenerated_prepared_bed_arrays_identical_including_nan_layout": {
+  "prepared_bed_arrays_exact_including_nan_layout": {
     "x": true,
     "y": true,
     "bed_igld85_estimated": true,
@@ -26,15 +28,16 @@
     "estimated_bank_bed": true,
     "bed_valid": true
   },
-  "package_local_generic_numerics": {
+  "generic_numerics_check": {
     "analytic_channel_expected_discharge_m3s": 1864.434188678917,
     "dwe_discharge_m3s": 1864.3920632160132,
     "dwe_relative_error": 2.2594234304285088e-05,
-    "swe_600s_discharge_m3s": 1834.8366186853814,
+    "swe_600s_discharge_m3s": 1834.8366186859803,
     "lake_at_rest_maximum_speed_mps": 0.0,
     "passed": true
   },
-  "packaged_script_sha256": {
+  "utf8_lf_scripts_compile": true,
+  "package_script_sha256": {
     "audit_solution.py": "0d3f8b61350ee660f4c03546f36396d67b6cbfcfcd3235dd4162c735c20f6019",
     "calibrate_uniform_roughness.py": "a6d05ec02346194139e62e998212838b9b90fd83bacfba731c1eeef475567a88",
     "check_numerics.py": "96f31a8a86c6dddd91199b9ad2276c526e53442d16b602d8df04928a028eb421",
@@ -42,17 +45,13 @@
     "estimate_bank_bed.py": "58e8e605e0bb0ae5ed792e9ea7f8276562c3b2fd50fe78c865f1e406474dc0b7",
     "estimate_bank_bed_open.py": "bb6325fe30c915480ea385426b1e6c62202e8d61faebf76f321216da1b6c93e9",
     "export_display.py": "919367dd35177ffb6d4c6a4ae25092b343f4757f3be9ad7a3fa77554bf7466b4",
+    "prepare_source_domain.py": "18b99853ae06e803e576c80c8b65a5f5709309396691d25707caf437c2151c34",
     "solve_hydraulics.py": "164221c4c5c6e3748df01f9a251df6cf7d82eed3942df79db8a69b334a79d488",
     "solve_inlet_extension.py": "d5021256c6bd84ead7eb718829772942d1b75382c66dd4fbb2b44533c303de6f",
-    "solve_local_wetness.py": "eab93eecf1a140519c3e1573b803ed94cc215804e87840bfaa376ebef6cec165",
+    "solve_local_wetness.py": "296cea49ac9f4d6fcbb8414df6f0fd3a2acd7b17074a8467651bed56b0c18757",
     "solve_semiimplicit_momentum.py": "63058772db045319ace421679c564a421ed78eba4eb278091cdb438bcfb35c00"
   },
-  "encoding_correction_check": {
-    "utf8_and_lf_all_packaged_scripts": true,
-    "all_scripts_compile": true,
-    "correct_label": "Kingston\u2013Brockville current estimates",
-    "corrected_script_frozen_solution_reexport_byte_identical": true,
-    "reexport_sha256": "6af379480059a1611ddbd49a6cbb784186fbcb50e5ec0b24979e22bdc5426e41",
-    "scope": "Only UTF-8 label correction and LF normalization after the full isolated numerical rebuild; re-export exactly reproduces the frozen original field. Numerical solver content and all numerical data are unchanged."
-  }
+  "wall_seconds": 233.73321890830994,
+  "frozen_field_sha256": "653d31ac284a724bd83d000064f19d375d5e6a8dd14a320fb48a4f0eef3904bb",
+  "note": "Only package-local scripts, compact numerical source and endpoint CSV were supplied. Numerical tolerances define reproduction; output-container/source-hash metadata can differ."
 }

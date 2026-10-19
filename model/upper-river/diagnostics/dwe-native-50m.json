@@ -2,189 +2,189 @@
   "method": "steady nonlinear Manning finite-volume diffusion-wave approximation",
   "n": 0.03,
   "cell_size_m": 50.0,
-  "wet_cells": 171786,
-  "inlet_cells": 115,
+  "wet_cells": 177775,
+  "inlet_cells": 111,
   "outlet_cells": 25,
   "kingston_stage_m": 74.80174436090226,
   "brockville_stage_m": 74.5217067669173,
-  "discharge_in_m3s": 7112.879326404515,
-  "discharge_out_m3s": 7112.87756123996,
-  "relative_boundary_flux_error": 2.481645580997441e-07,
-  "maximum_cell_continuity_residual_m3s": 0.00010499404152142233,
-  "minimum_actual_water_depth_m": 0.12202174107548558,
+  "discharge_in_m3s": 7105.575395425998,
+  "discharge_out_m3s": 7105.573802692685,
+  "relative_boundary_flux_error": 2.2415261604267094e-07,
+  "maximum_cell_continuity_residual_m3s": 0.00010371012922405498,
+  "minimum_actual_water_depth_m": 0.12135566804765574,
   "cells_requiring_depth_floor": 0,
   "speed_percentiles_mps": [
     0.0,
-    0.023664214746545065,
-    0.05415440379145858,
-    0.12183897235335497,
-    0.2813086393832185,
-    0.5435358654495555,
-    2.361119068027246
+    0.023403003425335515,
+    0.05448347406541791,
+    0.11983340370331369,
+    0.277302984753971,
+    0.5360628063848837,
+    2.3586801755364575
   ],
   "iterations": [
     {
       "iteration": 0,
-      "stage_change_m": 0.08696518316426705,
-      "lagged_continuity_l1_relative": 18.543186580090662
+      "stage_change_m": 0.08891405301706357,
+      "lagged_continuity_l1_relative": 20.9989163942138
     },
     {
       "iteration": 1,
-      "stage_change_m": 0.04414863474437425,
-      "lagged_continuity_l1_relative": 11.118152775723273
+      "stage_change_m": 0.045356743576576264,
+      "lagged_continuity_l1_relative": 12.103992070647468
     },
     {
       "iteration": 2,
-      "stage_change_m": 0.021920124427282417,
-      "lagged_continuity_l1_relative": 6.198952205749504
+      "stage_change_m": 0.022509329147197832,
+      "lagged_continuity_l1_relative": 6.505258041560596
     },
     {
       "iteration": 3,
-      "stage_change_m": 0.01080312973617481,
-      "lagged_continuity_l1_relative": 3.3069779056631923
+      "stage_change_m": 0.0110913188970585,
+      "lagged_continuity_l1_relative": 3.393507067850727
     },
     {
       "iteration": 4,
-      "stage_change_m": 0.00563410862866931,
-      "lagged_continuity_l1_relative": 1.7686338518302565
+      "stage_change_m": 0.005770565146107742,
+      "lagged_continuity_l1_relative": 1.7932695179499132
     },
     {
       "iteration": 5,
-      "stage_change_m": 0.0031544338779241343,
-      "lagged_continuity_l1_relative": 0.9583888849164105
+      "stage_change_m": 0.0032281934705480353,
+      "lagged_continuity_l1_relative": 0.9667333360713232
     },
     {
       "iteration": 6,
-      "stage_change_m": 0.0018097245713022403,
-      "lagged_continuity_l1_relative": 0.52650118107355
+      "stage_change_m": 0.0018510658138097824,
+      "lagged_continuity_l1_relative": 0.5296983847948367
     },
     {
       "iteration": 7,
-      "stage_change_m": 0.001054911964644134,
-      "lagged_continuity_l1_relative": 0.292803561324385
+      "stage_change_m": 0.0010786263510595973,
+      "lagged_continuity_l1_relative": 0.2942961333208081
     },
     {
       "iteration": 8,
-      "stage_change_m": 0.00062126722016842,
-      "lagged_continuity_l1_relative": 0.16454303384769325
+      "stage_change_m": 0.0006350953463822862,
+      "lagged_continuity_l1_relative": 0.16530784107117447
     },
     {
       "iteration": 9,
-      "stage_change_m": 0.00036817588780024835,
-      "lagged_continuity_l1_relative": 0.0933275684379578
+      "stage_change_m": 0.0003763061939139334,
+      "lagged_continuity_l1_relative": 0.09373634128062594
     },
     {
       "iteration": 10,
-      "stage_change_m": 0.00021902038729137985,
-      "lagged_continuity_l1_relative": 0.05336793628756152
+      "stage_change_m": 0.00022382846202617657,
+      "lagged_continuity_l1_relative": 0.05358785237812246
     },
     {
       "iteration": 11,
-      "stage_change_m": 0.00013059652930280663,
-      "lagged_continuity_l1_relative": 0.030716392612142953
+      "stage_change_m": 0.00013344945884341541,
+      "lagged_continuity_l1_relative": 0.030836494075562257
     },
     {
       "iteration": 12,
-      "stage_change_m": 7.798495896338409e-05,
-      "lagged_continuity_l1_relative": 0.017764732438975916
+      "stage_change_m": 7.968099981781052e-05,
+      "lagged_continuity_l1_relative": 0.01783078548506104
     },
     {
       "iteration": 13,
-      "stage_change_m": 4.6610495772370086e-05,
-      "lagged_continuity_l1_relative": 0.010316520334388964
+      "stage_change_m": 4.762031456095883e-05,
+      "lagged_continuity_l1_relative": 0.0103536766191922
     },
     {
       "iteration": 14,
-      "stage_change_m": 2.7874867910782086e-05,
-      "lagged_continuity_l1_relative": 0.006009993519409715
+      "stage_change_m": 2.847620336865475e-05,
+      "lagged_continuity_l1_relative": 0.006031073725597769
     },
     {
       "iteration": 15,
-      "stage_change_m": 1.667668978200254e-05,
-      "lagged_continuity_l1_relative": 0.0035111420993668733
+      "stage_change_m": 1.7034899514101198e-05,
+      "lagged_continuity_l1_relative": 0.003522988392579436
     },
     {
       "iteration": 16,
-      "stage_change_m": 9.979681664162854e-06,
-      "lagged_continuity_l1_relative": 0.0020556507987692803
+      "stage_change_m": 1.019319019235354e-05,
+      "lagged_continuity_l1_relative": 0.0020621448101170257
     },
     {
       "iteration": 17,
-      "stage_change_m": 5.973122569002953e-06,
-      "lagged_continuity_l1_relative": 0.0012055335663740403
+      "stage_change_m": 6.100325975921805e-06,
+      "lagged_continuity_l1_relative": 0.0012093435902310512
     },
     {
       "iteration": 18,
-      "stage_change_m": 3.575483930262635e-06,
-      "lagged_continuity_l1_relative": 0.0007082472681199563
+      "stage_change_m": 3.651424563599903e-06,
+      "lagged_continuity_l1_relative": 0.0007102728140097917
     },
     {
       "iteration": 19,
-      "stage_change_m": 2.1404955958814753e-06,
-      "lagged_continuity_l1_relative": 0.00041652029444603914
+      "stage_change_m": 2.1857504890476775e-06,
+      "lagged_continuity_l1_relative": 0.0004178114125399855
     },
     {
       "iteration": 20,
-      "stage_change_m": 1.2815229268881012e-06,
-      "lagged_continuity_l1_relative": 0.00024536758163426817
+      "stage_change_m": 1.3084005274777155e-06,
+      "lagged_continuity_l1_relative": 0.00024588416694710044
     },
     {
       "iteration": 21,
-      "stage_change_m": 7.669434722856749e-07,
-      "lagged_continuity_l1_relative": 0.00014484385997213907
+      "stage_change_m": 7.830601447267327e-07,
+      "lagged_continuity_l1_relative": 0.0001451058194352845
     },
     {
       "iteration": 22,
-      "stage_change_m": 4.5940018367218727e-07,
-      "lagged_continuity_l1_relative": 8.55287332731771e-05
+      "stage_change_m": 4.679787082295661e-07,
+      "lagged_continuity_l1_relative": 8.581781873327742e-05
     },
     {
       "iteration": 23,
-      "stage_change_m": 2.75222632240002e-07,
-      "lagged_continuity_l1_relative": 5.059066335107056e-05
+      "stage_change_m": 2.8014210329274647e-07,
+      "lagged_continuity_l1_relative": 5.085647503542297e-05
     },
     {
       "iteration": 24,
-      "stage_change_m": 1.6585529749590933e-07,
-      "lagged_continuity_l1_relative": 3.065487554235014e-05
+      "stage_change_m": 1.676945942108432e-07,
+      "lagged_continuity_l1_relative": 3.0654904320882855e-05
     },
     {
       "iteration": 25,
-      "stage_change_m": 9.947187606940133e-08,
-      "lagged_continuity_l1_relative": 1.824736749816128e-05
+      "stage_change_m": 1.0106647607699415e-07,
+      "lagged_continuity_l1_relative": 1.8719318884103654e-05
     },
     {
       "iteration": 26,
-      "stage_change_m": 5.952472292847233e-08,
-      "lagged_continuity_l1_relative": 1.1216700703599272e-05
+      "stage_change_m": 6.196208346409549e-08,
+      "lagged_continuity_l1_relative": 1.2009237460928536e-05
     },
     {
       "iteration": 27,
-      "stage_change_m": 3.5534171161089034e-08,
-      "lagged_continuity_l1_relative": 8.37344077963401e-06
+      "stage_change_m": 3.8154084336383676e-08,
+      "lagged_continuity_l1_relative": 8.347731719387794e-06
     },
     {
       "iteration": 28,
-      "stage_change_m": 2.0885636331513524e-08,
-      "lagged_continuity_l1_relative": 5.396206631323712e-06
+      "stage_change_m": 2.245452890292654e-08,
+      "lagged_continuity_l1_relative": 5.580069984562042e-06
     },
     {
       "iteration": 29,
-      "stage_change_m": 1.2195243925816612e-08,
-      "lagged_continuity_l1_relative": 4.373082166781937e-06
+      "stage_change_m": 1.3217245964369795e-08,
+      "lagged_continuity_l1_relative": 4.806757251643248e-06
     },
     {
       "iteration": 30,
-      "stage_change_m": 7.882576369411254e-09,
-      "lagged_continuity_l1_relative": 5.219401918011511e-06
+      "stage_change_m": 9.444605097996828e-09,
+      "lagged_continuity_l1_relative": 5.105838538733774e-06
     }
   ],
-  "wall_seconds": 90.99381947517395,
+  "wall_seconds": 95.08171057701111,
   "active_set_iteration": 1,
   "wetting_method": "Maximum-stage initial candidate; local solved-depth pruning and connected-neighbour rewetting with hysteresis.",
   "wet_depth_threshold_m": 0.12,
   "rewet_hysteresis_m": 0.01,
-  "inlet_padding_m": 1000,
+  "inlet_padding_m": 3000.0,
   "regulation_discharge_scenario_m3s": 7377.58,
-  "n_required_for_regulation_Q": 0.028923628044987035
+  "n_required_for_regulation_Q": 0.028893927529458158
 }

@@ -1,0 +1,82 @@
+{
+  "scope": "Independent source identity and real-water mask audit only; final solved local wetness is a separate check.",
+  "original_file": "work/carleton-review/local-stage-active-set/public-package/inputs/bathymetry-grid-50m.npz",
+  "candidate_file": "work/carleton-continuity-review/expanded-model/source-50m.npz",
+  "original_file_sha256": "d0c2b6ae3ec44203cda5ff2318b8399566abce300795c1b7348a8501c88731b9",
+  "candidate_file_sha256": "ba5120a30dbbb397327de31ec18176dc1798a746e48e962d0374b8a4fcf31b47",
+  "arrays": {
+    "x": {
+      "shape_equal": true,
+      "dtype_equal": true,
+      "byte_identical": true,
+      "original_array_sha256": "6b4c6c2a7c392b99c2f456c5c9b40721b957164cb2807919f3c4f6e066d90d90",
+      "candidate_array_sha256": "6b4c6c2a7c392b99c2f456c5c9b40721b957164cb2807919f3c4f6e066d90d90"
+    },
+    "y": {
+      "shape_equal": true,
+      "dtype_equal": true,
+      "byte_identical": true,
+      "original_array_sha256": "397d9d5228b08935beec2e17fcae78778adaff07ff23e9223d321b56dbf551e5",
+      "candidate_array_sha256": "397d9d5228b08935beec2e17fcae78778adaff07ff23e9223d321b56dbf551e5"
+    },
+    "bed_igld85_estimated": {
+      "shape_equal": true,
+      "dtype_equal": true,
+      "byte_identical": true,
+      "original_array_sha256": "89af99815e33d20001fefbaa60bf0a348b2d0b6374d33cf5e6c47b0c04196d32",
+      "candidate_array_sha256": "89af99815e33d20001fefbaa60bf0a348b2d0b6374d33cf5e6c47b0c04196d32"
+    },
+    "wet_geometry": {
+      "shape_equal": true,
+      "dtype_equal": true,
+      "byte_identical": true,
+      "original_array_sha256": "a3518470602d93dfb9db17950088e12c0b492016ee2272500a4a8c1930479c8e",
+      "candidate_array_sha256": "a3518470602d93dfb9db17950088e12c0b492016ee2272500a4a8c1930479c8e"
+    },
+    "measured_bathy": {
+      "shape_equal": true,
+      "dtype_equal": true,
+      "byte_identical": true,
+      "original_array_sha256": "963e83f19646aab57e9588d03a4b6034e5b5466118a19c2e3032590fbbd5b4e8",
+      "candidate_array_sha256": "963e83f19646aab57e9588d03a4b6034e5b5466118a19c2e3032590fbbd5b4e8"
+    },
+    "mean_stage_igld85_estimated": {
+      "shape_equal": true,
+      "dtype_equal": true,
+      "byte_identical": true,
+      "original_array_sha256": "f0abfbe5b96e53c4b958d9e85a9bb9ec377c6e19dc8875f4ea4682bd10e2949c",
+      "candidate_array_sha256": "f0abfbe5b96e53c4b958d9e85a9bb9ec377c6e19dc8875f4ea4682bd10e2949c"
+    },
+    "bathy_source_product": {
+      "shape_equal": true,
+      "dtype_equal": true,
+      "byte_identical": true,
+      "original_array_sha256": "9d1c446dc32a3b2247e73d92de069a7e72cbb78fd47888d60fdb4bfbd28a1b9f",
+      "candidate_array_sha256": "9d1c446dc32a3b2247e73d92de069a7e72cbb78fd47888d60fdb4bfbd28a1b9f"
+    },
+    "source_subsample_count": {
+      "shape_equal": true,
+      "dtype_equal": true,
+      "byte_identical": true,
+      "original_array_sha256": "e48a3737e3fb64ccf9f4f16e5e687c557e9556ec6833b3e2ba0b17331cc95010",
+      "candidate_array_sha256": "e48a3737e3fb64ccf9f4f16e5e687c557e9556ec6833b3e2ba0b17331cc95010"
+    },
+    "proposed_active_corridor": {
+      "shape_equal": true,
+      "dtype_equal": true,
+      "byte_identical": false,
+      "original_array_sha256": "061b81fa0bc310fb0c36b2d0aebec4eeab292e292c662081bfa879ac75af7d87",
+      "candidate_array_sha256": "843fdc60ba550d0b9fbfd20f6feb3fd54f92afa38cf9792eb651d54a868f38f3"
+    }
+  },
+  "all_non_corridor_arrays_byte_identical": true,
+  "candidate_corridor_is_subset_of_original_wet_geometry": true,
+  "removed_original_corridor_cells": 0,
+  "added_corridor_cells": 6076,
+  "added_numeric_source_bed_cells": 6010,
+  "western_gap_component_id": 12,
+  "western_gap_cells": 274,
+  "western_gap_inside_candidate_geometric_corridor": 274,
+  "western_gap_numeric_original_bed_cells": 273,
+  "important_limit": "Geometric water and numeric source bed do not alone establish local wetness or a reliable speed; mean-stage active-set hydraulic solve must decide wetness, and its simplified physics remain unvalidated."
+}

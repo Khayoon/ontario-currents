@@ -73,7 +73,10 @@ function renderer(W,H,cfg=globalConfig){
       const [lon,lat]=invert((i+.5)*cell,(j+.5)*cell),ix=Math.round((lon-r.west)/r.dx),iy=Math.round((lat-r.south)/r.dy);
       if(ix<0||iy<0||ix>=r.width||iy>=r.height)continue;
       const z=iy*r.width+ix;if(r.u[z]===null||r.v[z]===null||!Number.isFinite(r.u[z])||!Number.isFinite(r.v[z]))continue;
-      const q=j*nx+i;if(P[q]&&(r.fallbackOnly||cfg.sourcePriority!=='last'))continue;U[q]=r.u[z];V[q]=r.v[z];P[q]=ordinal+2;if(r.t&&r.t[z]!==null)T[q]=r.t[z];
+      // A regional hydraulic estimate needs one coherent field through its
+      // domain. An explicit opt-in can prefer it over overlapping lake-mesh
+      // triangles; fallback remains the default for every existing edition.
+      const q=j*nx+i;if(P[q]&&((r.fallbackOnly&&cfg.riverSourcePriority!=='model')||cfg.sourcePriority!=='last'))continue;U[q]=r.u[z];V[q]=r.v[z];P[q]=ordinal+2;if(r.t&&r.t[z]!==null)T[q]=r.t[z];
     }
   });
   // The field itself provides wet cells when no polygon exists (for example the estuary).

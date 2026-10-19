@@ -1,0 +1,3845 @@
+{
+  "video": "outputs/lake-ontario-continuity.mp4",
+  "video_sha256": "cb69e2e24851e1f195a3b062a19c5c69fa3f3c44fe793c9301a6405a60a112c5",
+  "display_field_sha256": "653d31ac284a724bd83d000064f19d375d5e6a8dd14a320fb48a4f0eef3904bb",
+  "background_sha256": "20e236b5602be3ae749729fcac1493f71a03fadfe8029388e9ae3be1448e8e34",
+  "geographic_bounds": [
+    -76.62,
+    44.04,
+    -76.15,
+    44.27
+  ],
+  "pixel_crop": [
+    1931,
+    384,
+    2188,
+    559
+  ],
+  "frame_indices": [
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    160,
+    170,
+    180,
+    190,
+    200,
+    210,
+    220,
+    230,
+    240,
+    250,
+    260,
+    270,
+    280,
+    290,
+    300,
+    310,
+    320,
+    330,
+    340,
+    350,
+    360,
+    370,
+    380,
+    390,
+    400,
+    410,
+    420,
+    430,
+    440,
+    450,
+    460,
+    470,
+    480,
+    490,
+    500,
+    510,
+    520,
+    530,
+    540,
+    550,
+    560,
+    570,
+    580,
+    590
+  ],
+  "sampled_frames": 60,
+  "ink_definition": "Maximum positive RGB channel increase above an exact zero-step production background exceeds12levels; threshold is descriptive, not a velocity or temporal motion test.",
+  "motion_evidence": "Independent candidate-trace-result.json measures nonzero actual integration travel; frame differences cannot distinguish travel from reseeding/flicker.",
+  "regions": [
+    {
+      "name": "entire upstream approach",
+      "bounds": [
+        -76.62,
+        44.04,
+        -76.39,
+        44.19
+      ],
+      "water_pixels": 11000,
+      "pixels_with_excess12_at_least_once": 10862,
+      "fraction_excess12_at_least_once": 0.9874545454545455,
+      "median_frame_ink_fraction": 0.9600454545454545,
+      "minimum_frame_ink_fraction": 0.949,
+      "median_excess_rgb": 85.0,
+      "provider_counts": {
+        "0": 152,
+        "1": 10815,
+        "2": 33
+      },
+      "native_wet_fraction": 0.0032727272727272726
+    },
+    {
+      "name": "old inlet dark patch",
+      "bounds": [
+        -76.361,
+        44.126,
+        -76.345,
+        44.134
+      ],
+      "water_pixels": 63,
+      "pixels_with_excess12_at_least_once": 63,
+      "fraction_excess12_at_least_once": 1.0,
+      "median_frame_ink_fraction": 1.0,
+      "minimum_frame_ink_fraction": 1.0,
+      "median_excess_rgb": 129.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 63
+      },
+      "native_wet_fraction": 1.0
+    },
+    {
+      "name": "restored western patch",
+      "bounds": [
+        -76.395,
+        44.13,
+        -76.36,
+        44.15
+      ],
+      "water_pixels": 146,
+      "pixels_with_excess12_at_least_once": 141,
+      "fraction_excess12_at_least_once": 0.9657534246575342,
+      "median_frame_ink_fraction": 0.8493150684931506,
+      "minimum_frame_ink_fraction": 0.821917808219178,
+      "median_excess_rgb": 59.0,
+      "provider_counts": {
+        "0": 12,
+        "1": 0,
+        "2": 134
+      },
+      "native_wet_fraction": 0.9246575342465754
+    },
+    {
+      "name": "Bayfield interior",
+      "bounds": [
+        -76.365,
+        44.189,
+        -76.336,
+        44.2
+      ],
+      "water_pixels": 144,
+      "pixels_with_excess12_at_least_once": 144,
+      "fraction_excess12_at_least_once": 1.0,
+      "median_frame_ink_fraction": 0.9722222222222222,
+      "minimum_frame_ink_fraction": 0.9375,
+      "median_excess_rgb": 87.0,
+      "provider_counts": {
+        "0": 9,
+        "1": 0,
+        "2": 135
+      },
+      "native_wet_fraction": 0.9444444444444444
+    },
+    {
+      "name": "Bayfield south mouth",
+      "bounds": [
+        -76.344,
+        44.181,
+        -76.321,
+        44.194
+      ],
+      "water_pixels": 108,
+      "pixels_with_excess12_at_least_once": 107,
+      "fraction_excess12_at_least_once": 0.9907407407407407,
+      "median_frame_ink_fraction": 0.9537037037037037,
+      "minimum_frame_ink_fraction": 0.9166666666666666,
+      "median_excess_rgb": 113.0,
+      "provider_counts": {
+        "0": 14,
+        "1": 0,
+        "2": 94
+      },
+      "native_wet_fraction": 0.8518518518518519
+    },
+    {
+      "name": "Bayfield north mouth",
+      "bounds": [
+        -76.345,
+        44.194,
+        -76.315,
+        44.209
+      ],
+      "water_pixels": 130,
+      "pixels_with_excess12_at_least_once": 129,
+      "fraction_excess12_at_least_once": 0.9923076923076923,
+      "median_frame_ink_fraction": 0.9423076923076923,
+      "minimum_frame_ink_fraction": 0.9230769230769231,
+      "median_excess_rgb": 120.0,
+      "provider_counts": {
+        "0": 12,
+        "1": 0,
+        "2": 118
+      },
+      "native_wet_fraction": 0.9230769230769231
+    },
+    {
+      "name": "main west/north Carleton",
+      "bounds": [
+        -76.335,
+        44.195,
+        -76.245,
+        44.235
+      ],
+      "water_pixels": 670,
+      "pixels_with_excess12_at_least_once": 666,
+      "fraction_excess12_at_least_once": 0.9940298507462687,
+      "median_frame_ink_fraction": 0.9388059701492537,
+      "minimum_frame_ink_fraction": 0.9283582089552239,
+      "median_excess_rgb": 132.0,
+      "provider_counts": {
+        "0": 32,
+        "1": 0,
+        "2": 638
+      },
+      "native_wet_fraction": 0.9611940298507463
+    },
+    {
+      "name": "Carleton east US channel",
+      "bounds": [
+        -76.28,
+        44.165,
+        -76.225,
+        44.2
+      ],
+      "water_pixels": 606,
+      "pixels_with_excess12_at_least_once": 603,
+      "fraction_excess12_at_least_once": 0.995049504950495,
+      "median_frame_ink_fraction": 0.9735973597359736,
+      "minimum_frame_ink_fraction": 0.9653465346534653,
+      "median_excess_rgb": 140.0,
+      "provider_counts": {
+        "0": 7,
+        "1": 0,
+        "2": 599
+      },
+      "native_wet_fraction": 0.9933993399339934
+    },
+    {
+      "name": "Carleton south channel",
+      "bounds": [
+        -76.35,
+        44.14,
+        -76.24,
+        44.18
+      ],
+      "water_pixels": 1067,
+      "pixels_with_excess12_at_least_once": 1066,
+      "fraction_excess12_at_least_once": 0.9990627928772259,
+      "median_frame_ink_fraction": 0.9775070290534208,
+      "minimum_frame_ink_fraction": 0.9690721649484536,
+      "median_excess_rgb": 126.0,
+      "provider_counts": {
+        "0": 10,
+        "1": 0,
+        "2": 1057
+      },
+      "native_wet_fraction": 0.9971883786316776
+    }
+  ],
+  "components": [
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 34,
+      "centroid_lonlat": [
+        -76.47115294930124,
+        44.25872503542692
+      ],
+      "bounds": [
+        -76.47590400552484,
+        44.25242210059386,
+        -76.46489019337015,
+        44.26556878110348
+      ],
+      "pixel_bounds": [
+        2009,
+        387,
+        2016,
+        398
+      ],
+      "maximum_land_clearance_pixels": 3.1622776601683795,
+      "provider_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 34
+      },
+      "native_wet_fraction": 1.0,
+      "export_valid_fraction": 1.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_excess_rgb": 6
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 30,
+      "centroid_lonlat": [
+        -76.47229392265191,
+        44.24273545930517
+      ],
+      "bounds": [
+        -76.47773964088395,
+        44.239272480592064,
+        -76.46672582872927,
+        44.24716260533024
+      ],
+      "pixel_bounds": [
+        2008,
+        401,
+        2015,
+        408
+      ],
+      "maximum_land_clearance_pixels": 3.605551275463989,
+      "provider_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 30
+      },
+      "native_wet_fraction": 1.0,
+      "export_valid_fraction": 1.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_excess_rgb": 5
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 27,
+      "centroid_lonlat": [
+        -76.5122087937385,
+        44.16514132059511
+      ],
+      "bounds": [
+        -76.51995925414363,
+        44.1616298911641,
+        -76.50710980662983,
+        44.16953042123165
+      ],
+      "pixel_bounds": [
+        1985,
+        460,
+        1993,
+        467
+      ],
+      "maximum_land_clearance_pixels": 3.1622776601683795,
+      "provider_counts": {
+        "0": 27,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 13
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 14,
+      "centroid_lonlat": [
+        -76.47747740726122,
+        44.09942330361726
+      ],
+      "bounds": [
+        -76.48141091160218,
+        44.09706929020948,
+        -76.47223273480661,
+        44.10234218854483
+      ],
+      "pixel_bounds": [
+        2006,
+        511,
+        2012,
+        516
+      ],
+      "maximum_land_clearance_pixels": 7.280109889280518,
+      "provider_counts": {
+        "0": 0,
+        "1": 14,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0013532191514968872,
+        0.002248128759674728,
+        0.010432719253003597
+      ],
+      "max_excess_rgb": 80
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 11,
+      "centroid_lonlat": [
+        -76.47156523103966,
+        44.093353987728364
+      ],
+      "bounds": [
+        -76.47406837016572,
+        44.09047750600821,
+        -76.46856146408838,
+        44.09575099214972
+      ],
+      "pixel_bounds": [
+        2010,
+        516,
+        2014,
+        521
+      ],
+      "maximum_land_clearance_pixels": 13.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 11,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0012197528267279267,
+        0.003068887162953615,
+        0.003142949193716049
+      ],
+      "max_excess_rgb": 14
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 10,
+      "centroid_lonlat": [
+        -76.61834930939226,
+        44.23124973237255
+      ],
+      "bounds": [
+        -76.6190835635359,
+        44.227435309354014,
+        -76.61724792817678,
+        44.23401180954148
+      ],
+      "pixel_bounds": [
+        1931,
+        411,
+        1933,
+        417
+      ],
+      "maximum_land_clearance_pixels": 3.0,
+      "provider_counts": {
+        "0": 10,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 6
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 10,
+      "centroid_lonlat": [
+        -76.42854461325967,
+        44.0964101235454
+      ],
+      "bounds": [
+        -76.43184875690608,
+        44.09443266469966,
+        -76.42450621546959,
+        44.099705798157984
+      ],
+      "pixel_bounds": [
+        2033,
+        513,
+        2038,
+        518
+      ],
+      "maximum_land_clearance_pixels": 7.0710678118654755,
+      "provider_counts": {
+        "0": 0,
+        "1": 10,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0010330895893275738,
+        0.006799840833991766,
+        0.008857334963977337
+      ],
+      "max_excess_rgb": 47
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 6,
+      "centroid_lonlat": [
+        -76.57961740331491,
+        44.112447249547586
+      ],
+      "bounds": [
+        -76.58053522099446,
+        44.11025065433203,
+        -76.57686395027622,
+        44.11420449045104
+      ],
+      "pixel_bounds": [
+        1952,
+        502,
+        1955,
+        506
+      ],
+      "maximum_land_clearance_pixels": 33.54101966249684,
+      "provider_counts": {
+        "0": 0,
+        "1": 6,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0014310086844488978,
+        0.0015888133784756064,
+        0.0015888133784756064
+      ],
+      "max_excess_rgb": 33
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 6,
+      "centroid_lonlat": [
+        -76.42450621546959,
+        44.10036490310231
+      ],
+      "bounds": [
+        -76.42817748618782,
+        44.099705798157984,
+        -76.42083494475136,
+        44.10102400804664
+      ],
+      "pixel_bounds": [
+        2035,
+        512,
+        2040,
+        514
+      ],
+      "maximum_land_clearance_pixels": 5.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 6,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0027102783787995577,
+        0.007697402033954859,
+        0.008282513357698917
+      ],
+      "max_excess_rgb": 90
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 5,
+      "centroid_lonlat": [
+        -76.4876520718232,
+        44.09996943425764
+      ],
+      "bounds": [
+        -76.48875345303867,
+        44.09838755887892,
+        -76.48691781767955,
+        44.10102400804664
+      ],
+      "pixel_bounds": [
+        2002,
+        512,
+        2004,
+        515
+      ],
+      "maximum_land_clearance_pixels": 5.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 5,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.009126941673457623,
+        0.010809917002916336,
+        0.010809917002916336
+      ],
+      "max_excess_rgb": 26
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 4,
+      "centroid_lonlat": [
+        -76.53510324585633,
+        44.15208200282681
+      ],
+      "bounds": [
+        -76.53647997237567,
+        44.151094205104336,
+        -76.53280870165744,
+        44.152411268734305
+      ],
+      "pixel_bounds": [
+        1976,
+        473,
+        1979,
+        475
+      ],
+      "maximum_land_clearance_pixels": 3.605551275463989,
+      "provider_counts": {
+        "0": 0,
+        "1": 4,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.008506339974701405,
+        0.01661679381504655,
+        0.01970873959362507
+      ],
+      "max_excess_rgb": 16
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.59583218232044,
+        44.213402982975005
+      ],
+      "bounds": [
+        -76.59705593922652,
+        44.21296442225475,
+        -76.59522030386739,
+        44.214280104415515
+      ],
+      "pixel_bounds": [
+        1943,
+        426,
+        1945,
+        428
+      ],
+      "maximum_land_clearance_pixels": 2.8284271247461903,
+      "provider_counts": {
+        "0": 0,
+        "1": 3,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.02760937437415123,
+        0.07875188440084457,
+        0.07931023091077805
+      ],
+      "max_excess_rgb": 10
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.51689986187843,
+        44.1475818884644
+      ],
+      "bounds": [
+        -76.51812361878451,
+        44.147142837862425,
+        -76.5162879834254,
+        44.14845998966835
+      ],
+      "pixel_bounds": [
+        1986,
+        476,
+        1988,
+        478
+      ],
+      "maximum_land_clearance_pixels": 2.8284271247461903,
+      "provider_counts": {
+        "0": 0,
+        "1": 3,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.005290646106004715,
+        0.007952067069709301,
+        0.011648774147033691
+      ],
+      "max_excess_rgb": 16
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.46489019337015,
+        44.24782006428432
+      ],
+      "bounds": [
+        -76.46489019337015,
+        44.24716260533024,
+        -76.46489019337015,
+        44.2484775232384
+      ],
+      "pixel_bounds": [
+        2015,
+        400,
+        2016,
+        402
+      ],
+      "maximum_land_clearance_pixels": 2.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 2
+      },
+      "native_wet_fraction": 1.0,
+      "export_valid_fraction": 1.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_excess_rgb": 4
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.58512430939226,
+        44.21559575718241
+      ],
+      "bounds": [
+        -76.5860421270718,
+        44.21559575718241,
+        -76.58420649171269,
+        44.21559575718241
+      ],
+      "pixel_bounds": [
+        1949,
+        425,
+        1951,
+        426
+      ],
+      "maximum_land_clearance_pixels": 2.23606797749979,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.039709776639938354,
+        0.039709776639938354,
+        0.039709776639938354
+      ],
+      "max_excess_rgb": 7
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.5539185082873,
+        44.21033296975173
+      ],
+      "bounds": [
+        -76.55483632596685,
+        44.21033296975173,
+        -76.55300069060773,
+        44.21033296975173
+      ],
+      "pixel_bounds": [
+        1966,
+        429,
+        1968,
+        430
+      ],
+      "maximum_land_clearance_pixels": 2.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 7
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.50435635359116,
+        44.17084707336911
+      ],
+      "bounds": [
+        -76.50527417127071,
+        44.17084707336911,
+        -76.5034385359116,
+        44.17084707336911
+      ],
+      "pixel_bounds": [
+        1993,
+        459,
+        1995,
+        460
+      ],
+      "maximum_land_clearance_pixels": 2.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 8
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.46580801104972,
+        44.11156862909584
+      ],
+      "bounds": [
+        -76.46672582872927,
+        44.11156862909584,
+        -76.46489019337015,
+        44.11156862909584
+      ],
+      "pixel_bounds": [
+        2014,
+        504,
+        2016,
+        505
+      ],
+      "maximum_land_clearance_pixels": 4.123105625617661,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.015433153137564659,
+        0.01576428208500147,
+        0.016095411032438278
+      ],
+      "max_excess_rgb": 18
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.46856146408838,
+        44.10959165225475
+      ],
+      "bounds": [
+        -76.46856146408838,
+        44.108932650177465,
+        -76.46856146408838,
+        44.11025065433203
+      ],
+      "pixel_bounds": [
+        2013,
+        505,
+        2014,
+        507
+      ],
+      "maximum_land_clearance_pixels": 4.123105625617661,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.015433153137564659,
+        0.015433153137564659,
+        0.015433153137564659
+      ],
+      "max_excess_rgb": 19
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.57686395027622,
+        44.10300126409868
+      ],
+      "bounds": [
+        -76.57686395027622,
+        44.10234218854483,
+        -76.57686395027622,
+        44.10366033965253
+      ],
+      "pixel_bounds": [
+        1954,
+        510,
+        1955,
+        512
+      ],
+      "maximum_land_clearance_pixels": 38.27531841800928,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0011664989870041609,
+        0.0011664989870041609,
+        0.0011664989870041609
+      ],
+      "max_excess_rgb": 13
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.42175276243091,
+        44.10366033965253
+      ],
+      "bounds": [
+        -76.42267058011048,
+        44.10366033965253,
+        -76.42083494475136,
+        44.10366033965253
+      ],
+      "pixel_bounds": [
+        2038,
+        510,
+        2040,
+        511
+      ],
+      "maximum_land_clearance_pixels": 2.8284271247461903,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.00249731563962996,
+        0.005238507874310017,
+        0.007979700341820717
+      ],
+      "max_excess_rgb": 11
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.46672582872927,
+        44.08586281621528
+      ],
+      "bounds": [
+        -76.46672582872927,
+        44.08520354962485,
+        -76.46672582872927,
+        44.08652208280571
+      ],
+      "pixel_bounds": [
+        2014,
+        523,
+        2015,
+        525
+      ],
+      "maximum_land_clearance_pixels": 15.264337522473747,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.002108478220179677,
+        0.002108478220179677,
+        0.002108478220179677
+      ],
+      "max_excess_rgb": 20
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.15007872928174,
+        44.062783988924444
+      ],
+      "bounds": [
+        -76.15099654696131,
+        44.062783988924444,
+        -76.1491609116022,
+        44.062783988924444
+      ],
+      "pixel_bounds": [
+        2186,
+        541,
+        2188,
+        542
+      ],
+      "maximum_land_clearance_pixels": 3.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.00843142718076706,
+        0.008642722386866808,
+        0.008854017592966557
+      ],
+      "max_excess_rgb": 14
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.5383156077348,
+        44.04761299566773
+      ],
+      "bounds": [
+        -76.5383156077348,
+        44.04695330293202,
+        -76.5383156077348,
+        44.048272688403436
+      ],
+      "pixel_bounds": [
+        1975,
+        552,
+        1976,
+        554
+      ],
+      "maximum_land_clearance_pixels": 51.10772935672255,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0023009234573692083,
+        0.003707042313180864,
+        0.005113161168992519
+      ],
+      "max_excess_rgb": 20
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.32079281767955,
+        44.04431444382324
+      ],
+      "bounds": [
+        -76.32171063535911,
+        44.04431444382324,
+        -76.31987499999998,
+        44.04431444382324
+      ],
+      "pixel_bounds": [
+        2093,
+        555,
+        2095,
+        556
+      ],
+      "maximum_land_clearance_pixels": 2.23606797749979,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.004051805008202791,
+        0.005426428513601422,
+        0.006801052019000053
+      ],
+      "max_excess_rgb": 10
+    },
+    {
+      "kind": "mostly_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.21616160220995,
+        44.04431444382324
+      ],
+      "bounds": [
+        -76.2170794198895,
+        44.04431444382324,
+        -76.21524378453039,
+        44.04431444382324
+      ],
+      "pixel_bounds": [
+        2150,
+        555,
+        2152,
+        556
+      ],
+      "maximum_land_clearance_pixels": 10.770329614269007,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0035865120589733124,
+        0.00553417787887156,
+        0.007481843698769808
+      ],
+      "max_excess_rgb": 9
+    },
+    {
+      "kind": "no_production",
+      "pixels": 95,
+      "centroid_lonlat": [
+        -76.50625961762141,
+        44.16887878203554
+      ],
+      "bounds": [
+        -76.52363052486186,
+        44.160313033279415,
+        -76.48691781767955,
+        44.17874636894751
+      ],
+      "pixel_bounds": [
+        1983,
+        453,
+        2004,
+        468
+      ],
+      "maximum_land_clearance_pixels": 3.1622776601683795,
+      "provider_counts": {
+        "0": 95,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 41
+    },
+    {
+      "kind": "no_production",
+      "pixels": 53,
+      "centroid_lonlat": [
+        -76.61302250338787,
+        44.23416046573977
+      ],
+      "bounds": [
+        -76.6190835635359,
+        44.2208580743105,
+        -76.59705593922652,
+        44.241902639750094
+      ],
+      "pixel_bounds": [
+        1931,
+        405,
+        1944,
+        422
+      ],
+      "maximum_land_clearance_pixels": 3.0,
+      "provider_counts": {
+        "0": 53,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 16
+    },
+    {
+      "kind": "no_production",
+      "pixels": 29,
+      "centroid_lonlat": [
+        -76.3217739331301,
+        44.07606387709397
+      ],
+      "bounds": [
+        -76.33088881215468,
+        44.0706977449087,
+        -76.31253245856351,
+        44.08124777374278
+      ],
+      "pixel_bounds": [
+        2088,
+        527,
+        2099,
+        536
+      ],
+      "maximum_land_clearance_pixels": 1.4142135623730951,
+      "provider_counts": {
+        "0": 29,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 16
+    },
+    {
+      "kind": "no_production",
+      "pixels": 19,
+      "centroid_lonlat": [
+        -76.20422997237567,
+        44.07465417509857
+      ],
+      "bounds": [
+        -76.20973687845301,
+        44.0706977449087,
+        -76.19872306629833,
+        44.07861044287227
+      ],
+      "pixel_bounds": [
+        2154,
+        529,
+        2161,
+        536
+      ],
+      "maximum_land_clearance_pixels": 1.4142135623730951,
+      "provider_counts": {
+        "0": 19,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 14
+    },
+    {
+      "kind": "no_production",
+      "pixels": 10,
+      "centroid_lonlat": [
+        -76.36080966850827,
+        44.098914845773436
+      ],
+      "bounds": [
+        -76.36393024861877,
+        44.09706929020948,
+        -76.35842334254141,
+        44.10102400804664
+      ],
+      "pixel_bounds": [
+        2070,
+        512,
+        2074,
+        516
+      ],
+      "maximum_land_clearance_pixels": 2.0,
+      "provider_counts": {
+        "0": 10,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 24
+    },
+    {
+      "kind": "no_production",
+      "pixels": 8,
+      "centroid_lonlat": [
+        -76.55391850828728,
+        44.21099084022594
+      ],
+      "bounds": [
+        -76.55667196132596,
+        44.21033296975173,
+        -76.55116505524862,
+        44.211648710700146
+      ],
+      "pixel_bounds": [
+        1965,
+        428,
+        1969,
+        430
+      ],
+      "maximum_land_clearance_pixels": 2.0,
+      "provider_counts": {
+        "0": 8,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 20
+    },
+    {
+      "kind": "no_production",
+      "pixels": 7,
+      "centroid_lonlat": [
+        -76.26847720994475,
+        44.051665255354486
+      ],
+      "bounds": [
+        -76.27214848066298,
+        44.05091137118012,
+        -76.26480593922649,
+        44.05223066848527
+      ],
+      "pixel_bounds": [
+        2120,
+        549,
+        2125,
+        551
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 7,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 15
+    },
+    {
+      "kind": "no_production",
+      "pixels": 5,
+      "centroid_lonlat": [
+        -76.33749709944752,
+        44.18875061491738
+      ],
+      "bounds": [
+        -76.34006698895027,
+        44.187960876413655,
+        -76.33639571823204,
+        44.19059332829503
+      ],
+      "pixel_bounds": [
+        2083,
+        444,
+        2086,
+        447
+      ],
+      "maximum_land_clearance_pixels": 2.23606797749979,
+      "provider_counts": {
+        "0": 5,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 74
+    },
+    {
+      "kind": "no_production",
+      "pixels": 4,
+      "centroid_lonlat": [
+        -76.49793162983424,
+        44.15438680539512
+      ],
+      "bounds": [
+        -76.49976726519336,
+        44.15372830297222,
+        -76.49609599447513,
+        44.15504530781803
+      ],
+      "pixel_bounds": [
+        1996,
+        471,
+        1999,
+        473
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 4,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 18
+    },
+    {
+      "kind": "no_production",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.54382251381215,
+        44.21954253911948
+      ],
+      "bounds": [
+        -76.54565814917126,
+        44.21954253911947,
+        -76.54198687845303,
+        44.21954253911947
+      ],
+      "pixel_bounds": [
+        1971,
+        422,
+        1974,
+        423
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 3,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 17
+    },
+    {
+      "kind": "no_production",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.35169267955798,
+        44.20287654589705
+      ],
+      "bounds": [
+        -76.35291643646407,
+        44.20243790679357,
+        -76.35108080110496,
+        44.20375382410399
+      ],
+      "pixel_bounds": [
+        2076,
+        434,
+        2078,
+        436
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 3,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 19
+    },
+    {
+      "kind": "no_production",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.38595787292817,
+        44.194541775870256
+      ],
+      "bounds": [
+        -76.38595787292817,
+        44.19322566260362,
+        -76.38595787292817,
+        44.19585787933912
+      ],
+      "pixel_bounds": [
+        2058,
+        440,
+        2059,
+        443
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 3,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 16
+    },
+    {
+      "kind": "no_production",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.35719958563534,
+        44.181818028198755
+      ],
+      "bounds": [
+        -76.35842334254141,
+        44.18137923233125,
+        -76.3565877071823,
+        44.18269561993374
+      ],
+      "pixel_bounds": [
+        2073,
+        450,
+        2075,
+        452
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 3,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 55
+    },
+    {
+      "kind": "no_production",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.49242472375688,
+        44.157679229333176
+      ],
+      "bounds": [
+        -76.49426035911601,
+        44.15767922933317,
+        -76.49058908839778,
+        44.15767922933317
+      ],
+      "pixel_bounds": [
+        1999,
+        469,
+        2002,
+        470
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 3,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 21
+    },
+    {
+      "kind": "no_production",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.37983908839779,
+        44.13572628775543
+      ],
+      "bounds": [
+        -76.38045096685083,
+        44.13528714897823,
+        -76.3786153314917,
+        44.13660456530984
+      ],
+      "pixel_bounds": [
+        2061,
+        485,
+        2063,
+        487
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 3,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 13
+    },
+    {
+      "kind": "no_production",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.34557389502761,
+        44.08784057679991
+      ],
+      "bounds": [
+        -76.34557389502761,
+        44.08652208280571,
+        -76.34557389502761,
+        44.08915906099744
+      ],
+      "pixel_bounds": [
+        2080,
+        521,
+        2081,
+        524
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 3,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 66
+    },
+    {
+      "kind": "no_production",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.3832044198895,
+        44.26293968016262
+      ],
+      "bounds": [
+        -76.38412223756906,
+        44.26293968016262,
+        -76.38228660220994,
+        44.26293968016262
+      ],
+      "pixel_bounds": [
+        2059,
+        389,
+        2061,
+        390
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 16
+    },
+    {
+      "kind": "no_production",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.58512430939226,
+        44.218226974534424
+      ],
+      "bounds": [
+        -76.5860421270718,
+        44.218226974534424,
+        -76.58420649171269,
+        44.218226974534424
+      ],
+      "pixel_bounds": [
+        1949,
+        423,
+        1951,
+        424
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 20
+    },
+    {
+      "kind": "no_production",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.56860359116021,
+        44.211648710700146
+      ],
+      "bounds": [
+        -76.56952140883976,
+        44.211648710700146,
+        -76.56768577348065,
+        44.211648710700146
+      ],
+      "pixel_bounds": [
+        1958,
+        428,
+        1960,
+        429
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 10
+    },
+    {
+      "kind": "no_production",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.39421823204418,
+        44.20112196008961
+      ],
+      "bounds": [
+        -76.39513604972375,
+        44.20112196008961,
+        -76.39330041436463,
+        44.20112196008961
+      ],
+      "pixel_bounds": [
+        2053,
+        436,
+        2055,
+        437
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "no_production",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.37310842541434,
+        44.199147981246675
+      ],
+      "bounds": [
+        -76.37310842541434,
+        44.198489978501215,
+        -76.37310842541434,
+        44.199805983992135
+      ],
+      "pixel_bounds": [
+        2065,
+        437,
+        2066,
+        439
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "no_production",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.35934116022096,
+        44.18401197814327
+      ],
+      "bounds": [
+        -76.36025897790053,
+        44.18401197814327,
+        -76.35842334254141,
+        44.18401197814327
+      ],
+      "pixel_bounds": [
+        2072,
+        449,
+        2074,
+        450
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "no_production",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.34649171270718,
+        44.18137923233125
+      ],
+      "bounds": [
+        -76.34740953038673,
+        44.18137923233125,
+        -76.34557389502761,
+        44.18137923233125
+      ],
+      "pixel_bounds": [
+        2079,
+        451,
+        2081,
+        452
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 82
+    },
+    {
+      "kind": "no_production",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.46030110497236,
+        44.14582565666459
+      ],
+      "bounds": [
+        -76.46121892265192,
+        44.14582565666459,
+        -76.45938328729281,
+        44.14582565666459
+      ],
+      "pixel_bounds": [
+        2017,
+        478,
+        2019,
+        479
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 14
+    },
+    {
+      "kind": "no_production",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.35934116022096,
+        44.093114307859366
+      ],
+      "bounds": [
+        -76.36025897790053,
+        44.093114307859366,
+        -76.35842334254141,
+        44.093114307859366
+      ],
+      "pixel_bounds": [
+        2072,
+        518,
+        2074,
+        519
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 35
+    },
+    {
+      "kind": "no_production",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.24553176795578,
+        44.0641030217284
+      ],
+      "bounds": [
+        -76.24644958563535,
+        44.0641030217284,
+        -76.24461395027623,
+        44.0641030217284
+      ],
+      "pixel_bounds": [
+        2134,
+        540,
+        2136,
+        541
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 7
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 153,
+      "centroid_lonlat": [
+        -76.47086500649982,
+        44.25230115075806
+      ],
+      "bounds": [
+        -76.47957527624307,
+        44.23795735692118,
+        -76.45938328729281,
+        44.26951221205017
+      ],
+      "pixel_bounds": [
+        2007,
+        384,
+        2019,
+        409
+      ],
+      "maximum_land_clearance_pixels": 3.605551275463989,
+      "provider_counts": {
+        "0": 7,
+        "1": 0,
+        "2": 146
+      },
+      "native_wet_fraction": 1.0,
+      "export_valid_fraction": 1.0,
+      "production_valid_fraction": 0.9452614379084967,
+      "physical_speed_percentiles_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 77,
+      "centroid_lonlat": [
+        -76.50648998170338,
+        44.16855554786065
+      ],
+      "bounds": [
+        -76.52179488950274,
+        44.160313033279415,
+        -76.49058908839778,
+        44.17742989316635
+      ],
+      "pixel_bounds": [
+        1984,
+        454,
+        2002,
+        468
+      ],
+      "maximum_land_clearance_pixels": 3.1622776601683795,
+      "provider_counts": {
+        "0": 77,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 48,
+      "centroid_lonlat": [
+        -76.61304126381215,
+        44.234641836405665
+      ],
+      "bounds": [
+        -76.6190835635359,
+        44.22348905651034,
+        -76.59889157458564,
+        44.241902639750094
+      ],
+      "pixel_bounds": [
+        1931,
+        405,
+        1943,
+        420
+      ],
+      "maximum_land_clearance_pixels": 3.0,
+      "provider_counts": {
+        "0": 48,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 18,
+      "centroid_lonlat": [
+        -76.20453591160218,
+        44.07450764408448
+      ],
+      "bounds": [
+        -76.20973687845301,
+        44.0706977449087,
+        -76.20055870165744,
+        44.07861044287227
+      ],
+      "pixel_bounds": [
+        2154,
+        529,
+        2160,
+        536
+      ],
+      "maximum_land_clearance_pixels": 1.4142135623730951,
+      "provider_counts": {
+        "0": 18,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 11
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 14,
+      "centroid_lonlat": [
+        -76.31764601420676,
+        44.07795107551675
+      ],
+      "bounds": [
+        -76.32354627071823,
+        44.07597299444286,
+        -76.31253245856351,
+        44.07992912300241
+      ],
+      "pixel_bounds": [
+        2092,
+        528,
+        2099,
+        532
+      ],
+      "maximum_land_clearance_pixels": 1.4142135623730951,
+      "provider_counts": {
+        "0": 14,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 10,
+      "centroid_lonlat": [
+        -76.32831892265192,
+        44.07293977151452
+      ],
+      "bounds": [
+        -76.33088881215468,
+        44.0706977449087,
+        -76.32538190607734,
+        44.074654226143664
+      ],
+      "pixel_bounds": [
+        2088,
+        532,
+        2092,
+        536
+      ],
+      "maximum_land_clearance_pixels": 1.4142135623730951,
+      "provider_counts": {
+        "0": 10,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 10
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 9,
+      "centroid_lonlat": [
+        -76.42552601289132,
+        44.200390858991746
+      ],
+      "bounds": [
+        -76.42817748618782,
+        44.198489978501215,
+        -76.42083494475136,
+        44.20112196008961
+      ],
+      "pixel_bounds": [
+        2035,
+        436,
+        2040,
+        439
+      ],
+      "maximum_land_clearance_pixels": 1.4142135623730951,
+      "provider_counts": {
+        "0": 1,
+        "1": 0,
+        "2": 8
+      },
+      "native_wet_fraction": 1.0,
+      "export_valid_fraction": 0.8888888888888888,
+      "production_valid_fraction": 0.8055555555555556,
+      "physical_speed_percentiles_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_excess_rgb": 8
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 9,
+      "centroid_lonlat": [
+        -76.47202877532226,
+        44.093553737280416
+      ],
+      "bounds": [
+        -76.47406837016572,
+        44.09047750600821,
+        -76.4703970994475,
+        44.09575099214972
+      ],
+      "pixel_bounds": [
+        2010,
+        516,
+        2013,
+        521
+      ],
+      "maximum_land_clearance_pixels": 13.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 9,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0012197528267279267,
+        0.003142949193716049,
+        0.003142949193716049
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 8,
+      "centroid_lonlat": [
+        -76.58512430939224,
+        44.2162535688689
+      ],
+      "bounds": [
+        -76.58787776243092,
+        44.21559575718241,
+        -76.58237085635358,
+        44.21691138055539
+      ],
+      "pixel_bounds": [
+        1948,
+        424,
+        1952,
+        426
+      ],
+      "maximum_land_clearance_pixels": 2.23606797749979,
+      "provider_counts": {
+        "0": 4,
+        "1": 4,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.625,
+      "physical_speed_percentiles_mps": [
+        0.035232748836278915,
+        0.039709776639938354,
+        0.039709776639938354
+      ],
+      "max_excess_rgb": 8
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 8,
+      "centroid_lonlat": [
+        -76.59659703038673,
+        44.214280097067046
+      ],
+      "bounds": [
+        -76.60072720994475,
+        44.21296442225475,
+        -76.59338466850828,
+        44.21559575718241
+      ],
+      "pixel_bounds": [
+        1941,
+        425,
+        1946,
+        428
+      ],
+      "maximum_land_clearance_pixels": 2.8284271247461903,
+      "provider_counts": {
+        "0": 0,
+        "1": 8,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.023912979289889336,
+        0.02863289602100849,
+        0.07931023091077805
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 8,
+      "centroid_lonlat": [
+        -76.36048843232041,
+        44.099211451080734
+      ],
+      "bounds": [
+        -76.36393024861877,
+        44.09706929020948,
+        -76.35842334254141,
+        44.10102400804664
+      ],
+      "pixel_bounds": [
+        2070,
+        512,
+        2074,
+        516
+      ],
+      "maximum_land_clearance_pixels": 1.4142135623730951,
+      "provider_counts": {
+        "0": 8,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 7,
+      "centroid_lonlat": [
+        -76.47905080899761,
+        44.098387550481675
+      ],
+      "bounds": [
+        -76.48141091160218,
+        44.09706929020948,
+        -76.47590400552484,
+        44.099705798157984
+      ],
+      "pixel_bounds": [
+        2006,
+        513,
+        2010,
+        516
+      ],
+      "maximum_land_clearance_pixels": 7.280109889280518,
+      "provider_counts": {
+        "0": 0,
+        "1": 7,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0013532191514968872,
+        0.0021773618645966053,
+        0.0023188956547528505
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 6,
+      "centroid_lonlat": [
+        -76.42848342541434,
+        44.10190279014702
+      ],
+      "bounds": [
+        -76.43184875690608,
+        44.10102400804664,
+        -76.4263418508287,
+        44.10366033965253
+      ],
+      "pixel_bounds": [
+        2033,
+        510,
+        2037,
+        513
+      ],
+      "maximum_land_clearance_pixels": 2.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 6,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.9895833333333334,
+      "physical_speed_percentiles_mps": [
+        0.0010330895893275738,
+        0.0034663673723116517,
+        0.004222456365823746
+      ],
+      "max_excess_rgb": 11
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 5,
+      "centroid_lonlat": [
+        -76.41753080110496,
+        44.108405436759355
+      ],
+      "bounds": [
+        -76.41899930939225,
+        44.10761461663219,
+        -76.41532803867402,
+        44.108932650177465
+      ],
+      "pixel_bounds": [
+        2040,
+        506,
+        2043,
+        508
+      ],
+      "maximum_land_clearance_pixels": 2.23606797749979,
+      "provider_counts": {
+        "0": 0,
+        "1": 5,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0002938315737992525,
+        0.005905043333768845,
+        0.006586253643035889
+      ],
+      "max_excess_rgb": 10
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 5,
+      "centroid_lonlat": [
+        -76.43001312154695,
+        44.096541965107505
+      ],
+      "bounds": [
+        -76.43184875690608,
+        44.09575099214972,
+        -76.42817748618782,
+        44.09838755887892
+      ],
+      "pixel_bounds": [
+        2033,
+        514,
+        2036,
+        517
+      ],
+      "maximum_land_clearance_pixels": 5.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 5,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.005794830154627562,
+        0.005794830154627562,
+        0.007391136139631271
+      ],
+      "max_excess_rgb": 9
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 5,
+      "centroid_lonlat": [
+        -76.32060925414363,
+        44.04484222152271
+      ],
+      "bounds": [
+        -76.32354627071823,
+        44.04431444382324,
+        -76.31803936464087,
+        44.04563388807193
+      ],
+      "pixel_bounds": [
+        2092,
+        554,
+        2096,
+        556
+      ],
+      "maximum_land_clearance_pixels": 2.23606797749979,
+      "provider_counts": {
+        "0": 0,
+        "1": 5,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.003646371653303504,
+        0.004059776198118925,
+        0.00916257593780756
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 4,
+      "centroid_lonlat": [
+        -76.5539185082873,
+        44.21099084022594
+      ],
+      "bounds": [
+        -76.55483632596685,
+        44.21033296975173,
+        -76.55300069060773,
+        44.211648710700146
+      ],
+      "pixel_bounds": [
+        1966,
+        428,
+        1968,
+        430
+      ],
+      "maximum_land_clearance_pixels": 2.0,
+      "provider_counts": {
+        "0": 4,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 7
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 4,
+      "centroid_lonlat": [
+        -76.51812361878451,
+        44.148130701716866
+      ],
+      "bounds": [
+        -76.51995925414363,
+        44.147142837862425,
+        -76.5162879834254,
+        44.14845998966835
+      ],
+      "pixel_bounds": [
+        1985,
+        476,
+        1988,
+        478
+      ],
+      "maximum_land_clearance_pixels": 2.23606797749979,
+      "provider_counts": {
+        "0": 0,
+        "1": 4,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.007952067069709301,
+        0.009800420608371496,
+        0.012535793706774712
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 4,
+      "centroid_lonlat": [
+        -76.4222116712707,
+        44.10464892359274
+      ],
+      "bounds": [
+        -76.42267058011048,
+        44.10366033965253,
+        -76.42083494475136,
+        44.106296553696254
+      ],
+      "pixel_bounds": [
+        2038,
+        508,
+        2040,
+        511
+      ],
+      "maximum_land_clearance_pixels": 2.8284271247461903,
+      "provider_counts": {
+        "0": 0,
+        "1": 4,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.984375,
+      "physical_speed_percentiles_mps": [
+        0.00249731563962996,
+        0.003915873821824789,
+        0.007979700341820717
+      ],
+      "max_excess_rgb": 11
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 4,
+      "centroid_lonlat": [
+        -76.21570269337016,
+        44.07168688725958
+      ],
+      "bounds": [
+        -76.2170794198895,
+        44.0706977449087,
+        -76.21340814917127,
+        44.072016601376546
+      ],
+      "pixel_bounds": [
+        2150,
+        534,
+        2153,
+        536
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 1,
+        "1": 3,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.578125,
+      "physical_speed_percentiles_mps": [
+        0.015676293522119522,
+        0.015968725085258484,
+        0.015968725085258484
+      ],
+      "max_excess_rgb": 6
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 4,
+      "centroid_lonlat": [
+        -76.15833908839778,
+        44.063443505326426
+      ],
+      "bounds": [
+        -76.1601747237569,
+        44.062783988924444,
+        -76.15650345303865,
+        44.0641030217284
+      ],
+      "pixel_bounds": [
+        2181,
+        540,
+        2184,
+        542
+      ],
+      "maximum_land_clearance_pixels": 1.4142135623730951,
+      "provider_counts": {
+        "0": 0,
+        "1": 4,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.84375,
+      "physical_speed_percentiles_mps": [
+        0.01766541227698326,
+        0.018640481866896152,
+        0.019711941480636597
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.3724965469613,
+        44.19892864699818
+      ],
+      "bounds": [
+        -76.37310842541434,
+        44.198489978501215,
+        -76.37127279005523,
+        44.199805983992135
+      ],
+      "pixel_bounds": [
+        2065,
+        437,
+        2067,
+        439
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 1
+      },
+      "native_wet_fraction": 0.3333333333333333,
+      "export_valid_fraction": 0.3333333333333333,
+      "production_valid_fraction": 0.1875,
+      "physical_speed_percentiles_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.37983908839779,
+        44.136165426532635
+      ],
+      "bounds": [
+        -76.38045096685083,
+        44.13528714897823,
+        -76.3786153314917,
+        44.13660456530984
+      ],
+      "pixel_bounds": [
+        2061,
+        485,
+        2063,
+        487
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 3,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.020833333333333332,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.26602969613258,
+        44.05179090271688
+      ],
+      "bounds": [
+        -76.26664157458563,
+        44.05091137118012,
+        -76.26480593922649,
+        44.05223066848527
+      ],
+      "pixel_bounds": [
+        2123,
+        549,
+        2125,
+        551
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 3,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.57778176795578,
+        44.214280104415515
+      ],
+      "bounds": [
+        -76.57869958563535,
+        44.214280104415515,
+        -76.57686395027622,
+        44.214280104415515
+      ],
+      "pixel_bounds": [
+        1953,
+        426,
+        1955,
+        427
+      ],
+      "maximum_land_clearance_pixels": 1.4142135623730951,
+      "provider_counts": {
+        "0": 1,
+        "1": 1,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.4375,
+      "physical_speed_percentiles_mps": [
+        0.04299171268939972,
+        0.04299171268939972,
+        0.04299171268939972
+      ],
+      "max_excess_rgb": 11
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.56860359116021,
+        44.211648710700146
+      ],
+      "bounds": [
+        -76.56952140883976,
+        44.211648710700146,
+        -76.56768577348065,
+        44.211648710700146
+      ],
+      "pixel_bounds": [
+        1958,
+        428,
+        1960,
+        429
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 10
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.56126104972375,
+        44.209017199409566
+      ],
+      "bounds": [
+        -76.5621788674033,
+        44.209017199409566,
+        -76.56034323204419,
+        44.209017199409566
+      ],
+      "pixel_bounds": [
+        1962,
+        430,
+        1964,
+        431
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.59375,
+      "physical_speed_percentiles_mps": [
+        0.13454173505306244,
+        0.13454173505306244,
+        0.13454173505306244
+      ],
+      "max_excess_rgb": 10
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.35108080110496,
+        44.20309586544878
+      ],
+      "bounds": [
+        -76.35108080110496,
+        44.20243790679357,
+        -76.35108080110496,
+        44.20375382410399
+      ],
+      "pixel_bounds": [
+        2077,
+        434,
+        2078,
+        436
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 11
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.39421823204418,
+        44.20112196008961
+      ],
+      "bounds": [
+        -76.39513604972375,
+        44.20112196008961,
+        -76.39330041436463,
+        44.20112196008961
+      ],
+      "pixel_bounds": [
+        2053,
+        436,
+        2055,
+        437
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.367601519337,
+        44.19783196105904
+      ],
+      "bounds": [
+        -76.367601519337,
+        44.19717394361686,
+        -76.367601519337,
+        44.198489978501215
+      ],
+      "pixel_bounds": [
+        2068,
+        438,
+        2069,
+        440
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 1,
+        "1": 0,
+        "2": 1
+      },
+      "native_wet_fraction": 0.5,
+      "export_valid_fraction": 0.5,
+      "production_valid_fraction": 0.59375,
+      "physical_speed_percentiles_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.38595787292817,
+        44.195199832503576
+      ],
+      "bounds": [
+        -76.38595787292817,
+        44.19454178566802,
+        -76.38595787292817,
+        44.19585787933912
+      ],
+      "pixel_bounds": [
+        2058,
+        440,
+        2059,
+        442
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 6
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.35934116022096,
+        44.18401197814327
+      ],
+      "bounds": [
+        -76.36025897790053,
+        44.18401197814327,
+        -76.35842334254141,
+        44.18401197814327
+      ],
+      "pixel_bounds": [
+        2072,
+        449,
+        2074,
+        450
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.53556215469612,
+        44.152411268734305
+      ],
+      "bounds": [
+        -76.53647997237567,
+        44.152411268734305,
+        -76.53464433701656,
+        44.152411268734305
+      ],
+      "pixel_bounds": [
+        1976,
+        473,
+        1978,
+        474
+      ],
+      "maximum_land_clearance_pixels": 3.1622776601683795,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.008506339974701405,
+        0.014107539784163237,
+        0.01970873959362507
+      ],
+      "max_excess_rgb": 10
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.5796174033149,
+        44.11288657446886
+      ],
+      "bounds": [
+        -76.58053522099446,
+        44.11288657446886,
+        -76.57869958563535,
+        44.11288657446886
+      ],
+      "pixel_bounds": [
+        1952,
+        503,
+        1954,
+        504
+      ],
+      "maximum_land_clearance_pixels": 31.76476034853718,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0015888133784756064,
+        0.0015888133784756064,
+        0.0015888133784756064
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.15283218232042,
+        44.06608151215585
+      ],
+      "bounds": [
+        -76.15283218232042,
+        44.06542202514313,
+        -76.15283218232042,
+        44.066740999168566
+      ],
+      "pixel_bounds": [
+        2185,
+        538,
+        2186,
+        540
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 1,
+        "1": 1,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.46875,
+      "physical_speed_percentiles_mps": [
+        0.020034777000546455,
+        0.020034777000546455,
+        0.020034777000546455
+      ],
+      "max_excess_rgb": 11
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.22901104972374,
+        44.06542202514313
+      ],
+      "bounds": [
+        -76.2299288674033,
+        44.06542202514313,
+        -76.22809323204419,
+        44.06542202514313
+      ],
+      "pixel_bounds": [
+        2143,
+        539,
+        2145,
+        540
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.65625,
+      "physical_speed_percentiles_mps": [
+        0.024489188566803932,
+        0.026956163346767426,
+        0.02942313812673092
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.24553176795578,
+        44.0641030217284
+      ],
+      "bounds": [
+        -76.24644958563535,
+        44.0641030217284,
+        -76.24461395027623,
+        44.0641030217284
+      ],
+      "pixel_bounds": [
+        2134,
+        540,
+        2136,
+        541
+      ],
+      "maximum_land_clearance_pixels": 1.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 7
+    },
+    {
+      "kind": "persistent_no_ink",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.21616160220995,
+        44.04431444382324
+      ],
+      "bounds": [
+        -76.2170794198895,
+        44.04431444382324,
+        -76.21524378453039,
+        44.04431444382324
+      ],
+      "pixel_bounds": [
+        2150,
+        555,
+        2152,
+        556
+      ],
+      "maximum_land_clearance_pixels": 10.770329614269007,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0035865120589733124,
+        0.00553417787887156,
+        0.007481843698769808
+      ],
+      "max_excess_rgb": 9
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 34,
+      "centroid_lonlat": [
+        -76.47115294930124,
+        44.25872503542692
+      ],
+      "bounds": [
+        -76.47590400552484,
+        44.25242210059386,
+        -76.46489019337015,
+        44.26556878110348
+      ],
+      "pixel_bounds": [
+        2009,
+        387,
+        2016,
+        398
+      ],
+      "maximum_land_clearance_pixels": 3.1622776601683795,
+      "provider_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 34
+      },
+      "native_wet_fraction": 1.0,
+      "export_valid_fraction": 1.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_excess_rgb": 6
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 30,
+      "centroid_lonlat": [
+        -76.47229392265191,
+        44.24273545930517
+      ],
+      "bounds": [
+        -76.47773964088395,
+        44.239272480592064,
+        -76.46672582872927,
+        44.24716260533024
+      ],
+      "pixel_bounds": [
+        2008,
+        401,
+        2015,
+        408
+      ],
+      "maximum_land_clearance_pixels": 3.605551275463989,
+      "provider_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 30
+      },
+      "native_wet_fraction": 1.0,
+      "export_valid_fraction": 1.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_excess_rgb": 5
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 26,
+      "centroid_lonlat": [
+        -76.51205190182745,
+        44.165276375573235
+      ],
+      "bounds": [
+        -76.51995925414363,
+        44.1616298911641,
+        -76.50710980662983,
+        44.16953042123165
+      ],
+      "pixel_bounds": [
+        1985,
+        460,
+        1993,
+        467
+      ],
+      "maximum_land_clearance_pixels": 3.1622776601683795,
+      "provider_counts": {
+        "0": 26,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 10,
+      "centroid_lonlat": [
+        -76.61834930939226,
+        44.23124973237255
+      ],
+      "bounds": [
+        -76.6190835635359,
+        44.227435309354014,
+        -76.61724792817678,
+        44.23401180954148
+      ],
+      "pixel_bounds": [
+        1931,
+        411,
+        1933,
+        417
+      ],
+      "maximum_land_clearance_pixels": 3.0,
+      "provider_counts": {
+        "0": 10,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 6
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 9,
+      "centroid_lonlat": [
+        -76.47202877532226,
+        44.093553737280416
+      ],
+      "bounds": [
+        -76.47406837016572,
+        44.09047750600821,
+        -76.4703970994475,
+        44.09575099214972
+      ],
+      "pixel_bounds": [
+        2010,
+        516,
+        2013,
+        521
+      ],
+      "maximum_land_clearance_pixels": 13.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 9,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0012197528267279267,
+        0.003142949193716049,
+        0.003142949193716049
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 7,
+      "centroid_lonlat": [
+        -76.47905080899761,
+        44.098387550481675
+      ],
+      "bounds": [
+        -76.48141091160218,
+        44.09706929020948,
+        -76.47590400552484,
+        44.099705798157984
+      ],
+      "pixel_bounds": [
+        2006,
+        513,
+        2010,
+        516
+      ],
+      "maximum_land_clearance_pixels": 7.280109889280518,
+      "provider_counts": {
+        "0": 0,
+        "1": 7,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0013532191514968872,
+        0.0021773618645966053,
+        0.0023188956547528505
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 5,
+      "centroid_lonlat": [
+        -76.43001312154695,
+        44.096541965107505
+      ],
+      "bounds": [
+        -76.43184875690608,
+        44.09575099214972,
+        -76.42817748618782,
+        44.09838755887892
+      ],
+      "pixel_bounds": [
+        2033,
+        514,
+        2036,
+        517
+      ],
+      "maximum_land_clearance_pixels": 5.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 5,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.005794830154627562,
+        0.005794830154627562,
+        0.007391136139631271
+      ],
+      "max_excess_rgb": 9
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 3,
+      "centroid_lonlat": [
+        -76.59583218232044,
+        44.213402982975005
+      ],
+      "bounds": [
+        -76.59705593922652,
+        44.21296442225475,
+        -76.59522030386739,
+        44.214280104415515
+      ],
+      "pixel_bounds": [
+        1943,
+        426,
+        1945,
+        428
+      ],
+      "maximum_land_clearance_pixels": 2.8284271247461903,
+      "provider_counts": {
+        "0": 0,
+        "1": 3,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.02760937437415123,
+        0.07875188440084457,
+        0.07931023091077805
+      ],
+      "max_excess_rgb": 10
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.46489019337015,
+        44.24782006428432
+      ],
+      "bounds": [
+        -76.46489019337015,
+        44.24716260533024,
+        -76.46489019337015,
+        44.2484775232384
+      ],
+      "pixel_bounds": [
+        2015,
+        400,
+        2016,
+        402
+      ],
+      "maximum_land_clearance_pixels": 2.0,
+      "provider_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 2
+      },
+      "native_wet_fraction": 1.0,
+      "export_valid_fraction": 1.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_excess_rgb": 4
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.58512430939226,
+        44.21559575718241
+      ],
+      "bounds": [
+        -76.5860421270718,
+        44.21559575718241,
+        -76.58420649171269,
+        44.21559575718241
+      ],
+      "pixel_bounds": [
+        1949,
+        425,
+        1951,
+        426
+      ],
+      "maximum_land_clearance_pixels": 2.23606797749979,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.039709776639938354,
+        0.039709776639938354,
+        0.039709776639938354
+      ],
+      "max_excess_rgb": 7
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.5539185082873,
+        44.21033296975173
+      ],
+      "bounds": [
+        -76.55483632596685,
+        44.21033296975173,
+        -76.55300069060773,
+        44.21033296975173
+      ],
+      "pixel_bounds": [
+        1966,
+        429,
+        1968,
+        430
+      ],
+      "maximum_land_clearance_pixels": 2.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 7
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.50435635359116,
+        44.17084707336911
+      ],
+      "bounds": [
+        -76.50527417127071,
+        44.17084707336911,
+        -76.5034385359116,
+        44.17084707336911
+      ],
+      "pixel_bounds": [
+        1993,
+        459,
+        1995,
+        460
+      ],
+      "maximum_land_clearance_pixels": 2.0,
+      "provider_counts": {
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 0.0,
+      "physical_speed_percentiles_mps": [],
+      "max_excess_rgb": 8
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.53556215469612,
+        44.152411268734305
+      ],
+      "bounds": [
+        -76.53647997237567,
+        44.152411268734305,
+        -76.53464433701656,
+        44.152411268734305
+      ],
+      "pixel_bounds": [
+        1976,
+        473,
+        1978,
+        474
+      ],
+      "maximum_land_clearance_pixels": 3.1622776601683795,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.008506339974701405,
+        0.014107539784163237,
+        0.01970873959362507
+      ],
+      "max_excess_rgb": 10
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.5796174033149,
+        44.11288657446886
+      ],
+      "bounds": [
+        -76.58053522099446,
+        44.11288657446886,
+        -76.57869958563535,
+        44.11288657446886
+      ],
+      "pixel_bounds": [
+        1952,
+        503,
+        1954,
+        504
+      ],
+      "maximum_land_clearance_pixels": 31.76476034853718,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0015888133784756064,
+        0.0015888133784756064,
+        0.0015888133784756064
+      ],
+      "max_excess_rgb": 12
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.42175276243091,
+        44.10366033965253
+      ],
+      "bounds": [
+        -76.42267058011048,
+        44.10366033965253,
+        -76.42083494475136,
+        44.10366033965253
+      ],
+      "pixel_bounds": [
+        2038,
+        510,
+        2040,
+        511
+      ],
+      "maximum_land_clearance_pixels": 2.8284271247461903,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.00249731563962996,
+        0.005238507874310017,
+        0.007979700341820717
+      ],
+      "max_excess_rgb": 11
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.32079281767955,
+        44.04431444382324
+      ],
+      "bounds": [
+        -76.32171063535911,
+        44.04431444382324,
+        -76.31987499999998,
+        44.04431444382324
+      ],
+      "pixel_bounds": [
+        2093,
+        555,
+        2095,
+        556
+      ],
+      "maximum_land_clearance_pixels": 2.23606797749979,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.004051805008202791,
+        0.005426428513601422,
+        0.006801052019000053
+      ],
+      "max_excess_rgb": 10
+    },
+    {
+      "kind": "persistent_no_ink_core",
+      "pixels": 2,
+      "centroid_lonlat": [
+        -76.21616160220995,
+        44.04431444382324
+      ],
+      "bounds": [
+        -76.2170794198895,
+        44.04431444382324,
+        -76.21524378453039,
+        44.04431444382324
+      ],
+      "pixel_bounds": [
+        2150,
+        555,
+        2152,
+        556
+      ],
+      "maximum_land_clearance_pixels": 10.770329614269007,
+      "provider_counts": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      },
+      "native_wet_fraction": 0.0,
+      "export_valid_fraction": 0.0,
+      "production_valid_fraction": 1.0,
+      "physical_speed_percentiles_mps": [
+        0.0035865120589733124,
+        0.00553417787887156,
+        0.007481843698769808
+      ],
+      "max_excess_rgb": 9
+    }
+  ],
+  "limitations": [
+    "Encoded sampling is60frames at1/3second intervals, not exhaustive all600frames.",
+    "Permanent true-zero vectors, dry/source-unknown water and subpixel shoreline loss are retained rather than fabricated.",
+    "No physically matched surface/depth-average source handoff is claimed."
+  ],
+  "independent_visual_review": {
+    "verdict": "PASS for the reported main Carleton channel discontinuity",
+    "observations": [
+      "Actual encoded wide crop shows continuous bright trail bands in both main Carleton branches and visibly drawn Bayfield weak-flow trails.",
+      "Former Cape Vincent inlet dark patch no longer forms a black break; subtraction of exact zero-step background confirms drawn ink.",
+      "Expanded upstream approach has no visually channel-spanning black source cut in inspected samples.",
+      "No persistent no-ink core component appears in Carleton or Bayfield in the60sampledframes."
+    ],
+    "remaining_limits": [
+      "Small weak shoreline cells and zero/source-unavailable tributary pockets remain. Fifteen of193new native western cell centres are lost during export/raster display; none are assigned artificial currents.",
+      "Some2\u20139pixel lake-side areas show no substantial trail ink in sampledframes; these are retained in component list rather than hidden by broad averages.",
+      "The source handoff is neither physically matched nor between fields at the same water depth. Enhanced motion has no common physical time scale.",
+      "This is independent display review and numerical integrity evidence, not current-meter or local-velocity validation."
+    ]
+  }
+}

@@ -1,65 +1,58 @@
-# Kingston–Brockville estimates: local-stage wetting correction
+# Kingston–Brockville estimates: expanded upstream domain
 
-This is the frozen numerical companion to the Lake Ontario close-up film. River trails are **illustrative, simplified, unvalidated depth-averaged hydraulic estimates**. NOAA's separate Lake Ontario surface field keeps priority wherever it has coverage. Local jet speeds, island wakes and detailed bay circulation are not validated.
+The selected river field is an **illustrative, simplified, unvalidated depth-averaged hydraulic estimate**. Its reusable raw JSON retains `fallbackOnly: true` as the default. The featured film explicitly overrides this with `riverSourcePriority: "model"`, using the regional depth-averaged field throughout its solved domain and NOAA surface vectors elsewhere. This source handoff is not physically matched or a comparison at the same water depth. This package reproduces the mean-condition river scenario and the actual 3 km upstream cut used for this release.
 
-## What changed
+## Concrete coverage repair
 
-The previous wetting shortcut compared every bed cell with **Brockville's lower water level**, including shallow water near upstream Wolfe and Carleton islands. At Bayfield Bay's southern mouth, retrieved bed is approximately 74.4892 m IGLD85. The global test saw only 0.0325 m of water and deleted the cell, although its locally solved upstream stage produces about **0.3105 m** of water.
+A real-water patch west of Cape Vincent was outside the previous 1 km computational inlet. Its 274 native cells covered about 0.685 km²; 273 had retrieved numerical source bed. The new cut is **3,000 m upstream of the original Kingston–Cape Vincent line**, or 2,000 m beyond the immediately previous cut. The source-water geometry and retrieved bathymetry are unchanged. The expanded geometric corridor adds 6,076 cells, including 6,010 with actual source-depth support.
 
-The corrected calculation keeps the **same source geometry, bathymetry, missing-bank-depth preparation, endpoint observations, regulated-flow scenario and 1,000 m upstream inlet extension**. It changes hydraulic wet activation:
+The calculation regenerates bank-bed estimates for this expanded corridor and repeats the local-stage wet/dry fixed point. It restores 193 of the 274 missing patch cells. Of the remainder, 57 have retrieved bed too shallow even at the upstream mean stage, 23 form potentially wet but stage-unanchored shallow fragments, and one has no retrieved bed. No arbitrary water level or current is assigned to isolated puddles. A water polygon alone is not evidence for a solved wet cell. No missing vectors were extrapolated across the old boundary.
 
-1. Begin with source-water cells that could be wet at the maximum upstream stage; enforce actual downstream-boundary depth separately.
-2. Solve the conservative nonlinear Manning field.
-3. Remove cells whose **locally solved** depth is below 0.12 m. Rewet only through an actual orthogonal water face whose connected neighbour supports depth above 0.13 m.
-4. Repeat until the mask does not change and no selected cell uses the solver's numerical depth floor. Components must be anchored to an imposed stage; a component attached to just one stage can correctly have zero hydraulic through-flow.
+The old dark source-transition point near −76.35567°, 44.13068° is now inside the solved domain rather than on its imposed inlet. Moving the numerical cut does not by itself validate the lake/river source transition or the film's particle sampling.
 
-The 0.12 m numerical wet margin and 0.01 m rewet hysteresis are disclosed shoreline assumptions. They are much smaller than uncertainties in some bed and datum values. No arrows or new water polygons were painted into the bay.
+Retrieved depths remain unchanged exactly. Regenerating the expanded missing-bank interpolation changes some **inferred** bed in the common domain, by up to 0.404 m. This release therefore does not claim that the previous prepared-bed array is unchanged. The raw and inferred parts remain explicitly identified.
 
-## Selected calculation and checks
+## Selected mean-condition calculation
 
-The forcing interval remains **12 October 2026 00:00–17 October 2026 12:00 UTC**. This is a steady mean-condition scenario, not a temporal average of hourly current vectors.
+The forcing interval is **12 October 2026 00:00–17 October 2026 12:00 UTC**. The scenario uses mean observed Kingston/Brockville stages and a representative IJC regulation target. It is not the temporal mean of hourly current vectors.
 
 | Check | Result |
 |---|---|
-| Grid / selected wet cells | 50 m UTM18N / 171,786 |
-| Active-set history | 171,886 initial cells; 97 too-shallow cells and 3 unanchored fragments removed; next 171,786-cell solve unchanged |
-| Uniform effective Manning n | 0.02892363 s/m^(1/3), calibrated to the regulation-discharge scenario |
-| Inflow / outflow | 7,377.580000 / 7,377.578169 m³/s |
-| Relative boundary-flux mismatch | 2.48 × 10⁻⁷ |
-| Maximum cell continuity residual | 1.09 × 10⁻⁴ m³/s |
-| Minimum actual depth / depth-floor cells | 0.12202 m / zero |
-| Maximum potential depth at inactive adjacent candidate | 0.12901 m, below the 0.13 m rewet trigger |
-| Held-out Alexandria Bay mean stage residual | +2.38 cm against preliminary observations |
-| Selected wet area with estimated bank bed | 17.68% |
+| Grid / selected wet cells | 50 m UTM18N / 177,775 |
+| Upstream inlet padding | 3,000 m beyond the original cut |
+| Effective uniform Manning n | 0.02889393 s/m^(1/3) |
+| Inflow / outflow | 7377.580000 / 7377.578346 m³/s |
+| Relative boundary-flux mismatch | 2.242e-07 |
+| Maximum interior-cell continuity residual | 1.077e-04 m³/s |
+| Minimum actual depth / depth-floor cells | 0.12136 m / 0 |
+| Held-out Alexandria Bay mean-stage residual | +2.35 cm |
+| Solved area with inferred bank bed | 17.12% |
 
-Bayfield's southern shallow connection is now present. A representative mouth probe changes from excluded to approximately **0.0167 m/s**; a bay-interior probe changes from numerical near-zero to approximately **0.000346 m/s**. The bay remains slow in this hydraulic scenario.
+The native conservative fluxes supply both main Carleton channels. Their branch comparison, newly solved patch depths/speeds, old/new overlap statistics and active-mask history are in `model-report.json`. Numerical conservation does not validate local velocities.
 
-The corrected southern connection is **depth-sensitive**. The independent audit's highest-clearance southern path has a 0.342 m bottleneck at an **inferred-bed cell**; its 87-cell representative path contains 60 retrieved-bed cells and 27 inferred-bed cells. Raising bed by 0.25 m **only within the physical southern-mouth rectangle** (longitude −76.344 to −76.321°, latitude 44.181 to 44.194°), with solved stage and the remaining bed held fixed, closes that route under the 0.12 m wet threshold. This is a topology diagnostic, not a recomputed flow scenario. A separate northern-mouth diagnostic remains connected. These conditional results do not establish observed bay currents.
+## Equations and uncertainty
 
-## Method, data and limits
+The finite-volume nonlinear Manning diffusion-wave approximation solves `div(q)=0`, with `q=−(h^(5/3)/n) grad(eta)/sqrt(|grad(eta)|)` and `h=eta−bed`. Land/island faces have zero normal flow. Exported `q/h` vectors are rotated from UTM to true east/north.
 
-The finite-volume solver conserves depth-integrated discharge on genuine wet/wet faces, with zero normal flow through island and land faces. Its simplified friction law is
+Wet activation starts from the maximum upstream-stage candidate, solves local levels, removes actual depths below 0.12 m and rewets only across real orthogonal water faces above 0.13 m. Selection requires a fixed mask and zero numerical depth-floor cells. These shoreline thresholds and the 0.20 m missing-bank constraint are assumptions, not accuracy claims.
 
-`div(q)=0; q=−(h^(5/3)/n) grad(eta)/sqrt(|grad(eta)|)`.
+This method omits momentum inertia and inertial eddies, wind, Coriolis, density stratification and vertical surface shear. It cannot reconstruct reliable local jets, island wakes or wind-driven bay exchange. Estimated bed and vertical-datum separation add uncertainty; parts of eastern Carleton have sparse retrieved depth support. Earlier shallow Bayfield-mouth sensitivity remains historical evidence under `diagnostics/before-3km-extension/`, rather than a newly performed sensitivity experiment on this domain. No local current-meter validation was retrieved.
 
-Depth is `h=eta−bed`; exported velocities are `q/h`, rotated from UTM to true geographic east and north. A uniform n fit to total regulated discharge is calibration, not independent velocity validation.
+The inlet uses the mean Kingston lake stage at a more distant cross-section. That is an explicit boundary-placement assumption. A fit to the regulation target and an independent Alexandria stage check do not validate this assumption or the branch velocities.
 
-The model omits momentum inertia, wind, Coriolis, density stratification and vertical surface shear. Weak-flow bays particularly need wind and unsteady circulation physics that this calculation lacks. Some source-survey vertical references are heterogeneous; the chart-datum separation surface is estimated. Missing bank depths are inferred separately, and source-depth support is much lower in parts of Bayfield Bay than the map-wide percentage. There is no retrieved local 2026 ADCP or current-meter validation.
+## Reproduce without the development workspace
 
-Earlier grid, bed, head, resistance and experimental momentum checks are retained under `diagnostics/before-local-stage-correction/` and explicitly scoped in `model-report.json`. They are **prior-configuration sensitivity evidence**, not newly run validation of this corrected mask. The earlier DWE's energetic fast-jet defect remains a limitation of the simplified method. A global flow fit and one held-out stage do not validate local velocities.
-
-See [PUBLICATION-SOURCES.md](PUBLICATION-SOURCES.md) for official sources, numerical depth requests, datum qualifications and licences. Raw source arrays are unchanged; [inputs/array-integrity-manifest.json](inputs/array-integrity-manifest.json) and the independent review record source-bed and NaN integrity. Historical preparation manifests retain original cache paths as provenance; current scripts and selected-case metadata use package-local paths.
-
-## Reproduce from this directory
-
-Use Python 3.13. All required helpers, compact numerical inputs and boundary CSV are package-local; no original development folder is required.
+Use Python 3.13 and the included dependencies. All current scripts, source arrays and boundary observations are package-local.
 
 ```powershell
 python -m pip install -r requirements.txt
 python check_numerics.py
-python solve_local_wetness.py --inlet-pad-m 1000 --source inputs/bathymetry-grid-50m.npz --out-dir regenerated
+python prepare_source_domain.py --input inputs/bathymetry-grid-50m.npz --inlet-pad-m 3000 --check
+python solve_local_wetness.py --inlet-pad-m 3000 --source inputs/bathymetry-grid-50m.npz --out-dir regenerated
 ```
 
-This regenerates the open-boundary bank-bed estimate, runs the wet/dry active-set iterations, calibrates total flow, exports the display field and checks Alexandria Bay. Intermediate candidate stages can contain dry cells; **only the converged no-floor solution is selected**. Results are written under `regenerated/`.
+The domain check recomputes the exact geometric cut from real water polygons and verifies the retained mask. To save that recomputed input, add `--out source-regenerated.npz`. The solver then regenerates missing bank bed, solves local-stage wetting to a fixed point, calibrates the explicit discharge scenario, exports the field and checks Alexandria Bay.
 
-The selected NPZ and display JSON are frozen here. Iterative floating-point last bits and container/source-hash metadata can differ on regeneration; numerical agreement is checked separately. Package integrity is recorded in `SHA256SUMS.json`.
+`inputs/array-integrity-manifest.json` identifies the changed corridor mask and proves all other raw arrays remain unchanged, including NaNs. [PUBLICATION-SOURCES.md](PUBLICATION-SOURCES.md) records source requests, datum assumptions and licences. Historical source manifests retain cache paths as provenance; no current command depends on them. Original large TIFFs and a separately stored prepared-bed NPZ are omitted because the compact numerical inputs regenerate the latter.
+
+The selected NPZ and display JSON are frozen. Numerical last bits/container hashes may differ on regeneration; the isolated reproduction report records tolerances. `SHA256SUMS.json` records package integrity after final checks.

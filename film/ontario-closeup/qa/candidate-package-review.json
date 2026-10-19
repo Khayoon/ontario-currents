@@ -1,0 +1,60 @@
+{
+  "manifest_sha256": "9746c4cc4d464a72448d9cb86c76ab4867a9444526a8fba95ff36950f13b096a",
+  "manifest_entries": 79,
+  "manifest_mismatches": [],
+  "scripts": {
+    "audit_solution.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    },
+    "calibrate_uniform_roughness.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    },
+    "check_numerics.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    },
+    "compare_full_momentum.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    },
+    "estimate_bank_bed.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    },
+    "estimate_bank_bed_open.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    },
+    "export_display.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    },
+    "prepare_source_domain.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    },
+    "solve_hydraulics.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    },
+    "solve_inlet_extension.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    },
+    "solve_local_wetness.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    },
+    "solve_semiimplicit_momentum.py": {
+      "lf_only": true,
+      "mojibake_absent": true
+    }
+  },
+  "absolute_current_paths": [],
+  "field_sha256": "653d31ac284a724bd83d000064f19d375d5e6a8dd14a320fb48a4f0eef3904bb",
+  "readme_review": "Explicit film model-domain source priority; nonmatching surface/depth-average handoff disclosed; inferred-bed recomputation max0.404m distinct from exact rawbed; prior sensitivities historical; stage-at-upstream-cut assumption explicit; no local velocity validation claim.",
+  "reproduction_evidence": "Isolated package-only full pipeline report has exact wetmask and all12 derived-bed arrays including NaNs; numerical vector tolerance8.5e-10m/s. This independent review verified integrity and docs rather than repeating full solve.",
+  "passed": true
+}

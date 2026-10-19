@@ -1,0 +1,97 @@
+{
+  "scope": "Independent expanded-candidate final native coverage and source-depth preservation audit; no files changed except this report.",
+  "solution_file": "work/carleton-continuity-review/expanded-model/dwe-calibrated-50m.npz",
+  "solution_sha256": "948c22f163b9a4a24e7af2a1be2daabe652060f34906a65d2be35fdc43b818dc",
+  "wet_cells": 177775,
+  "measured_wet_cells_checked": 147345,
+  "all_measured_wet_bed_values_byte_identical_to_original_source": true,
+  "wet_mask_subset_original_geography": true,
+  "wet_mask_subset_expanded_geometric_corridor": true,
+  "minimum_wet_depth_m": 0.12135566804765574,
+  "regions": {
+    "western_inlet_gap_component12": {
+      "source_water_cells": 274,
+      "numeric_source_bed_cells": 273,
+      "previous_native_wet": 0,
+      "candidate_native_wet": 193,
+      "gained_native_wet": 193,
+      "lost_native_wet": 0,
+      "combined_candidate_no_vectors": 81,
+      "native_speed_mps_p0_p5_p50_p95_p100": [
+        0.0,
+        4.774267208001777e-06,
+        0.00010842865826049617,
+        0.00040736508368794994,
+        0.0005476544423592811
+      ],
+      "native_depth_m_p0_p50_p100": [
+        0.13401003920000676,
+        1.250141556135091,
+        2.423019355558168
+      ]
+    },
+    "east_carleton": {
+      "source_water_cells": 5077,
+      "numeric_source_bed_cells": 942,
+      "previous_native_wet": 5077,
+      "candidate_native_wet": 5077,
+      "gained_native_wet": 0,
+      "lost_native_wet": 0,
+      "combined_candidate_no_vectors": 0,
+      "native_speed_mps_p0_p5_p50_p95_p100": [
+        0.0,
+        0.013217487654617464,
+        0.05733872491333996,
+        0.1251554807233749,
+        0.14849143402043635
+      ],
+      "native_depth_m_p0_p50_p100": [
+        0.2672980197759074,
+        11.555956517159238,
+        25.953601893793746
+      ]
+    },
+    "northeast_carleton": {
+      "source_water_cells": 6408,
+      "numeric_source_bed_cells": 2755,
+      "previous_native_wet": 6403,
+      "candidate_native_wet": 6403,
+      "gained_native_wet": 0,
+      "lost_native_wet": 0,
+      "combined_candidate_no_vectors": 5,
+      "native_speed_mps_p0_p5_p50_p95_p100": [
+        0.0,
+        0.009386954148687834,
+        0.098197310841122,
+        0.16488334211619993,
+        0.2398840041913984
+      ],
+      "native_depth_m_p0_p50_p100": [
+        0.25583448343797954,
+        18.436222990747993,
+        36.66502312146071
+      ]
+    },
+    "whole_neighbourhood": {
+      "source_water_cells": 48826,
+      "numeric_source_bed_cells": 38529,
+      "previous_native_wet": 43238,
+      "candidate_native_wet": 45214,
+      "gained_native_wet": 1976,
+      "lost_native_wet": 0,
+      "combined_candidate_no_vectors": 919,
+      "native_speed_mps_p0_p5_p50_p95_p100": [
+        0.0,
+        0.0004600765724544105,
+        0.059624895226428,
+        0.17087841387630479,
+        0.43080660040214075
+      ],
+      "native_depth_m_p0_p50_p100": [
+        0.12135566804765574,
+        8.808530962561896,
+        70.39790275299174
+      ]
+    }
+  }
+}

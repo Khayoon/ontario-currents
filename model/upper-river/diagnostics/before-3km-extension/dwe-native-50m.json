@@ -1,0 +1,190 @@
+{
+  "method": "steady nonlinear Manning finite-volume diffusion-wave approximation",
+  "n": 0.03,
+  "cell_size_m": 50.0,
+  "wet_cells": 171786,
+  "inlet_cells": 115,
+  "outlet_cells": 25,
+  "kingston_stage_m": 74.80174436090226,
+  "brockville_stage_m": 74.5217067669173,
+  "discharge_in_m3s": 7112.879326404515,
+  "discharge_out_m3s": 7112.87756123996,
+  "relative_boundary_flux_error": 2.481645580997441e-07,
+  "maximum_cell_continuity_residual_m3s": 0.00010499404152142233,
+  "minimum_actual_water_depth_m": 0.12202174107548558,
+  "cells_requiring_depth_floor": 0,
+  "speed_percentiles_mps": [
+    0.0,
+    0.023664214746545065,
+    0.05415440379145858,
+    0.12183897235335497,
+    0.2813086393832185,
+    0.5435358654495555,
+    2.361119068027246
+  ],
+  "iterations": [
+    {
+      "iteration": 0,
+      "stage_change_m": 0.08696518316426705,
+      "lagged_continuity_l1_relative": 18.543186580090662
+    },
+    {
+      "iteration": 1,
+      "stage_change_m": 0.04414863474437425,
+      "lagged_continuity_l1_relative": 11.118152775723273
+    },
+    {
+      "iteration": 2,
+      "stage_change_m": 0.021920124427282417,
+      "lagged_continuity_l1_relative": 6.198952205749504
+    },
+    {
+      "iteration": 3,
+      "stage_change_m": 0.01080312973617481,
+      "lagged_continuity_l1_relative": 3.3069779056631923
+    },
+    {
+      "iteration": 4,
+      "stage_change_m": 0.00563410862866931,
+      "lagged_continuity_l1_relative": 1.7686338518302565
+    },
+    {
+      "iteration": 5,
+      "stage_change_m": 0.0031544338779241343,
+      "lagged_continuity_l1_relative": 0.9583888849164105
+    },
+    {
+      "iteration": 6,
+      "stage_change_m": 0.0018097245713022403,
+      "lagged_continuity_l1_relative": 0.52650118107355
+    },
+    {
+      "iteration": 7,
+      "stage_change_m": 0.001054911964644134,
+      "lagged_continuity_l1_relative": 0.292803561324385
+    },
+    {
+      "iteration": 8,
+      "stage_change_m": 0.00062126722016842,
+      "lagged_continuity_l1_relative": 0.16454303384769325
+    },
+    {
+      "iteration": 9,
+      "stage_change_m": 0.00036817588780024835,
+      "lagged_continuity_l1_relative": 0.0933275684379578
+    },
+    {
+      "iteration": 10,
+      "stage_change_m": 0.00021902038729137985,
+      "lagged_continuity_l1_relative": 0.05336793628756152
+    },
+    {
+      "iteration": 11,
+      "stage_change_m": 0.00013059652930280663,
+      "lagged_continuity_l1_relative": 0.030716392612142953
+    },
+    {
+      "iteration": 12,
+      "stage_change_m": 7.798495896338409e-05,
+      "lagged_continuity_l1_relative": 0.017764732438975916
+    },
+    {
+      "iteration": 13,
+      "stage_change_m": 4.6610495772370086e-05,
+      "lagged_continuity_l1_relative": 0.010316520334388964
+    },
+    {
+      "iteration": 14,
+      "stage_change_m": 2.7874867910782086e-05,
+      "lagged_continuity_l1_relative": 0.006009993519409715
+    },
+    {
+      "iteration": 15,
+      "stage_change_m": 1.667668978200254e-05,
+      "lagged_continuity_l1_relative": 0.0035111420993668733
+    },
+    {
+      "iteration": 16,
+      "stage_change_m": 9.979681664162854e-06,
+      "lagged_continuity_l1_relative": 0.0020556507987692803
+    },
+    {
+      "iteration": 17,
+      "stage_change_m": 5.973122569002953e-06,
+      "lagged_continuity_l1_relative": 0.0012055335663740403
+    },
+    {
+      "iteration": 18,
+      "stage_change_m": 3.575483930262635e-06,
+      "lagged_continuity_l1_relative": 0.0007082472681199563
+    },
+    {
+      "iteration": 19,
+      "stage_change_m": 2.1404955958814753e-06,
+      "lagged_continuity_l1_relative": 0.00041652029444603914
+    },
+    {
+      "iteration": 20,
+      "stage_change_m": 1.2815229268881012e-06,
+      "lagged_continuity_l1_relative": 0.00024536758163426817
+    },
+    {
+      "iteration": 21,
+      "stage_change_m": 7.669434722856749e-07,
+      "lagged_continuity_l1_relative": 0.00014484385997213907
+    },
+    {
+      "iteration": 22,
+      "stage_change_m": 4.5940018367218727e-07,
+      "lagged_continuity_l1_relative": 8.55287332731771e-05
+    },
+    {
+      "iteration": 23,
+      "stage_change_m": 2.75222632240002e-07,
+      "lagged_continuity_l1_relative": 5.059066335107056e-05
+    },
+    {
+      "iteration": 24,
+      "stage_change_m": 1.6585529749590933e-07,
+      "lagged_continuity_l1_relative": 3.065487554235014e-05
+    },
+    {
+      "iteration": 25,
+      "stage_change_m": 9.947187606940133e-08,
+      "lagged_continuity_l1_relative": 1.824736749816128e-05
+    },
+    {
+      "iteration": 26,
+      "stage_change_m": 5.952472292847233e-08,
+      "lagged_continuity_l1_relative": 1.1216700703599272e-05
+    },
+    {
+      "iteration": 27,
+      "stage_change_m": 3.5534171161089034e-08,
+      "lagged_continuity_l1_relative": 8.37344077963401e-06
+    },
+    {
+      "iteration": 28,
+      "stage_change_m": 2.0885636331513524e-08,
+      "lagged_continuity_l1_relative": 5.396206631323712e-06
+    },
+    {
+      "iteration": 29,
+      "stage_change_m": 1.2195243925816612e-08,
+      "lagged_continuity_l1_relative": 4.373082166781937e-06
+    },
+    {
+      "iteration": 30,
+      "stage_change_m": 7.882576369411254e-09,
+      "lagged_continuity_l1_relative": 5.219401918011511e-06
+    }
+  ],
+  "wall_seconds": 90.99381947517395,
+  "active_set_iteration": 1,
+  "wetting_method": "Maximum-stage initial candidate; local solved-depth pruning and connected-neighbour rewetting with hysteresis.",
+  "wet_depth_threshold_m": 0.12,
+  "rewet_hysteresis_m": 0.01,
+  "inlet_padding_m": 1000,
+  "regulation_discharge_scenario_m3s": 7377.58,
+  "n_required_for_regulation_Q": 0.028923628044987035
+}

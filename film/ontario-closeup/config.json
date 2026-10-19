@@ -172,7 +172,7 @@
       "color": "#92adb1"
     },
     {
-      "text": "Lake mean / river mean-condition estimate · motion scaled for legibility",
+      "text": "Colour shows speed · trail motion enhanced for legibility",
       "x": 625,
       "y": 1011,
       "size": 10
@@ -212,13 +212,13 @@
   "fps": 30,
   "particleCount": 12500,
   "warmupFrames": 220,
-  "baseBrightness": 0.08,
+  "baseBrightness": 0.3,
   "video": "rendered/master.mp4",
   "manifest": "rendered/render-manifest.json",
   "poster": "rendered/review.png",
   "posterWidth": 2560,
   "posterHeight": 1440,
-  "posterFrames": 220,
+  "posterFrames": 160,
   "sourcePriority": "last",
   "useNativeOntarioCoast": false,
   "clipCurrentsToWater": true,
@@ -231,7 +231,7 @@
   "maxParticleStep": 0.2,
   "motionAcceleration": 70000,
   "seed": 74129,
-  "waterColor": "#04131b",
+  "waterColor": "#0a2632",
   "coastColor": "#2d5b65",
   "coastWidth": 0.55,
   "clipToBounds": true,
@@ -266,8 +266,8 @@
     "2": 12
   },
   "preserveUnweightedSeedDensity": true,
-  "minDisplaySpeed": 8,
-  "maxDisplayBoost": 8,
+  "minDisplaySpeed": 12,
+  "maxDisplayBoost": 1024,
   "seedRegions": [
     {
       "name": "weak eastern-lake surface mean",
@@ -322,5 +322,6 @@
       ],
       "weight": 24
     }
-  ]
+  ],
+  "riverSourcePriority": "model"
 }

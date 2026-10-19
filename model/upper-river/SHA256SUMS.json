@@ -1,5 +1,5 @@
 {
-  "scope": "Frozen local-stage correction package; excludes this manifest and Python bytecode caches.",
+  "scope": "Frozen 3 km expanded-domain package, excluding this manifest and Python bytecode caches.",
   "files": [
     {
       "path": "audit_solution.py",
@@ -23,183 +23,243 @@
     },
     {
       "path": "diagnostics/active-set-history.json",
+      "bytes": 1057,
+      "sha256": "c2c70f320e8d2df4a348d308397586872357490798818ab71b450e21c7633c9c"
+    },
+    {
+      "path": "diagnostics/audit.json",
+      "bytes": 3300,
+      "sha256": "43eb25accdb1715831371bfc320f3a346160412122d64e32525596190a2577c4"
+    },
+    {
+      "path": "diagnostics/before-3km-extension/active-set-history.json",
       "bytes": 1087,
       "sha256": "cc0caa334359db75fd4b222a51dd8155f53cdfc0a73e631bfd965c3ddad449bf"
     },
     {
-      "path": "diagnostics/audit.json",
+      "path": "diagnostics/before-3km-extension/audit.json",
       "bytes": 3412,
       "sha256": "f78ccc182fffb19f3e9a22d7f8f71d8999dd1bd0cd25ed76880c4807534c8030"
     },
     {
-      "path": "diagnostics/bayfield-shallow-wet-mask.json",
+      "path": "diagnostics/before-3km-extension/bayfield-shallow-wet-mask.json",
       "bytes": 31664,
       "sha256": "0ef41b1e63067b4faf535ae6e4b97d7cba8e9c3a25542833bcef9791283be253"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/audit.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/audit.json",
       "bytes": 3394,
       "sha256": "42e7abde4484954bda6007665ab48dd1d625e7fc336e558bc9161c6b1d983824"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/bank-bed-harmonic-50m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/bank-bed-harmonic-50m.json",
       "bytes": 651,
       "sha256": "f2baf4fe64c67bb2a1738f88964de879e66530f17b900a8c5223faf220abbf48"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/dwe-native-50m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/dwe-native-50m.json",
       "bytes": 5986,
       "sha256": "893e9874d00968443095a6b3ce33b8b685f319c2b27dc3ac04e2d4fba9372eb4"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/independent-display-review.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/independent-display-review.json",
       "bytes": 1132,
       "sha256": "5021f7091b1236680f030fcb13945482ddb2dad52ef4e40c35dad73fadfea4c0"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/independent-model-review.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/independent-model-review.json",
       "bytes": 1556,
       "sha256": "c0575384f4afee9147e65b92b290024fafde2e36cee947d2030bfc90449ea435"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/inlet-comparison.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/inlet-comparison.json",
       "bytes": 1404,
       "sha256": "ced1d6fd451a2fe97d4867080a3d747c8f3cb42f02b836910b79bc9e14f45b25"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/portable-reproduction-check.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/portable-reproduction-check.json",
       "bytes": 758,
       "sha256": "330f6a06ac1778d31b74be842d41336e167ce95d5a3b152678991fdef5c9596e"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/dwe-audit-100m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/dwe-audit-100m.json",
       "bytes": 3405,
       "sha256": "57c12d3ffe810fa26eb70306f801e22c3ad061314a615f0820f13388985005fb"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/dwe-audit-50m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/dwe-audit-50m.json",
       "bytes": 3415,
       "sha256": "bc522f0e1872703a4be26915af3b033bfffcffb6dd9ac144daf09896222371d4"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/dwe-bed-minus025-100m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/dwe-bed-minus025-100m.json",
       "bytes": 5715,
       "sha256": "8217719fd7206a3b703ff81809fc61b327795845a39f3156a0958843e7de94dd"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/dwe-bed-plus025-100m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/dwe-bed-plus025-100m.json",
       "bytes": 5710,
       "sha256": "c9e70c3cc9923e113fc8a1083420fd075ba8e9134b24ce445d6fc089dcbc64d4"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/dwe-head-p05-100m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/dwe-head-p05-100m.json",
       "bytes": 5711,
       "sha256": "9a84ea5015b1392b2dd4eba4c993db1585f4f76a54d11c762c5bc4b77c043625"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/dwe-head-p95-100m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/dwe-head-p95-100m.json",
       "bytes": 5704,
       "sha256": "5db9bd0d5d7029a93d4bcac7ad8bea82dd2315af6badff234e49585bafb46706"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/dwe-native-harmonic-100m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/dwe-native-harmonic-100m.json",
       "bytes": 5525,
       "sha256": "adb6a2f633bcadbfbd3664745493baba6bd58a8b8bc0f06e44456164f1dae5b8"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/dwe-native-harmonic-50m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/dwe-native-harmonic-50m.json",
       "bytes": 5515,
       "sha256": "6020e6959226a6e1fd56f65f4df18599ec38c9b4bef38ad9378df08a83c52309"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/dwe-native-nearest-100m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/dwe-native-nearest-100m.json",
       "bytes": 5703,
       "sha256": "6dfbc7d308e0d8ff4a323324a3f20bae3a2aa0ca7e14379f454d1b75b4229837"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/independent-boundary-statistics.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/independent-boundary-statistics.json",
       "bytes": 1463,
       "sha256": "b742f22fb4ddabc317fd616c8a1538452387757112b6e212e0588edde1da648e"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/numerics-check.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/numerics-check.json",
       "bytes": 271,
       "sha256": "213a66d8ae68dfd17731a4adfc8ee85dfd3449b10601c6d43b8c78874bc432ee"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/portable-reproduction-check.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/portable-reproduction-check.json",
       "bytes": 641,
       "sha256": "edb0d740674028e00ceb721073ae2a1d648875ca4e81b30d5f9b1bb649c22a63"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/review-display-field.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/review-display-field.json",
       "bytes": 885,
       "sha256": "a2de7b159f39a23e53878d5f5f4d7cda4b01f87621d8011c79f470ecbdc0927f"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/review-final-estimate.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/review-final-estimate.json",
       "bytes": 1619,
       "sha256": "fd2ccc752ca2ae1d86fc64a381d1fbe0b8c5c20da6518758a08ff155ed2de77f"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/review-grid-comparison.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/review-grid-comparison.json",
       "bytes": 1020,
       "sha256": "5246c0b6c4ed8beb1cab72193f1a81edf93b7393a7af388f102418ec7031adff"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/swe-implicit-100m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/swe-implicit-100m.json",
       "bytes": 45589,
       "sha256": "9e01c772c64688bb29c7a0fe06a91a54a7968b8c46d9eb4a30c5bb919fb2eda2"
     },
     {
-      "path": "diagnostics/before-local-stage-correction/prior-domain/swe-no-advection-100m.json",
+      "path": "diagnostics/before-3km-extension/before-local-stage-correction/prior-domain/swe-no-advection-100m.json",
       "bytes": 16841,
       "sha256": "08cf3448a23b8caea8d5613e79621881f8dc71bdf1eeee7fccff1525f463cb45"
     },
     {
-      "path": "diagnostics/carleton-native-probes.json",
+      "path": "diagnostics/before-3km-extension/carleton-native-probes.json",
       "bytes": 2013,
       "sha256": "fff57486bae1529bc57ff27b59ccbf6a878a2c2dce1b22bb17277da12cf3802a"
     },
     {
-      "path": "diagnostics/dwe-native-50m.json",
+      "path": "diagnostics/before-3km-extension/dwe-native-50m.json",
       "bytes": 5776,
       "sha256": "2a1b815b116e5aa1b20164d6cc83126820d01365dc1858826bfa644cdd3c7ba8"
     },
     {
-      "path": "diagnostics/local-candidate-independent-review.json",
+      "path": "diagnostics/before-3km-extension/local-candidate-independent-review.json",
       "bytes": 37559,
       "sha256": "4d554e4ecbf42c0ed4d8b5857cc8abf3b315e07dd7c65a7a3639617155fd3cd5"
     },
     {
-      "path": "diagnostics/local-candidate-independent-review.log",
+      "path": "diagnostics/before-3km-extension/local-candidate-independent-review.log",
       "bytes": 8294,
       "sha256": "50f69e4e68b8369c8575e9f2d958ab48a5aa45f0167b3e567f4435711cc51abf"
     },
     {
-      "path": "diagnostics/portable-reproduction-check.json",
+      "path": "diagnostics/before-3km-extension/model-report.json",
+      "bytes": 61492,
+      "sha256": "b6963f4785998506742b9d0c9314f293e109e92e2bfe4998a5b633b581a6ebff"
+    },
+    {
+      "path": "diagnostics/before-3km-extension/portable-reproduction-check.json",
       "bytes": 3183,
       "sha256": "815c703c671553dfd69068a2c748d182215a1b492509b986e4373a4084ce8d8b"
     },
     {
-      "path": "diagnostics/targeted-before-after.json",
+      "path": "diagnostics/before-3km-extension/targeted-before-after.json",
       "bytes": 9384,
       "sha256": "6ae91bc4e0fb2b62c270e9c1edd8d59ebf89438962cd27e73ebd5b928d68fa59"
     },
     {
+      "path": "diagnostics/comparison-audit.json",
+      "bytes": 15533,
+      "sha256": "36719cf0c131532606090ef83a9408dc58716dcb06ba2de48087daaedc9f3a3a"
+    },
+    {
+      "path": "diagnostics/dwe-native-50m.json",
+      "bytes": 5592,
+      "sha256": "9c21e4907697fe0ce041cff0f88b52e1d80c61c5f8a12d8cf5a0546b817b926c"
+    },
+    {
+      "path": "diagnostics/geometry-expanded-final-audit.json",
+      "bytes": 3016,
+      "sha256": "6cb18c6240356bf4c2d1b71ca6569526859755f6fa33eb20a258d4eb538452b1"
+    },
+    {
+      "path": "diagnostics/geometry-expanded-source-audit.json",
+      "bytes": 3986,
+      "sha256": "03b52fa772dd572dfab2a0caca266d5d3f6fd37dab551e5539a43d95640ad76d"
+    },
+    {
+      "path": "diagnostics/hydraulic-cut-gap.json",
+      "bytes": 1277,
+      "sha256": "5fcc1ea41750c845dc0da13f79ba140d4e1f20fba0bc3885aec19f4cf711889b"
+    },
+    {
+      "path": "diagnostics/independent-review.json",
+      "bytes": 2683,
+      "sha256": "f786da0476e43bfaad7de853e63c725718a739782d4eaa1d8b7e4acaa68441be"
+    },
+    {
+      "path": "diagnostics/portable-reproduction-check.json",
+      "bytes": 2842,
+      "sha256": "7765bdf5a62b16d7294dea6d7cdadc102c7beb312ce50c57165cef6bd12cd824"
+    },
+    {
+      "path": "diagnostics/prepared-bed.json",
+      "bytes": 641,
+      "sha256": "3952697867299297183ead4ce71c542eade6ed9bd9afa0f99812a6777720ebf2"
+    },
+    {
+      "path": "diagnostics/source-domain-audit.json",
+      "bytes": 966,
+      "sha256": "2f27969bab885555bd3963994f119756e18b89a1c00d32f60df9ec7712d45616"
+    },
+    {
       "path": "display-field.json",
-      "bytes": 10002198,
-      "sha256": "6af379480059a1611ddbd49a6cbb784186fbcb50e5ec0b24979e22bdc5426e41"
+      "bytes": 10586515,
+      "sha256": "653d31ac284a724bd83d000064f19d375d5e6a8dd14a320fb48a4f0eef3904bb"
     },
     {
       "path": "dwe-calibrated-50m.json",
-      "bytes": 6175,
-      "sha256": "b59c2838ff0dbc7380f2e72fef79fa7549ad497094ef9c71ed194b0492301fbc"
+      "bytes": 5998,
+      "sha256": "145f498fd91c7aad1180d116c64f4aec04a2e4518c227201d7bc6880bde646b6"
     },
     {
       "path": "dwe-calibrated-50m.npz",
-      "bytes": 8842963,
-      "sha256": "82ea22e673fcc72a7bf2352b1de33e973413da6c7d32d27ce2023239d5573101"
+      "bytes": 9152644,
+      "sha256": "948c22f163b9a4a24e7af2a1be2daabe652060f34906a65d2be35fdc43b818dc"
     },
     {
       "path": "estimate_bank_bed.py",
@@ -228,8 +288,8 @@
     },
     {
       "path": "inputs/array-integrity-manifest.json",
-      "bytes": 2479,
-      "sha256": "8cedbf94a5bd1e7f374cafb6ca577bb1e3b5cc06ebd34be20592d2fadad43322"
+      "bytes": 2628,
+      "sha256": "8c47414472773a67d4557a239cd5503bee9f26590f8ba19b987a6881e32d2676"
     },
     {
       "path": "inputs/bathymetry-grid-100m-audit.json",
@@ -248,8 +308,8 @@
     },
     {
       "path": "inputs/bathymetry-grid-50m.npz",
-      "bytes": 14171483,
-      "sha256": "d0c2b6ae3ec44203cda5ff2318b8399566abce300795c1b7348a8501c88731b9"
+      "bytes": 14171747,
+      "sha256": "ba5120a30dbbb397327de31ec18176dc1798a746e48e962d0374b8a4fcf31b47"
     },
     {
       "path": "inputs/BATHYMETRY-INPUTS.md",
@@ -283,8 +343,8 @@
     },
     {
       "path": "inputs/README.md",
-      "bytes": 1156,
-      "sha256": "747634f386ac4068a1714ee42f61fc492d9bfcc4fad84afbfbaf9d7be61694fc"
+      "bytes": 942,
+      "sha256": "c2b5f2f5332708752c95eb8b2b511a6650c94eef6f617ddde61e648e09d477d4"
     },
     {
       "path": "inputs/water-repair-manifest.json",
@@ -293,18 +353,23 @@
     },
     {
       "path": "model-report.json",
-      "bytes": 61492,
-      "sha256": "b6963f4785998506742b9d0c9314f293e109e92e2bfe4998a5b633b581a6ebff"
+      "bytes": 37093,
+      "sha256": "1601d05b23d5cf9553d2555acb8c4c31661cd7d726742a77a8f3e835019ff85f"
+    },
+    {
+      "path": "prepare_source_domain.py",
+      "bytes": 1193,
+      "sha256": "18b99853ae06e803e576c80c8b65a5f5709309396691d25707caf437c2151c34"
     },
     {
       "path": "PUBLICATION-SOURCES.md",
-      "bytes": 15041,
-      "sha256": "2c55d2c20b15b9577ee9a81d8295e2ac76b3eb69dd164b5dd524fd7e5e2aad38"
+      "bytes": 11653,
+      "sha256": "0678471cef6e3af7b4623ffda87a00b4991172b5b31f3d187b7e7037c64b3463"
     },
     {
       "path": "README.md",
-      "bytes": 6748,
-      "sha256": "2cc5be8d086c9b4b960fc104886f300cd2f234757690ac60f0593f973d15caf7"
+      "bytes": 6330,
+      "sha256": "f4ad8aad156a758d739438dc6cf4fef546758ce3ce0bc495d8e90a1c7d8e2f73"
     },
     {
       "path": "requirements.txt",
@@ -324,7 +389,7 @@
     {
       "path": "solve_local_wetness.py",
       "bytes": 6280,
-      "sha256": "eab93eecf1a140519c3e1573b803ed94cc215804e87840bfaa376ebef6cec165"
+      "sha256": "296cea49ac9f4d6fcbb8414df6f0fd3a2acd7b17074a8467651bed56b0c18757"
     },
     {
       "path": "solve_semiimplicit_momentum.py",

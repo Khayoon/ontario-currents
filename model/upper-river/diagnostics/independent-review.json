@@ -1,0 +1,64 @@
+{
+  "method": "Independent source-array and finite-volume reconstruction; numerical checks are not velocity validation.",
+  "case": "expanded-model",
+  "solution_sha256": "948c22f163b9a4a24e7af2a1be2daabe652060f34906a65d2be35fdc43b818dc",
+  "field_sha256": "653d31ac284a724bd83d000064f19d375d5e6a8dd14a320fb48a4f0eef3904bb",
+  "unchanged_source_arrays": {
+    "x": true,
+    "y": true,
+    "bed_igld85_estimated": true,
+    "wet_geometry": true,
+    "measured_bathy": true,
+    "mean_stage_igld85_estimated": true,
+    "bathy_source_product": true,
+    "source_subsample_count": true
+  },
+  "only_allowed_changed_source_array": "proposed_active_corridor",
+  "retrieved_solved_bed_max_abs_change_m": 0.0,
+  "selected_bed_identical_to_prepared_including_nan": true,
+  "wet_cells": 177775,
+  "added_wet_cells": 5989,
+  "removed_wet_cells": 0,
+  "any_wet_outside_source_water": false,
+  "minimum_actual_depth_m": 0.12135566804765574,
+  "actual_depth_floor_cells": 0,
+  "maximum_saved_depth_error_m": 0.0,
+  "stage_minmax_m": [
+    74.5217067669173,
+    74.80174436090226
+  ],
+  "discharge_in_m3s": 7377.579999999998,
+  "discharge_out_m3s": 7377.578346296141,
+  "relative_boundary_flux_error": 2.2415261607472513e-07,
+  "maximum_interior_cell_flux_residual_m3s": 0.00010768019956231001,
+  "inactive_adjacent_above_rewet_trigger": 0,
+  "maximum_inactive_adjacent_supported_depth_m": 0.1285546114232261,
+  "common_vector_rms_change_mps": 0.005211473932346104,
+  "common_moving_angle_change_percentiles_deg": [
+    0.002298462996559478,
+    0.5139216118379812,
+    1.691390450786302,
+    8.749377342337366
+  ],
+  "common_inferred_bed_max_change_m": 0.4038487101316548,
+  "final_active_set": {
+    "iteration": 1,
+    "wet_cells": 177775,
+    "removed_shallow_cells": 0,
+    "activated_connected_cells": 0,
+    "mask_changed_cells": 0,
+    "minimum_actual_depth_m": 0.12135566804765574,
+    "cells_using_floor": 0,
+    "max_depth_of_inactive_adjacent_candidate_m": 0.1285546114232261,
+    "discharge_m3s": 7105.575395425998,
+    "boundary_flux_error": 2.2415261604267094e-07
+  },
+  "export_source_sha_matches": true,
+  "qualifications": [
+    "Kingston mean stage is imposed3000m upstream of the original cut: explicit boundary-placement approximation, not an observed stage at that cross-section.",
+    "Raw source bathymetry and source water are fixed; missing bank bed is regenerated for the expanded geometric corridor.",
+    "Uniform roughness fit to regulation discharge is calibration, not observed velocity validation.",
+    "Diffusion-wave physics omits inertia, wind, Coriolis, stratification and surface shear; shallow inferred bay-bed uncertainty remains."
+  ],
+  "passed": true
+}

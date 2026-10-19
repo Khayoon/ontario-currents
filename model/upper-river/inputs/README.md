@@ -1,7 +1,7 @@
-# Unchanged source inputs, corrected hydraulic wet activation
+# Source inputs for the 3 km upstream cut
 
-These input arrays are byte-identical to the previous 1 km inlet-extension model package. Numerical bathymetry, source-water geometry, proposed computational cut, source flags and endpoint observations have not changed. The correction occurs in `solve_local_wetness.py`: it no longer assumes Brockville's lowest stage everywhere upstream.
+The selected 50 m NPZ retains the previous raw depth values, NaNs, original water geometry, datum-stage arrays, product flags and coordinates. Only `proposed_active_corridor` changes: it is reproducibly cut 3,000 m upstream of the original line. The mask describes the geometric computational domain; the hydraulic solver subsequently determines wet cells from local levels.
 
-The `proposed_active_corridor` mask describes the geometric domain, not a physical wet/dry decision. The active-set solver determines hydraulic wet cells using locally solved water levels. Its 0.12 m wet margin and 0.13 m connected rewet trigger are disclosed numerical shoreline criteria, not bathymetric accuracy claims. Raw NaNs remain missing bed; bank estimation is separate.
+Run `prepare_source_domain.py` from the package root to verify or regenerate the cut. `array-integrity-manifest.json` records all array hashes and the intentionally changed mask. Missing source bed remains NaN in this input; `estimate_bank_bed_open.py` separately infers bank bed for the chosen corridor.
 
-The 100 m input and historical source-preparation notes refer to earlier sensitivity configurations. Current selected checks and scope are in `../model-report.json`. Per-array hashes and identity checks are in `array-integrity-manifest.json`. Historical source manifests retain original cache paths for provenance; no current reproduction command depends on them.
+The retained 100 m dataset belongs to historical sensitivity work, not a current 3 km convergence comparison. Historical download/preparation manifests retain source URLs and original cache paths for provenance only.
