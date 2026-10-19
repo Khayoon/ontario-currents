@@ -1,7 +1,6 @@
 {
   "mesh": "../../src/mesh.json",
-  "field": "inputs/noaa-week-mean.json",
-  "geography": "inputs/water.geojson",
+  "geography": "inputs/geography.geojson",
   "rivers": [
     "../../model/upper-river/display-field.json"
   ],
@@ -26,7 +25,7 @@
     "subtitleGap": 37,
     "subtitleSize": 12
   },
-  "subtitle": "12–18 OCTOBER 2026 UTC · WEEKLY LAKE MEAN",
+  "subtitle": "12–18 OCTOBER 2026 UTC · HOURLY SURFACE FIELDS",
   "edition": {
     "text": "TORONTO TO BROCKVILLE",
     "x": 80,
@@ -150,7 +149,7 @@
     "x": 78,
     "y": 1000,
     "width": 350,
-    "title": "WATER TEMPERATURE · WEEKLY MEAN",
+    "title": "WATER TEMPERATURE",
     "ticks": [
       {
         "value": 12,
@@ -169,14 +168,14 @@
   },
   "footnotes": [
     {
-      "text": "NOAA LOOFS · surface vector / temperature means · 28 six-hourly fields",
+      "text": "NOAA LOOFS · hourly surface currents / temperature · 12–18 Oct UTC",
       "x": 625,
       "y": 990,
       "size": 10,
       "color": "#92adb1"
     },
     {
-      "text": "Colour = temperature · grey = unavailable · motion enhanced",
+      "text": "Colour = temperature · grey = unavailable · river motion enhanced",
       "x": 625,
       "y": 1011,
       "size": 10
@@ -189,7 +188,7 @@
       "color": "#b4b9a4"
     },
     {
-      "text": "River forcing: 12–17 Oct · CHS bathymetry / levels · IJC outflow",
+      "text": "Fixed river estimate · 12–17 Oct forcing · CHS / IJC · not hourly",
       "x": 625,
       "y": 1060,
       "size": 9,
@@ -212,28 +211,22 @@
   ],
   "width": 2560,
   "height": 1440,
-  "duration": 22,
   "fps": 30,
   "particleCount": 12500,
-  "warmupFrames": 220,
+  "warmupFrames": 45,
   "baseBrightness": 0.3,
-  "video": "rendered/master.mp4",
+  "video": "rendered/lake-ontario.mp4",
   "manifest": "rendered/render-manifest.json",
-  "poster": "rendered/review.png",
-  "posterWidth": 2560,
-  "posterHeight": 1440,
-  "posterFrames": 160,
   "sourcePriority": "last",
   "useNativeOntarioCoast": false,
   "clipCurrentsToWater": true,
   "particleMinLife": 180,
   "particleLifeRange": 150,
-  "trailRetention": 0.971,
+  "trailRetention": 0.92,
   "particleWidth": 0.78,
   "particleOpacity": 0.94,
   "gridCell": 0.25,
   "maxParticleStep": 0.2,
-  "motionAcceleration": 70000,
   "seed": 74129,
   "waterColor": "#0a2632",
   "coastColor": "#2d5b65",
@@ -275,11 +268,10 @@
     "2": 12
   },
   "preserveUnweightedSeedDensity": true,
-  "minDisplaySpeed": 12,
   "maxDisplayBoost": 1024,
   "seedRegions": [
     {
-      "name": "weak eastern-lake surface mean",
+      "name": "eastern-lake particle visibility",
       "bounds": [
         -76.72,
         44.0,
@@ -341,5 +333,16 @@
     158,
     174,
     179
-  ]
+  ],
+  "hourlyManifest": "inputs/hourly/manifest.json",
+  "expectedHours": 168,
+  "activeDuration": 24,
+  "restartDuration": 1,
+  "riverMinDisplaySpeed": 12,
+  "clock": {
+    "x": 78,
+    "y": 220,
+    "width": 320,
+    "size": 15
+  }
 }

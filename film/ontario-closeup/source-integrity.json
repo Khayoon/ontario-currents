@@ -1,21 +1,17 @@
 {
-  "edition": "28-sample 12-18 October 2026 UTC temperature-coloured Lake Ontario film",
+  "edition": "169-endpoint chronological 12-18 October 2026 UTC Lake Ontario film",
   "intended_repository_location": "film/ontario-closeup",
-  "source_renderer_sha256": "f02b795c7f83ca0f4c01395fa2de0a8715b77eb223dad5109cb5a557115d1fe6",
-  "source_config_sha256": "84927a70e84249acb45c5c9ffe577c881dba33c44050646708a1adfafa6f06b7",
-  "render_logic_copied_without_changes": true,
+  "source_renderer_sha256": "05fe498736ce609319629d9fb8be14512e21f0a5a1956d3d78bdea99815cca1a",
+  "source_config_sha256": "4c4411cdddd1f0a5d9a232ac704baf56d803dbc2f47472d67d7e9c91826c6702",
   "portable_changes": [
     "Canvas dependency and FFmpeg executable resolution",
+    "relative input/output paths",
+    "review snapshots/probes omitted from portable config",
     "LF normalization"
   ],
-  "source_data_copied_byte_identically": {
-    "field": "307c30517b8d8d54c6987157a128625039318e160c3a384ebe4ddd0dfa909c15",
-    "geography": "abba152ec2676c644b9c2c42dba5b5a998b2c7bef15fb22c2891f08b2d33c381",
-    "helper": "1a9ff1f31c1338bab4423a7152e664c96b10fc0fb51b5e7a36c386741f26f4f4",
-    "mesh": "d5720f28802855db79f088946e359e75554ad64f432a048e7df06f45832471cf",
-    "river": "653d31ac284a724bd83d000064f19d375d5e6a8dd14a320fb48a4f0eef3904bb"
-  },
-  "source_protection_check": "All source arrays/files unchanged after preparation.",
+  "render_logic_copied_without_changes": true,
+  "dataset_manifest_sha256": "66ff440910a4cb9822c12d59271f70f1ad2d4a6bfc393c9f914230afcb9b7e4e",
+  "source_protection_check": "All 169-hour binary source hashes match; original mean renderer/config, mesh, river and helper unchanged.",
   "external_inputs": [
     {
       "path": "../../src/mesh.json",
@@ -28,11 +24,14 @@
   ],
   "lake_period": {
     "first_model_time": "2026-10-12T00:00:00Z",
-    "last_model_time": "2026-10-18T18:00:00Z",
+    "last_requested_hour": "2026-10-18T23:00:00Z",
     "calendar_end_exclusive": "2026-10-19T00:00:00Z",
-    "samples": 28
+    "closing_endpoint": "2026-10-19T00:00:00Z",
+    "requested_hour_count": 168,
+    "endpoints": 169,
+    "last_encoded_chronological_time": "2026-10-18T23:46:00Z"
   },
-  "river_period": "2026-10-12T00:00:00Z to 2026-10-17T12:00:00Z; unchanged steady mean-forcing estimate",
+  "river_period": "2026-10-12T00:00:00Z to 2026-10-17T12:00:00Z; unchanged fixed mean-forcing estimate",
   "temperature_scale_C": [
     12,
     16.5
@@ -41,137 +40,63 @@
     "<=12",
     ">=16.5"
   ],
-  "final_encoded_review_status": "passed; actual final visual and independent encoded reviews accepted, no pending visual assessment",
+  "final_encoded_review_status": "passed; actual full-resolution encoded visual review and clock/loop checks accepted",
   "final_encoded_video": {
-    "sha256": "1d85eb18651c7756755c9d26e9fdc93d625460869198d521adcb778890ae73aa",
-    "bytes": 61016615,
-    "seconds": 20,
-    "frames": 600,
-    "fps": 30,
+    "passed": true,
+    "video": "work\\hourly-render\\ontario-hourly-master.mp4",
+    "sha256": "b6da3ba744ee3a5e50f6d8319d9d81cd2d24c8244d2df9370c0c30491c91b303",
+    "bytes": 102976638,
     "width": 2560,
     "height": 1440,
+    "seconds": 25,
+    "frames": 750,
+    "fps": 30,
+    "audio": false,
     "codec": "h264",
     "pixel_format": "yuv420p",
-    "audio": false
+    "chronological_frames": 720,
+    "replay_frames": 30,
+    "clock_first": "2026-10-12T00:00:00.000Z",
+    "clock_last_chronological": "2026-10-18T23:46:00.000Z",
+    "all_requested_hours_covered": true,
+    "lake_probes": [
+      {
+        "name": "central lake",
+        "ranges": {
+          "u": 0.4821831876140843,
+          "v": 0.45580054659554226,
+          "temperature": 1.758359795218098
+        }
+      },
+      {
+        "name": "eastern lake",
+        "ranges": {
+          "u": 0.3244506246457671,
+          "v": 0.31045266633460056,
+          "temperature": 1.2330999348775933
+        }
+      }
+    ],
+    "river_uv_fixed": true,
+    "river_missing_temperature_neutral": true,
+    "segment_metrics": {
+      "segments": 85682121,
+      "maximumSegmentPixels": 0.200000000019727,
+      "hourSplits": 4230086,
+      "invalidResets": 31467,
+      "substepLimitResets": 0,
+      "zeroSegments": 607739
+    },
+    "decoded_review_resolution": [
+      640,
+      360
+    ],
+    "decoded_active_delta_mean": 0.530083215821872,
+    "decoded_active_delta_median": 0.5295558449074074,
+    "decoded_active_delta_min": 0.3541594328703704,
+    "decoded_last_to_first_mae": 0.46304398148148146,
+    "full_resolution_actual_visual_review": "separate independent report required"
   },
-  "qa_copy_provenance": [
-    {
-      "source": "temperature-statistics-review.json",
-      "package_path": "qa/temperature-statistics-review.json",
-      "source_sha256": "ea4ebee68a8aa1d0582588e4c8f90e0adf6d4c052a4f9e200433ab772a9b7a51",
-      "byte_identical": true
-    },
-    {
-      "source": "palette-selection.json",
-      "package_path": "qa/palette-selection.json",
-      "source_sha256": "6567d81afdf176222138d4d9840f031adc2266109461be98bd7eb82d51374d9f",
-      "byte_identical": true
-    },
-    {
-      "source": "temperature-preview-review.json",
-      "package_path": "qa/temperature-preview-review.json",
-      "source_sha256": "328ffc809e1b050c6bed589e563e7ccb9243e2fb064cdc011f4a872efe89bb14",
-      "byte_identical": true
-    },
-    {
-      "source": "current-week-ingestion-review.json",
-      "package_path": "qa/current-week-ingestion-review.json",
-      "source_sha256": "b36c379addbb2388d39f5aad4e6aa3f98ad02d4e63b6f57898402e15d55efffe",
-      "byte_identical": true
-    },
-    {
-      "source": "temperature-raster-coverage-review.json",
-      "package_path": "qa/temperature-raster-coverage-review.json",
-      "source_sha256": "83b15caa7c4cbad50f73badeca987f97b2e8c9c7ee21d8371806b79dd5b9bcc4",
-      "byte_identical": true
-    },
-    {
-      "source": "thermal-validation/REPORT.md",
-      "package_path": "qa/thermal-validation/REPORT.md",
-      "source_sha256": "89e2977ad00bb4b6ac99d1714af2d361ebaf8ee25541177e488e2f049c454f0a",
-      "byte_identical": true
-    },
-    {
-      "source": "thermal-validation/actual-field-temperature-stats.json",
-      "package_path": "qa/thermal-validation/actual-field-temperature-stats.json",
-      "source_sha256": "9f527d905239167f72453755aa9652a15ed2196f587fdcc0522e67776ba25895",
-      "byte_identical": true
-    },
-    {
-      "source": "thermal-validation/thermal-base.png",
-      "package_path": "qa/thermal-validation/thermal-base.png",
-      "source_sha256": "f0570599f15e0b43a193f0cc51ea0b615f4149ee76f8fed8e2e05b5359d16fdc",
-      "byte_identical": true
-    },
-    {
-      "source": "thermal-validation/thermal-trails.png",
-      "package_path": "qa/thermal-validation/thermal-trails.png",
-      "source_sha256": "eb05f7389bd684cbd7cb50ec6083e8bf3dc93d1e6fb67c5a6132d77443204b03",
-      "byte_identical": true
-    },
-    {
-      "source": "thermal-validation/speed-control.png",
-      "package_path": "qa/thermal-validation/speed-control.png",
-      "source_sha256": "9335968cc4feee48bb606dba4a778fa759ec1d88ca14742966f055bfb38df6ca",
-      "byte_identical": true
-    },
-    {
-      "source": "thermal-validation/before-speed-control.png",
-      "package_path": "qa/thermal-validation/before-speed-control.png",
-      "source_sha256": "71ee4959235f3805aeeb65a17a3fa8bcbb41e70b315b10e7a39c60e5f874a472",
-      "byte_identical": true
-    },
-    {
-      "source": "thermal-validation/report.json",
-      "package_path": "qa/thermal-validation/report.json",
-      "source_sha256": "c12defdea58229d35f2eaa0c62fa815484a2470510aeba1772a98cf5a26ade8e",
-      "byte_identical": false,
-      "only_rewrite": "Replace local absolute tested_renderer path with work/forum-render/render.mjs; all evidence values and tested-renderer hash retained."
-    },
-    {
-      "source": "work/temperature-week/final-temperature-film-review.json",
-      "package_path": "qa/final-temperature-film-review.json",
-      "source_sha256": "79f3ea3cd68162ce87c977f3792fff6250d8d9e583709118e5878ea674637782",
-      "byte_identical": true
-    },
-    {
-      "source": "work/temperature-week/final-qa/FINAL-QA.json",
-      "package_path": "qa/FINAL-QA.json",
-      "source_sha256": "cee4ead044eb73601fb053b0346aa4b04a7d70592669f731617e5bac17cf0426",
-      "byte_identical": true
-    },
-    {
-      "source": "work/temperature-week/final-qa/final-seam-review.json",
-      "package_path": "qa/final-seam-review.json",
-      "source_sha256": "11bc593889dbde8ad347c810b8aa23374437f377d8eeb52dbf77a25110ffadbb",
-      "byte_identical": true
-    },
-    {
-      "source": "work/temperature-week/final-qa/final-carleton-review.json",
-      "package_path": "qa/final-carleton-review.json",
-      "source_sha256": "470fde51996930421d7c61d9681bf69f8f647b556ca9196cf2a533227f1a8ee1",
-      "byte_identical": true
-    },
-    {
-      "source": "work/temperature-week/final-qa/thermal-river-review.json",
-      "package_path": "qa/thermal-river-review.json",
-      "source_sha256": "2b1886dacf5deb0e15e617aa8e649cad269e52392d47d89e3fe67627517b7ca6",
-      "byte_identical": true
-    },
-    {
-      "source": "work/forum-render/ontario-temperature-motion-check.json",
-      "package_path": "qa/ontario-temperature-motion-check.json",
-      "source_sha256": "8950b06f20b8359e3a4e0960f03c2a1d150b09396442c5b64b37aff082fa6562",
-      "byte_identical": true
-    },
-    {
-      "source": "work/forum-render/ontario-temperature-media-verification.json",
-      "package_path": "qa/media-verification.json",
-      "source_sha256": "29b4a778f0a0975fd3caf9334b4b0614b7bbbfba0327df0262e62b89b9832b6f",
-      "byte_identical": false,
-      "only_rewrite": "Replace local absolute format.filename with lake-ontario-temperature.mp4; all media evidence and exact video SHA-256 retained."
-    }
-  ],
   "files": [
     {
       "path": ".gitignore",
@@ -180,18 +105,88 @@
     },
     {
       "path": "config.json",
+      "bytes": 6590,
+      "sha256": "2222ea635ee903cdd24eec07defed8fdf448b07d4a992b670ada88d5a72ffca2"
+    },
+    {
+      "path": "DATA-SOURCES.md",
+      "bytes": 5829,
+      "sha256": "7c9c447c1f1fb186525ad35f58dbe5cd6a5e3670a63f1091ba843f4a7f7e633c"
+    },
+    {
+      "path": "history/pre-hourly/config.json",
       "bytes": 6225,
       "sha256": "b55f2c7ab82d7be3c4a3d2219adee5280b0b62d305abe3d4c64d36f9a525c604"
     },
     {
-      "path": "DATA-SOURCES.md",
-      "bytes": 4270,
-      "sha256": "74fc346a1061933b761c6dd872517c003b3fc7bac62b06ff2a34a712f8c0d9a9"
-    },
-    {
-      "path": "finish.py",
+      "path": "history/pre-hourly/finish.py",
       "bytes": 3551,
       "sha256": "b510f8caa2e300efbcd2f663807bb7c956bd1fbdd3b5238749a86d2c5b4d289a"
+    },
+    {
+      "path": "history/pre-hourly/README.md",
+      "bytes": 365,
+      "sha256": "27a499ec91323a51463b9dd09f17070075e16ab0e47dedde1997854d21614ebf"
+    },
+    {
+      "path": "history/pre-hourly/render.mjs",
+      "bytes": 27471,
+      "sha256": "d10ffbcca4466561caa76fc1d75bab0cd6a662c6750d773651dcb26c15a2f3a8"
+    },
+    {
+      "path": "history/pre-hourly/source-integrity.json",
+      "bytes": 17672,
+      "sha256": "97b81a2400b50f67c5b2b0b9cf25e0601a45befc196ce3847ec0a3d1606d5bb3"
+    },
+    {
+      "path": "inputs/geography.geojson",
+      "bytes": 3677177,
+      "sha256": "abba152ec2676c644b9c2c42dba5b5a998b2c7bef15fb22c2891f08b2d33c381"
+    },
+    {
+      "path": "inputs/hourly/manifest.json",
+      "bytes": 252208,
+      "sha256": "66ff440910a4cb9822c12d59271f70f1ad2d4a6bfc393c9f914230afcb9b7e4e"
+    },
+    {
+      "path": "inputs/hourly/mesh.json",
+      "bytes": 1914196,
+      "sha256": "d5720f28802855db79f088946e359e75554ad64f432a048e7df06f45832471cf"
+    },
+    {
+      "path": "inputs/hourly/noaa-20261019-00z.das",
+      "bytes": 15233,
+      "sha256": "a630ef897484e186c3418cf54050c308426d7be2628f38224669c8094ca4c29d"
+    },
+    {
+      "path": "inputs/hourly/prepare_hourly.py",
+      "bytes": 12638,
+      "sha256": "2ba134527ce349fe18766daba47cc6f337b7ac3c470606540a3f3d8b86522a16"
+    },
+    {
+      "path": "inputs/hourly/README.md",
+      "bytes": 4074,
+      "sha256": "813098a7f4577f202584b651e550faeccf46356d03730b137db74ad9ec233dae"
+    },
+    {
+      "path": "inputs/hourly/t.f32",
+      "bytes": 23251020,
+      "sha256": "5d083d7be1c42d7c7be8de4fef5db2876b4e112bee8957d8237ef2d665aa9567"
+    },
+    {
+      "path": "inputs/hourly/temperature-node-statistics.json",
+      "bytes": 31907,
+      "sha256": "09cc8e4fecdbb24337ce1313300395e87ffbb9f0639472031bb2bd7764d42839"
+    },
+    {
+      "path": "inputs/hourly/u.f32",
+      "bytes": 43570228,
+      "sha256": "82876e4a133ee745e975ad59eb78aa69504866e34aa39afa3dc8cf86ec632269"
+    },
+    {
+      "path": "inputs/hourly/v.f32",
+      "bytes": 43570228,
+      "sha256": "15b73cac293658f8af27aa704c6a533707292480327198b00fb5b4ed85733732"
     },
     {
       "path": "inputs/mesh-flow.js",
@@ -220,8 +215,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 429,
-      "sha256": "d9c50b7225dff859b31ef971959f01232b3f634f781e03517067dd49cec9048d"
+      "bytes": 413,
+      "sha256": "4beb9990b587e7bd07badb88057450c81e07d31b77a28defd9d3dedd5d48bf35"
     },
     {
       "path": "qa/before-temperature/ARCHIVE.json",
@@ -374,6 +369,61 @@
       "sha256": "79f3ea3cd68162ce87c977f3792fff6250d8d9e583709118e5878ea674637782"
     },
     {
+      "path": "qa/hourly/actual-hourly-source-tests.json",
+      "bytes": 1956,
+      "sha256": "ec95e027023afc35f450cac530d42719cd13ba292877f2aaa1733e8900253861"
+    },
+    {
+      "path": "qa/hourly/encoded-check.json",
+      "bytes": 1587,
+      "sha256": "7f8a3159656162cae41e5f015f61f60fca48c6e950c99c6fafcd902fcb20d75e"
+    },
+    {
+      "path": "qa/hourly/ffprobe.json",
+      "bytes": 2387,
+      "sha256": "cb5c502fe8d064df9a13c1709c878428d93d761f3385b7284bc4489e51cc2033"
+    },
+    {
+      "path": "qa/hourly/final-encoded-review.json",
+      "bytes": 10206,
+      "sha256": "fd5a17b70de52f11c61785dd3ef62b90d65d1ed6b7874f7af054bfa977153b04"
+    },
+    {
+      "path": "qa/hourly/hourly-temperature-statistics.json",
+      "bytes": 43197,
+      "sha256": "15eec9526b564d49a22a4bdf4fe65c53cdad14639805febe84b32d783536355e"
+    },
+    {
+      "path": "qa/hourly/portable-source-check.json",
+      "bytes": 7493,
+      "sha256": "18eac4a41d052df2b2f5a9c8c84aa430960fde98f3f24837f5934f4a55f75be9"
+    },
+    {
+      "path": "qa/hourly/preview-encoded-review.json",
+      "bytes": 8679,
+      "sha256": "d6654dfa06f04ecf6204c158e7dc16fe45473d81c082824486b2e59b246d196d"
+    },
+    {
+      "path": "qa/hourly/render-manifest.json",
+      "bytes": 680055,
+      "sha256": "f34904f1295709ee4aaf0a1a5628d6fa9e259090edeaac23c4ac17916fd46a06"
+    },
+    {
+      "path": "qa/hourly/renderer-integration-tests.json",
+      "bytes": 3374,
+      "sha256": "404ee9c4d24bf6c30909beddfe2c242ba2cb19f636c910bf6c8b14bcedc151f0"
+    },
+    {
+      "path": "qa/hourly/renderer-scientific-review.json",
+      "bytes": 4019,
+      "sha256": "b817a7ecc143458061decb3049d10ae1e3168919cb2f6d25daebd12896ace563"
+    },
+    {
+      "path": "qa/hourly/temporal-field-tests.json",
+      "bytes": 2273,
+      "sha256": "3bc9ee0f7303f8a30e46c8a42dcd586f926acfd9e6f1eab4120e5e712ab59b33"
+    },
+    {
       "path": "qa/media-verification.json",
       "bytes": 2279,
       "sha256": "1a8ac3beff15f5bd4d11e4f869f81ee2929b91c34463462e4eacc083670b12b6"
@@ -455,13 +505,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 5340,
-      "sha256": "686bf17a9abacafa07f0e3a038ad848851853b34efdc90d1e375a37da17fa361"
+      "bytes": 5559,
+      "sha256": "2bf0cba5e827cc1b823cfa83e628438074e1504be0ca381134c018df605873ec"
     },
     {
       "path": "render.mjs",
-      "bytes": 27471,
-      "sha256": "d10ffbcca4466561caa76fc1d75bab0cd6a662c6750d773651dcb26c15a2f3a8"
+      "bytes": 31647,
+      "sha256": "24a594c0d0db0d16429718b8c6ae9daa5423e2ceb6ffa7f235cc5b1116889932"
+    },
+    {
+      "path": "temporal-field.mjs",
+      "bytes": 7934,
+      "sha256": "f1b8aa09e2e41b4c1dc5d2d4538e051ab53f10f7e93f9ba09ac0de63c0cb0166"
     }
   ]
 }

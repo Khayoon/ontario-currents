@@ -2,12 +2,11 @@
   "name": "ontario-currents-film-source",
   "private": true,
   "type": "module",
-  "version": "1.0.0",
-  "description": "Portable deterministic Canvas renderer for the Lake Ontario current-map loop.",
+  "version": "2.0.0",
+  "description": "Chronological hourly Lake Ontario current and temperature film.",
   "scripts": {
-    "preview": "node render.mjs config.json --no-video",
-    "render": "node render.mjs config.json --no-poster",
-    "finish": "python finish.py"
+    "check": "node --check render.mjs && node --check temporal-field.mjs",
+    "render": "node --expose-gc render.mjs config.json"
   },
   "dependencies": {
     "@napi-rs/canvas": "0.1.100"

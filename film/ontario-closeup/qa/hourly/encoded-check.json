@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "video": "work\\hourly-render\\ontario-hourly-master.mp4",
+  "sha256": "b6da3ba744ee3a5e50f6d8319d9d81cd2d24c8244d2df9370c0c30491c91b303",
+  "bytes": 102976638,
+  "width": 2560,
+  "height": 1440,
+  "seconds": 25,
+  "frames": 750,
+  "fps": 30,
+  "audio": false,
+  "codec": "h264",
+  "pixel_format": "yuv420p",
+  "chronological_frames": 720,
+  "replay_frames": 30,
+  "clock_first": "2026-10-12T00:00:00.000Z",
+  "clock_last_chronological": "2026-10-18T23:46:00.000Z",
+  "all_requested_hours_covered": true,
+  "lake_probes": [
+    {
+      "name": "central lake",
+      "ranges": {
+        "u": 0.4821831876140843,
+        "v": 0.45580054659554226,
+        "temperature": 1.758359795218098
+      }
+    },
+    {
+      "name": "eastern lake",
+      "ranges": {
+        "u": 0.3244506246457671,
+        "v": 0.31045266633460056,
+        "temperature": 1.2330999348775933
+      }
+    }
+  ],
+  "river_uv_fixed": true,
+  "river_missing_temperature_neutral": true,
+  "segment_metrics": {
+    "segments": 85682121,
+    "maximumSegmentPixels": 0.200000000019727,
+    "hourSplits": 4230086,
+    "invalidResets": 31467,
+    "substepLimitResets": 0,
+    "zeroSegments": 607739
+  },
+  "decoded_review_resolution": [
+    640,
+    360
+  ],
+  "decoded_active_delta_mean": 0.530083215821872,
+  "decoded_active_delta_median": 0.5295558449074074,
+  "decoded_active_delta_min": 0.3541594328703704,
+  "decoded_last_to_first_mae": 0.46304398148148146,
+  "full_resolution_actual_visual_review": "separate independent report required"
+}

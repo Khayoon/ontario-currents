@@ -1,37 +1,38 @@
-# Lake Ontario: weekly temperature and current film
+# Lake Ontario: chronological temperature and current film
 
-A deterministic, silent **20-second, 2560 x 1440, 30 fps H.264 loop**, framing Lake Ontario through Brockville without insets, timeline or interactive controls. Colours show modeled surface temperature; particle trails show a fixed estimated flow field.
+**Numerical checks and independent final encoded visual review accepted.** This is a silent **25-second, 750-frame, 2560 × 1440, 30 fps H.264 film**. Its first 24 seconds show the 168-hour UTC week of 12–18 October 2026. The final one-second, explicitly labelled replay dissolve returns to the opening. It is an editorial restart, not modeled weather or a physical transition between the final and first fields.
 
-## Full-week lake inputs and colours
+## Hourly inputs and source clock
 
-The frozen NOAA LOOFS input has **28 six-hourly surface samples covering all seven UTC calendar days, 12-18 October 2026**. Actual model times run from 12 October 00:00 to 18 October 18:00 UTC. Calendar boundaries are 12 October 00:00 inclusive to 19 October 00:00 exclusive. Eastward/northward face vectors and node temperatures are averaged separately. This is a fixed sampled weekly mean, not chronological replay, a continuous 168-hour integral, climatology, or measured-current/temperature map.
+`inputs/hourly/manifest.json` identifies **169 endpoints**: every hour from 12 October 00:00 through 18 October 23:00, plus 19 October 00:00 for interpolation through the final interval. It records actual checked timestamps, native dimensions, binary hashes and official request/raw-response hashes. All 64,453 face vectors and 34,395 node temperatures are finite at every source time. U/V are in m/s; temperature is in degrees C at the top, model-dependent sigma layer. No weekly averaging or forecast substitution is used.
 
-All 64,453 face vectors and 34,395 node temperatures have 28 of 28 valid inputs. Native temperature units are degrees C; the top sigma layer has model-dependent thickness. The source mesh/order is unchanged. See `inputs/source-manifest.json` for every official dataset/request URL and raw-response hash; raw ASCII downloads are not bundled.
+Adjacent hourly east/north components and node temperatures are interpolated numerically. The shared centre-fan helper handles spatial display velocities within the original valid triangles; temperature remains independently interpolated from nodes. Invalid coverage and island holes are not filled, and the spatial reconstruction does not conserve native element means or face transports. No sequence of screenshot dissolves substitutes for these changing numerical fields.
 
-The chosen linear scale is **12 to 16.5 degrees C**, labelled **<=12 / >=16.5** (rendered with inequality symbols). Actual mean node extrema are 10.682209 to 16.893734 C. Spherical native wet-area statistics place 99.6582% inside this range, 0.1492% below and 0.19259% above. Endpoint saturation affects colour only, not source values. Grey base/trails explicitly identify unavailable temperature. No temperature is inferred from speed or extrapolated beyond the actual temperature mesh.
+Lake particles integrate the changing field using **25,200 model seconds per video second** (seven hours per second). **Lake motion has no additional minimum-speed boost.** Sampling, seeding, warm-up, shoreline termination and visible trails remain rendering choices, so these are illustrative model trajectories rather than observed parcels.
 
-## River and mesh display
+## Fixed colours and static river
 
-The **unchanged Kingston-Brockville depth-averaged estimate** retains its separately labelled **12 October 00:00 to 17 October 12:00 UTC** mean-forcing period. Valid regional river vectors take priority over overlapping NOAA vectors; NOAA temperature remains available independently where its source mesh covers the position. This is not a coupled or physically matched surface/depth-average boundary. The river remains simplified and unvalidated; inertia, wind, stratification and vertical shear are omitted. See [river limitations](../../docs/kingston-brockville-estimates.md).
+The original colour sequence stays fixed at **12–16.5°C**, with explicit **≤12 / ≥16.5** caps. Actual hourly source nodes span 7.0215–18.3903°C. The [168-state native wet-area/time review](qa/hourly/hourly-temperature-statistics.json) places 95.0631% inside the scale, 1.0183% below and 3.9187% above. The warm cap reaches 14.8494% of native wet area at 13 October 20:00 UTC; total endpoint saturation then reaches 15.0679%. Saturation changes colour only. Grey identifies unavailable temperature; current speed never substitutes for temperature. See [temperature sources and interpretation](../../docs/temperature-week.md).
 
-The same `inputs/mesh-flow.js` helper is shared with the browser. Spherical-area-weighted edge-connected wet-node fans and convex centre fans preserve source face vectors at triangle centroids and valid-edge continuity without filling invalid triangles or island holes. It changes interior display values and does not conserve native element spatial means or face transports. The source currents remain in m/s. Temperature is interpolated from its independent native node values. See [mesh display](../../docs/mesh-display.md) and [temperature provenance](../../docs/temperature-week.md).
+The regional Kingston–Brockville estimate stays **fixed**, with its separate **12 October 00:00 to 17 October 12:00 UTC** mean-forcing period. It is simplified, depth-averaged and unvalidated against local currents; the advancing lake clock does not make it hourly river dynamics. Weak river particles alone can receive a display boost targeting 12 design pixels/second, capped at an additional 1,024×. Exact-zero motion remains zero. That boost changes neither vectors nor temperatures and has no physical-time meaning.
 
-Fine field sampling is 0.25 output pixels; midpoint particle segments are bounded to 0.2 pixels. Nominal motion acceleration is 70,000. Slow nonzero vectors target 12 design pixels/second with additional boost capped at 1,024; extremely weak flow may remain slower. Exact-zero segments are not drawn. Motion and particle density have no uniform physical-time or discharge interpretation. Temperature colour does not encode current speed.
+Regional river vectors take priority where solved. Actual NOAA temperature remains available independently wherever its mesh covers the position; river-only waters have the neutral missing-temperature treatment. There is no extrapolated temperature or physically coupled surface/depth-average handoff. Read the [hydraulic assumptions](../../docs/kingston-brockville-estimates.md).
 
-## Reproduce from the repository layout
+## Direct render
 
-Place this bundle at `film/ontario-closeup/` in the source checkout: its immutable external inputs are `../../src/mesh.json` and `../../model/upper-river/display-field.json`. Their exact hashes are recorded in `source-integrity.json`. Requires Node.js 22+, Python 3 and FFmpeg/FFprobe on PATH.
+This package lives at `film/ontario-closeup/` in the repository layout. Hourly binaries sit beside `inputs/hourly/manifest.json`; mesh and river references retain their repository-relative paths. Requires Node.js 22+, FFmpeg on PATH and the pinned Canvas dependency. Python is only needed for optional source preparation/checks.
 
 ```sh
 npm install
-node --expose-gc render.mjs config.json --no-poster
-python finish.py --output rendered/lake-ontario.mp4
+npm run render
 ```
 
-The renderer creates a 22-second master; the unchanged finalizer crossfades two seconds into a silent 20-second loop, using CRF 16 for join and body. `canvasModule` may select a package.json beside another Canvas installation; `FFMPEG_BINARY` and `FFPROBE_BINARY` may select executables. Native system fonts can change text appearance across platforms.
+The renderer writes the **final 25-second movie directly** to the configured video path. The previous 22-second-master/`finish.py` procedure belongs to the earlier 20-second edition and is not used here. The replay dissolve is part of the chronological renderer. Native system fonts can vary across platforms.
 
-## Provenance and review
+## Provenance and review status
 
-`source-integrity.json` identifies every frozen input and packaged file. The local and portable renderers differ only in Canvas/FFmpeg resolution and LF normalization. `DATA-SOURCES.md`, `inputs/source-manifest.json` and the saved official DAS describe the data. `qa/` separates current source/thermal tests from prior-movie evidence. Final encoded visual, loop-seam, island-channel and neutral-river reviews **passed**, with no pending visual assessment. The accepted movie is **61,016,615 bytes, 600 frames, 20 seconds**, with SHA-256 `1d85eb18651c7756755c9d26e9fdc93d625460869198d521adcb778890ae73aa`. Historical checks remain labelled as preceding-movie evidence.
+`DATA-SOURCES.md` describes the native hourly binary layout and fixed river period. Dataset-manifest SHA-256: `66ff440910a4cb9822c12d59271f70f1ad2d4a6bfc393c9f914230afcb9b7e4e`. Numerical source completeness and hourly temperature statistics have been independently reviewed. The [independent final encoded review](qa/hourly/final-encoded-review.json) and [encoding/clock checks](qa/hourly/encoded-check.json) **passed**. The accepted movie is **102,976,638 bytes**, SHA-256 `b6da3ba744ee3a5e50f6d8319d9d81cd2d24c8244d2df9370c0c30491c91b303`. The final chronological clock reads **18 October 23:46 UTC**; 19 October 00:00 remains an interpolation endpoint. These are visualization checks, not measured-current validation.
 
-Source attribution: NOAA LOOFS retains its provider identity; geography is copyright [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), under [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/), through [OpenFreeMap](https://openfreemap.org/) and OpenMapTiles. River-source CHS information retains the [Open Government Licence - Canada](https://open.canada.ca/en/open-government-licence-canada). This visualization and its custom hydraulic limitations are the project's responsibility.
+The [preceding edition](history/pre-hourly/README.md) retains its historical record. Earlier 20-second movie hashes, 600-frame checks and weekly-mean statistics apply only to those preceding editions.
+
+Attribution: NOAA LOOFS retains its provider identity. Geography is © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), under [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/), through OpenFreeMap and OpenMapTiles. CHS river-source information retains the [Open Government Licence – Canada](https://open.canada.ca/en/open-government-licence-canada). The visualization and custom hydraulic limitations are this project's responsibility.

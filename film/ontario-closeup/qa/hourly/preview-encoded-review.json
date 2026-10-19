@@ -1,0 +1,274 @@
+{
+  "passed": true,
+  "assessment_pending_actual_visual_review": false,
+  "full_resolution_film_review_pending": true,
+  "visual_assessment": {
+    "actual_encoded_frames_inspected": [0, 120, 240, 360, 480, 600, 719, 735, 749],
+    "evolving_lake": "Both thermal pattern and visible current-trail orientation change through the week. Early warm salmon/orange western and central water gives way to more yellow/green and expanding cyan/blue northern/eastern water late in the sequence. This is visibly different from the fixed weekly-mean film.",
+    "middle_lake_regression": "No repeated angular triangular teeth are visible in the actual whole-map preview; broad curved and weaker lanes remain rather than being uniformly smoothed away.",
+    "clock": "Actual raster labels match the source-time entries: 12 Oct 00:00, 13 Oct 04:00, 14 Oct 08:00, 15 Oct 12:00, 16 Oct 16:00, 17 Oct 20:00 and 18 Oct 23:46 UTC.",
+    "replay": "The actual intermediate dissolve frame clearly reads REPLAY - WEEK RESTARTS; the final preview frame visibly returns to the first thermal and trail state with its 12 Oct clock. The dissolve is visibly marked as editorial replay, not a new weather interval.",
+    "river": "Upper river lacking temperature remains neutral grey with visible bright trails. The varying lake thermal overlap reaches the fixed river region without turning missing river temperatures into artificial colors.",
+    "handoff_and_carleton": "Across the seven inspected chronological phases, no new broad severed channel or black stripe is apparent at the lake-river handoff or main Carleton branches. This low-resolution preview cannot establish continuity through the smallest channels; the enlarged crop simply magnifies original pixels.",
+    "readability": "Clock and replay badge are readable at their actual preview resolution when enlarged. Source footer text is necessarily very small in the 960-pixel preview and requires final full-resolution review.",
+    "verdict": "Accept the preview for full-resolution rendering. Final encoded full-resolution visual, clock, footer and small-channel acceptance remains pending."
+  },
+  "scope": "Actual decoded 960x540 preview only; full-resolution acceptance pending. Enlarged river crops do not recover subpixel channels.",
+  "video_file": "work/hourly-review/preview.mp4",
+  "video_sha256": "bad8f6280bf69d616b460066219664da2e743e58c3c6b62a21cb4945946e39a8",
+  "video_bytes": 12269458,
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 960,
+        "height": 540,
+        "r_frame_rate": "30/1",
+        "nb_read_frames": "750"
+      }
+    ],
+    "format": {
+      "duration": "25.000000"
+    }
+  },
+  "inspected_frames": [
+    0,
+    120,
+    240,
+    360,
+    480,
+    600,
+    719,
+    735,
+    749
+  ],
+  "expected_clock_entries": [
+    {
+      "frame": 0,
+      "phase": "chronological",
+      "seconds": 0,
+      "utc": "2026-10-12T00:00:00.000Z",
+      "probes": [
+        {
+          "name": "central lake",
+          "provider": 1,
+          "u": 0.20264885750962305,
+          "v": -0.12717779915745203,
+          "temperature": 16.398114047773902
+        },
+        {
+          "name": "eastern lake",
+          "provider": 1,
+          "u": -0.15305481616760933,
+          "v": 0.058877725216138294,
+          "temperature": 14.09408572536455
+        },
+        {
+          "name": "river",
+          "provider": 2,
+          "u": 0.1141899973154068,
+          "v": 0.00203000009059906,
+          "temperature": null
+        }
+      ]
+    },
+    {
+      "frame": 120,
+      "phase": "chronological",
+      "seconds": 100800,
+      "utc": "2026-10-13T04:00:00.000Z",
+      "probes": [
+        {
+          "name": "central lake",
+          "provider": 1,
+          "u": 0.041655385679932024,
+          "v": 0.2246116100199969,
+          "temperature": 16.363404512535112
+        },
+        {
+          "name": "eastern lake",
+          "provider": 1,
+          "u": -0.20221664804262096,
+          "v": -0.009396672271976676,
+          "temperature": 14.57336157496789
+        },
+        {
+          "name": "river",
+          "provider": 2,
+          "u": 0.1141899973154068,
+          "v": 0.00203000009059906,
+          "temperature": null
+        }
+      ]
+    },
+    {
+      "frame": 240,
+      "phase": "chronological",
+      "seconds": 201600,
+      "utc": "2026-10-14T08:00:00.000Z",
+      "probes": [
+        {
+          "name": "central lake",
+          "provider": 1,
+          "u": -0.09476128514878121,
+          "v": -0.13989226460704868,
+          "temperature": 16.284821513962868
+        },
+        {
+          "name": "eastern lake",
+          "provider": 1,
+          "u": -0.04922666527953304,
+          "v": 0.008445824960972924,
+          "temperature": 14.752515184268049
+        },
+        {
+          "name": "river",
+          "provider": 2,
+          "u": 0.1141899973154068,
+          "v": 0.00203000009059906,
+          "temperature": null
+        }
+      ]
+    },
+    {
+      "frame": 360,
+      "phase": "chronological",
+      "seconds": 302400,
+      "utc": "2026-10-15T12:00:00.000Z",
+      "probes": [
+        {
+          "name": "central lake",
+          "provider": 1,
+          "u": 0.09200823271776215,
+          "v": 0.026912969898046805,
+          "temperature": 15.82265292273064
+        },
+        {
+          "name": "eastern lake",
+          "provider": 1,
+          "u": -0.15015554174356927,
+          "v": 0.09569904750309992,
+          "temperature": 14.987454775155811
+        },
+        {
+          "name": "river",
+          "provider": 2,
+          "u": 0.1141899973154068,
+          "v": 0.00203000009059906,
+          "temperature": null
+        }
+      ]
+    },
+    {
+      "frame": 480,
+      "phase": "chronological",
+      "seconds": 403200,
+      "utc": "2026-10-16T16:00:00.000Z",
+      "probes": [
+        {
+          "name": "central lake",
+          "provider": 1,
+          "u": 0.007437594965555373,
+          "v": -0.04183997721937589,
+          "temperature": 15.661286041370374
+        },
+        {
+          "name": "eastern lake",
+          "provider": 1,
+          "u": -0.0006620662789984388,
+          "v": -0.13659970889854245,
+          "temperature": 14.799750790248964
+        },
+        {
+          "name": "river",
+          "provider": 2,
+          "u": 0.1141899973154068,
+          "v": 0.00203000009059906,
+          "temperature": null
+        }
+      ]
+    },
+    {
+      "frame": 600,
+      "phase": "chronological",
+      "seconds": 504000,
+      "utc": "2026-10-17T20:00:00.000Z",
+      "probes": [
+        {
+          "name": "central lake",
+          "provider": 1,
+          "u": -0.003056353756827708,
+          "v": -0.039794536310311886,
+          "temperature": 15.194974246436175
+        },
+        {
+          "name": "eastern lake",
+          "provider": 1,
+          "u": -0.0056738242581179125,
+          "v": 0.008719038060003691,
+          "temperature": 14.434140210204816
+        },
+        {
+          "name": "river",
+          "provider": 2,
+          "u": 0.1141899973154068,
+          "v": 0.00203000009059906,
+          "temperature": null
+        }
+      ]
+    },
+    {
+      "frame": 719,
+      "phase": "chronological",
+      "seconds": 603960,
+      "utc": "2026-10-18T23:46:00.000Z",
+      "probes": [
+        {
+          "name": "central lake",
+          "provider": 1,
+          "u": 0.05613842450972067,
+          "v": 0.0029912552160469164,
+          "temperature": 14.68352643890311
+        },
+        {
+          "name": "eastern lake",
+          "provider": 1,
+          "u": -0.1237686099336668,
+          "v": 0.013226406045839252,
+          "temperature": 14.21236246673471
+        },
+        {
+          "name": "river",
+          "provider": 2,
+          "u": 0.1141899973154068,
+          "v": 0.00203000009059906,
+          "temperature": null
+        }
+      ]
+    },
+    {
+      "frame": 735,
+      "phase": "labelled-replay-dissolve",
+      "alpha": 0.5333333333333333,
+      "notModelWeather": true
+    },
+    {
+      "frame": 749,
+      "phase": "labelled-replay-dissolve",
+      "alpha": 1,
+      "notModelWeather": true
+    }
+  ],
+  "carleton_crop_geographic_bounds": [
+    -76.62,
+    44.04,
+    -76.15,
+    44.27
+  ],
+  "contact_sheets": [
+    "preview-encoded-full-map.png",
+    "preview-encoded-clock.png",
+    "preview-encoded-carleton.png"
+  ]
+}

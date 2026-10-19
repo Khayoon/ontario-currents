@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "manifestSHA256": "66ff440910a4cb9822c12d59271f70f1ad2d4a6bfc393c9f914230afcb9b7e4e",
+  "moduleSHA256": "f1b8aa09e2e41b4c1dc5d2d4538e051ab53f10f7e93f9ba09ac0de63c0cb0166",
+  "endpointHours": [
+    0,
+    1,
+    12,
+    24,
+    72,
+    120,
+    167,
+    168
+  ],
+  "midpointHours": [
+    0.5,
+    23.5,
+    71.5,
+    119.5,
+    167.5
+  ],
+  "nativeFaceIndices": [
+    0,
+    4296,
+    8593,
+    12890,
+    17187,
+    21484,
+    25780,
+    30077,
+    34374,
+    38671,
+    42968,
+    47264,
+    51561,
+    55858,
+    60155,
+    64452
+  ],
+  "queries": 208,
+  "maximumEndpointError": 3.552713678800501e-15,
+  "maximumMidpointError": 3.552713678800501e-15,
+  "maximumFirstToClosingVectorChangeMps": 0.26661558617468717,
+  "sourceArraysSHA256Unchanged": {
+    "u": "82876e4a133ee745e975ad59eb78aa69504866e34aa39afa3dc8cf86ec632269",
+    "v": "15b73cac293658f8af27aa704c6a533707292480327198b00fb5b4ed85733732",
+    "t": "5d083d7be1c42d7c7be8de4fef5db2876b4e112bee8957d8237ef2d665aa9567"
+  },
+  "metadata": {
+    "interpolation": "hourly linear numerical UV/T; centroid-fan native face UV; P1 node T",
+    "timeUnits": "seconds since first supplied UTC endpoint",
+    "timeWrap": false,
+    "firstSeconds": 0,
+    "lastSeconds": 604800,
+    "endpointCount": 169,
+    "intervalCount": 168,
+    "hourlySpacing": true,
+    "faceCount": 64453,
+    "nodeCount": 34395,
+    "cacheLimit": 3,
+    "missingPolicy": "exact endpoint uses itself; intermediate UV and T independently require finite endpoints",
+    "barycentricTolerance": 0.00001,
+    "cachedHours": [
+      167,
+      168
+    ],
+    "reconstructions": 18,
+    "cacheHits": 304,
+    "maximumCacheSize": 2,
+    "sampleCount": 224,
+    "temperatureSampleCount": 80,
+    "prepareCount": 13
+  },
+  "scope": "Bounded actual-source sampler validation. Confirms native endpoint/time-major indexing and midpoint interpolation, not source prediction accuracy or production-renderer advection."
+}
