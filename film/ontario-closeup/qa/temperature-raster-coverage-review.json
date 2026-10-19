@@ -1,0 +1,23 @@
+{
+  "actual_production_provider_counts": {
+    "1": 13787300,
+    "2": 328696
+  },
+  "temperature_finite_cells": 13803278,
+  "temperature_missing_cells": 312718,
+  "temperature_minmax_C": [
+    10.688156127929688,
+    16.891868591308594
+  ],
+  "finite_by_velocity_provider": {
+    "1": 13787300,
+    "2": 15978
+  },
+  "missing_by_velocity_provider": {
+    "1": 0,
+    "2": 312718
+  },
+  "below12_cells": 19989,
+  "above16p5_cells": 24782,
+  "interpretation": "Exactproductionquarterpixel raster coverage after original vector sampling, sourcepriority and waterclip. Temperatureprovider is independent of currentprovider: actual NOAAtemperature can coincide with regional rivercurrentvectors; remainingrivercells are explicitlyneutral."
+}

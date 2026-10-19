@@ -1,0 +1,84 @@
+{
+  "stage": "actual encoded thermal movie",
+  "config_sha256": "84927a70e84249acb45c5c9ffe577c881dba33c44050646708a1adfafa6f06b7",
+  "renderer_sha256": "f02b795c7f83ca0f4c01395fa2de0a8715b77eb223dad5109cb5a557115d1fe6",
+  "provider_counts": {
+    "1": {
+      "valid": 13787300,
+      "temperature_finite": 13787300,
+      "temperature_missing": 0,
+      "invalid_velocity": 0,
+      "nonzero_velocity": 13787300
+    },
+    "2": {
+      "valid": 328696,
+      "temperature_finite": 15978,
+      "temperature_missing": 312718,
+      "invalid_velocity": 0,
+      "nonzero_velocity": 318110
+    }
+  },
+  "missing_temperature_color": [
+    158,
+    174,
+    179
+  ],
+  "source_semantics": "Model-provider river velocities may retain finite NOAA lake temperature where available. Missing river temperature is neutral grey, never mapped from speed.",
+  "numerical_checks_passed": true,
+  "motion_scope": "Temporal ink variation is a visual regression check and cannot establish measured water velocity.",
+  "video": "outputs/lake-ontario-temperature.mp4",
+  "video_sha256": "1d85eb18651c7756755c9d26e9fdc93d625460869198d521adcb778890ae73aa",
+  "frame_indices": [
+    0,
+    30,
+    60,
+    90,
+    120,
+    150,
+    180,
+    210,
+    240,
+    270,
+    300,
+    330,
+    360,
+    390,
+    420,
+    450,
+    480,
+    510,
+    540,
+    570
+  ],
+  "pixel_crop": [
+    1931,
+    86,
+    2487,
+    559
+  ],
+  "neutral_river_core_pixels": 13901,
+  "neutral_core_ever_trail_ink_pixels": 13737,
+  "neutral_core_temporal_rgb_range_percentiles": [
+    2.0,
+    34.0,
+    99.0,
+    136.0
+  ],
+  "bright_neutral_ink_samples": 267423,
+  "bright_neutral_ink_saturation_percentiles": [
+    0.0,
+    0.10526315789473684,
+    0.14457831325301204,
+    0.46153846153846156
+  ],
+  "bright_neutral_ink_fraction_saturation_below_025": 0.9948471148704486,
+  "interpretation": "Low saturation is consistent with neutral missing-temperature trails. Variation/ink proves changing visible marks only; prior kernel travel checks and unchanged river vectors provide separate model-animation evidence.",
+  "passed": true,
+  "encoded_visual_review_passed": true,
+  "assessment_pending_actual_visual_review": false,
+  "visual_review_artifacts": [
+    "thermal-river-frame150.png",
+    "carleton-six-encoded-frames.png"
+  ],
+  "visual_assessment": "Actual encoded river frame 150 and six Carleton frames show neutral grey river trails where temperature is missing, with changing visible marks across samples. Finite retained NOAA lake temperatures remain coloured near the upstream source overlap. This is visual animation QA, not measured current validation."
+}

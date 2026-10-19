@@ -1,0 +1,103 @@
+{
+  "video": "outputs/lake-ontario-temperature.mp4",
+  "video_sha256": "1d85eb18651c7756755c9d26e9fdc93d625460869198d521adcb778890ae73aa",
+  "source_sha256": "307c30517b8d8d54c6987157a128625039318e160c3a384ebe4ddd0dfa909c15",
+  "frame_indices": [
+    0,
+    75,
+    150,
+    225,
+    300,
+    375,
+    450,
+    525
+  ],
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "30/1",
+        "nb_read_frames": "600"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "61016615"
+    }
+  },
+  "selected_scale_C": [
+    12,
+    16.5
+  ],
+  "legend_ticks": [
+    {
+      "value": 12,
+      "label": "\u226412"
+    },
+    13,
+    14,
+    15,
+    {
+      "value": 16.5,
+      "label": "\u226516.5"
+    }
+  ],
+  "missing_temperature_colour": [
+    158,
+    174,
+    179
+  ],
+  "grey_core_analysis": {
+    "core_pixels": 12369,
+    "bright_sample_pixels": 98952,
+    "encoded_chromatic_spread_fraction_p5_p50_p95": [
+      0.0851063829787234,
+      0.10526315789473684,
+      0.18461538461538463
+    ],
+    "definition": "Core is more than2outputpixels inside the exact missing-temperature river mask. Descriptive chroma uses(maxRGB\u2212minRGB)/maxRGB on decoded bright pixels; it is not a temperature inversion or motion test."
+  },
+  "scientific_context": "NOAA surface-layer 28-sample mean covers12\u201318October2026UTC. River currents remain the separately labelled12\u201317October unvalidated depth-averaged estimate. Grey means no temperature; colored areas use actual NOAA temperature where available. Tail saturation is explicit in the \u226412/\u226516.5 labels.",
+  "assessment_pending_actual_visual_review": false,
+  "passed": true,
+  "production_config_sha256": "84927a70e84249acb45c5c9ffe577c881dba33c44050646708a1adfafa6f06b7",
+  "renderer_sha256": "f02b795c7f83ca0f4c01395fa2de0a8715b77eb223dad5109cb5a557115d1fe6",
+  "helper_sha256": "1a9ff1f31c1338bab4423a7152e664c96b10fc0fb51b5e7a36c386741f26f4f4",
+  "actual_visual_assessment": {
+    "inspected_full_map_frames": [
+      0,
+      150,
+      300,
+      450
+    ],
+    "inspected_anomaly_frames": [
+      0,
+      150,
+      300,
+      450
+    ],
+    "thermal_variety": "PASS: actual whole-map frames clearly show warm salmon/orange western and southern water, yellow/green central and eastern areas, and cyan/blue cooler northern nearshore/bays. Thermal variation is clear at the full map scale.",
+    "middle_lake_anomaly": "PASS: enlarged actual encoded crops show continuous curved trails and the broad reversing/weak-flow lane. The former repeated vertical/angular black teeth are absent in all reviewed samples.",
+    "missing_temperature": "PASS: upper river beyond NOAA temperature coverage is neutral grey, retains visible trails, and is explained by the footer. Grey-core encoded chroma is low as expected; it is not assigned a fake temperature hue.",
+    "legend_utf8": "PASS: actual encoded legend reads \u226412,13,14,15,\u226516.5 and \u00b0C; no crowded16tick or mojibake is present.",
+    "timeframe_and_qualification": "PASS: title dates12\u201318October2026UTC and28six-hourly NOAAfields; footer separately states riverforcing12\u201317October and the simplified unvalidated depth-averaged river estimate.",
+    "overall_readability": "PASS: title and place labels remain distinct. Legend/source/footer are legible in the inspected native encoded crop.",
+    "remaining_limits": [
+      "The mean is sampled model top-layer data, not observed temperatures or a continuous168hour integral.",
+      "Endpoint saturation is explicit:0.14920%of native wet area is below12\u00b0C and0.19259%above16.5\u00b0C.",
+      "Trail motion is enhanced, and river currents use their separately stated forcing period.",
+      "This visual review does not substitute for the independent seam/motion/Carleton checks handled in parallel."
+    ]
+  },
+  "artifacts": [
+    "temperature-final-contact-sheet.png",
+    "temperature-final-band-contact-sheet.png",
+    "temperature-final-footer.png",
+    "temperature-final-frame150.png"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "field": "work/temperature-week/ontario-october-week-mean-28.json",
+  "field_sha256": "307c30517b8d8d54c6987157a128625039318e160c3a384ebe4ddd0dfa909c15",
+  "sources": 28,
+  "all_source_file_hashes_match": true,
+  "actual_unique_source_times": 28,
+  "six_hour_spacing": true,
+  "actual_first_last_source_times": [
+    "2026-10-12T00:00:00.000000",
+    "2026-10-18T18:00:00.000000"
+  ],
+  "components": {
+    "u": {
+      "source_shape": [
+        28,
+        64453
+      ],
+      "all_raw_values_finite": true,
+      "full_28_sample_count_at_every_position": true,
+      "maximum_mean_rounding_difference": 4.999999999935612e-07,
+      "units": "m/s",
+      "location": "face",
+      "passed": true
+    },
+    "v": {
+      "source_shape": [
+        28,
+        64453
+      ],
+      "all_raw_values_finite": true,
+      "full_28_sample_count_at_every_position": true,
+      "maximum_mean_rounding_difference": 4.999714285716401e-07,
+      "units": "m/s",
+      "location": "face",
+      "passed": true
+    },
+    "t": {
+      "source_shape": [
+        28,
+        34395
+      ],
+      "all_raw_values_finite": true,
+      "full_28_sample_count_at_every_position": true,
+      "maximum_mean_rounding_difference": 5.00000002290335e-07,
+      "units": "degreesC",
+      "location": "node",
+      "passed": true
+    }
+  },
+  "component_interpretation": "Raw NOAA u/v are earth-east/north face components in m/s (official metadata); each component is averaged separately in unchanged native face order. Temperature is averaged separately in native node order. No source vectors are rotated, scalarized or spatially remapped in this mean.",
+  "passed": true
+}

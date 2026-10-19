@@ -26,7 +26,7 @@
     "subtitleGap": 37,
     "subtitleSize": 12
   },
-  "subtitle": "12–17 OCTOBER 2026 · LAKE MEAN + RIVER ESTIMATES",
+  "subtitle": "12–18 OCTOBER 2026 UTC · WEEKLY LAKE MEAN",
   "edition": {
     "text": "TORONTO TO BROCKVILLE",
     "x": 80,
@@ -36,7 +36,7 @@
     "spacing": 1.8,
     "color": "#72979e"
   },
-  "colorBy": "speed",
+  "colorBy": "temperature",
   "speedScale": "log",
   "speedLogOffset": 0.02,
   "speedMax": 1.5,
@@ -149,30 +149,34 @@
   "legend": {
     "x": 78,
     "y": 1000,
-    "width": 320,
-    "title": "CURRENT SPEED · LOG SCALE",
+    "width": 350,
+    "title": "WATER TEMPERATURE · WEEKLY MEAN",
     "ticks": [
-      0,
-      2,
-      10,
-      50,
       {
-        "value": 150,
-        "label": "150+"
+        "value": 12,
+        "label": "≤12"
+      },
+      13,
+      14,
+      15,
+      {
+        "value": 16.5,
+        "label": "≥16.5"
       }
     ],
-    "units": "cm/s"
+    "units": "°C",
+    "tickSize": 10
   },
   "footnotes": [
     {
-      "text": "NOAA LOOFS · surface vector mean · 23 six-hourly fields",
+      "text": "NOAA LOOFS · surface vector / temperature means · 28 six-hourly fields",
       "x": 625,
       "y": 990,
-      "size": 11,
+      "size": 10,
       "color": "#92adb1"
     },
     {
-      "text": "Colour shows speed · trail motion enhanced for legibility",
+      "text": "Colour = temperature · grey = unavailable · motion enhanced",
       "x": 625,
       "y": 1011,
       "size": 10
@@ -185,7 +189,7 @@
       "color": "#b4b9a4"
     },
     {
-      "text": "River inputs: CHS bathymetry / water levels · IJC outflow",
+      "text": "River forcing: 12–17 Oct · CHS bathymetry / levels · IJC outflow",
       "x": 625,
       "y": 1060,
       "size": 9,
@@ -237,29 +241,34 @@
   "clipToBounds": true,
   "colorStops": [
     [
-      59,
-      131,
-      174
+      55,
+      124,
+      209
     ],
     [
-      71,
-      173,
-      206
+      49,
+      184,
+      204
     ],
     [
-      95,
-      211,
-      220
+      113,
+      207,
+      143
     ],
     [
-      164,
-      235,
-      220
+      224,
+      225,
+      107
     ],
     [
-      240,
-      242,
-      185
+      239,
+      165,
+      102
+    ],
+    [
+      210,
+      113,
+      103
     ]
   ],
   "providerSeedWeights": {
@@ -325,5 +334,12 @@
   ],
   "riverSourcePriority": "model",
   "meshInterpolation": "centroid-fan",
-  "meshFlowModule": "inputs/mesh-flow.js"
+  "meshFlowModule": "inputs/mesh-flow.js",
+  "temperatureMin": 12,
+  "temperatureMax": 16.5,
+  "missingTemperatureColor": [
+    158,
+    174,
+    179
+  ]
 }

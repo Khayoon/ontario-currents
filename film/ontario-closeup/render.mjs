@@ -54,8 +54,11 @@ function renderer(W,H,cfg=globalConfig){
   const px=new Float32Array(mesh.lon.length),py=new Float32Array(mesh.lon.length);
   for(let i=0;i<px.length;i++){const p=project(mesh.lon[i],mesh.lat[i]);px[i]=p[0]/cell;py[i]=p[1]/cell;}
   for(let f=0;f<mesh.triangles.length;f++){
-    if(field.u[f]===null||field.v[f]===null||!Number.isFinite(field.u[f])||!Number.isFinite(field.v[f]))continue;
+    const velocityValid=Number.isFinite(field.u[f])&&Number.isFinite(field.v[f]);
     const [aa,bb,cc]=mesh.triangles[f],ax=px[aa],ay=py[aa],bx=px[bb],by=py[bb],cx=px[cc],cy=py[cc];
+    // Temperature coverage is independent of the selected velocity provider.
+    const temperatureValid=field.t&&[aa,bb,cc].every(i=>Number.isFinite(field.t[i]));
+    if(!velocityValid&&!temperatureValid)continue;
     const x0=Math.max(0,Math.ceil(Math.min(ax,bx,cx)-.5)),x1=Math.min(nx-1,Math.floor(Math.max(ax,bx,cx)-.5));
     const y0=Math.max(0,Math.ceil(Math.min(ay,by,cy)-.5)),y1=Math.min(ny-1,Math.floor(Math.max(ay,by,cy)-.5));
     if(x0>x1||y0>y1)continue;
@@ -64,11 +67,11 @@ function renderer(W,H,cfg=globalConfig){
       const x=i+.5,y=j+.5,wa=((by-cy)*(x-cx)+(cx-bx)*(y-cy))/den,wb=((cy-ay)*(x-cx)+(ax-cx)*(y-cy))/den,wc=1-wa-wb;
       if(wa<-.00001||wb<-.00001||wc<-.00001)continue;
       const z=j*nx+i;
-      if(meshVectors){const q=3*f,ra=Math.max(0,wa),rb=Math.max(0,wb),rc=Math.max(0,wc),sum=ra+rb+rc,m=Math.min(ra,rb,rc);
+      if(velocityValid){if(meshVectors){const q=3*f,ra=Math.max(0,wa),rb=Math.max(0,wb),rc=Math.max(0,wc),sum=ra+rb+rc,m=Math.min(ra,rb,rc);
         U[z]=(3*m*meshVectors.faceU[f]+(ra-m)*meshVectors.cornerU[q]+(rb-m)*meshVectors.cornerU[q+1]+(rc-m)*meshVectors.cornerU[q+2])/sum;
         V[z]=(3*m*meshVectors.faceV[f]+(ra-m)*meshVectors.cornerV[q]+(rb-m)*meshVectors.cornerV[q+1]+(rc-m)*meshVectors.cornerV[q+2])/sum;
-      }else{U[z]=field.u[f];V[z]=field.v[f];}P[z]=1;
-      if(field.t&&field.t[aa]!==null&&field.t[bb]!==null&&field.t[cc]!==null)T[z]=field.t[aa]*wa+field.t[bb]*wb+field.t[cc]*wc;
+      }else{U[z]=field.u[f];V[z]=field.v[f];}P[z]=1;}
+      if(temperatureValid)T[z]=field.t[aa]*wa+field.t[bb]*wb+field.t[cc]*wc;
     }
   }
   sources.forEach((r,ordinal)=>{
@@ -82,7 +85,7 @@ function renderer(W,H,cfg=globalConfig){
       // A regional hydraulic estimate needs one coherent field through its
       // domain. An explicit opt-in can prefer it over overlapping lake-mesh
       // triangles; fallback remains the default for every existing edition.
-      const q=j*nx+i;if(P[q]&&((r.fallbackOnly&&cfg.riverSourcePriority!=='model')||cfg.sourcePriority!=='last'))continue;U[q]=r.u[z];V[q]=r.v[z];P[q]=ordinal+2;if(r.t&&r.t[z]!==null)T[q]=r.t[z];
+      const q=j*nx+i;if(P[q]&&((r.fallbackOnly&&cfg.riverSourcePriority!=='model')||cfg.sourcePriority!=='last'))continue;U[q]=r.u[z];V[q]=r.v[z];P[q]=ordinal+2;if(r.t&&Number.isFinite(r.t[z]))T[q]=r.t[z];
     }
   });
   // The field itself provides wet cells when no polygon exists (for example the estuary).
@@ -94,7 +97,7 @@ function renderer(W,H,cfg=globalConfig){
     if(maskData){const x=Math.min(W-1,Math.floor((z%nx+.5)*cell)),y=Math.min(H-1,Math.floor((Math.floor(z/nx)+.5)*cell));if(maskData[(y*W+x)*4+3]<80){P[z]=0;U[z]=NaN;continue;}}
     valid.push(z);providerCounts[P[z]]=(providerCounts[P[z]]||0)+1;
   }
-  if(cfg.auditGrid){const file=resolve(cfg.auditGrid);fs.mkdirSync(path.dirname(file),{recursive:true});for(const [suffix,array] of [['u',U],['v',V],['provider',P]])fs.writeFileSync(file+'.'+suffix+'.bin',Buffer.from(array.buffer));fs.writeFileSync(file+'.json',JSON.stringify({W,H,cell,nx,ny,k,tx,ty,bounds:bbox,providerCounts}));}
+  if(cfg.auditGrid){const file=resolve(cfg.auditGrid);fs.mkdirSync(path.dirname(file),{recursive:true});for(const [suffix,array] of [['u',U],['v',V],['t',T],['provider',P]])fs.writeFileSync(file+'.'+suffix+'.bin',Buffer.from(array.buffer));fs.writeFileSync(file+'.json',JSON.stringify({W,H,cell,nx,ny,k,tx,ty,bounds:bbox,providerCounts}));}
   // A narrow river occupies far fewer screen cells than a lake or estuary.
   // Optional source weights allocate more particles to those actual wet cells;
   // they change drawing density only, never vectors, motion, speed or coverage.
@@ -103,8 +106,15 @@ function renderer(W,H,cfg=globalConfig){
   if(!valid.length)throw new Error('No current samples in map bounds');
   const raster=createCanvas(nx,ny),rctx=raster.getContext('2d'),im=rctx.createImageData(nx,ny);
   const useTemperature=cfg.colorBy==='temperature';
+  const temperatureMin=Number(cfg.temperatureMin??0),temperatureMax=Number(cfg.temperatureMax??25);
+  if(useTemperature&&!(Number.isFinite(temperatureMin)&&Number.isFinite(temperatureMax)&&temperatureMax>temperatureMin))throw new Error('Temperature maximum must exceed a finite minimum');
+  const temperatureRatio=value=>Number.isFinite(value)?(value-temperatureMin)/(temperatureMax-temperatureMin):null;
+  const missingTemperatureColor=cfg.missingTemperatureColor||[158,174,179];
   const speedRatio=speed=>cfg.speedScale==='log'?Math.log1p(speed/(cfg.speedLogOffset||.02))/Math.log1p((cfg.speedMax||1.5)/(cfg.speedLogOffset||.02)):speed/(cfg.speedMax||.65);
-  for(const z of valid){const speed=Math.hypot(U[z],V[z]);const c=color(useTemperature&&Number.isFinite(T[z])?T[z]/(cfg.temperatureMax||25):speedRatio(speed));const i=z*4;im.data[i]=c[0]*(cfg.baseBrightness||.46);im.data[i+1]=c[1]*(cfg.baseBrightness||.46);im.data[i+2]=c[2]*(cfg.baseBrightness||.46);im.data[i+3]=255;}
+  const temperatureCoverage={finite:0,missing:0,belowScale:0,aboveScale:0,min:null,max:null};
+  for(const z of valid){const speed=Math.hypot(U[z],V[z]),thermalPosition=temperatureRatio(T[z]);
+    if(thermalPosition===null)temperatureCoverage.missing++;else{temperatureCoverage.finite++;temperatureCoverage.min=temperatureCoverage.min===null?T[z]:Math.min(temperatureCoverage.min,T[z]);temperatureCoverage.max=temperatureCoverage.max===null?T[z]:Math.max(temperatureCoverage.max,T[z]);if(thermalPosition<0)temperatureCoverage.belowScale++;if(thermalPosition>1)temperatureCoverage.aboveScale++;}
+    const c=useTemperature?(thermalPosition===null?missingTemperatureColor:color(thermalPosition)):color(speedRatio(speed));const i=z*4;im.data[i]=c[0]*(cfg.baseBrightness||.46);im.data[i+1]=c[1]*(cfg.baseBrightness||.46);im.data[i+2]=c[2]*(cfg.baseBrightness||.46);im.data[i+3]=255;}
   rctx.putImageData(im,0,0);
   const base=createCanvas(W,H),bg=base.getContext('2d');bg.fillStyle=cfg.background||'#020607';bg.fillRect(0,0,W,H);clipBounds(bg);bg.fillStyle=cfg.waterColor||'#071c26';for(const p of waterPaths)bg.fill(p,'evenodd');
   for(const f of lines){const p=new Path2D();const ls=f.geometry.type==='LineString'?[f.geometry.coordinates]:f.geometry.coordinates;for(const line of ls)line.forEach((pnt,i)=>i?p.lineTo(...project(...pnt)):p.moveTo(...project(...pnt)));bg.strokeStyle=cfg.waterColor||'#071c26';bg.lineWidth=(cfg.riverLineWidth||3)*S;bg.lineJoin='round';bg.stroke(p);}
@@ -124,7 +134,7 @@ function renderer(W,H,cfg=globalConfig){
     if(item.dot!==false){fx.beginPath();fx.arc(p[0],p[1],(item.dotRadius||2)*S,0,Math.PI*2);fx.fillStyle=item.dotColor||'#bacfcb';fx.fill();}
     text(item.text,x,y,item.size||12,{family:item.family||cfg.monoFont||'Consolas',color:item.color||'#9db7b9',align:item.align||'left',spacing:item.spacing===undefined?.8:item.spacing,shadow:item.shadow!==false});
   }
-  if(cfg.legend!==false){const l=cfg.legend||{},x=l.x||76,y=l.y||1250,w=l.width||230;const grad=fx.createLinearGradient(x*S,0,(x+w)*S,0);stops.forEach((c,i)=>grad.addColorStop(i/(stops.length-1),rgb(c)));fx.fillStyle=grad;fx.fillRect(x*S,y*S,w*S,5*S);text(l.title||'MEAN CURRENT SPEED',x,y-15,10,{color:'#78969b',spacing:1.5});if(l.ticks){for(const tick of l.ticks){const value=typeof tick==='number'?tick:tick.value,label=typeof tick==='number'?String(tick):tick.label,xx=x+speedRatio(value/100)*w;fx.fillStyle='#8ca6aa';fx.fillRect(xx*S,(y+5)*S,.6*S,5*S);text(label,xx,y+25,l.tickSize||10,{color:'#8ca6aa',align:value===0?'left':value>=Math.round((cfg.speedMax||.65)*100)?'right':'center'});}if(l.units)text(l.units,x+w+14,y+25,l.tickSize||10,{color:'#8ca6aa'});}else{text(l.min||'0',x,y+25,10,{color:'#8ca6aa'});text(l.max||`${Math.round((cfg.speedMax||.65)*100)}+ cm/s`,x+w,y+25,10,{color:'#8ca6aa',align:'right'});}}
+  if(cfg.legend!==false){const l=cfg.legend||{},x=l.x||76,y=l.y||1250,w=l.width||230;const grad=fx.createLinearGradient(x*S,0,(x+w)*S,0);stops.forEach((c,i)=>grad.addColorStop(i/(stops.length-1),rgb(c)));fx.fillStyle=grad;fx.fillRect(x*S,y*S,w*S,5*S);text(l.title||(useTemperature?'WATER TEMPERATURE':'MEAN CURRENT SPEED'),x,y-15,10,{color:'#78969b',spacing:1.5});if(l.ticks){for(const tick of l.ticks){const value=typeof tick==='number'?tick:tick.value,label=typeof tick==='number'?String(tick):tick.label,xx=x+(useTemperature?temperatureRatio(value):speedRatio(value/100))*w;fx.fillStyle='#8ca6aa';fx.fillRect(xx*S,(y+5)*S,.6*S,5*S);text(label,xx,y+25,l.tickSize||10,{color:'#8ca6aa',align:value<=(useTemperature?temperatureMin:0)?'left':value>=(useTemperature?temperatureMax:Math.round((cfg.speedMax||.65)*100))?'right':'center'});}if(l.units)text(l.units,x+w+14,y+25,l.tickSize||10,{color:'#8ca6aa'});}else{text(l.min??(useTemperature?String(temperatureMin):'0'),x,y+25,10,{color:'#8ca6aa'});text(l.max??(useTemperature?`${temperatureMax}°C`:`${Math.round((cfg.speedMax||.65)*100)}+ cm/s`),x+w,y+25,10,{color:'#8ca6aa',align:'right'});}}
   for(const note of cfg.footnotes||[])text(note.text,note.x||76,note.y,note.size||10,{color:note.color||'#69868b',align:note.align||'left',spacing:note.spacing||.3,family:note.family||cfg.monoFont||'Consolas'});
   const insetMetadata=[],animatedInsets=[];
   for(const inset of cfg.insets||[]){
@@ -147,7 +157,7 @@ function renderer(W,H,cfg=globalConfig){
   function step(dt){
     ink.setTransform(1,0,0,1,0,0);ink.clearRect(0,0,W,H);ink.putImageData(history,0,0);
     ink.globalCompositeOperation='source-over';ink.fillStyle=`rgba(0,0,0,${1-(cfg.trailRetention||.965)})`;ink.fillRect(0,0,W,H);
-    const buckets=Array.from({length:24},()=>[]),seconds=dt*(cfg.motionAcceleration||90000);
+    const buckets=Array.from({length:useTemperature?25:24},()=>[]),seconds=dt*(cfg.motionAcceleration||90000);
     for(const p of particles){if(p.age++>p.life){reset(p);continue;}let remaining=seconds,substeps=0;
       while(remaining>1e-6&&substeps++<250){
         const z=index(p.x,p.y);if(z<0||!P[z]){reset(p);break;}
@@ -164,11 +174,11 @@ function renderer(W,H,cfg=globalConfig){
         if(nz<0||!P[nz]){reset(p);break;}p.x=nx;p.y=ny;remaining-=stepTime;
         // Round caps paint a dot even for a zero-length stroke. Do not make
         // a zero vector flicker as stationary particles are reseeded.
-        if(p.x!==ox||p.y!==oy){const q=useTemperature&&Number.isFinite(T[z])?T[z]/(cfg.temperatureMax||25):speedRatio(Math.hypot(U[z],V[z])),b=Math.max(0,Math.min(23,Math.floor(q*24)));buckets[b].push(ox,oy,p.x,p.y);}
+        if(p.x!==ox||p.y!==oy){const q=useTemperature?temperatureRatio(T[z]):speedRatio(Math.hypot(U[z],V[z])),b=q===null?24:Math.max(0,Math.min(23,Math.floor(q*24)));buckets[b].push(ox,oy,p.x,p.y);}
       }
     }
     ink.lineWidth=(cfg.particleWidth||.72)*S;ink.lineCap='round';
-    for(let b=0;b<buckets.length;b++){if(!buckets[b].length)continue;const c=color(b/23);ink.strokeStyle=`rgba(${c.join(',')},${cfg.particleOpacity||.64})`;ink.beginPath();const points=buckets[b];for(let n=0;n<points.length;n+=4){ink.moveTo(points[n],points[n+1]);ink.lineTo(points[n+2],points[n+3]);}ink.stroke();}
+    for(let b=0;b<buckets.length;b++){if(!buckets[b].length)continue;const c=b===24?missingTemperatureColor:color(b/23);ink.strokeStyle=`rgba(${c.join(',')},${cfg.particleOpacity||.64})`;ink.beginPath();const points=buckets[b];for(let n=0;n<points.length;n+=4){ink.moveTo(points[n],points[n+1]);ink.lineTo(points[n+2],points[n+3]);}ink.stroke();}
     if(cfg.clipCurrentsToWater){ink.globalCompositeOperation='destination-in';ink.drawImage(mask,0,0);ink.globalCompositeOperation='destination-over';ink.fillStyle='#000';ink.fillRect(0,0,W,H);ink.globalCompositeOperation='source-over';}
     // Canvas.data() is a bounded raw native view; getImageData allocates a native
     // snapshot on every invocation in this runtime. Keep one opaque ImageData
@@ -177,7 +187,7 @@ function renderer(W,H,cfg=globalConfig){
     for(const inset of animatedInsets)inset.mini.step(dt);
   }
   function frame(){ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,W,H);ctx.drawImage(base,0,0);ctx.globalCompositeOperation='screen';ctx.drawImage(flow,0,0);ctx.globalCompositeOperation='source-over';for(const inset of animatedInsets)ctx.drawImage(inset.mini.frame(),inset.ix,inset.iy);ctx.drawImage(fixed,0,0);return out;}
-  return {step,frame,project,metadata:{width:W,height:H,gridCell:cell,validGridCells:valid.length,providerCounts,particles:count,minDisplaySpeed:cfg.minDisplaySpeed||0,maxDisplayBoost:cfg.maxDisplayBoost||8,providerSeedWeights:cfg.providerSeedWeights||null,seedRegions,seedDensityCompensation,seedProbabilities:seedGroups?seedProbabilities:null,seedGroups:seedGroups?.map(g=>({provider:g.provider,weight:g.weight,wetCells:g.cells.length,probability:g.mass/seedTotal}))||null,bounds:bbox,projection:'Web Mercator',mapRect,insets:insetMetadata}};
+  return {step,frame,project,metadata:{width:W,height:H,gridCell:cell,validGridCells:valid.length,providerCounts,colorBy:cfg.colorBy||'speed',temperatureRange:useTemperature?[temperatureMin,temperatureMax]:null,missingTemperatureColor:useTemperature?missingTemperatureColor:null,temperatureCoverage,particles:count,minDisplaySpeed:cfg.minDisplaySpeed||0,maxDisplayBoost:cfg.maxDisplayBoost||8,providerSeedWeights:cfg.providerSeedWeights||null,seedRegions,seedDensityCompensation,seedProbabilities:seedGroups?seedProbabilities:null,seedGroups:seedGroups?.map(g=>({provider:g.provider,weight:g.weight,wetCells:g.cells.length,probability:g.mass/seedTotal}))||null,bounds:bbox,projection:'Web Mercator',mapRect,insets:insetMetadata}};
 }
 
 const fps=Number(arg('fps',cfg.fps||30)),frames=Number(arg('frames',Math.round((cfg.duration||20)*fps)));

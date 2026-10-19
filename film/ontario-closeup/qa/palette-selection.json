@@ -1,0 +1,19 @@
+{
+  "source_field_sha256": "307c30517b8d8d54c6987157a128625039318e160c3a384ebe4ddd0dfa909c15",
+  "temperatureMin": 12,
+  "temperatureMax": 16.5,
+  "units": "degrees_C",
+  "endpointLabels": [
+    "≤12",
+    "≥16.5"
+  ],
+  "actualSourceMeanExtrema": [
+    10.682209,
+    16.893734
+  ],
+  "areaPercentBelow": 0.1492,
+  "areaPercentAbove": 0.19259,
+  "areaPercentInside": 99.65821,
+  "rationale": "Both scale endpoints lie inside the actual weekly mean range. Explicit endpoint saturation makes the full colour spectrum represent present temperatures; over 99.6 percent of native wet area remains inside. Independent audit also considered12–17 degreesC; its recommendation is preserved separately.",
+  "missingTemperaturePolicy": "Neutral grey base and trails; never colour by current speed in temperature mode. Preserve finite NOAA temperature independently of the selected UV provider."
+}

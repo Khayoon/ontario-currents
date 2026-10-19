@@ -1,22 +1,26 @@
 {
-  "bytes": 57212577,
-  "sha256": "54e2541a2f6cd6c014227d4f4c10c9b7a01c8ea51e150451506153bf2d953782",
-  "edition": "Continuous lake-mesh display with retained river estimates, 19 October 2026",
+  "bytes": 61016615,
+  "sha256": "1d85eb18651c7756755c9d26e9fdc93d625460869198d521adcb778890ae73aa",
+  "edition": "12-18 October 2026 weekly lake temperature and currents; retained river estimates",
+  "temperatureScaleC": [
+    12,
+    16.5
+  ],
   "parts": [
     {
       "file": "ontario-closeup.part0",
       "bytes": 22000000,
-      "sha256": "765dcad8839bc0676d935d58d83cd76a906397706f112d75a36370f6019b85b9"
+      "sha256": "d4e83b5dd78c5d51361cfa6730d6de2b73801894af5d6706d0b16057472b6e26"
     },
     {
       "file": "ontario-closeup.part1",
       "bytes": 22000000,
-      "sha256": "22889c511acb63d21d54a382118b0aa2780176071957554b253d7cad46abae71"
+      "sha256": "09d4634aefa1821b71cd83ec03629196b6464c48d0207c458678abfa6beb8041"
     },
     {
       "file": "ontario-closeup.part2",
-      "bytes": 13212577,
-      "sha256": "c1f6f79ac7b3dda6cf360e8c3bebb82ebf2f92cd206cc350f180bd4717a78f50"
+      "bytes": 17016615,
+      "sha256": "be0161ffda50bd6fd507ef7d307541b5cd5c769182a44bf299b361763f872f30"
     }
   ]
 }
