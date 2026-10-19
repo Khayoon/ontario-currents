@@ -1,0 +1,55 @@
+{
+  "step_metres": 50.0,
+  "width": 1644,
+  "height": 1297,
+  "crs": "EPSG:32618",
+  "row_order": "south to north",
+  "x0_edge": 371850.0,
+  "y0_edge": 4880250.0,
+  "geometry_cells": 294426,
+  "connected_main_cells": 261368,
+  "measured_wet_cells": 228160,
+  "coverage_fraction": 0.7749315617506606,
+  "missing_wet_cells": 66266,
+  "missing_distance_percentiles_m": {
+    "50": 269.2582403567252,
+    "90": 17566.26738659815,
+    "95": 18870.347099905008,
+    "99": 22244.25768494024,
+    "100": 23832.121181296472
+  },
+  "missing_over_100m": 42900,
+  "main_coverage_fraction": 0.8697545223592789,
+  "bed_chart_measured_quantiles_m": [
+    -73.14843665228949,
+    -34.78111514621311,
+    -24.875791422526042,
+    -10.501378059387207,
+    -1.2031006813049312,
+    0.30000001192092896,
+    1.340739369392395
+  ],
+  "vertical_datum_caveat": "NONNA negative elevations interpreted as local-chart-datum bed; source-survey datum ambiguity remains. bed_igld85_estimated uses linearly interpolated Kingston/Brockville chart datum offsets (74.20/73.95m), not an authoritative datum separation surface.",
+  "interpolation": "Raw bed_chart_m is NaN at unknown wet cells; nearest_depth_chart_m supplied separately, along with distance. No gaps silently filled.",
+  "NONNA10_wet_cells": 138617,
+  "NONNA100_fallback_wet_cells": 89543,
+  "active_corridor": {
+    "cells": 169860,
+    "minlon": -76.48330929435502,
+    "maxlon": -75.66847775671565,
+    "coverage_fraction": 0.8204168138466973,
+    "missing_cells": 30504,
+    "missing_distance_percentiles_m": {
+      "50": 70.71067811865476,
+      "90": 206.15528128088303,
+      "95": 282.842712474619,
+      "99": 500.0,
+      "100": 1004.987562112089
+    }
+  },
+  "native_bed_aggregation": {
+    "NONNA10_request_step_mercator_m": 20.0,
+    "subsamples_per_cell": 9,
+    "method": "Arithmetic mean of finite native-resolution source bathymetry samples inside each grid cell; no depth invented. NONNA100 fallback where no fine sample is finite."
+  }
+}

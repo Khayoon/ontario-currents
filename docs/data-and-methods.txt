@@ -175,10 +175,21 @@ Contains Information made available under Lake Simcoe Region Conservation Author
 Contains information licensed under the Open Government Licence – Ontario.
 
 
-9. Lake Ontario close-up film, 19 October 2026
+9. Original Lake Ontario close-up film, 19 October 2026 (superseded below)
 
 The featured film is now media/lake-ontario-closeup.mp4: a silent 20-second H.264/yuv420p loop, 2560 × 1440 at 30 fps. It frames Lake Ontario through Brockville, with no Simcoe, estuary, drainage layer, insets, timeline or interactive controls. The broader atlas and earlier media/october-current-map.mp4 remain available with the scope described above.
 
 This close-up uses the unchanged 23-sample NOAA LOOFS native surface vector mean for 12 October 2026 00:00 UTC–17 October 2026 12:00 UTC. There are no additional river vectors. Complete shorelines preserve island holes; currents are clipped to those water polygons and to valid model cells. The logarithmic speed legend is unchanged. Brighter trails, increased visual particle density and a nominal motion acceleration of 70,000 improve full-frame legibility; these drawing settings do not change vector direction, speed or geographic coverage. A bounded two-second crossfade joins the 20-second loop.
 
 Kingston–Brockville is explicitly labelled as lacking a retrieved current field. Research verified existing ELCOM and ECCC H2D2 model applications covering that reach, as well as actual CHS water-level records and bathymetry downloads. These are reconstruction inputs and model-asset leads, not a downloaded velocity field or a newly validated simulation. Exact evidence, retrieval examples, model limitations and the remaining work are recorded in docs/kingston-brockville.md.
+
+
+10. Kingston–Brockville estimated-flow film revision, 19 October 2026
+
+The featured 20-second Lake Ontario film now adds a new, explicitly estimated river field between the Kingston/Cape Vincent boundary and Brockville. The lake's original 23-snapshot surface-vector mean is unchanged. The river is a steady, simplified depth-averaged diffusion-wave hydraulic scenario forced with the same period's mean endpoint stages and calibrated to the IJC regulation-discharge target. It is not a temporal average of hourly river velocities, measured currents, or an operational forecast. The film footer reads: "Kingston–Brockville: ESTIMATES · simplified, unvalidated depth-averaged model".
+
+The 50 m finite-volume calculation uses CHS NONNA numerical bathymetry and sourced water polygons preserving island holes. About 82.04% of the connected input corridor has source-depth support; the remaining 17.96% is explicitly estimated bank bed. Historical survey datums are represented by an approximate chart-datum separation surface, not a verified modern vertical transformation. All source masks, frozen inputs, method code and audit results are published under model/upper-river/.
+
+This approximation conserves the prescribed scenario discharge; that is a numerical/calibration property, not validation of local velocities. A held-out Alexandria Bay water-level check differs by about +2.4 cm, and 50/100 m results have broadly similar main-flow directions. Neither establishes current accuracy. Inertia, inertial eddies, wind, stratification and surface shear are omitted. An experimental full-momentum comparison was unsettled and materially different; its failure and kinetic-head defects in a small set of fast cells are documented. Local jet speeds should not be read as quantitatively reconstructed observations.
+
+The river estimate only fills film cells without NOAA data. Its extra particle seeding improves legibility and does not represent greater discharge or confidence. No vectors are stretched past the Brockville outlet. The broader live atlas retains its previous domains and coverage; this fixed river estimate is not silently added to its live sources. Detailed assumptions, sensitivities, reproducible commands, source URLs and limitations: docs/kingston-brockville-estimates.md and model/upper-river/README.md.

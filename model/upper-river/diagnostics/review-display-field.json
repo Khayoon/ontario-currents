@@ -1,0 +1,19 @@
+{
+  "file_sha256": "adb561fe8e65b97433ff22630d9bf24faaa1804b15cc92f2c004c92d25c8489c",
+  "source_sha256": "2ca686277af26ffb289c498ae2fd26025c8a262644b165cf3fd0475f404f99d9",
+  "cells": 905216,
+  "valid_cells": 114119,
+  "matched_null_masks": true,
+  "all_valid_cells_map_to_solved_native_wet": true,
+  "maximum_vector_error_vs_independent_convergence_rotation_mps": 9.44799321303784e-05,
+  "error_percentiles_mps": [
+    4.911964629468444e-06,
+    1.2539816411170648e-05,
+    2.1188494587330297e-05,
+    9.44799321303784e-05
+  ],
+  "maximum_speed_mps": 2.450417263447187,
+  "max_speed_difference_due_to_rotation_mps": 9.447704762655107e-05,
+  "metadata_preserves_estimate_depth_average_and_NOAA_priority": true,
+  "note": "Small differences include 5-decimal export rounding and spherical cos(latitude) approximation in exporter unit bases; no vectors were edited."
+}

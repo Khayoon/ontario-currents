@@ -1,13 +1,13 @@
 # Kingston–Brockville currents: a concrete reconstruction route
 
-This is the research companion to the Lake Ontario close-up film. No public corridor u/v download was verified, so the movie labels the gap rather than drawing unsupported currents.
+This records the input research for the original close-up edition. No public corridor u/v download was verified. The newer film uses a separately computed, labelled experimental estimate: see [the implemented model and its limitations](kingston-brockville-estimates.md). The source availability findings below remain distinct from that new calculation.
 
 The [frozen input records and retrieval scripts](../research/upper-river/) are published with SHA-256 records. Larger bathymetry tiles, the original thesis and ECCC report were downloaded and inspected locally; they are not redistributed here. The links and scripts below retrieve the original sources. Cached local filenames in the evidence tables identify what was actually inspected.
 
 CHS's public November 2025 S-111 sample catalogue was also downloaded and inspected: its four current tiles are at Québec City, not Kingston–Brockville. That sample therefore cannot fill the gap. This does not establish that a separate operational corridor product is unavailable. [Official S-100 products and sample](https://shc.gc.ca/data-gestion/s-100/products-services-produits-eng.html).
 
 
-Verified 19 October 2026. Target interval: 12 October 2026 00:00 UTC–17 October 2026 12:00 UTC. No hydrodynamic simulation was run for this note, and none of the bathymetry or water-level observations below is being presented as a measured velocity field.
+Verified 19 October 2026. Target interval: 12 October 2026 00:00 UTC–17 October 2026 12:00 UTC. No hydrodynamic simulation had been run when this input-research note was written, and none of the bathymetry or water-level observations below is being presented as a measured velocity field.
 
 ## What was actually retrieved
 

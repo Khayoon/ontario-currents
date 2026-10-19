@@ -1,0 +1,530 @@
+{
+  "help": "https://open.canada.ca/data/api/3/action/help_show?name=package_show",
+  "success": true,
+  "result": {
+    "association_type": [],
+    "audience": [],
+    "author": null,
+    "author_email": null,
+    "collection": "fgp",
+    "contact_information": "{\"en\": {\"organization_name\": \"Government of Canada; Fisheries and Oceans Canada; Canadian Hydrographic Service\", \"country\": \"Canada\", \"electronic_mail_address\": \"chsinfo@dfo-mpo.gc.ca\"}, \"fr\": {\"organization_name\": \"Gouvernement du Canada; P\\u00eaches et Oc\\u00e9ans Canada; Service hydrographique du Canada\", \"country\": \"Canada (le)\", \"electronic_mail_address\": \"chsinfo@dfo-mpo.gc.ca\"}}",
+    "contributor": {},
+    "creator_user_id": "b88b9549-3a4b-43a9-9375-5f3fc20fe782",
+    "data_series_issue_identification": {},
+    "data_series_name": {},
+    "date_modified": "2026-04-01 00:00:00",
+    "date_published": "2018-10-11 00:00:00",
+    "display_flags": [
+      "fgp_viewer"
+    ],
+    "distributor": "{\"en\": {\"organization_name\": \"Government of Canada; Fisheries and Oceans Canada; Canadian Hydrographic Service\", \"country\": \"Canada\", \"electronic_mail_address\": \"chsinfo@dfo-mpo.gc.ca\"}, \"fr\": {\"organization_name\": \"Gouvernement du Canada; P\\u00eaches et Oc\\u00e9ans Canada; Service hydrographique du Canada\", \"country\": \"Canada (le)\", \"electronic_mail_address\": \"chsinfo@dfo-mpo.gc.ca\"}}",
+    "file_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+    "frequency": "irregular",
+    "geographic_region": [],
+    "hierarchy_level": "dataset; jeuDonnées",
+    "id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+    "imso_approval": "true",
+    "isopen": false,
+    "jurisdiction": "federal",
+    "keywords": {
+      "en": [
+        "Bathymetry",
+        "Depth",
+        "Hydrography"
+      ],
+      "fr": [
+        "Bathymétrie",
+        "les profondeurs des fonds marins",
+        "Hydrographie"
+      ]
+    },
+    "license_id": "ca-ogl-lgo",
+    "license_title": "Open Government Licence - Canada",
+    "license_url": "https://open.canada.ca/en/open-government-licence-canada",
+    "maintainer": null,
+    "maintainer_contact_form": {},
+    "maintainer_email": "chsinfo@dfo-mpo.gc.ca",
+    "metadata_contact": {
+      "en": "Government of Canada; Fisheries and Oceans Canada; Canadian Hydrographic Service",
+      "fr": "Gouvernement du Canada; Pêches et Océans Canada; Service hydrographique du Canada"
+    },
+    "metadata_created": "2018-10-04T18:00:16.177135",
+    "metadata_modified": "2026-05-15T19:30:53.937432",
+    "name": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+    "notes": "**CHS NONNA data has been updated: April 1, 2026**\n\nThe Canadian Hydrographic Service (CHS) offers a complete inventory of bathymetric data free to the general public for non-navigational use called 'CHS NONNA' for the 'NON-NAvigational' purpose of the data. The product is available in a spatial resolution of 10 metres or 100 metres.\n\nTo directly access the CHS NONNA Data Portal please follow this link - https://data.chs-shc.ca/login\n\n(Note: The data portal is NOT compatible with Internet Explorer browser).\n\nTerms of Use\n\nThe Canadian Hydrographic Service (CHS) NONNA Data products are for NON-NAVIGATIONAL USE ONLY. Please see the Open Data Licence below and the CHS NONNA LICENCE viewable on https://data.chs-shc.ca/login and downloadable with the NONNA data, for the full terms and conditions governing the use of this data.\n\n----- PRODUCT DESCRIPTION -----\n\nThe CHS NONNA-10 NONNA-100 and NONNA Package Bathymetric Data products represent a consolidation of digital bathymetric sources managed by the CHS in Canadian jurisdiction.\n\nThe « NONNA » refers to NON-NAvigational.\n\nThe « 10 » or « 100 » references the approximate resolution (in metres) of the data.\n\nNONNA Packages\n\nA NONNA Package is a ZIP file containing a collection of NONNAP datasets to ease the download of large amounts of high resolution data. Packages are currently available for data sources of approximately 10 metre resolution.\n\nThe «P10 » refers to the Packages and approximate resolution (in metres)  of the data.\n\nThe CHS NONNA-10 individual product coverage (resolution)  is as follows:\n\n   - South of 68°N the products = 0.1° latitude X 0.1° longitude (0.0001 degrees)\n   - 68°N-80°N the products = 0.1° latitude X 0.2° longitude (0.0002 degrees)\n   - 80°N and north the products = 0.1° latitude X 0.4° longitude (0.0004 degrees)\n\nThe CHS NONNA-100 individual product coverage (resolution)  is as follows:\n\n   - South of 68°N the products = 1° latitude X 1° longitude (0.001 degrees)\n   - 68°N-80°N the products = 1° latitude X 2° longitude (0.002 degrees)\n   - 80°N and north the products = 1° latitude X 4° longitude (0.004 degrees)\n\nThe CHS NONNA-P10 Packages are ZIP files that contain product coverage (resolution) defined as:\n\n   - South of 68°N the products = 1° latitude X 1° longitude (0.0001 degrees)\n   - 68°N-80°N the products = 1° latitude X 2° longitude (0.0002 degrees)\n   - 80°N and north the products = 1° latitude X 4° longitude (0.0004 degrees)\n\n----- DATUM -----\n\nAll CHS NONNA data sources are horizontally referenced to the World Geodetic System 1984 (WGS84) ESPG:4326 and vertically referenced to Chart Datum (CD), a tidal or water level datum that is locally derived and, of which, the depth of water should seldom fall below. For more information on vertical references visit: https://tides.gc.ca/en/vertical-datum-chart-references\n\n----- DATA PRESENTATION -----\n\nCHS NONNA products adhere to the following naming convention: NONNAXXX_SouthwestCorner Example: \n\nNONNAP10_4360N07940W\n\n   - NONNAP10 = the product NONNAP10\n   - 4360N07940W = the southwest corner of the NONNA cell.\n\nThese products are available to view, query and download via the CHS NONNA Data Portal. The following formats are available for download:\n\n   - 32-bit GeoTIFF\n   - ASCII++ (XYZ)\n   - CSAR\n   - BAG\n\nThese formats can be opened using various GIS applications.\n\nAlternatively, the CHS NONNA products can be accessed via Web Map Service (WMS), Web Coverage Service (WCS) or Web Map Tile Service (WMTS) links: \n\n- WMS https://nonna-geoserver.data.chs-shc.ca/geoserver/wms?request=GetCapabilities\n- WMTS https://nonna-geoserver.data.chs-shc.ca/geoserver/gwc/service/wmts?request=GetCapabilities\n- WCS https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?request=GetCapabilities\n\n**Note**\n\nGaps in the data may be visible where modern surveys have not yet been conducted, the data is not updated to Chart Datum (CD) or where legacy data has not yet been digitized. In addition, there may be data sources removed from the Data Portal for further processing in the CHS’ Bathymetric Database, and will not be available until such work is complete.\n\nData sources included in the NONNA products may not have been subjected to the same level of quality assurance as those in official navigational products.\n\n**Help**\n\nNew users of the CHS NONNA Data Portal are encouraged to fully review the 'CHS NONNA Data Portal Guidance Document' (PDF) which is available below in the RESOURCES section of this page.",
+    "notes_translated": {
+      "en": "**CHS NONNA data has been updated: April 1, 2026**\n\nThe Canadian Hydrographic Service (CHS) offers a complete inventory of bathymetric data free to the general public for non-navigational use called 'CHS NONNA' for the 'NON-NAvigational' purpose of the data. The product is available in a spatial resolution of 10 metres or 100 metres.\n\nTo directly access the CHS NONNA Data Portal please follow this link - https://data.chs-shc.ca/login\n\n(Note: The data portal is NOT compatible with Internet Explorer browser).\n\nTerms of Use\n\nThe Canadian Hydrographic Service (CHS) NONNA Data products are for NON-NAVIGATIONAL USE ONLY. Please see the Open Data Licence below and the CHS NONNA LICENCE viewable on https://data.chs-shc.ca/login and downloadable with the NONNA data, for the full terms and conditions governing the use of this data.\n\n----- PRODUCT DESCRIPTION -----\n\nThe CHS NONNA-10 NONNA-100 and NONNA Package Bathymetric Data products represent a consolidation of digital bathymetric sources managed by the CHS in Canadian jurisdiction.\n\nThe « NONNA » refers to NON-NAvigational.\n\nThe « 10 » or « 100 » references the approximate resolution (in metres) of the data.\n\nNONNA Packages\n\nA NONNA Package is a ZIP file containing a collection of NONNAP datasets to ease the download of large amounts of high resolution data. Packages are currently available for data sources of approximately 10 metre resolution.\n\nThe «P10 » refers to the Packages and approximate resolution (in metres)  of the data.\n\nThe CHS NONNA-10 individual product coverage (resolution)  is as follows:\n\n   - South of 68°N the products = 0.1° latitude X 0.1° longitude (0.0001 degrees)\n   - 68°N-80°N the products = 0.1° latitude X 0.2° longitude (0.0002 degrees)\n   - 80°N and north the products = 0.1° latitude X 0.4° longitude (0.0004 degrees)\n\nThe CHS NONNA-100 individual product coverage (resolution)  is as follows:\n\n   - South of 68°N the products = 1° latitude X 1° longitude (0.001 degrees)\n   - 68°N-80°N the products = 1° latitude X 2° longitude (0.002 degrees)\n   - 80°N and north the products = 1° latitude X 4° longitude (0.004 degrees)\n\nThe CHS NONNA-P10 Packages are ZIP files that contain product coverage (resolution) defined as:\n\n   - South of 68°N the products = 1° latitude X 1° longitude (0.0001 degrees)\n   - 68°N-80°N the products = 1° latitude X 2° longitude (0.0002 degrees)\n   - 80°N and north the products = 1° latitude X 4° longitude (0.0004 degrees)\n\n----- DATUM -----\n\nAll CHS NONNA data sources are horizontally referenced to the World Geodetic System 1984 (WGS84) ESPG:4326 and vertically referenced to Chart Datum (CD), a tidal or water level datum that is locally derived and, of which, the depth of water should seldom fall below. For more information on vertical references visit: https://tides.gc.ca/en/vertical-datum-chart-references\n\n----- DATA PRESENTATION -----\n\nCHS NONNA products adhere to the following naming convention: NONNAXXX_SouthwestCorner Example: \n\nNONNAP10_4360N07940W\n\n   - NONNAP10 = the product NONNAP10\n   - 4360N07940W = the southwest corner of the NONNA cell.\n\nThese products are available to view, query and download via the CHS NONNA Data Portal. The following formats are available for download:\n\n   - 32-bit GeoTIFF\n   - ASCII++ (XYZ)\n   - CSAR\n   - BAG\n\nThese formats can be opened using various GIS applications.\n\nAlternatively, the CHS NONNA products can be accessed via Web Map Service (WMS), Web Coverage Service (WCS) or Web Map Tile Service (WMTS) links: \n\n- WMS https://nonna-geoserver.data.chs-shc.ca/geoserver/wms?request=GetCapabilities\n- WMTS https://nonna-geoserver.data.chs-shc.ca/geoserver/gwc/service/wmts?request=GetCapabilities\n- WCS https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?request=GetCapabilities\n\n**Note**\n\nGaps in the data may be visible where modern surveys have not yet been conducted, the data is not updated to Chart Datum (CD) or where legacy data has not yet been digitized. In addition, there may be data sources removed from the Data Portal for further processing in the CHS’ Bathymetric Database, and will not be available until such work is complete.\n\nData sources included in the NONNA products may not have been subjected to the same level of quality assurance as those in official navigational products.\n\n**Help**\n\nNew users of the CHS NONNA Data Portal are encouraged to fully review the 'CHS NONNA Data Portal Guidance Document' (PDF) which is available below in the RESOURCES section of this page.",
+      "fr": "**Les données NONNA du Service hydrographique du Canada ont été mises à jour : 1 avril 2026**\n\nLe Service hydrographique du Canada (SHC) offre au public une panoplie complète de données bathymétriques gratuites en vue d’une utilisation non navigationnelle. Le nom « NONNA » provient de « NON NAvigationnel » et limite l’utilisation de ces données à des fins non navigationnelles. Ce produit est offert en deux résolutions spatiales : 10 mètres ou 100 mètres.\n\nPour accéder directement au portail de données NONNA du SCH, veuillez suivre ce lien : https://data.chs-shc.ca/login\n\n(Remarque : Le portail de données n’est PAS compatible avec le navigateur Internet Explorer).\n\nModalités d’utilisation\n\nLes produits de données NONNA du Service hydrographique du Canada (SHC) sont À USAGE NON-NAVIGATIONNEL SEULEMENT. Veuillez consulter la licence de données ouvertes ci-dessous et la LICENCE NONNA du SHC se trouvant à l’adresse https://data.chs-shc.ca/login et téléchargeable avec les données NONNA, pour connaître l’ensemble des conditions régissant l’utilisation de ces données.\n\n----- DESCRIPTION DES PRODUITS -----\n\nLes produits de données bathymétriques NONNA-10, NONNA-100 et la trousse NONNA du SHC représentent une consolidation des sources bathymétriques numériques gérées par le SHC en territoire canadien.\n\n« NONNA » signifie NON destiné à la NAvigation.\n\n« 10 » ou « 100 » est la résolution approximative des données (en mètres).\n\nTrousses NONNA \n\nUne trousse NONNA est un fichier ZIP contenant plusieurs ensembles de données NONNAP qui a pour but de faciliter le téléchargement de grandes quantités de données à haute résolution. Des trousses sont actuellement disponibles pour des sources de données d’une résolution d’environ 10 mètres.\n\n« P10 » fait référence aux trousses et à la résolution approximative des données (en mètres).\n\nLa couverture individuelle des produits NONNA-10 (résolution) du SHC est la suivante :\n\n   - Au sud de 68° N, les produits = 0,1° de latitude X 0,1° de longitude (0,0001 degré).\n   - Entre 68° N et 80° N, les produits = 0,1° de latitude X 0,2° de longitude (0,0002 degré).\n   - À partir de 80° N, les produits = 0,1° de latitude X 0,4° de longitude (0,0004 degré).\n\nLa couverture individuelle des produits NONNA-100 (résolution) du SHC est la suivante :\n\n   - Au sud de 68° N, les produits = 1° de latitude X 1° de longitude (0,001 degré).\n   - Entre 68° N et 80° N, les produits = 1° de latitude X 2° de longitude (0,002 degré).\n   - À partir de 80° N, les produits = 1° de latitude X 4° de longitude (0,004 degré).\n\nLes trousses NONNA-P10 du SHC sont des fichiers ZIP qui contiennent des produits dont la couverture (résolution) est la suivante :\n\n   - Au sud de 68° N, les produits = 1° de latitude X 1° de longitude (0,0001 degré).\n   - Entre 68° N et 80° N, les produits = 1° de latitude X 2° de longitude (0,0002 degré).\n   - À partir de 80° N, les produits = 1° de latitude X 4° de longitude (0,0004 degré).\n\n----- NIVEAU DE RÉFÉRENCE -----\n\nToutes les sources de données NONNA du SHC sont référencées horizontalement au code EPSG : 4326 du Système géodésique mondial 1984 (WGS84) et sont référencées verticalement au zéro des cartes (ZC), un niveau de référence pour les marées et le niveau de l’eau qui est dérivé à l’échelle locale, et par rapport auquel la profondeur de l’eau doit rarement être inférieure.  Pour de plus amples renseignements sur les références verticales, consultez le site suivant : https://www.marees.gc.ca/fr/references-des-donnees-du-canevas-altimetrique-des-cartes-marines\n\n----- PRÉSENTATION DES DONNÉES -----\n\nLes produits NONNA du SHC respectent la convention d’appellation suivante : NONNAXXX_Coinsud-ouest Exemple : \n\nNONNAP10_4360N07940W\n\n   - NONNAP10 = le produit, qui sera NONNAP10\n   - 4360N07940W = le coin sud-ouest de la cellule NONNA\n\nCes produits peuvent être visualisés, interrogés et téléchargés à partir du portail des données NONNA du SHC. Les formats suivants peuvent être téléchargés :\n\n   - GeoTIFF 32 bits\n   - ASCII++ (XYZ)\n   - CSAR\n   - BAG\n\nCes formats peuvent être ouverts à l’aide de différentes applications de systèmes d’information géographique (SIG).\n\nLes produits NONNA du SHC sont également accessibles au moyen des liens du service de cartographie Web (WMS), du service de couverture Web (WCS) ou du service de juxtaposition cartographique Web (WMTS) : \n\n- WMS (en anglais seulement) https://nonna-geoserver.data.chs-shc.ca/geoserver/wms?request=GetCapabilities\n- WMTS (en anglais seulement) https://nonna-geoserver.data.chs-shc.ca/geoserver/gwc/service/wmts?request=GetCapabilities\n- WCS (en anglais seulement) https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?request=GetCapabilities\n\n**Remarque**\n\nDes lacunes liées aux données peuvent être constatées dans les cas où des relevés modernes n’ont pas encore été menés, des données ne sont pas mises à jour par rapport au zéro des cartes ou des données existantes n’ont pas encore été numérisées. De plus, il se peut que des sources de données soient retirées du portail des données afin d’être traitées plus amplement dans la base de données bathymétriques du SHC. Celles-ci ne seront alors disponibles qu’à la fin des travaux.\n\nLes sources de données utilisées dans les produits NONNA peuvent ne pas avoir le même niveau d’assurance de la qualité que celles des produits de navigation officiels.\n\n**Aide**\n\nLes nouveaux utilisateurs du portail de données NONNA du SHC sont invités à examiner attentivement le document PDF « Document d’orientation du portail de données NONNA du SHC », accessible à partir de la section Données et ressources de cette page."
+    },
+    "num_resources": 14,
+    "num_tags": 0,
+    "org_section": {},
+    "org_title_at_publication": {
+      "en": "Fisheries and Oceans Canada",
+      "fr": "Pêches et Océans Canada"
+    },
+    "organization": {
+      "id": "E56460A0-2055-4BF4-A693-EA238E0746E7",
+      "name": "dfo-mpo",
+      "title": "Fisheries and Oceans Canada | Pêches et Océans Canada",
+      "type": "organization",
+      "description": "",
+      "image_url": "",
+      "created": "2016-09-23T17:25:21.313583",
+      "is_organization": true,
+      "approval_status": "approved",
+      "state": "active"
+    },
+    "owner_org": "E56460A0-2055-4BF4-A693-EA238E0746E7",
+    "place_of_publication": [],
+    "position_name": {},
+    "private": false,
+    "program_page_url": {},
+    "ready_to_publish": "true",
+    "reference_system_information": "EPSG:4326,https://epsg.io,",
+    "responsible_role": "resourceProvider; fournisseurRessource",
+    "restrictions": "unrestricted",
+    "spatial": "{\"type\": \"Polygon\", \"coordinates\": [[[-143, 39.05], [-47, 39.05], [-47, 85], [-143, 85], [-143, 39.05]]]}",
+    "spatial_representation_type": [
+      "grid"
+    ],
+    "state": "active",
+    "status": "ongoing",
+    "subject": [
+      "nature_and_environment"
+    ],
+    "time_period_coverage_start": "2018-10-01 00:00:00",
+    "title": "Canadian Hydrographic Service Non-Navigational (NONNA) Bathymetric Data",
+    "title_translated": {
+      "en": "Canadian Hydrographic Service Non-Navigational (NONNA) Bathymetric Data",
+      "fr": "Données bathymétriques non navigationnelles (NONNA) du Service hydrographique du Canada"
+    },
+    "topic_category": [
+      "inland_waters",
+      "oceans"
+    ],
+    "type": "dataset",
+    "url": null,
+    "version": null,
+    "resources": [
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000352",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "HTML",
+        "hash": "",
+        "id": "cb1b0ff7-f000-4471-9104-1a540204b9c5",
+        "language": [
+          "en",
+          "fr"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.929866",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "1. CHS NONNA Data Portal",
+        "name_translated": {
+          "en": "1. CHS NONNA Data Portal",
+          "fr": "1. Portail des données NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 0,
+        "resource_type": "application",
+        "state": "active",
+        "url": "https://data.chs-shc.ca/",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000359",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "PDF",
+        "hash": "",
+        "id": "85287ade-5e1b-4a47-8162-e577ad8eb812",
+        "language": [
+          "en"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.929954",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "2. (a) - CHS NONNA Data Portal Guidance Document",
+        "name_translated": {
+          "en": "2. (a) - CHS NONNA Data Portal Guidance Document",
+          "fr": "2. (a) - Document d’orientation du portail de données NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 1,
+        "resource_type": "guide",
+        "state": "active",
+        "url": "https://api-proxy.edh-cde.dfo-mpo.gc.ca/catalogue/records/d3881c4c-650d-4070-bf9b-1e00aabf0a1d/attachments/CHS_NONNA_Data_Portal_Guidance_Document_en.pdf",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000362",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "PDF",
+        "hash": "",
+        "id": "d959417e-cbaf-4a91-a6d0-22a1ae03bd71",
+        "language": [
+          "fr"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930026",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "2. (b) - CHS NONNA Data Portal Guidance Document",
+        "name_translated": {
+          "en": "2. (b) - CHS NONNA Data Portal Guidance Document",
+          "fr": "2. (b) - Document d’orientation du portail de données NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 2,
+        "resource_type": "guide",
+        "state": "active",
+        "url": "https://api-proxy.edh-cde.dfo-mpo.gc.ca/catalogue/records/d3881c4c-650d-4070-bf9b-1e00aabf0a1d/attachments/CHS_NONNA_Data_Portal_Guidance_Document_fr.pdf",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000363",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "WCS",
+        "hash": "",
+        "id": "a1c3c308-eedd-49a9-99fa-5838ccb8acaf",
+        "language": [
+          "en",
+          "fr"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930095",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "3. (a) - CHS NONNA Bathymetric Data",
+        "name_translated": {
+          "en": "3. (a) - CHS NONNA Bathymetric Data",
+          "fr": "3. (a) - Données bathymétriques NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 3,
+        "resource_type": "web_service",
+        "state": "active",
+        "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?request=GetCapabilities",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000365",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "WMTS",
+        "hash": "",
+        "id": "c59d333b-3687-4a83-8ef0-3638cf1c2ca7",
+        "language": [
+          "en",
+          "fr"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930162",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "3. (b) - CHS NONNA Bathymetric Data",
+        "name_translated": {
+          "en": "3. (b) - CHS NONNA Bathymetric Data",
+          "fr": "3. (b) - Données bathymétriques NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 4,
+        "resource_type": "web_service",
+        "state": "active",
+        "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/gwc/service/wmts?request=GetCapabilities",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000367",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "WMS",
+        "hash": "",
+        "id": "3b3a3962-430f-4bc3-9955-5f6d31001ee3",
+        "language": [
+          "en",
+          "fr"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930227",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "3. (c) - CHS NONNA Bathymetric Data",
+        "name_translated": {
+          "en": "3. (c) - CHS NONNA Bathymetric Data",
+          "fr": "3. (c) - Données bathymétriques NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 5,
+        "resource_type": "web_service",
+        "state": "active",
+        "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wms?request=GetCapabilities",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000368",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "PDF",
+        "hash": "",
+        "id": "3bea3e4a-cd4a-4e71-99a3-2f0eefa5888e",
+        "language": [
+          "en"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930294",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "4. (a) - CHS NONNA Frequently Asked Questions",
+        "name_translated": {
+          "en": "4. (a) - CHS NONNA Frequently Asked Questions",
+          "fr": "4. (a) - Foire aux questions sur les produits NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 6,
+        "resource_type": "guide",
+        "state": "active",
+        "url": "https://api-proxy.edh-cde.dfo-mpo.gc.ca/catalogue/records/d3881c4c-650d-4070-bf9b-1e00aabf0a1d/attachments/CHS_NONNA_Data_Portal_FAQ_en.pdf",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000370",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "PDF",
+        "hash": "",
+        "id": "bc2b8788-c0f4-4040-b511-d2e6579691cd",
+        "language": [
+          "fr"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930358",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "4. (b) - CHS NONNA Frequently Asked Questions",
+        "name_translated": {
+          "en": "4. (b) - CHS NONNA Frequently Asked Questions",
+          "fr": "4. (b) - Foire aux questions sur les produits NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 7,
+        "resource_type": "guide",
+        "state": "active",
+        "url": "https://api-proxy.edh-cde.dfo-mpo.gc.ca/catalogue/records/d3881c4c-650d-4070-bf9b-1e00aabf0a1d/attachments/CHS_NONNA_Data_Portal_FAQ_fr.pdf",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000372",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "PDF",
+        "hash": "",
+        "id": "48680af3-2b8a-439f-8810-148046fc01a3",
+        "language": [
+          "en",
+          "fr"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930423",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "5. CHS NONNA Licence",
+        "name_translated": {
+          "en": "5. CHS NONNA Licence",
+          "fr": "5. Licence NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 8,
+        "resource_type": "guide",
+        "state": "active",
+        "url": "https://api-proxy.edh-cde.dfo-mpo.gc.ca/catalogue/records/d3881c4c-650d-4070-bf9b-1e00aabf0a1d/attachments/CHS_NONNA_LICENCE-LICENCE_NONNA_DU_SHC.pdf",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000373",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "SHP",
+        "hash": "",
+        "id": "44e5da51-5add-4846-a420-ed8382e25367",
+        "language": [
+          "en",
+          "fr"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930487",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "6. CHS NONNA 10 Index",
+        "name_translated": {
+          "en": "6. CHS NONNA 10 Index",
+          "fr": "6. Indice NONNA 10 du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 9,
+        "resource_type": "dataset",
+        "state": "active",
+        "url": "https://api-proxy.edh-cde.dfo-mpo.gc.ca/catalogue/records/d3881c4c-650d-4070-bf9b-1e00aabf0a1d/attachments/NONNA10.zip",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000375",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "SHP",
+        "hash": "",
+        "id": "323af940-c666-4d2f-afa6-13d92a087f44",
+        "language": [
+          "en",
+          "fr"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930562",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "7. CHS NONNA 100 Index",
+        "name_translated": {
+          "en": "7. CHS NONNA 100 Index",
+          "fr": "7. Indice NONNA 100 du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 10,
+        "resource_type": "dataset",
+        "state": "active",
+        "url": "https://api-proxy.edh-cde.dfo-mpo.gc.ca/catalogue/records/d3881c4c-650d-4070-bf9b-1e00aabf0a1d/attachments/NONNA100.zip",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000377",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "SHP",
+        "hash": "",
+        "id": "6825d026-f795-4f4e-a0bc-064c02637987",
+        "language": [
+          "en",
+          "fr"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930627",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "8. CHS NONNA Packages Index",
+        "name_translated": {
+          "en": "8. CHS NONNA Packages Index",
+          "fr": "8. Indice des trousses NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 11,
+        "resource_type": "dataset",
+        "state": "active",
+        "url": "https://api-proxy.edh-cde.dfo-mpo.gc.ca/catalogue/records/d3881c4c-650d-4070-bf9b-1e00aabf0a1d/attachments/NONNAP10.zip",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000379",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "WMS",
+        "hash": "",
+        "id": "56ad7b26-bcef-44df-8d56-062d7ef97aef",
+        "language": [
+          "en"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930692",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "CHS NONNA Bathymetric Data",
+        "name_translated": {
+          "en": "CHS NONNA Bathymetric Data",
+          "fr": "Données bathymétriques NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 12,
+        "resource_type": "web_service",
+        "state": "active",
+        "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wms?request=GetCapabilities&service=WMS&version=1.3.0&layers=caris:NONNA%2010&legend_format=image%2Fpng&feature_info_type=text%2Fplain",
+        "url_type": null
+      },
+      {
+        "cache_last_updated": null,
+        "cache_url": null,
+        "created": "2026-05-15T19:30:54.000380",
+        "data_quality": [],
+        "datastore_active": false,
+        "description": null,
+        "format": "WMS",
+        "hash": "",
+        "id": "88ab7582-51a9-4d2e-b253-63f898650928",
+        "language": [
+          "fr"
+        ],
+        "last_modified": null,
+        "metadata_modified": "2026-05-15T19:30:53.930756",
+        "mimetype": null,
+        "mimetype_inner": null,
+        "name": "CHS NONNA Bathymetric Data",
+        "name_translated": {
+          "en": "CHS NONNA Bathymetric Data",
+          "fr": "Données bathymétriques NONNA du SHC"
+        },
+        "package_id": "d3881c4c-650d-4070-bf9b-1e00aabf0a1d",
+        "position": 13,
+        "resource_type": "web_service",
+        "state": "active",
+        "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wms?request=GetCapabilities&service=WMS&version=1.3.0&layers=caris:NONNA%2010&legend_format=image%2Fpng&feature_info_type=text%2Fplain",
+        "url_type": null
+      }
+    ],
+    "tags": [],
+    "groups": [],
+    "relationships_as_subject": [],
+    "relationships_as_object": []
+  }
+}

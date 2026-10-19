@@ -1,0 +1,187 @@
+{
+  "method": "steady nonlinear Manning finite-volume diffusion-wave approximation",
+  "n": 0.03065938233,
+  "cell_size_m": 100.0,
+  "wet_cells": 41299,
+  "inlet_cells": 64,
+  "outlet_cells": 14,
+  "kingston_stage_m": 74.8671067669173,
+  "brockville_stage_m": 74.5217067669173,
+  "discharge_in_m3s": 8239.910341818008,
+  "discharge_out_m3s": 8239.908869506808,
+  "relative_boundary_flux_error": 1.7868048787285832e-07,
+  "maximum_cell_continuity_residual_m3s": 0.00011985741684839013,
+  "minimum_actual_water_depth_m": 0.2373068672083889,
+  "cells_requiring_depth_floor": 0,
+  "speed_percentiles_mps": [
+    0.0,
+    0.031094543987252574,
+    0.06669177040861615,
+    0.1450752967360185,
+    0.32949657802628046,
+    0.6339571190033865,
+    2.1723969162715204
+  ],
+  "iterations": [
+    {
+      "iteration": 0,
+      "stage_change_m": 0.10271082813432031,
+      "lagged_continuity_l1_relative": 14.285979863431125
+    },
+    {
+      "iteration": 1,
+      "stage_change_m": 0.05107949731808503,
+      "lagged_continuity_l1_relative": 8.058000640080067
+    },
+    {
+      "iteration": 2,
+      "stage_change_m": 0.025244739250197767,
+      "lagged_continuity_l1_relative": 4.2634023340882035
+    },
+    {
+      "iteration": 3,
+      "stage_change_m": 0.012544982138777527,
+      "lagged_continuity_l1_relative": 2.18976352123641
+    },
+    {
+      "iteration": 4,
+      "stage_change_m": 0.006774525626227046,
+      "lagged_continuity_l1_relative": 1.1421240486330666
+    },
+    {
+      "iteration": 5,
+      "stage_change_m": 0.0038270886236517754,
+      "lagged_continuity_l1_relative": 0.6103085945315915
+    },
+    {
+      "iteration": 6,
+      "stage_change_m": 0.002204046612774846,
+      "lagged_continuity_l1_relative": 0.3331819743384519
+    },
+    {
+      "iteration": 7,
+      "stage_change_m": 0.0012860511381518336,
+      "lagged_continuity_l1_relative": 0.18479322973015513
+    },
+    {
+      "iteration": 8,
+      "stage_change_m": 0.0007568383317533289,
+      "lagged_continuity_l1_relative": 0.1038512735573702
+    },
+    {
+      "iteration": 9,
+      "stage_change_m": 0.00044786178762024065,
+      "lagged_continuity_l1_relative": 0.05896184146158404
+    },
+    {
+      "iteration": 10,
+      "stage_change_m": 0.0002659773875990368,
+      "lagged_continuity_l1_relative": 0.03376172787068236
+    },
+    {
+      "iteration": 11,
+      "stage_change_m": 0.0001585918841868761,
+      "lagged_continuity_l1_relative": 0.019455676602067557
+    },
+    {
+      "iteration": 12,
+      "stage_change_m": 9.476462480506598e-05,
+      "lagged_continuity_l1_relative": 0.011269765843180905
+    },
+    {
+      "iteration": 13,
+      "stage_change_m": 5.671293965292534e-05,
+      "lagged_continuity_l1_relative": 0.0065549995137910095
+    },
+    {
+      "iteration": 14,
+      "stage_change_m": 3.396462923888066e-05,
+      "lagged_continuity_l1_relative": 0.0038248710873591144
+    },
+    {
+      "iteration": 15,
+      "stage_change_m": 2.0353567322217714e-05,
+      "lagged_continuity_l1_relative": 0.002237280910442228
+    },
+    {
+      "iteration": 16,
+      "stage_change_m": 1.2201767788155848e-05,
+      "lagged_continuity_l1_relative": 0.0013114398485551276
+    },
+    {
+      "iteration": 17,
+      "stage_change_m": 7.31632066219845e-06,
+      "lagged_continuity_l1_relative": 0.0007699805930219746
+    },
+    {
+      "iteration": 18,
+      "stage_change_m": 4.3875686657202095e-06,
+      "lagged_continuity_l1_relative": 0.0004526579452327796
+    },
+    {
+      "iteration": 19,
+      "stage_change_m": 2.6312300889230755e-06,
+      "lagged_continuity_l1_relative": 0.00026647675600106126
+    },
+    {
+      "iteration": 20,
+      "stage_change_m": 1.578152662773391e-06,
+      "lagged_continuity_l1_relative": 0.0001570186921805281
+    },
+    {
+      "iteration": 21,
+      "stage_change_m": 9.466786963230334e-07,
+      "lagged_continuity_l1_relative": 9.261690118244443e-05
+    },
+    {
+      "iteration": 22,
+      "stage_change_m": 5.67886516478211e-07,
+      "lagged_continuity_l1_relative": 5.467366756652012e-05
+    },
+    {
+      "iteration": 23,
+      "stage_change_m": 3.406676114536822e-07,
+      "lagged_continuity_l1_relative": 3.2308911625306686e-05
+    },
+    {
+      "iteration": 24,
+      "stage_change_m": 2.0424630520210485e-07,
+      "lagged_continuity_l1_relative": 1.9175946183637746e-05
+    },
+    {
+      "iteration": 25,
+      "stage_change_m": 1.2253742909251741e-07,
+      "lagged_continuity_l1_relative": 1.1474402738614074e-05
+    },
+    {
+      "iteration": 26,
+      "stage_change_m": 7.331418316880445e-08,
+      "lagged_continuity_l1_relative": 6.99476432892738e-06
+    },
+    {
+      "iteration": 27,
+      "stage_change_m": 4.374135187390493e-08,
+      "lagged_continuity_l1_relative": 4.439184059818787e-06
+    },
+    {
+      "iteration": 28,
+      "stage_change_m": 2.6454088697391853e-08,
+      "lagged_continuity_l1_relative": 2.943209609192386e-06
+    },
+    {
+      "iteration": 29,
+      "stage_change_m": 1.5991631130418682e-08,
+      "lagged_continuity_l1_relative": 2.02681334584124e-06
+    },
+    {
+      "iteration": 30,
+      "stage_change_m": 9.806981893234479e-09,
+      "lagged_continuity_l1_relative": 1.6900275913731734e-06
+    }
+  ],
+  "wall_seconds": 18.579724550247192,
+  "regulation_discharge_scenario_m3s": 7377.58,
+  "input_grid_path": "work/upper-river-model/bank-bed-native-harmonic-100m.npz",
+  "input_grid_sha256": "87a0e2257eb4f5eaa16c10952542bf276963b6392077807a882c9bd332eb69a6",
+  "n_required_for_regulation_Q": 0.0342430121441881
+}

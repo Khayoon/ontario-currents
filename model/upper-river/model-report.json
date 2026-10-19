@@ -1,0 +1,399 @@
+{
+  "title": "Illustrative Kingston\u2013Brockville through-flow estimates",
+  "selected_method": "Simplified, unvalidated steady nonlinear Manning diffusion-wave approximation",
+  "model_period": {
+    "from": "2026-10-12T00:00:00Z",
+    "to": "2026-10-17T12:00:00Z",
+    "type": "Steady mean-condition scenario, NOT an hourly current-field average"
+  },
+  "selected": {
+    "cell_size_m": 50,
+    "wet_cells": 166832,
+    "effective_uniform_manning_n": 0.0289356306270774,
+    "boundary_stages_igld85_m": [
+      74.80174436090226,
+      74.5217067669173
+    ],
+    "discharge_scenario_m3s": 7377.58,
+    "discharge_in_m3s": 7377.579999999999,
+    "discharge_out_m3s": 7377.578199974462,
+    "relative_boundary_flux_error": 2.439859055495664e-07,
+    "maximum_cell_continuity_residual_m3s": 9.859961587734565e-05,
+    "min_actual_depth_m": 0.21058635820772054,
+    "cells_using_depth_floor": 0
+  },
+  "held_out_stage": {
+    "station": "NOAA8311062",
+    "station_position": [
+      -75.9345,
+      44.3311
+    ],
+    "nearest_wet_cell_distance_m": 29.941589301463875,
+    "predicted_igld85_stage_m": 74.69178477351716,
+    "observed_time_weighted_mean_m": 74.66782083333334,
+    "stage_residual_m": 0.023963940183818977,
+    "observation_quality": "preliminary, one missing six-minute value interpolated only for time-weighted stage mean"
+  },
+  "bank_bed_estimated_area_fraction": 0.17444495060899587,
+  "cross_sections": [
+    {
+      "distance_from_inlet_km": 2.476579501152645,
+      "net_discharge_m3s": 7377.579816086125,
+      "absolute_crossing_flux_m3s": 7400.35847910136,
+      "estimated_bed_face_flux_share": 0.00015594226612949011
+    },
+    {
+      "distance_from_inlet_km": 7.952851244925314,
+      "net_discharge_m3s": 7377.5795126456715,
+      "absolute_crossing_flux_m3s": 7515.807551428828,
+      "estimated_bed_face_flux_share": 0.055526222860494905
+    },
+    {
+      "distance_from_inlet_km": 13.429122988697983,
+      "net_discharge_m3s": 7377.579691255363,
+      "absolute_crossing_flux_m3s": 7449.589286396126,
+      "estimated_bed_face_flux_share": 0.31398763614377057
+    },
+    {
+      "distance_from_inlet_km": 18.905394732470658,
+      "net_discharge_m3s": 7377.579458511863,
+      "absolute_crossing_flux_m3s": 7676.702305385963,
+      "estimated_bed_face_flux_share": 1.8084220843176823e-05
+    },
+    {
+      "distance_from_inlet_km": 24.381666476243325,
+      "net_discharge_m3s": 7377.578700542097,
+      "absolute_crossing_flux_m3s": 7574.005117638972,
+      "estimated_bed_face_flux_share": 0.42520433580280337
+    },
+    {
+      "distance_from_inlet_km": 29.857938220015992,
+      "net_discharge_m3s": 7377.579009764831,
+      "absolute_crossing_flux_m3s": 7702.4678706495815,
+      "estimated_bed_face_flux_share": 0.21632890943510835
+    },
+    {
+      "distance_from_inlet_km": 35.334209963788666,
+      "net_discharge_m3s": 7377.5774654218685,
+      "absolute_crossing_flux_m3s": 7380.155547286865,
+      "estimated_bed_face_flux_share": 0.01528967573566649
+    },
+    {
+      "distance_from_inlet_km": 40.81048170756133,
+      "net_discharge_m3s": 7377.578183828598,
+      "absolute_crossing_flux_m3s": 7384.237075211658,
+      "estimated_bed_face_flux_share": 0.012496001897190889
+    },
+    {
+      "distance_from_inlet_km": 46.286753451334,
+      "net_discharge_m3s": 7377.578840623231,
+      "absolute_crossing_flux_m3s": 7407.144321823263,
+      "estimated_bed_face_flux_share": 0.006746879584712462
+    },
+    {
+      "distance_from_inlet_km": 51.763025195106664,
+      "net_discharge_m3s": 7377.578580755843,
+      "absolute_crossing_flux_m3s": 7418.820959007012,
+      "estimated_bed_face_flux_share": 0.2447146634833491
+    },
+    {
+      "distance_from_inlet_km": 57.239296938879335,
+      "net_discharge_m3s": 7377.578737392396,
+      "absolute_crossing_flux_m3s": 8157.9074803214535,
+      "estimated_bed_face_flux_share": 0.04201533889166003
+    },
+    {
+      "distance_from_inlet_km": 62.71556868265201,
+      "net_discharge_m3s": 7377.578763993625,
+      "absolute_crossing_flux_m3s": 7443.604908198264,
+      "estimated_bed_face_flux_share": 0.0
+    }
+  ],
+  "sensitivities": {
+    "bed_raised025m": {
+      "discharge_m3s": 7055.03885225888,
+      "relative_change_from_mean_case": -0.04371909863954304,
+      "head_drop_m": 0.2800375939849573,
+      "effective_manning_n": 0.03065938233
+    },
+    "bed_lowered025m": {
+      "discharge_m3s": 7710.385770897363,
+      "relative_change_from_mean_case": 0.04511042522037889,
+      "head_drop_m": 0.2800375939849573,
+      "effective_manning_n": 0.03065938233
+    },
+    "nearest_bank_bed": {
+      "discharge_m3s": 7395.048436310739,
+      "relative_change_from_mean_case": 0.002367773214351887,
+      "head_drop_m": 0.2800375939849573,
+      "effective_manning_n": 0.03065938233
+    },
+    "head_observed_p05": {
+      "discharge_m3s": 6651.078880395884,
+      "relative_change_from_mean_case": -0.09847417711554685,
+      "head_drop_m": 0.2296000000000049,
+      "effective_manning_n": 0.03065938233
+    },
+    "head_observed_p95": {
+      "discharge_m3s": 8239.910341818008,
+      "relative_change_from_mean_case": 0.1168852580138755,
+      "head_drop_m": 0.34539999999999793,
+      "effective_manning_n": 0.03065938233
+    },
+    "roughness_m20percent": {
+      "discharge_scale": 1.25,
+      "calculation": "Exact inverse-n scaling at constant imposed stages, global uniform resistance only."
+    },
+    "roughness_p20percent": {
+      "discharge_scale": 0.8333333333333334,
+      "calculation": "Exact inverse-n scaling at constant imposed stages, global uniform resistance only."
+    }
+  },
+  "momentum_comparison": {
+    "used_in_movie": false,
+    "method": "experimental semi-implicit full-momentum depth-averaged shallow-water estimate",
+    "final": {
+      "q_in": 2858.6436738398297,
+      "q_out": 2886.1886570627425,
+      "net_volume_rate": -27.544983222912833,
+      "interior_continuity_l1": 33.45323288267171,
+      "max_stage": 74.80174436090226,
+      "min_stage": 74.51805117079157,
+      "minimum_actual_depth_m": 0.20248318940447518,
+      "cells_requiring_depth_floor": 0,
+      "kinetic_energy_m5s2": 11557688.42632249,
+      "max_face_speed": 0.7551333246368301,
+      "speed_percentiles": [
+        0.026674691108006236,
+        0.13163544346029632,
+        0.2684448300191156,
+        0.9653546143449223
+      ],
+      "simulated_seconds": 86400.0,
+      "maximum_stage_change_last_checkpoint_m": 0.00022738452062753822,
+      "rms_face_speed_change_last_checkpoint_mps": 0.00011819249129395537,
+      "advection_cfl": 0.15102666492736602,
+      "wall_seconds": 382.1357934474945,
+      "relative_boundary_flux_error": 0.009635682640331824
+    },
+    "reason_rejected": "The full-momentum experimental solver strongly disagreed with the regulated discharge at the selected resistance and retained residual boundary seiche. Advection/grid losses are unresolved; it is not an accuracy upgrade.",
+    "no_advection_friction_check_final": {
+      "q_in": 7580.332276380942,
+      "q_out": 7576.062301331944,
+      "net_volume_rate": 4.269975048998276,
+      "interior_continuity_l1": 4.621108395325579,
+      "max_stage": 74.80174436090226,
+      "min_stage": 74.5217067669173,
+      "minimum_actual_depth_m": 0.22274854394484578,
+      "cells_requiring_depth_floor": 0,
+      "kinetic_energy_m5s2": 84821280.26915239,
+      "max_face_speed": 2.390695181676043,
+      "speed_percentiles": [
+        0.061392511722367434,
+        0.3029530304091841,
+        0.5777169747893319,
+        2.0535621532507156
+      ],
+      "simulated_seconds": 27000.0,
+      "global_step_mass_balance_error_m3s": 1.1974826366056845e-06,
+      "flux_depth_linearization_relative_difference": 1.1612227361681118e-07,
+      "maximum_stage_change_last_checkpoint_m": 7.991213125535523e-05,
+      "rms_face_speed_change_last_checkpoint_mps": 6.634567268058875e-05,
+      "advection_cfl": 2.8688342939238947,
+      "wall_seconds": 38.09622526168823,
+      "relative_boundary_flux_error": 0.0005632965539390417
+    }
+  },
+  "major_limitations": [
+    "No momentum inertia, inertial wakes, wind, Coriolis, thermal density stratification or surface shear.",
+    "A global discharge fit plus one held-out stage does not validate local current vectors or channel flow splits.",
+    "The DWE permits a small number of energetically suspect fast jets; their speeds are not quantitatively trustworthy. Do not use this for navigation.",
+    "NONNA source survey datums are heterogeneous; the interpolated Kingston/Brockville chart-datum separation is estimated, not authoritative.",
+    "About 17.4% of the selected wet-cell bed is inferred near banks; some channel sections have substantial flux adjacent to inferred bed.",
+    "Two-grid sensitivity checks do not establish strict asymptotic convergence."
+  ],
+  "numerical_environment": {
+    "python": "3.13.15",
+    "numpy": "2.2.0",
+    "scipy": "1.14.1",
+    "pyamg": "5.3.0",
+    "pyproj": "3.8.0"
+  },
+  "frozen_inputs": [
+    {
+      "filename": "bank-bed-native-harmonic-50m.npz",
+      "bytes": 66705099,
+      "sha256": "75affc8d53b2b272de5f97bf38b7fefad7e0caa2eaeddb61a99499c0975b48fe"
+    },
+    {
+      "filename": "dwe-native-harmonic-50m.npz",
+      "bytes": 8615652,
+      "sha256": "860722ad049ac859c882ec6ce8d52d81c2f8e153e4d00fd1b443562972c46d55"
+    },
+    {
+      "filename": "dwe-calibrated-50m.npz",
+      "bytes": 8615510,
+      "sha256": "2ca686277af26ffb289c498ae2fd26025c8a262644b165cf3fd0475f404f99d9"
+    },
+    {
+      "filename": "display-field.json",
+      "bytes": 9697249,
+      "sha256": "adb561fe8e65b97433ff22630d9bf24faaa1804b15cc92f2c004c92d25c8489c"
+    },
+    {
+      "filename": "hourly-stage-boundaries-igld85.csv",
+      "bytes": 5627,
+      "sha256": "3180c0f1bf2e515b13efd89853538e859e9884ec3eb45c6d010b22c01ca0aba0"
+    }
+  ],
+  "grid_sensitivity": {
+    "common_wet_cells": 161201,
+    "fraction_fine_wet_with_common_coarse_wet": 0.9662474824973626,
+    "rms_vector_difference_mps": 0.04975297724148752,
+    "rms_speed_difference_mps": 0.04055134315073642,
+    "moving_cells_for_direction": 86109,
+    "moving_direction_difference_deg_percentiles": {
+      "50": 3.092932801834404,
+      "90": 14.488984412351995,
+      "95": 20.995093596271143,
+      "99": 38.57671147567368
+    },
+    "moving_speed_ratio_fine_over_coarse_percentiles": {
+      "10": 0.8112606816765,
+      "50": 0.9927858372987742,
+      "90": 1.2008050046034602
+    },
+    "absolute_stage_difference_m_percentiles": {
+      "50": 0.0009601089675896901,
+      "90": 0.004852862985458728,
+      "95": 0.005236427612317129,
+      "99": 0.0063729282185533975
+    },
+    "scope": "Both runs independently calibrated to the same total regulation-Q scenario. Nearest coarse cell to each fine centroid; statistics exclude noncommon wet cells. This is a grid sensitivity check, not formal asymptotic convergence or validation."
+  },
+  "independent_inertia_and_energy_diagnostics": {
+    "solution": "dwe-calibrated-50m.npz",
+    "wet_cells": 166832,
+    "inlet_flux_m3s": 7377.579999999998,
+    "outlet_flux_m3s": 7377.578199974462,
+    "relative_boundary_flux_error": 2.4398590538979617e-07,
+    "max_interior_cell_flux_residual_m3s": 9.859961528491112e-05,
+    "interior_L1_flux_residual_relative_to_inflow": 1.1314399148145924e-05,
+    "actual_minimum_depth_m": 0.21058635820772054,
+    "cells_at_or_below_numerical_floor": 0,
+    "max_inlet_static_stage_m_igld85": 74.80174436090226,
+    "moving_cells_for_inertia_diagnostic": 90492,
+    "ratio_advective_to_pressure_acceleration_percentiles": {
+      "50": 4.249529980203522,
+      "90": 15.491798422590316,
+      "95": 21.28373496895195,
+      "99": 38.369120593664334
+    },
+    "moving_fraction_ratio_above_point2": 0.9923197630729789,
+    "moving_fraction_ratio_above1": 0.8890288644300048,
+    "fraction_wet_cells_total_head_exceeds_inlet_static_stage_by_1cm": 0.0009110961925769636,
+    "worst_kinetic_head_cell": {
+      "utm18n": [
+        420425.0,
+        4911825.0
+      ],
+      "speed_mps": 2.3827990008275384,
+      "stage_m_igld85": 74.73619250928627,
+      "total_kinetic_plus_static_head_m_igld85": 75.0256762309621,
+      "excess_over_inlet_static_stage_m": 0.22393187005984316
+    },
+    "interpretation": "Conservation is a numerical property, not field validation. DWE omits inertia and cannot enforce full kinetic-energy/momentum balances; local fast jets and island wakes are uncertain. Acceleration ratios and kinetic head are diagnostics only, not clipping/correction rules. Inlet kinetic energy and unresolved subcell velocities are not measured."
+  },
+  "portable_reproduction_check": {
+    "passed": true,
+    "source": "Isolated directory containing only copied package scripts and compact inputs; no original work-tree input dependency.",
+    "maximum_absolute_differences": {
+      "eta": 3.6862957131234e-11,
+      "depth": 3.6862957131234e-11,
+      "u": 9.351963647930006e-10,
+      "v": 1.9279025394343396e-09,
+      "face_flux": 2.8229816280145315e-06
+    },
+    "wall_seconds": 101.41201734542847,
+    "frozen_field_sha256": "adb561fe8e65b97433ff22630d9bf24faaa1804b15cc92f2c004c92d25c8489c",
+    "regenerated_field_sha256": "eb3cdb71e3318c8ae27f43f50ca9c2a855a18d493e8b93c8ede4eb35fffc69f0",
+    "byte_identical_field": false
+  },
+  "portable_inputs": [
+    {
+      "filename": "inputs/13988-metadata.json",
+      "bytes": 1334,
+      "sha256": "bef994d02a816840417202de1f25b8248d9718189d744a448e39e987f3196bc0"
+    },
+    {
+      "filename": "inputs/14400-metadata.json",
+      "bytes": 1338,
+      "sha256": "bc6ec35e96aea2f5d06c373735e7857c15bc4f22b170f56b24082a4bace00485"
+    },
+    {
+      "filename": "inputs/array-integrity-manifest.json",
+      "bytes": 10081,
+      "sha256": "fb42c5b27d6a93b6bb6972cb821dfc5947e94a9766560663ef6174d25f126ca5"
+    },
+    {
+      "filename": "inputs/bathymetry-grid-100m-audit.json",
+      "bytes": 2029,
+      "sha256": "bd5bf836b5b7032a6c7765b67494d61e9909502d8633d3545350451b302584dd"
+    },
+    {
+      "filename": "inputs/bathymetry-grid-100m.npz",
+      "bytes": 2747179,
+      "sha256": "b0c6b56f9ba28f9aea40e585e9fa53c0c1c55b3759d945b6731c342e6bbf0843"
+    },
+    {
+      "filename": "inputs/bathymetry-grid-50m-audit.json",
+      "bytes": 2043,
+      "sha256": "a2a6d8d9844178e4253f34a60584d1de1f950c0a198d91bcc13a53e42296848c"
+    },
+    {
+      "filename": "inputs/bathymetry-grid-50m.npz",
+      "bytes": 9319829,
+      "sha256": "d89c0763202ffc4229dd243480285a3670451e45f64cbc82b1575a12f9341b44"
+    },
+    {
+      "filename": "inputs/BATHYMETRY-INPUTS.md",
+      "bytes": 9363,
+      "sha256": "fbdb20d05c8a547744510d3937f98aac7205efc40583b8615ed5bb498f747fdd"
+    },
+    {
+      "filename": "inputs/hourly-stage-boundaries-igld85.csv",
+      "bytes": 5627,
+      "sha256": "3180c0f1bf2e515b13efd89853538e859e9884ec3eb45c6d010b22c01ca0aba0"
+    },
+    {
+      "filename": "inputs/nonna-catalog-metadata.json",
+      "bytes": 34931,
+      "sha256": "6093ae39086d6c95db7a2f879de19371d508d0b4ce298879a613ddf5e9e990c0"
+    },
+    {
+      "filename": "inputs/nonna10-20m-download-manifest.json",
+      "bytes": 37467,
+      "sha256": "be9fde2f6a65b6a08316fa4b7375b960048a25b8a798b6ac51357649c900cd63"
+    },
+    {
+      "filename": "inputs/nonna10-download-manifest.json",
+      "bytes": 7478,
+      "sha256": "2d9974b47a95ade8b047a220a5541906c51886e55a691fa74db89a311ee870b4"
+    },
+    {
+      "filename": "inputs/nonna100-download-manifest.json",
+      "bytes": 7551,
+      "sha256": "c3db64356ebce168c81dfc7bb702a8541fba6157a70d16d3c51b99ecfe2bd252"
+    },
+    {
+      "filename": "inputs/README.md",
+      "bytes": 5740,
+      "sha256": "7e17dcd19aba368e83d330f01976ba5e5f3725f2176e7c28fb7d00ad55df12ef"
+    },
+    {
+      "filename": "inputs/water-repair-manifest.json",
+      "bytes": 61012,
+      "sha256": "89dbc163d815a4e5a73e51e8839bab91c8f7edf292cdf0c9c1c79debbd4d9d26"
+    }
+  ]
+}

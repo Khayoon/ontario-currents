@@ -1,0 +1,55 @@
+{
+  "step_metres": 100.0,
+  "width": 823,
+  "height": 649,
+  "crs": "EPSG:32618",
+  "row_order": "south to north",
+  "x0_edge": 371800.0,
+  "y0_edge": 4880200.0,
+  "geometry_cells": 73578,
+  "connected_main_cells": 64693,
+  "measured_wet_cells": 57138,
+  "coverage_fraction": 0.7765636467422328,
+  "missing_wet_cells": 16440,
+  "missing_distance_percentiles_m": {
+    "50": 316.22776601683796,
+    "90": 17623.33680013586,
+    "95": 18967.762111666616,
+    "99": 22277.508526436945,
+    "100": 23832.121181296472
+  },
+  "missing_over_100m": 11245,
+  "main_coverage_fraction": 0.8761844403567619,
+  "bed_chart_measured_quantiles_m": [
+    -66.45699286947445,
+    -34.65096161978585,
+    -24.902406457005714,
+    -10.687376465116229,
+    -1.2942370811024184,
+    0.2589204826950981,
+    1.340739369392395
+  ],
+  "vertical_datum_caveat": "NONNA negative elevations interpreted as local-chart-datum bed; source-survey datum ambiguity remains. bed_igld85_estimated uses linearly interpolated Kingston/Brockville chart datum offsets (74.20/73.95m), not an authoritative datum separation surface.",
+  "interpolation": "Raw bed_chart_m is NaN at unknown wet cells; nearest_depth_chart_m supplied separately, along with distance. No gaps silently filled.",
+  "NONNA10_wet_cells": 37224,
+  "NONNA100_fallback_wet_cells": 19914,
+  "active_corridor": {
+    "cells": 41959,
+    "minlon": -76.48297944858676,
+    "maxlon": -75.66816032690622,
+    "coverage_fraction": 0.8284754164779904,
+    "missing_cells": 7197,
+    "missing_distance_percentiles_m": {
+      "50": 100.0,
+      "90": 223.60679774997897,
+      "95": 316.22776601683796,
+      "99": 500.3960780543708,
+      "100": 1000.0
+    }
+  },
+  "native_bed_aggregation": {
+    "NONNA10_request_step_mercator_m": 20.0,
+    "subsamples_per_cell": 49,
+    "method": "Arithmetic mean of finite native-resolution source bathymetry samples inside each grid cell; no depth invented. NONNA100 fallback where no fine sample is finite."
+  }
+}

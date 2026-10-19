@@ -1,0 +1,33 @@
+{
+  "solution": "dwe-calibrated-50m.npz",
+  "wet_cells": 166832,
+  "inlet_flux_m3s": 7377.579999999998,
+  "outlet_flux_m3s": 7377.578199974462,
+  "relative_boundary_flux_error": 2.4398590538979617e-07,
+  "max_interior_cell_flux_residual_m3s": 9.859961528491112e-05,
+  "interior_L1_flux_residual_relative_to_inflow": 1.1314399148145924e-05,
+  "actual_minimum_depth_m": 0.21058635820772054,
+  "cells_at_or_below_numerical_floor": 0,
+  "max_inlet_static_stage_m_igld85": 74.80174436090226,
+  "moving_cells_for_inertia_diagnostic": 90492,
+  "ratio_advective_to_pressure_acceleration_percentiles": {
+    "50": 4.249529980203522,
+    "90": 15.491798422590316,
+    "95": 21.28373496895195,
+    "99": 38.369120593664334
+  },
+  "moving_fraction_ratio_above_point2": 0.9923197630729789,
+  "moving_fraction_ratio_above1": 0.8890288644300048,
+  "fraction_wet_cells_total_head_exceeds_inlet_static_stage_by_1cm": 0.0009110961925769636,
+  "worst_kinetic_head_cell": {
+    "utm18n": [
+      420425.0,
+      4911825.0
+    ],
+    "speed_mps": 2.3827990008275384,
+    "stage_m_igld85": 74.73619250928627,
+    "total_kinetic_plus_static_head_m_igld85": 75.0256762309621,
+    "excess_over_inlet_static_stage_m": 0.22393187005984316
+  },
+  "interpretation": "Conservation is a numerical property, not field validation. DWE omits inertia and cannot enforce full kinetic-energy/momentum balances; local fast jets and island wakes are uncertain. Acceleration ratios and kinetic head are diagnostics only, not clipping/correction rules. Inlet kinetic energy and unresolved subcell velocities are not measured."
+}

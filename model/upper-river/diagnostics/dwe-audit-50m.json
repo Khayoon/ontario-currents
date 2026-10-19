@@ -1,0 +1,92 @@
+{
+  "wet_cells": 166832,
+  "estimated_bed_area_fraction": 0.17444495060899587,
+  "cross_sections": [
+    {
+      "distance_from_inlet_km": 2.476579501152645,
+      "net_discharge_m3s": 7377.579816086125,
+      "absolute_crossing_flux_m3s": 7400.35847910136,
+      "estimated_bed_face_flux_share": 0.00015594226612949011
+    },
+    {
+      "distance_from_inlet_km": 7.952851244925314,
+      "net_discharge_m3s": 7377.5795126456715,
+      "absolute_crossing_flux_m3s": 7515.807551428828,
+      "estimated_bed_face_flux_share": 0.055526222860494905
+    },
+    {
+      "distance_from_inlet_km": 13.429122988697983,
+      "net_discharge_m3s": 7377.579691255363,
+      "absolute_crossing_flux_m3s": 7449.589286396126,
+      "estimated_bed_face_flux_share": 0.31398763614377057
+    },
+    {
+      "distance_from_inlet_km": 18.905394732470658,
+      "net_discharge_m3s": 7377.579458511863,
+      "absolute_crossing_flux_m3s": 7676.702305385963,
+      "estimated_bed_face_flux_share": 1.8084220843176823e-05
+    },
+    {
+      "distance_from_inlet_km": 24.381666476243325,
+      "net_discharge_m3s": 7377.578700542097,
+      "absolute_crossing_flux_m3s": 7574.005117638972,
+      "estimated_bed_face_flux_share": 0.42520433580280337
+    },
+    {
+      "distance_from_inlet_km": 29.857938220015992,
+      "net_discharge_m3s": 7377.579009764831,
+      "absolute_crossing_flux_m3s": 7702.4678706495815,
+      "estimated_bed_face_flux_share": 0.21632890943510835
+    },
+    {
+      "distance_from_inlet_km": 35.334209963788666,
+      "net_discharge_m3s": 7377.5774654218685,
+      "absolute_crossing_flux_m3s": 7380.155547286865,
+      "estimated_bed_face_flux_share": 0.01528967573566649
+    },
+    {
+      "distance_from_inlet_km": 40.81048170756133,
+      "net_discharge_m3s": 7377.578183828598,
+      "absolute_crossing_flux_m3s": 7384.237075211658,
+      "estimated_bed_face_flux_share": 0.012496001897190889
+    },
+    {
+      "distance_from_inlet_km": 46.286753451334,
+      "net_discharge_m3s": 7377.578840623231,
+      "absolute_crossing_flux_m3s": 7407.144321823263,
+      "estimated_bed_face_flux_share": 0.006746879584712462
+    },
+    {
+      "distance_from_inlet_km": 51.763025195106664,
+      "net_discharge_m3s": 7377.578580755843,
+      "absolute_crossing_flux_m3s": 7418.820959007012,
+      "estimated_bed_face_flux_share": 0.2447146634833491
+    },
+    {
+      "distance_from_inlet_km": 57.239296938879335,
+      "net_discharge_m3s": 7377.578737392396,
+      "absolute_crossing_flux_m3s": 8157.9074803214535,
+      "estimated_bed_face_flux_share": 0.04201533889166003
+    },
+    {
+      "distance_from_inlet_km": 62.71556868265201,
+      "net_discharge_m3s": 7377.578763993625,
+      "absolute_crossing_flux_m3s": 7443.604908198264,
+      "estimated_bed_face_flux_share": 0.0
+    }
+  ],
+  "alexandria_bay": {
+    "station": "NOAA8311062",
+    "station_position": [
+      -75.9345,
+      44.3311
+    ],
+    "nearest_wet_cell_distance_m": 29.941589301463875,
+    "predicted_igld85_stage_m": 74.69178477351716,
+    "observed_time_weighted_mean_m": 74.66782083333334,
+    "stage_residual_m": 0.023963940183818977,
+    "observation_quality": "preliminary, one missing six-minute value interpolated only for time-weighted stage mean"
+  },
+  "minimum_actual_depth_m": 0.21058635820772054,
+  "cells_requiring_depth_floor": 0
+}

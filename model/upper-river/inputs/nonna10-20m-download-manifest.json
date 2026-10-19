@@ -1,0 +1,936 @@
+{
+  "retrieved_utc": "2026-10-19T14:10:16Z",
+  "source": "CHS NONNA10 WCS",
+  "crs": "EPSG:3857",
+  "sampling_projected_metres": 20.0,
+  "bounds3857": [
+    -8527080.0,
+    5476280.0,
+    -8413520.0,
+    5568160.0
+  ],
+  "requested_bounds_lonlat": [
+    -76.6,
+    44.07,
+    -75.58,
+    44.66
+  ],
+  "width": 5678,
+  "height": 4594,
+  "nodata": "NaN in saved npz; original float32 max in raw TIFF",
+  "vertical_datum": "Local chart datum, but source surveys may have mixed/ambiguous datums; not a universal IGLD85 bed surface.",
+  "tiles": [
+    {
+      "col": 0,
+      "row": 0,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8527080.0,
+        5552160.0,
+        -8511080.0,
+        5568160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8527080.0%2C5552160.0%2C-8511080.0%2C5568160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-0-0.tif",
+      "bytes": 2769346,
+      "sha256": "e2cbe4a8baf254168ed59a0bf5e820631268427b0da9293f4f3ea0baa549bb03",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 800,
+      "row": 0,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8511080.0,
+        5552160.0,
+        -8495080.0,
+        5568160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8511080.0%2C5552160.0%2C-8495080.0%2C5568160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-800-0.tif",
+      "bytes": 2769346,
+      "sha256": "0a7f3c63fa57002050fcf07a0b62e73dce2069fb3f121a40bab8b6feeb6221ff",
+      "numeric_cells": 58,
+      "min": -2.9563238620758057,
+      "max": -1.3009330034255981
+    },
+    {
+      "col": 1600,
+      "row": 0,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8495080.0,
+        5552160.0,
+        -8479080.0,
+        5568160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8495080.0%2C5552160.0%2C-8479080.0%2C5568160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-1600-0.tif",
+      "bytes": 2560450,
+      "sha256": "eb68872e90cc910481db333dd0e63cac3d2812dbb677580013c4e89bd8f939c2",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 2400,
+      "row": 0,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8479080.0,
+        5552160.0,
+        -8463080.0,
+        5568160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8479080.0%2C5552160.0%2C-8463080.0%2C5568160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-2400-0.tif",
+      "bytes": 2560450,
+      "sha256": "7427a19915a870cea65281965dd8ea7d19c4f979bb93bf96e1c72114bdbef23c",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 3200,
+      "row": 0,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8463080.0,
+        5552160.0,
+        -8447080.0,
+        5568160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8463080.0%2C5552160.0%2C-8447080.0%2C5568160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-3200-0.tif",
+      "bytes": 2560450,
+      "sha256": "ae7e536769a6e5475ecd4ab33f82c047a5d598ac433d18fa1f740858dd054a46",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 4000,
+      "row": 0,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8447080.0,
+        5552160.0,
+        -8431080.0,
+        5568160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8447080.0%2C5552160.0%2C-8431080.0%2C5568160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4000-0.tif",
+      "bytes": 2560450,
+      "sha256": "39e0f0e2503685319016da20846e09b31c2b70d291da11b26ba3f3e94d99a030",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 4800,
+      "row": 0,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8431080.0,
+        5552160.0,
+        -8415080.0,
+        5568160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8431080.0%2C5552160.0%2C-8415080.0%2C5568160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4800-0.tif",
+      "bytes": 2769346,
+      "sha256": "4f580782c8b252fbab92b2c1b14a9ab3936d740ea7ab8a68d568fc877ec1fc5f",
+      "numeric_cells": 21212,
+      "min": -48.777503967285156,
+      "max": 0.9172686338424683
+    },
+    {
+      "col": 5600,
+      "row": 0,
+      "width": 78,
+      "height": 800,
+      "bbox3857": [
+        -8415080.0,
+        5552160.0,
+        -8413520.0,
+        5568160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8415080.0%2C5552160.0%2C-8413520.0%2C5568160.0&width=78&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-5600-0.tif",
+      "bytes": 266674,
+      "sha256": "1aeceee579bc698e9a1b513e6f93ab6060c999cb714cdd98c4ad992e6b1154fe",
+      "numeric_cells": 2570,
+      "min": -23.454618453979492,
+      "max": -19.11380958557129
+    },
+    {
+      "col": 0,
+      "row": 800,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8527080.0,
+        5536160.0,
+        -8511080.0,
+        5552160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8527080.0%2C5536160.0%2C-8511080.0%2C5552160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-0-800.tif",
+      "bytes": 2769346,
+      "sha256": "c1b0cee71fb0ace1c2fd2839dc1ff8ee958c9763261916fd0d5a64c2c5c382db",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 800,
+      "row": 800,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8511080.0,
+        5536160.0,
+        -8495080.0,
+        5552160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8511080.0%2C5536160.0%2C-8495080.0%2C5552160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-800-800.tif",
+      "bytes": 2769346,
+      "sha256": "3cfa5e440709950434eabdc2760051f6c36d1dc0deceffd0148a7f376a01a647",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 1600,
+      "row": 800,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8495080.0,
+        5536160.0,
+        -8479080.0,
+        5552160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8495080.0%2C5536160.0%2C-8479080.0%2C5552160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-1600-800.tif",
+      "bytes": 2560450,
+      "sha256": "8c3c36037bc5f70e4a55e681a9633ae37734efd0372c1145311e3646899e1e37",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 2400,
+      "row": 800,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8479080.0,
+        5536160.0,
+        -8463080.0,
+        5552160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8479080.0%2C5536160.0%2C-8463080.0%2C5552160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-2400-800.tif",
+      "bytes": 2560450,
+      "sha256": "b4ad51b481c9607e2b8bb4fdb96f8b03943edf89980fb47d7a28c092bf49f5ff",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 3200,
+      "row": 800,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8463080.0,
+        5536160.0,
+        -8447080.0,
+        5552160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8463080.0%2C5536160.0%2C-8447080.0%2C5552160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-3200-800.tif",
+      "bytes": 2560450,
+      "sha256": "dc162f3391525ec41d44356926a94f05c2a5634ec731b7a06fdb9de8a6b1e94a",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 4000,
+      "row": 800,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8447080.0,
+        5536160.0,
+        -8431080.0,
+        5552160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8447080.0%2C5536160.0%2C-8431080.0%2C5552160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4000-800.tif",
+      "bytes": 2560450,
+      "sha256": "3a4d6eeaa755237d1fad7412193b95dd50ec366eb7f2ed0e48c15919faf46721",
+      "numeric_cells": 16342,
+      "min": -41.749053955078125,
+      "max": 0.800000011920929
+    },
+    {
+      "col": 4800,
+      "row": 800,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8431080.0,
+        5536160.0,
+        -8415080.0,
+        5552160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8431080.0%2C5536160.0%2C-8415080.0%2C5552160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4800-800.tif",
+      "bytes": 2769346,
+      "sha256": "a6df43e526756051a7843186dd9fe31f77a22763cd026a08c04ff253c29686c6",
+      "numeric_cells": 3794,
+      "min": -53.15719223022461,
+      "max": 0.8999999761581421
+    },
+    {
+      "col": 5600,
+      "row": 800,
+      "width": 78,
+      "height": 800,
+      "bbox3857": [
+        -8415080.0,
+        5536160.0,
+        -8413520.0,
+        5552160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8415080.0%2C5536160.0%2C-8413520.0%2C5552160.0&width=78&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-5600-800.tif",
+      "bytes": 266674,
+      "sha256": "d5cede2ba8c44c9ce8b0ec25fe6daf028f03c7e3057301adf01d11c1758c4206",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 0,
+      "row": 1600,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8527080.0,
+        5520160.0,
+        -8511080.0,
+        5536160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8527080.0%2C5520160.0%2C-8511080.0%2C5536160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-0-1600.tif",
+      "bytes": 2769346,
+      "sha256": "7062929f68e85a1a97e44feaedc06329ae783cc1460ec1120d9a9fb1f1c4fc98",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 800,
+      "row": 1600,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8511080.0,
+        5520160.0,
+        -8495080.0,
+        5536160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8511080.0%2C5520160.0%2C-8495080.0%2C5536160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-800-1600.tif",
+      "bytes": 2769346,
+      "sha256": "17c7fa30a70305ec6ac9c64bbb0aba7e670f5768f28458447bb26d8c74ab336b",
+      "numeric_cells": 48,
+      "min": -2.4692728519439697,
+      "max": -0.800000011920929
+    },
+    {
+      "col": 1600,
+      "row": 1600,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8495080.0,
+        5520160.0,
+        -8479080.0,
+        5536160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8495080.0%2C5520160.0%2C-8479080.0%2C5536160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-1600-1600.tif",
+      "bytes": 2560450,
+      "sha256": "cc58d733e73215ac1b10e898e56340e25c131e97cad82fcd717ca9af54aefa9c",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 2400,
+      "row": 1600,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8479080.0,
+        5520160.0,
+        -8463080.0,
+        5536160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8479080.0%2C5520160.0%2C-8463080.0%2C5536160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-2400-1600.tif",
+      "bytes": 2560450,
+      "sha256": "a9b2eded802de0a28969669f04441b0f943b669ed857ff68e284db71c7f8e676",
+      "numeric_cells": 4,
+      "min": -0.800000011920929,
+      "max": -0.800000011920929
+    },
+    {
+      "col": 3200,
+      "row": 1600,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8463080.0,
+        5520160.0,
+        -8447080.0,
+        5536160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8463080.0%2C5520160.0%2C-8447080.0%2C5536160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-3200-1600.tif",
+      "bytes": 2560450,
+      "sha256": "2fe3fdb32463bc8c7f0d7cc0a79713512feaffe75f0fbf1d7d7fc19f13b9b6a7",
+      "numeric_cells": 44244,
+      "min": -74.25248718261719,
+      "max": 1.2000000476837158
+    },
+    {
+      "col": 4000,
+      "row": 1600,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8447080.0,
+        5520160.0,
+        -8431080.0,
+        5536160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8447080.0%2C5520160.0%2C-8431080.0%2C5536160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4000-1600.tif",
+      "bytes": 2560450,
+      "sha256": "4816bbde0c398082b0a7380930cf325247ed04002e3979a5635c5b4ea44fb787",
+      "numeric_cells": 19552,
+      "min": -63.350067138671875,
+      "max": -2.5999999046325684
+    },
+    {
+      "col": 4800,
+      "row": 1600,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8431080.0,
+        5520160.0,
+        -8415080.0,
+        5536160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8431080.0%2C5520160.0%2C-8415080.0%2C5536160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4800-1600.tif",
+      "bytes": 2769346,
+      "sha256": "e0ebc23deaae1e14321fbb5013afca03da74cd30db7dd9c1f5d36632e93beac0",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 5600,
+      "row": 1600,
+      "width": 78,
+      "height": 800,
+      "bbox3857": [
+        -8415080.0,
+        5520160.0,
+        -8413520.0,
+        5536160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8415080.0%2C5520160.0%2C-8413520.0%2C5536160.0&width=78&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-5600-1600.tif",
+      "bytes": 266674,
+      "sha256": "700a0f889944df72a9e40d760ba698ddc6c99e5a2000d0dfc13117a457e5458d",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 0,
+      "row": 2400,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8527080.0,
+        5504160.0,
+        -8511080.0,
+        5520160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8527080.0%2C5504160.0%2C-8511080.0%2C5520160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-0-2400.tif",
+      "bytes": 2769346,
+      "sha256": "f98fb9230334a6ccb5a72cdd7bd233849adc8465f86540c13244b1d3fdd46745",
+      "numeric_cells": 497,
+      "min": -2.3049139976501465,
+      "max": -0.36166319251060486
+    },
+    {
+      "col": 800,
+      "row": 2400,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8511080.0,
+        5504160.0,
+        -8495080.0,
+        5520160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8511080.0%2C5504160.0%2C-8495080.0%2C5520160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-800-2400.tif",
+      "bytes": 2769346,
+      "sha256": "8faaffb07c491ef179c23904685db7f0e0b5b8ea1a2e8c6e3ce3f09dcbc3bcac",
+      "numeric_cells": 34208,
+      "min": -25.769861221313477,
+      "max": 0.9143999814987183
+    },
+    {
+      "col": 1600,
+      "row": 2400,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8495080.0,
+        5504160.0,
+        -8479080.0,
+        5520160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8495080.0%2C5504160.0%2C-8479080.0%2C5520160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-1600-2400.tif",
+      "bytes": 2560450,
+      "sha256": "c178d3c6cacf6bc261f227aca4777b2239e22dacaae9fc38c75c87a2d7d90007",
+      "numeric_cells": 85429,
+      "min": -51.813968658447266,
+      "max": -0.3047930598258972
+    },
+    {
+      "col": 2400,
+      "row": 2400,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8479080.0,
+        5504160.0,
+        -8463080.0,
+        5520160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8479080.0%2C5504160.0%2C-8463080.0%2C5520160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-2400-2400.tif",
+      "bytes": 2560450,
+      "sha256": "3189ce59ee3132582e4e67b522b18600925414f02ca570450423205a9309eead",
+      "numeric_cells": 63575,
+      "min": -49.03374481201172,
+      "max": 1.2999999523162842
+    },
+    {
+      "col": 3200,
+      "row": 2400,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8463080.0,
+        5504160.0,
+        -8447080.0,
+        5520160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8463080.0%2C5504160.0%2C-8447080.0%2C5520160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-3200-2400.tif",
+      "bytes": 2560450,
+      "sha256": "e1aa90f1cbe8de9d5b67d57be179993dd59344b1e7498de044b9f39f43ed1325",
+      "numeric_cells": 18414,
+      "min": -72.64859771728516,
+      "max": 1.100000023841858
+    },
+    {
+      "col": 4000,
+      "row": 2400,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8447080.0,
+        5504160.0,
+        -8431080.0,
+        5520160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8447080.0%2C5504160.0%2C-8431080.0%2C5520160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4000-2400.tif",
+      "bytes": 2560450,
+      "sha256": "3538d6ac5b9d5712c0bea15f182330d618ba5e767a1d67391ff97d38e8fc8281",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 4800,
+      "row": 2400,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8431080.0,
+        5504160.0,
+        -8415080.0,
+        5520160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8431080.0%2C5504160.0%2C-8415080.0%2C5520160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4800-2400.tif",
+      "bytes": 2769346,
+      "sha256": "298d8516d6cd570a0963caecc93ad44e03b0cae608e11d6b12585861767c64ce",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 5600,
+      "row": 2400,
+      "width": 78,
+      "height": 800,
+      "bbox3857": [
+        -8415080.0,
+        5504160.0,
+        -8413520.0,
+        5520160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8415080.0%2C5504160.0%2C-8413520.0%2C5520160.0&width=78&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-5600-2400.tif",
+      "bytes": 266674,
+      "sha256": "55d10249f84aaddf9ef988b101a7c57f1a5472890418df096424c5b2537088a0",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 0,
+      "row": 3200,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8527080.0,
+        5488160.0,
+        -8511080.0,
+        5504160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8527080.0%2C5488160.0%2C-8511080.0%2C5504160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-0-3200.tif",
+      "bytes": 2769346,
+      "sha256": "5f240440ba61c9be18c77b3cb27e1a93cdadd3963a24d13ad7d94e1028e96187",
+      "numeric_cells": 333728,
+      "min": -31.012720108032227,
+      "max": 1.2904072999954224
+    },
+    {
+      "col": 800,
+      "row": 3200,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8511080.0,
+        5488160.0,
+        -8495080.0,
+        5504160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8511080.0%2C5488160.0%2C-8495080.0%2C5504160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-800-3200.tif",
+      "bytes": 2769346,
+      "sha256": "66e9e36484eb6369edb8256c9c5bfcae9f779cc1dfdb94eb5583c8fb86043234",
+      "numeric_cells": 219627,
+      "min": -58.96076965332031,
+      "max": 1.2984881401062012
+    },
+    {
+      "col": 1600,
+      "row": 3200,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8495080.0,
+        5488160.0,
+        -8479080.0,
+        5504160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8495080.0%2C5488160.0%2C-8479080.0%2C5504160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-1600-3200.tif",
+      "bytes": 2560450,
+      "sha256": "246f1227b6d6e678c88d6cf23dbe5df2323c369c7c4282706cd8e5ec15f183b4",
+      "numeric_cells": 94986,
+      "min": -47.558143615722656,
+      "max": 1.2965542078018188
+    },
+    {
+      "col": 2400,
+      "row": 3200,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8479080.0,
+        5488160.0,
+        -8463080.0,
+        5504160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8479080.0%2C5488160.0%2C-8463080.0%2C5504160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-2400-3200.tif",
+      "bytes": 2560450,
+      "sha256": "e23e29e89655053c0428e78b7ea24e60c40af2abc477fc9dd6b73a4c16397cda",
+      "numeric_cells": 18196,
+      "min": -30.80099868774414,
+      "max": -4.151810169219971
+    },
+    {
+      "col": 3200,
+      "row": 3200,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8463080.0,
+        5488160.0,
+        -8447080.0,
+        5504160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8463080.0%2C5488160.0%2C-8447080.0%2C5504160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-3200-3200.tif",
+      "bytes": 2560450,
+      "sha256": "17666dedc9df9219cb459dcf36714b131c280b923b02b83b88e7a1eeb15edd01",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 4000,
+      "row": 3200,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8447080.0,
+        5488160.0,
+        -8431080.0,
+        5504160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8447080.0%2C5488160.0%2C-8431080.0%2C5504160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4000-3200.tif",
+      "bytes": 2560450,
+      "sha256": "413411e99f01a1d120607f845457178f2f0fad7575344f5ad9d060427e1dc38c",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 4800,
+      "row": 3200,
+      "width": 800,
+      "height": 800,
+      "bbox3857": [
+        -8431080.0,
+        5488160.0,
+        -8415080.0,
+        5504160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8431080.0%2C5488160.0%2C-8415080.0%2C5504160.0&width=800&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4800-3200.tif",
+      "bytes": 2769346,
+      "sha256": "6cd70ceea6ca61b196b128c4158f94f585028ae3cc35cbc7748b0a9a06f84d41",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 5600,
+      "row": 3200,
+      "width": 78,
+      "height": 800,
+      "bbox3857": [
+        -8415080.0,
+        5488160.0,
+        -8413520.0,
+        5504160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8415080.0%2C5488160.0%2C-8413520.0%2C5504160.0&width=78&height=800&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-5600-3200.tif",
+      "bytes": 266674,
+      "sha256": "89e27588f2576a2a32cbdca3b97300ed0d82d1c72b28da38cc61284d9c06c20f",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 0,
+      "row": 4000,
+      "width": 800,
+      "height": 594,
+      "bbox3857": [
+        -8527080.0,
+        5476280.0,
+        -8511080.0,
+        5488160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8527080.0%2C5476280.0%2C-8511080.0%2C5488160.0&width=800&height=594&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-0-4000.tif",
+      "bytes": 2023874,
+      "sha256": "44c50798defa3d43443949777ade648100243127ffcb6a75b17607abbceb7bdd",
+      "numeric_cells": 451329,
+      "min": -37.0826301574707,
+      "max": 1.2959327697753906
+    },
+    {
+      "col": 800,
+      "row": 4000,
+      "width": 800,
+      "height": 594,
+      "bbox3857": [
+        -8511080.0,
+        5476280.0,
+        -8495080.0,
+        5488160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8511080.0%2C5476280.0%2C-8495080.0%2C5488160.0&width=800&height=594&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-800-4000.tif",
+      "bytes": 2023874,
+      "sha256": "80a766751deab2b1b61a223ad3fdd33ab360067e79b465482fc62802bbdfb017",
+      "numeric_cells": 178086,
+      "min": -71.25131225585938,
+      "max": 1.2997665405273438
+    },
+    {
+      "col": 1600,
+      "row": 4000,
+      "width": 800,
+      "height": 594,
+      "bbox3857": [
+        -8495080.0,
+        5476280.0,
+        -8479080.0,
+        5488160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8495080.0%2C5476280.0%2C-8479080.0%2C5488160.0&width=800&height=594&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-1600-4000.tif",
+      "bytes": 3789250,
+      "sha256": "c7e20c1e97504c072b0ed0aab08c68beb2dad9f805c34c447fc6efe40f6c1034",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 2400,
+      "row": 4000,
+      "width": 800,
+      "height": 594,
+      "bbox3857": [
+        -8479080.0,
+        5476280.0,
+        -8463080.0,
+        5488160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8479080.0%2C5476280.0%2C-8463080.0%2C5488160.0&width=800&height=594&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-2400-4000.tif",
+      "bytes": 3789250,
+      "sha256": "9d89f4be45b47a761df4c84b83e40df3ede49c27c2211779960c10ff2e31fdcf",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 3200,
+      "row": 4000,
+      "width": 800,
+      "height": 594,
+      "bbox3857": [
+        -8463080.0,
+        5476280.0,
+        -8447080.0,
+        5488160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8463080.0%2C5476280.0%2C-8447080.0%2C5488160.0&width=800&height=594&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-3200-4000.tif",
+      "bytes": 3789250,
+      "sha256": "b51cc6d80aae6dc6e6c311d337495c772d6219d119d54bf73e0360137eeab6d6",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 4000,
+      "row": 4000,
+      "width": 800,
+      "height": 594,
+      "bbox3857": [
+        -8447080.0,
+        5476280.0,
+        -8431080.0,
+        5488160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8447080.0%2C5476280.0%2C-8431080.0%2C5488160.0&width=800&height=594&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4000-4000.tif",
+      "bytes": 3789250,
+      "sha256": "6771cc3d5c79c518188133028065b35ac1981ed65e50f4f60ff41decbc45ca56",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 4800,
+      "row": 4000,
+      "width": 800,
+      "height": 594,
+      "bbox3857": [
+        -8431080.0,
+        5476280.0,
+        -8415080.0,
+        5488160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8431080.0%2C5476280.0%2C-8415080.0%2C5488160.0&width=800&height=594&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-4800-4000.tif",
+      "bytes": 2023874,
+      "sha256": "4e57d47791928d1e75b928a57b61a45680d6b76b900aa79a60f6161d7060ea3e",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    },
+    {
+      "col": 5600,
+      "row": 4000,
+      "width": 78,
+      "height": 594,
+      "bbox3857": [
+        -8415080.0,
+        5476280.0,
+        -8413520.0,
+        5488160.0
+      ],
+      "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8415080.0%2C5476280.0%2C-8413520.0%2C5488160.0&width=78&height=594&format=GeoTIFF&interpolation=nearest+neighbor",
+      "file": "nonna10-20m-tiles\\nonna10-5600-4000.tif",
+      "bytes": 194994,
+      "sha256": "2c137d0336ff8453694f390b6ce123b49c93eb5d5c4594c180923466614979b9",
+      "numeric_cells": 0,
+      "min": null,
+      "max": null
+    }
+  ]
+}

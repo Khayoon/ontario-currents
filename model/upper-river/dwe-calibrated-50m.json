@@ -1,0 +1,189 @@
+{
+  "method": "steady nonlinear Manning finite-volume diffusion-wave approximation",
+  "n": 0.0289356306270774,
+  "cell_size_m": 50.0,
+  "wet_cells": 166832,
+  "inlet_cells": 125,
+  "outlet_cells": 25,
+  "kingston_stage_m": 74.80174436090226,
+  "brockville_stage_m": 74.5217067669173,
+  "discharge_in_m3s": 7377.579999999999,
+  "discharge_out_m3s": 7377.578199974462,
+  "relative_boundary_flux_error": 2.439859055495664e-07,
+  "maximum_cell_continuity_residual_m3s": 9.859961587734565e-05,
+  "minimum_actual_water_depth_m": 0.21058635820772054,
+  "cells_requiring_depth_floor": 0,
+  "speed_percentiles_mps": [
+    0.0,
+    0.025415946881568223,
+    0.056377285095870214,
+    0.12868855612391922,
+    0.2947873847700309,
+    0.5695442715705791,
+    2.450335019320488
+  ],
+  "iterations": [
+    {
+      "iteration": 0,
+      "stage_change_m": 0.08603285015290396,
+      "lagged_continuity_l1_relative": 15.24583893984056
+    },
+    {
+      "iteration": 1,
+      "stage_change_m": 0.04353092657123625,
+      "lagged_continuity_l1_relative": 9.673341689258754
+    },
+    {
+      "iteration": 2,
+      "stage_change_m": 0.021599279660719617,
+      "lagged_continuity_l1_relative": 5.705717121233102
+    },
+    {
+      "iteration": 3,
+      "stage_change_m": 0.010641570990216564,
+      "lagged_continuity_l1_relative": 3.1710511230628
+    },
+    {
+      "iteration": 4,
+      "stage_change_m": 0.005558497619304603,
+      "lagged_continuity_l1_relative": 1.7342726541688234
+    },
+    {
+      "iteration": 5,
+      "stage_change_m": 0.003113328166705287,
+      "lagged_continuity_l1_relative": 0.9499125194311006
+    },
+    {
+      "iteration": 6,
+      "stage_change_m": 0.001786618987821953,
+      "lagged_continuity_l1_relative": 0.524096933750952
+    },
+    {
+      "iteration": 7,
+      "stage_change_m": 0.001041635882742753,
+      "lagged_continuity_l1_relative": 0.29196212108161373
+    },
+    {
+      "iteration": 8,
+      "stage_change_m": 0.0006135191067357937,
+      "lagged_continuity_l1_relative": 0.16416882440175679
+    },
+    {
+      "iteration": 9,
+      "stage_change_m": 0.00036362245313625863,
+      "lagged_continuity_l1_relative": 0.09312853294171804
+    },
+    {
+      "iteration": 10,
+      "stage_change_m": 0.00021633110502250474,
+      "lagged_continuity_l1_relative": 0.053249388530931675
+    },
+    {
+      "iteration": 11,
+      "stage_change_m": 0.00012900219056177775,
+      "lagged_continuity_l1_relative": 0.03064367743506508
+    },
+    {
+      "iteration": 12,
+      "stage_change_m": 7.703820124049798e-05,
+      "lagged_continuity_l1_relative": 0.017719978185311472
+    },
+    {
+      "iteration": 13,
+      "stage_change_m": 4.604822103715378e-05,
+      "lagged_continuity_l1_relative": 0.010288045855279844
+    },
+    {
+      "iteration": 14,
+      "stage_change_m": 2.754075917721366e-05,
+      "lagged_continuity_l1_relative": 0.005992167909287637
+    },
+    {
+      "iteration": 15,
+      "stage_change_m": 1.6478113010975903e-05,
+      "lagged_continuity_l1_relative": 0.0034998231289189497
+    },
+    {
+      "iteration": 16,
+      "stage_change_m": 9.861712925385291e-06,
+      "lagged_continuity_l1_relative": 0.002048539791448624
+    },
+    {
+      "iteration": 17,
+      "stage_change_m": 5.903160030129584e-06,
+      "lagged_continuity_l1_relative": 0.0012011955856346913
+    },
+    {
+      "iteration": 18,
+      "stage_change_m": 3.5340569439767933e-06,
+      "lagged_continuity_l1_relative": 0.0007055134402701438
+    },
+    {
+      "iteration": 19,
+      "stage_change_m": 2.1159969065820405e-06,
+      "lagged_continuity_l1_relative": 0.0004148452395862129
+    },
+    {
+      "iteration": 20,
+      "stage_change_m": 1.2670202949038867e-06,
+      "lagged_continuity_l1_relative": 0.0002444000648895442
+    },
+    {
+      "iteration": 21,
+      "stage_change_m": 7.587193948666027e-07,
+      "lagged_continuity_l1_relative": 0.00014405497286663582
+    },
+    {
+      "iteration": 22,
+      "stage_change_m": 4.5424978623032075e-07,
+      "lagged_continuity_l1_relative": 8.504721246658663e-05
+    },
+    {
+      "iteration": 23,
+      "stage_change_m": 2.7195883944841626e-07,
+      "lagged_continuity_l1_relative": 5.0337399886201134e-05
+    },
+    {
+      "iteration": 24,
+      "stage_change_m": 1.6373631694932556e-07,
+      "lagged_continuity_l1_relative": 3.074031581165331e-05
+    },
+    {
+      "iteration": 25,
+      "stage_change_m": 1.0007258310906764e-07,
+      "lagged_continuity_l1_relative": 1.976540004545499e-05
+    },
+    {
+      "iteration": 26,
+      "stage_change_m": 6.083273262902367e-08,
+      "lagged_continuity_l1_relative": 1.3189914993785297e-05
+    },
+    {
+      "iteration": 27,
+      "stage_change_m": 3.57183864707622e-08,
+      "lagged_continuity_l1_relative": 8.172052447630266e-06
+    },
+    {
+      "iteration": 28,
+      "stage_change_m": 2.1314036757758004e-08,
+      "lagged_continuity_l1_relative": 6.37361905076564e-06
+    },
+    {
+      "iteration": 29,
+      "stage_change_m": 1.441955532754946e-08,
+      "lagged_continuity_l1_relative": 7.319166197929039e-06
+    },
+    {
+      "iteration": 30,
+      "stage_change_m": 8.274355423054658e-09,
+      "lagged_continuity_l1_relative": 5.059645755494291e-06
+    }
+  ],
+  "wall_seconds": 89.2837655544281,
+  "regulation_discharge_scenario_m3s": 7377.58,
+  "n_required_for_regulation_Q": 0.028935630627077397,
+  "calibrated_to": "IJC regulation-discharge schedule scenario, NOT observed current validation",
+  "original_solution": "work\\upper-river-model\\dwe-native-harmonic-50m.npz",
+  "original_solution_sha256": "860722ad049ac859c882ec6ce8d52d81c2f8e153e4d00fd1b443562972c46d55",
+  "calibration": "Uniform Manning n algebraically rescales all DWE fluxes; stage and depth solution unchanged because n factors out of continuity."
+}

@@ -1,0 +1,8 @@
+{
+  "analytic_channel_expected_discharge_m3s": 1864.434188678917,
+  "dwe_discharge_m3s": 1864.3920632160132,
+  "dwe_relative_error": 2.2594234304285088e-05,
+  "swe_600s_discharge_m3s": 1834.8366186847543,
+  "lake_at_rest_maximum_speed_mps": 0.0,
+  "passed": true
+}
