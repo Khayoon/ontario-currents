@@ -20,7 +20,11 @@ function fit(name='all'){
   state.k=Math.min(w/(b[0]-a[0]),h/(b[1]-a[1]));state.tx=state.w/2-(a[0]+b[0])/2*state.k;state.ty=top+h/2-(a[1]+b[1])/2*state.k;
   $$('.regions button').forEach(b=>b.classList.toggle('selected',b.dataset.view===name));redraw(true);
 }
-function resize(){const old=state.w?[...invert(state.w/2,state.h/2),state.k/state.w]:null;state.w=innerWidth;state.h=innerHeight;state.dpr=Math.min(devicePixelRatio||1,2);for(const c of [base,flow,label]){c.width=Math.round(state.w*state.dpr);c.height=Math.round(state.h*state.dpr);c.getContext('2d').setTransform(state.dpr,0,0,state.dpr,0,0);}if(state.view)fit(state.view);else if(old){state.k=old[2]*state.w;const p=projectRaw(old[0],old[1]);state.tx=state.w/2-p[0]*state.k;state.ty=state.h/2-p[1]*state.k;redraw(true);}else fit();}
+function resize(){
+  // A background panel can briefly have no viewport during startup or reload.
+  // Keep loaded data and the last usable canvas until it becomes visible.
+  const width=innerWidth,height=innerHeight;if(!(width>0&&height>0))return;
+  const old=state.w?[...invert(state.w/2,state.h/2),state.k/state.w]:null;state.w=width;state.h=height;state.dpr=Math.min(devicePixelRatio||1,2);for(const c of [base,flow,label]){c.width=Math.round(state.w*state.dpr);c.height=Math.round(state.h*state.dpr);c.getContext('2d').setTransform(state.dpr,0,0,state.dpr,0,0);}if(state.view)fit(state.view);else if(old){state.k=old[2]*state.w;const p=projectRaw(old[0],old[1]);state.tx=state.w/2-p[0]*state.k;state.ty=state.h/2-p[1]*state.k;redraw(true);}else fit();}
 function color(value){const q=Math.max(0,Math.min(.9999,value))*4,i=Math.floor(q),t=q-i;return stops[i].map((c,j)=>Math.round(c*(1-t)+stops[i+1][j]*t));}
 function shade(t,s){return color(state.layer==='speed'?s/(screenGrid?.speedMaximum||.6):t/25);}
 function polygon(rings,ctx){for(const ring of rings){for(let i=0;i<ring.length;i++){const p=project(...ring[i]);if(i===0)ctx.moveTo(...p);else ctx.lineTo(...p);}ctx.closePath();}}
@@ -61,7 +65,7 @@ function drawLabels(){type.clearRect(0,0,state.w,state.h);if(!state.geo)return;c
 }
 function sample(lon,lat){const p=project(lon,lat);return displaySample(screenGrid,...p);}
 let screenGrid=null,gridKey=null;
-function buildGrid(){if(!state.mesh)return;const key=[state.mesh,state.field,state.river,state.estuary,state.simcoe,state.outerEstuary,state.geo,state.w,state.h,state.k,state.tx,state.ty];if(screenGrid&&gridKey&&key.every((value,i)=>value===gridKey[i]))return;screenGrid=makeDisplay(state.mesh,state.field,state.river,project,invert,state.w,state.h,state.estuary,state.simcoe,state.outerEstuary);
+function buildGrid(){if(!state.mesh||!(state.w>0&&state.h>0))return;const key=[state.mesh,state.field,state.river,state.estuary,state.simcoe,state.outerEstuary,state.geo,state.w,state.h,state.k,state.tx,state.ty];if(screenGrid&&gridKey&&key.every((value,i)=>value===gridKey[i]))return;screenGrid=makeDisplay(state.mesh,state.field,state.river,project,invert,state.w,state.h,state.estuary,state.simcoe,state.outerEstuary);
   // Preserve exact native Ontario wet triangles; clip disseminated river grids
   // to real water polygons so coarse cells cannot paint over island land.
   const g=screenGrid,pixels=waterMask(g,projectedGeography());g.valid=g.valid.filter(k=>{if(g.provider[k]!==1&&pixels[k*4+3]<16){g.provider[k]=0;g.u[k]=NaN;return false;}return true;});g.simcoeVisibleCells=0;g.outerEstuaryVisibleCells=0;for(const k of g.valid){if(g.provider[k]===4)g.simcoeVisibleCells++;if(g.provider[k]===5)g.outerEstuaryVisibleCells++;}const outerStatus=$('#outer-estuary-status');outerStatus.hidden=!g.outerEstuaryVisibleCells;outerStatus.textContent=g.outerEstuaryVisibleCells?'Outer estuary · archived 12–17 Oct 2026 vector mean':'';
@@ -81,7 +85,7 @@ function updateLayerUI(){const simcoeOnly=state.view==='simcoe'&&Boolean(state.s
 function simcoePeriod(){return state.simcoe?'12 Oct 00:00 – 17 Oct 12:00 UTC · 2026':'';}
 function simcoeMethod(){const method=state.simcoe?.method;return typeof method==='string'?method:[method?.equations,method?.scheme,method?.boundary].filter(value=>typeof value==='string'&&value.trim()).join(' ');}
 function updateCoverage(){const selected=state.view==='simcoe',experimental=Boolean(state.simcoe&&(selected||screenGrid?.simcoeVisibleCells));$('#coverage-note').hidden=!(selected&&!state.simcoe);$('.legend').hidden=selected&&!state.simcoe;$('#experimental-note').hidden=!experimental;$('#atlas').dataset.simcoeExperiment=experimental?'visible':'hidden';$('#simcoe-period').textContent=simcoePeriod();$('#simcoe-model-period').textContent=state.simcoe?simcoePeriod():'No experimental dataset is included.';$('#simcoe-model-method').textContent=state.simcoe?simcoeMethod():'The map remains shoreline only until a separately labelled experimental dataset is supplied.';updateLayerUI();updateFieldSummary();}
-function redraw(reseed=false){if(state.field){buildGrid();if(reseed)seed();}updateCoverage();const bounds=state.drainage?.bbox;if(bounds){const a=project(bounds[0],bounds[3]),b=project(bounds[2],bounds[1]);$('#drainage-key').hidden=b[0]<0||a[0]>state.w||b[1]<0||a[1]>state.h;}else $('#drainage-key').hidden=true;drawWater();drawLabels();ink.clearRect(0,0,state.w,state.h);if(reduced)for(let i=0;i<35;i++)animateStep(.016);}
+function redraw(reseed=false){if(!(state.w>0&&state.h>0))return;if(state.field){buildGrid();if(reseed)seed();}updateCoverage();const bounds=state.drainage?.bbox;if(bounds){const a=project(bounds[0],bounds[3]),b=project(bounds[2],bounds[1]);$('#drainage-key').hidden=b[0]<0||a[0]>state.w||b[1]<0||a[1]>state.h;}else $('#drainage-key').hidden=true;drawWater();drawLabels();ink.clearRect(0,0,state.w,state.h);if(reduced)for(let i=0;i<35;i++)animateStep(.016);}
 function animateStep(dt){if(!screenGrid?.valid.length)return;ink.globalCompositeOperation='destination-in';ink.fillStyle='rgba(0,0,0,.982)';ink.fillRect(0,0,state.w,state.h);ink.globalCompositeOperation='source-over';ink.lineWidth=state.w<600?.9:1.1;
   const g=screenGrid,seconds=dt*(g.motionMultiplier||nominalMotionMultiplier),metresPerDegree=111320;const buckets=Array.from({length:12},()=>[]);
   const index=(x,y)=>x<0||y<0||x>=state.w||y>=state.h?-1:Math.floor(y/g.cell)*g.nx+Math.floor(x/g.cell);
@@ -178,6 +182,7 @@ $('#source-button').onclick=()=>{$('#sources').hidden=false;$('#source-button').
 function closeSources(){$('#sources').hidden=true;$('#source-button').setAttribute('aria-expanded','false');$('#source-button').focus();}$('#close-sources').onclick=closeSources;
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('#sources').hidden)closeSources();else if(!$('#time-controls-panel').hidden)setTimeControls(false,true);}if(e.code==='Space'&&e.target===document.body){e.preventDefault();$('#play').click();}});
 window.addEventListener('resize',()=>{clearTimeout(state.resizeTimer);state.resizeTimer=setTimeout(resize,100);});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)resize();});
 async function loadRiver(mode,quiet=true){
   const results=await Promise.allSettled([loadJSON('./data/river'+(mode==='average'?'-average':'')+'.json'),loadJSON('./data/estuary'+(mode==='average'?'-average':'')+'.json')]);
   if(state.mode!==mode)return;

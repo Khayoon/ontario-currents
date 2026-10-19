@@ -7,18 +7,23 @@ import vm from 'node:vm';
 const count={paths:0,vertices:0,masks:0,grids:0};
 class TestPath{constructor(){count.paths++;}moveTo(){count.vertices++;}lineTo(){count.vertices++;}closePath(){}}
 class Surface{
-  constructor(){this.width=64;this.height=64;this.style={};this.dataset={};this.attributes={};this.classList={toggle(){}};this.context={traceStyles:[],setLineDash(){},setTransform(){},clearRect(){},fillRect(){},beginPath(){this.segments=0;},moveTo(){},lineTo(){this.segments++;},closePath(){},fill(){},stroke(){if(this.segments)this.traceStyles.push(this.strokeStyle);},drawImage(){},arc(){},fillText(){},measureText(){return {width:1};},createImageData(w,h){return {data:new Uint8ClampedArray(w*h*4)};},putImageData(){},getImageData(x,y,w,h){count.masks++;const data=new Uint8ClampedArray(w*h*4);for(let i=3;i<data.length;i+=4)data[i]=255;return {data};}};}
+  constructor(){this.width=64;this.height=64;this.style={};this.dataset={};this.attributes={};this.classList={toggle(){}};this.context={traceStyles:[],setLineDash(){},setTransform(){},clearRect(){},fillRect(){},beginPath(){this.segments=0;},moveTo(){},lineTo(){this.segments++;},closePath(){},fill(){},stroke(){if(this.segments)this.traceStyles.push(this.strokeStyle);},drawImage(){},arc(){},fillText(){},measureText(){return {width:1};},createImageData(w,h){return {data:new Uint8ClampedArray(w*h*4)};},putImageData(){},getImageData(x,y,w,h){if(!(w>0&&h>0))throw new Error('IndexSizeError: source width or height is zero');count.masks++;const data=new Uint8ClampedArray(w*h*4);for(let i=3;i<data.length;i+=4)data[i]=255;return {data};}};}
   getContext(){return this.context;}addEventListener(){}setAttribute(name,value){this.attributes[name]=value;}focus(){this.focused=true;}
 }
-const elements=new Map(),context=vm.createContext({console,Math,Date,Intl,Uint8Array,Uint8ClampedArray,Float32Array,Float64Array,Path2D:TestPath,document:{querySelector(s){if(!elements.has(s))elements.set(s,new Surface());return elements.get(s);},querySelectorAll(){return [];},createElement(){return new Surface();},addEventListener(){}},window:{addEventListener(){}},matchMedia(){return {matches:false};},requestAnimationFrame(){},setTimeout(){},clearTimeout(){}});
+const documentListeners=new Map();
+const elements=new Map(),context=vm.createContext({console,Math,Date,Intl,Uint8Array,Uint8ClampedArray,Float32Array,Float64Array,Path2D:TestPath,document:{querySelector(s){if(!elements.has(s))elements.set(s,new Surface());return elements.get(s);},querySelectorAll(){return [];},createElement(){return new Surface();},addEventListener(name,listener){documentListeners.set(name,listener);}},window:{addEventListener(){}},matchMedia(){return {matches:false};},requestAnimationFrame(){},setTimeout(){},clearTimeout(){}});
 vm.runInContext(await readFile(new URL('../src/mesh-flow.js',import.meta.url),'utf8'),context);
 vm.runInContext(await readFile(new URL('../src/field.js',import.meta.url),'utf8'),context);
 context.recordGrid=()=>count.grids++;
 vm.runInContext('const actualMakeDisplay=makeDisplay;makeDisplay=(...args)=>{recordGrid();return actualMakeDisplay(...args);};const actualRaster=displayRaster;displayRaster=(...args)=>{globalThis.lastRasterMaximum=args[3];return actualRaster(...args);};',context);
 const app=(await readFile(new URL('../src/app.js',import.meta.url),'utf8')).replace(/\binit\(\);\s*$/,'');
-vm.runInContext(app+';globalThis.testAtlas={state,redraw,grid:()=>screenGrid,animateStep,validateSimcoe,loadSimcoe,simcoePeriod,inspect,color,validateOuterEstuary,loadOuterEstuary,loadDrainage};',context);
+vm.runInContext(app+';globalThis.testAtlas={state,redraw,resize,grid:()=>screenGrid,animateStep,validateSimcoe,loadSimcoe,simcoePeriod,inspect,color,validateOuterEstuary,loadOuterEstuary,loadDrainage};',context);
 const {state,redraw,grid,animateStep,validateSimcoe,loadSimcoe,simcoePeriod,inspect}=context.testAtlas;
 Object.assign(state,{w:64,h:64,dpr:1,k:64,tx:0,ty:0,mesh:{lon:[-180,180,-180],lat:[85,85,-85],triangles:[[0,1,2]]},field:{kind:'mesh',u:[.2],v:[-.1],t:[10,20,30]},geo:{type:'FeatureCollection',features:[{properties:{name:'Water'},geometry:{type:'Polygon',coordinates:[[[-180,-85],[180,-85],[180,85],[-180,85],[-180,-85]]]}}]}});
+// Data may arrive before the tab has ever acquired a usable viewport.
+state.w=0;state.h=0;context.innerWidth=0;context.innerHeight=0;
+context.testAtlas.resize();redraw(true);assert.equal(grid(),null);assert.equal(count.grids,0);assert.equal(count.masks,0);assert(state.field);
+state.w=64;state.h=64;
 redraw();const first={...count};assert.equal(first.grids,1);assert.equal(first.masks,1);assert(first.vertices>0);
 state.layer='speed';redraw();assert.equal(count.grids,first.grids,'Colour changes must reuse velocity data');assert.equal(count.vertices,first.vertices,'Colour changes must not reproject shores');assert.equal(count.masks,first.masks,'Colour changes must reuse the island mask');
 state.field={...state.field,u:[.7]};redraw();assert.equal(count.grids,first.grids+1,'New source fields must rebuild velocities');assert.equal(count.vertices,first.vertices,'Source updates must reuse unchanged shores');assert.equal(count.masks,first.masks,'Source updates must reuse the same geographic mask');assert(Math.abs(grid().u[grid().valid[0]]-.7)<1e-6,'New field values must reach the display');
@@ -76,4 +81,21 @@ state.estuary=null;state.simcoe=experiment;redraw();assert(!grid().valid.some(k=
 state.simcoe=null;redraw();const drainageGridBefore=JSON.stringify({u:Array.from(grid().u),v:Array.from(grid().v),provider:Array.from(grid().provider)}),drainageBuilds=count.grids;
 state.drainage={type:'FeatureCollection',bbox:[-1,-1,1,1],features:[{properties:{role:'divide'},geometry:{type:'LineString',coordinates:[[-1,0],[1,0]]}},{properties:{role:'tributary'},geometry:{type:'LineString',coordinates:[[0,-1],[0,1]]}}]};redraw();assert.equal(count.grids,drainageBuilds,'Drainage context must not rebuild current data');assert.equal(JSON.stringify({u:Array.from(grid().u),v:Array.from(grid().v),provider:Array.from(grid().provider)}),drainageGridBefore,'Drainage context supplies no current or wet mask');
 context.fetch=async()=>({ok:false,status:404});await context.testAtlas.loadOuterEstuary();assert.equal(state.outerEstuary,null,'Optional estuary failure retains the government map');assert(state.field);
+// Reproduce a background-tab startup with a temporarily zero-size viewport.
+const retainedField=state.field,retainedGrid=grid(),retainedSize=[state.w,state.h],beforeHiddenBuilds=count.grids;
+context.devicePixelRatio=1;
+for(const [width,height] of [[0,0],[0,720],[1280,0]]){
+  context.innerWidth=width;context.innerHeight=height;context.testAtlas.resize();
+  assert.deepEqual([state.w,state.h],retainedSize,'A transient zero viewport must preserve the last usable size');
+}
+assert.equal(grid(),retainedGrid);assert.equal(count.grids,beforeHiddenBuilds);
+state.w=0;state.h=0;redraw(true);
+assert.equal(count.grids,beforeHiddenBuilds,'Data can load before a usable viewport without allocating a zero-size grid');
+assert.equal(state.field,retainedField,'Deferring drawing must retain the loaded source field');
+context.innerWidth=1280;context.innerHeight=720;context.document.hidden=false;
+assert(documentListeners.has('visibilitychange'),'The map must recover when its background tab becomes visible');
+documentListeners.get('visibilitychange')();
+assert.equal(state.w,1280);assert.equal(state.h,720);
+assert(grid().nx>0&&grid().ny>0&&grid().valid.length>0,'A visible viewport must recover and render the retained field');
+assert.equal(state.field,retainedField);
 console.log('Redraw/UI checks passed: cache/adaptive motion, secondary controls and separately typed, fixed-period optional Simcoe response without temperature or government-data replacement.');
