@@ -1,0 +1,14 @@
+{
+  "count": 1,
+  "lon": [
+    -76.47666487771738
+  ],
+  "lat": [
+    44.183596850846435
+  ],
+  "inflow_m3_s": [
+    3.2791341804381453
+  ],
+  "inflow_fraction": 0.000444472873277978,
+  "treatment": "Contemporaneous discharge-weighted mean of the directly NOAA-covered inlet cells; boundary approximation, not an observation."
+}

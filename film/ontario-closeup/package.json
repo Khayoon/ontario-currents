@@ -2,10 +2,10 @@
   "name": "ontario-currents-film-source",
   "private": true,
   "type": "module",
-  "version": "2.0.0",
-  "description": "Chronological hourly Lake Ontario current and temperature film.",
+  "version": "2.1.0",
+  "description": "Hourly Lake Ontario film with separately estimated river currents and passive temperature.",
   "scripts": {
-    "check": "node --check render.mjs && node --check temporal-field.mjs",
+    "check": "node --check render.mjs && node --check temporal-field.mjs && node --check river-temperature.mjs",
     "render": "node --expose-gc render.mjs config.json"
   },
   "dependencies": {

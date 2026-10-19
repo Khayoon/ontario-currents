@@ -1,6 +1,6 @@
 # Hourly Lake Ontario data sources
 
-Prepared 19 October 2026. **Chronological movie numerical checks and independent encoded visual review accepted.** These are hourly numerical fields, not the preceding 28-sample weekly mean.
+Prepared 19 October 2026. **Coloured river edition accepted: source, transport, encoding and visual checks pass.** The hourly lake data and completed source checks are unchanged. Earlier movie acceptance belongs to the preceding edition with neutral river-only temperatures.
 
 ## Actual times and native arrays
 
@@ -38,6 +38,27 @@ For the fixed **12–16.5°C** scale, **95.0631%** of native wet-area/time is in
 
 The renderer numerically interpolates adjacent hourly U/V and node temperatures. The first **24 seconds compress 168 model hours by 25,200×**. Lake advection uses that source clock without an extra minimum-speed boost. The final **one-second labelled replay dissolve** is an editorial restart, not an interpolation of modeled weather across the week boundary. The silent H.264 movie is **25 seconds / 750 frames at 30 fps, 2560 × 1440**, rendered directly without the older `finish.py` procedure. Its last chronological frame reads **18 October 23:46 UTC**; 19 October 00:00 is used only as an interpolation endpoint.
 
-The static Kingston–Brockville estimate keeps its separate **12 October 00:00 to 17 October 12:00 UTC** mean forcing and remains simplified, depth-averaged and unvalidated. Only weak river particle motion receives the bounded display boost (12 design pixels/second target, at most an additional 1,024×); it does not alter river vectors or temperatures or imply hourly river dynamics. Actual NOAA temperature can colour river trails only inside its source coverage. Elsewhere the missing-temperature treatment is neutral grey; no temperature is inferred from speed or extrapolated into river-only cells.
+The static Kingston–Brockville current estimate keeps its separate **12 October 00:00 to 17 October 12:00 UTC** mean forcing and remains simplified, depth-averaged and unvalidated. Only weak river particle motion receives the bounded display boost (12 design pixels/second target, at most an additional 1,024×); it does not alter river vectors or enter the temperature transport calculation. The lake clock does not imply hourly river hydraulics.
 
-The [independent final encoded review](qa/hourly/final-encoded-review.json) and [encoding/clock checks](qa/hourly/encoded-check.json) passed for the **102,976,638-byte** movie, SHA-256 `b6da3ba744ee3a5e50f6d8319d9d81cd2d24c8244d2df9370c0c30491c91b303`. These confirm the encoded visualization and source-clock presentation, not the physical accuracy of local currents. Encoded passes and hashes from earlier 20-second films remain historical.
+## Passive river-temperature supplement
+
+The renderer keeps every finite NOAA model temperature, including zero. Only missing temperature under the selected river provider is supplemented by estimated temperature, using the same fixed palette. Original U/V, provider priority, wet cells, bathymetry and hourly lake arrays remain unchanged. The new output covers every one of the **121,644 original valid river display cells**; it does not create velocity or water coverage.
+
+`inputs/river-temperature/manifest.json` binds the scalar to the original river field SHA-256, exact regular-grid geometry and the same 169 UTC endpoints as the lake. Frozen binary layout:
+
+| Array | Shape | Meaning | Units |
+|---|---|---|---|
+| `temperature.f32` | 169 × 121,644 | estimated temperature at compact original river cells | degrees C |
+| `index-map.i32` | 865 × 1,144 | original regular cell → compact wet index; −1 outside | integer index |
+
+Both use little-endian C order. The exact source river display hash is `653d31ac284a724bd83d000064f19d375d5e6a8dd14a320fb48a4f0eef3904bb`. Binary hashes and completed numerical diagnostics are bound by the manifest and `qa/river-temperature/` reports. All 169 × 121,644 scalar values are finite; the selected display range is 12.0601–16.7746°C.
+
+The estimate transports NOAA inlet temperature using the frozen native hydraulic solution's **344,179 face discharges** and **177,775 depth-derived cell volumes**. Physical volume is depth × 2,500 m²; visually enhanced particle motion is not a transport input. Initially every cell is assumed to be **15.04994844°C**, the first-hour discharge-weighted inlet temperature. An independent tracer tracks remaining initial-water fraction. The calculation omits atmospheric, solar, bed and tributary heat exchange, stratification and time-varying hydraulics. Slow cells may retain assumed initial temperature throughout the week. Its surface-temperature boundary and depth-averaged carrier are not a coupled three-dimensional thermal model.
+
+Of 110 positive-inflow boundary cells, 109 have direct NOAA wet-triangle temperature support, representing **99.9555527%** of the inflow. One nearshore cell carries **0.0444473%** and receives the contemporaneous discharge-weighted temperature of covered inflows. This is a declared boundary estimate. The [dedicated method notes](../../docs/river-temperature-estimates.md) explain initialization, numerical mixing, continuity compensation and completed full-week numerical checks.
+
+## Edition-specific acceptance
+
+Final coloured-film review passed; its movie SHA-256 is recorded below. The **previous hourly edition with neutral river-only temperatures** passed its [encoded visual review](qa/hourly/final-encoded-review.json) and [encoding/clock checks](qa/hourly/encoded-check.json): **102,976,638 bytes**, SHA-256 `b6da3ba744ee3a5e50f6d8319d9d81cd2d24c8244d2df9370c0c30491c91b303`. These certify only that previous encoded visualization and clock presentation, not physical current or temperature accuracy. Earlier 20-second film hashes are historical too.
+
+Accepted coloured movie: **103,544,787 bytes**, **25 seconds / 750 frames / 2560 × 1440 / 30 fps**, silent H.264. SHA-256 `5c57c348290d527c350ecba138517da96803dce5254ba2926282e4bc5a932458`. [Actual encoded visual review](qa/river-temperature/final-encoded-review.json) and [encoding, clock and unchanged-lake checks](qa/river-temperature/encoded-check.json) pass. These checks verify the displayed artifact, not real-world river temperature accuracy.

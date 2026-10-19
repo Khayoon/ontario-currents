@@ -3,3 +3,7 @@ research/upper-river/* -text
 model/upper-river/** -text
 film/ontario-closeup/** -text
 src/mesh-flow.js -text
+
+# Scientific buffers are binary even when a uniform first row contains no NUL bytes.
+*.f32 binary
+*.i32 binary

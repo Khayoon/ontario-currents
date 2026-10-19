@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "method": "Independent brute-force barycentric containment against every supplied original NOAA triangle, without the preparer Matplotlib triangle finder. Native signed face fluxes independently reconstructed in frozen solver order for discharge weights. Native scalar T interpolated from original source node values; no nearest-neighbor filling across shoreline.",
+  "positive_inflow_cells": 110,
+  "directly_covered_cells": 109,
+  "covered_discharge_fraction": 0.9995555271267219,
+  "uncovered": [
+    {
+      "native_id": 16121,
+      "lon": -76.47666487771738,
+      "lat": 44.183596850846435,
+      "discharge_m3s": 3.2791341804381453
+    }
+  ],
+  "maximum_boundary_series_difference_C": 0.0,
+  "maximum_discharge_weighted_mean_difference_C": 0.0,
+  "initial_discharge_weighted_mean_C": 15.04994843803976,
+  "all_boundary_temperature_range_C": [
+    12.052933723443404,
+    16.902953449976497
+  ],
+  "weighted_mean_range_C": [
+    13.355999633518163,
+    15.810214497141965
+  ],
+  "endpoint_count": 169,
+  "boundary_npz_sha256": "e98b01ef592fecde16db52e2ef4a099cb1c534183db10f85c2e0f23c7e013894",
+  "source_temperature_sha256": "5d083d7be1c42d7c7be8de4fef5db2876b4e112bee8957d8237ef2d665aa9567",
+  "scientific_interpretation": "109 positive-inflow cells are directly source-supported. The one uncovered shoreline inflow uses the contemporaneous covered-inflow discharge-weighted mean, an explicitly documented estimate affecting 0.04445% of total inflow. This does not establish observed or depth-uniform river temperature.",
+  "production_edits": false
+}

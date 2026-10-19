@@ -175,20 +175,20 @@
       "color": "#92adb1"
     },
     {
-      "text": "Colour = temperature · grey = unavailable · river motion enhanced",
+      "text": "Colour = temperature · river temperatures estimated · river motion enhanced",
       "x": 625,
       "y": 1011,
       "size": 10
     },
     {
-      "text": "Kingston–Brockville: ESTIMATES · simplified, unvalidated depth-averaged model",
+      "text": "Kingston–Brockville: currents + temperature ESTIMATES · unvalidated depth-averaged model",
       "x": 625,
       "y": 1036,
       "size": 12,
       "color": "#b4b9a4"
     },
     {
-      "text": "Fixed river estimate · 12–17 Oct forcing · CHS / IJC · not hourly",
+      "text": "Fixed 12–17 Oct river flow · hourly lake-fed temperature tracer · no heat exchange",
       "x": 625,
       "y": 1060,
       "size": 9,
@@ -344,5 +344,6 @@
     "y": 220,
     "width": 320,
     "size": 15
-  }
+  },
+  "riverTemperatureManifest": "inputs/river-temperature/manifest.json"
 }

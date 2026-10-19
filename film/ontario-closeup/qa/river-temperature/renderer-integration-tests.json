@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "productionRendererSHA256": "50daacf14113daddc7b6222deecacd1716a3c0bd1b7e4a9edc4c9b86484f0365",
+  "baselineRendererSHA256": "05fe498736ce609319629d9fb8be14512e21f0a5a1956d3d78bdea99815cca1a",
+  "helperSHA256": "34ba04849f8eb568c658b87c5fdcc5b220f234f9716a78505dcec00cb442e40e",
+  "cases": [
+    {
+      "passed": true,
+      "case": "normal",
+      "checks": [
+        "Actual U/V/provider raster bytes and all sampled UV identical to the accepted hourly renderer.",
+        "Finite NOAA temperature including0 wins; outside lake coverage estimated endpoints/midpoints use the same actual base palette; probe classification is correct.",
+        "Actual nativeCanvas trail strokes change thermal colour while the same fixed-river particle path/end coordinates stay identical.",
+        "Actual emitted trail style at0s: rgba(90,59,154,0.8)",
+        "Actual emitted trail style at3600s: rgba(177,33,71,0.8)"
+      ],
+      "hashes": {
+        "U": "cd1356756f9152cbe48f11afebf927e6fac0600cb655e2fd32e841b4f9d84885",
+        "V": "067f67d73234caeca238988800a0c8c6b8823dbe233578a942a5ebcdad86206a",
+        "P": "e3c1264d7acf8d74178f361837c0f92eac36b1fac32b39741d5499cf14b9a3d9"
+      },
+      "productionRendererSHA256": "50daacf14113daddc7b6222deecacd1716a3c0bd1b7e4a9edc4c9b86484f0365"
+    },
+    {
+      "passed": true,
+      "case": "missing-uv",
+      "checks": [
+        "Actual U/V/provider raster bytes and all sampled UV identical to the accepted hourly renderer.",
+        "First-hour missing lake UV and valid actual T remain independent; river UV override unchanged and actual0 T retained."
+      ],
+      "hashes": {
+        "U": "ebe532919d06293a727832d36ffbd2e233e51a4804add33a311011dc86d4449e",
+        "V": "067f67d73234caeca238988800a0c8c6b8823dbe233578a942a5ebcdad86206a",
+        "P": "e3c1264d7acf8d74178f361837c0f92eac36b1fac32b39741d5499cf14b9a3d9"
+      },
+      "productionRendererSHA256": "50daacf14113daddc7b6222deecacd1716a3c0bd1b7e4a9edc4c9b86484f0365"
+    },
+    {
+      "passed": true,
+      "case": "missing-temperature",
+      "checks": [
+        "Actual U/V/provider raster bytes and all sampled UV identical to the accepted hourly renderer.",
+        "Missing NOAA T is supplemented only under provider2; lake missing T stays neutral, including valid FID with missing nodes."
+      ],
+      "hashes": {
+        "U": "cd1356756f9152cbe48f11afebf927e6fac0600cb655e2fd32e841b4f9d84885",
+        "V": "067f67d73234caeca238988800a0c8c6b8823dbe233578a942a5ebcdad86206a",
+        "P": "e3c1264d7acf8d74178f361837c0f92eac36b1fac32b39741d5499cf14b9a3d9"
+      },
+      "productionRendererSHA256": "50daacf14113daddc7b6222deecacd1716a3c0bd1b7e4a9edc4c9b86484f0365"
+    }
+  ],
+  "allUVProviderBytesUnchanged": true,
+  "actualNativeCanvas": true,
+  "visualReviewPending": false,
+  "scope": "Actual supplement/base/trail integration only. Scientific passive-temperature estimates are separately reviewed; no velocity or temperature accuracy validation.",
+  "actualVisualReviewPassed": true,
+  "visualReviewArtifacts": [
+    "integration/normal/supplement-base-0.png",
+    "integration/normal/supplement-base-1800.png",
+    "integration/normal/estimated-trails-3600.png",
+    "integration/missing-temperature/missing-noaa-river-estimate.png"
+  ]
+}

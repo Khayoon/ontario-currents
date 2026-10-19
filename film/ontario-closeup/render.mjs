@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {createTemporalField} from './temporal-field.mjs';
+import {loadRiverTemperature} from './river-temperature.mjs';
 import path from 'node:path';
 import {createRequire} from 'node:module';
 import {spawn} from 'node:child_process';
@@ -38,6 +39,10 @@ if(cfg.insets?.length)throw new Error('This chronological edition intentionally 
 if(field.u.length!==mesh.triangles.length||field.v.length!==mesh.triangles.length)throw new Error('Lake vector field length does not match native mesh triangles');
 let meshVectors=null;if(cfg.meshInterpolation==='centroid-fan'){if(!cfg.meshFlowModule)throw new Error('meshFlowModule is required for centroid-fan interpolation');await import(pathToFileURL(resolve(cfg.meshFlowModule)).href);meshVectors=globalThis.MeshFlow.reconstruct(mesh,field);}
 const temporal=createTemporalField(mesh,{times:sourceTimes,...sourceArrays},globalThis.MeshFlow.reconstruct);
+const riverThermal=await loadRiverTemperature(resolve(cfg.riverTemperatureManifest),{expectedRiverFieldSHA256:hash(fs.readFileSync(resolve(cfg.rivers[0])))});
+const riverThermalManifest=json(cfg.riverTemperatureManifest);
+if(JSON.stringify(riverThermalManifest.times)!==JSON.stringify(dataset.times))throw new Error('River thermal and lake hourly UTC axes differ');
+for(const key of ['width','height','west','south','dx','dy'])if(riverThermal.grid[key]!==sources[0][key])throw new Error('River thermal and velocity display grids differ: '+key);
 const lake=geo.features.find(f=>f.properties?.name==='Lake Ontario');
 if(lake&&cfg.useNativeOntarioCoast!==false)lake.geometry={type:'Polygon',coordinates:mesh.rings.map(r=>r.map(i=>[mesh.lon[i],mesh.lat[i]]))};
 const seeded=(seed=cfg.seed||74129)=>()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};
@@ -67,7 +72,7 @@ function renderer(W,H,cfg=globalConfig){
   }
   const cell=Number(cfg.gridCell||2),nx=Math.ceil(W/cell),ny=Math.ceil(H/cell),n=nx*ny;
   const U=new Float32Array(n).fill(NaN),V=new Float32Array(n),T=new Float32Array(n).fill(NaN),P=new Uint8Array(n);
-  const FID=new Int32Array(n).fill(-1),WAF=new Float32Array(n),WBF=new Float32Array(n);
+  const FID=new Int32Array(n).fill(-1),WAF=new Float32Array(n),WBF=new Float32Array(n),RID=new Int32Array(n).fill(-1);
   const px=new Float32Array(mesh.lon.length),py=new Float32Array(mesh.lon.length);
   for(let i=0;i<px.length;i++){const p=project(mesh.lon[i],mesh.lat[i]);px[i]=p[0]/cell;py[i]=p[1]/cell;}
   for(let f=0;f<mesh.triangles.length;f++){
@@ -102,7 +107,7 @@ function renderer(W,H,cfg=globalConfig){
       // A regional hydraulic estimate needs one coherent field through its
       // domain. An explicit opt-in can prefer it over overlapping lake-mesh
       // triangles; fallback remains the default for every existing edition.
-      const q=j*nx+i;if(P[q]&&((r.fallbackOnly&&cfg.riverSourcePriority!=='model')||cfg.sourcePriority!=='last'))continue;U[q]=r.u[z];V[q]=r.v[z];P[q]=ordinal+2;if(r.t&&Number.isFinite(r.t[z]))T[q]=r.t[z];
+      const q=j*nx+i;if(P[q]&&((r.fallbackOnly&&cfg.riverSourcePriority!=='model')||cfg.sourcePriority!=='last'))continue;U[q]=r.u[z];V[q]=r.v[z];P[q]=ordinal+2;if(ordinal===0)RID[q]=riverThermal.indexMap[z];if(r.t&&Number.isFinite(r.t[z]))T[q]=r.t[z];
     }
   });
   // The field itself provides wet cells when no polygon exists (for example the estuary).
@@ -114,13 +119,14 @@ function renderer(W,H,cfg=globalConfig){
     if(maskData){const x=Math.min(W-1,Math.floor((z%nx+.5)*cell)),y=Math.min(H-1,Math.floor((Math.floor(z/nx)+.5)*cell));if(maskData[(y*W+x)*4+3]<80){P[z]=0;U[z]=NaN;continue;}}
     valid.push(z);providerCounts[P[z]]=(providerCounts[P[z]]||0)+1;
   }
-  if(cfg.auditGrid){const file=resolve(cfg.auditGrid);fs.mkdirSync(path.dirname(file),{recursive:true});for(const [suffix,array] of [['u',U],['v',V],['t',T],['provider',P],['face',FID],['wa',WAF],['wb',WBF]])fs.writeFileSync(file+'.'+suffix+'.bin',Buffer.from(array.buffer));fs.writeFileSync(file+'.json',JSON.stringify({W,H,cell,nx,ny,k,tx,ty,bounds:bbox,providerCounts}));}
+  if(cfg.auditGrid){const file=resolve(cfg.auditGrid);fs.mkdirSync(path.dirname(file),{recursive:true});for(const [suffix,array] of [['u',U],['v',V],['t',T],['provider',P],['face',FID],['wa',WAF],['wb',WBF],['riverTemperatureIndex',RID]])fs.writeFileSync(file+'.'+suffix+'.bin',Buffer.from(array.buffer));fs.writeFileSync(file+'.json',JSON.stringify({W,H,cell,nx,ny,k,tx,ty,bounds:bbox,providerCounts}));}
   // A narrow river occupies far fewer screen cells than a lake or estuary.
   // Optional source weights allocate more particles to those actual wet cells;
   // they change drawing density only, never vectors, motion, speed or coverage.
   let seedGroups=null,seedTotal=0;const seedProbabilities={},seedRegions=cfg.seedRegions||[];
   if((cfg.providerSeedWeights&&Object.keys(cfg.providerSeedWeights).length)||seedRegions.length){const groups=new Map();for(const z of valid){const provider=P[z];let weight=Math.max(0,Number(cfg.providerSeedWeights?.[provider]??1));if(seedRegions.length){const [lon,lat]=invert((z%nx+.5)*cell,(Math.floor(z/nx)+.5)*cell);for(const region of seedRegions){const [west,south,east,north]=region.bounds;if(lon<west||lon>east||lat<south||lat>north||(region.providers&&!region.providers.includes(provider)))continue;weight=Math.max(weight,Number(region.weight||1));}}if(!Number.isFinite(weight)||weight===0)continue;const key=provider+':'+weight;if(!groups.has(key))groups.set(key,{provider,weight,cells:[]});groups.get(key).cells.push(z);}seedGroups=[];for(const g of groups.values()){const mass=g.cells.length*g.weight;seedTotal+=mass;seedGroups.push({...g,end:seedTotal,mass});}if(!seedTotal)throw new Error('Seed weights exclude every current cell');for(const g of seedGroups)seedProbabilities[g.provider]=(seedProbabilities[g.provider]||0)+g.mass/seedTotal;}
   if(!valid.length)throw new Error('No current samples in map bounds');
+  let estimatedRiverWetGridCells=0;for(const z of valid)if(P[z]===2){estimatedRiverWetGridCells++;if(RID[z]<0)throw new Error('Rendered river cell lacks its estimated temperature index');}
   const useTemperature=true;
   const temperatureMin=Number(cfg.temperatureMin),temperatureMax=Number(cfg.temperatureMax);
   if(!(Number.isFinite(temperatureMin)&&Number.isFinite(temperatureMax)&&temperatureMax>temperatureMin))throw new Error('Invalid fixed thermal scale');
@@ -132,9 +138,10 @@ function renderer(W,H,cfg=globalConfig){
   const thermalCanvas=createCanvas(W,H),thermalContext=thermalCanvas.getContext('2d'),thermalImage=thermalContext.createImageData(W,H),thermalPixels=[];
   for(let y=0;y<H;y++)for(let x=0;x<W;x++){const z=Math.min(ny-1,Math.floor((y+.5)/cell))*nx+Math.min(nx-1,Math.floor((x+.5)/cell));if(P[z])thermalPixels.push([4*(y*W+x),z]);}
   const thermalCoverage=[];
-  function paintThermal(seconds){let finite=0,missing=0,below=0,above=0,min=Infinity,max=-Infinity;
+  function paintThermal(seconds){let finite=0,missing=0,estimated=0,actual=0,below=0,above=0,min=Infinity,max=-Infinity;
     for(const [offset,z] of thermalPixels){const face=FID[z],a=WAF[z],b=WBF[z];let value=face>=0?temporal.sampleTemperature(face,a,b,1-a-b,seconds):NaN;
       if(!Number.isFinite(value)&&P[z]>1&&Number.isFinite(T[z])&&face<0)value=T[z];
+      const sourceTemperature=Number.isFinite(value);value=riverThermal.supplement(P[z],value,RID[z],seconds);if(Number.isFinite(value)){if(sourceTemperature)actual++;else estimated++;}
       if(Number.isFinite(value)){finite++;min=Math.min(min,value);max=Math.max(max,value);below+=value<temperatureMin;above+=value>temperatureMax;
         const q=Math.max(0,Math.min(.999999,(value-temperatureMin)/(temperatureMax-temperatureMin)))*(stops.length-1),i=Math.floor(q),w=q-i;
         for(let c=0;c<3;c++)thermalImage.data[offset+c]=(stops[i][c]*(1-w)+stops[i+1][c]*w)*(cfg.baseBrightness??.3);
@@ -142,7 +149,7 @@ function renderer(W,H,cfg=globalConfig){
       thermalImage.data[offset+3]=255;
     }
     thermalContext.putImageData(thermalImage,0,0);if(cfg.clipCurrentsToWater){thermalContext.globalCompositeOperation='destination-in';thermalContext.drawImage(mask,0,0);thermalContext.globalCompositeOperation='source-over';}
-    const coverage={seconds,finite,missing,below,above,min:Number.isFinite(min)?min:null,max:Number.isFinite(max)?max:null};thermalCoverage.push(coverage);return coverage;
+    const coverage={seconds,finite,missing,actual,estimated,below,above,min:Number.isFinite(min)?min:null,max:Number.isFinite(max)?max:null};thermalCoverage.push(coverage);return coverage;
   }
   // Drainage context is geography, not a current product. It never contributes
   // cells to the water mask, field sampling, particle paths, or speed palette.
@@ -176,7 +183,7 @@ function renderer(W,H,cfg=globalConfig){
   const firstSample=new Float64Array(3),midSample=new Float64Array(3);
   const metrics={segments:0,maximumSegmentPixels:0,hourSplits:0,invalidResets:0,substepLimitResets:0,zeroSegments:0};
   function sampleAt(x,y,seconds,out){const z=index(x,y);if(z<0||!P[z]){out.fill(NaN);return 0;}const f=FID[z],a=WAF[z],b=WBF[z];if(f>=0)temporal.sample(f,a,b,1-a-b,seconds,out);else out.fill(NaN);
-    if(P[z]>1){out[0]=U[z];out[1]=V[z];if(!Number.isFinite(out[2])&&f<0&&Number.isFinite(T[z]))out[2]=T[z];}return P[z];
+    if(P[z]>1){out[0]=U[z];out[1]=V[z];if(!Number.isFinite(out[2])&&f<0&&Number.isFinite(T[z]))out[2]=T[z];}out[2]=riverThermal.supplement(P[z],out[2],RID[z],seconds);return P[z];
   }
   function step(dt,startSeconds,endSeconds,freezeField=false){
     if(!(endSeconds>=startSeconds&&startSeconds>=0&&endSeconds<=modelDuration))throw new Error('Invalid chronological advection interval');
@@ -215,11 +222,11 @@ function renderer(W,H,cfg=globalConfig){
     ctx.save();ctx.font=`${(options.size??15)*S}px "${cfg.monoFont||'Consolas'}"`;ctx.textAlign='left';ctx.fillStyle='#b6ced0';ctx.fillText(replay?'REPLAY \u00b7 WEEK RESTARTS':label,x,y);ctx.fillStyle='#18343c';ctx.fillRect(x,y+14*S,w,2*S);ctx.fillStyle='#7abac2';ctx.fillRect(x,y+14*S,w*Math.min(1,seconds/modelDuration),2*S);ctx.restore();return label;
   }
   function frame(seconds){paintThermal(seconds);ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,W,H);ctx.drawImage(base,0,0);ctx.drawImage(thermalCanvas,0,0);ctx.strokeStyle=cfg.coastColor||'#2d5b65';ctx.lineWidth=(cfg.coastWidth||.55)*S;ctx.stroke(coasts);ctx.globalCompositeOperation='screen';ctx.drawImage(flow,0,0);ctx.globalCompositeOperation='source-over';ctx.drawImage(fixed,0,0);clock(ctx,seconds);return out;}
-  function probes(seconds){return (cfg.auditProbes||[]).map(probe=>{const [x,y]=project(probe.lon,probe.lat),out=new Float64Array(3),provider=sampleAt(x,y,seconds,out);return {name:probe.name,provider,u:out[0],v:out[1],temperature:out[2]};});}
+  function probes(seconds){return (cfg.auditProbes||[]).map(probe=>{const [x,y]=project(probe.lon,probe.lat),out=new Float64Array(3),provider=sampleAt(x,y,seconds,out);const z=index(x,y),f=z>=0?FID[z]:-1,a=z>=0?WAF[z]:NaN,b=z>=0?WBF[z]:NaN,actualT=f>=0?temporal.sampleTemperature(f,a,b,1-a-b,seconds):NaN;return {name:probe.name,provider,u:out[0],v:out[1],temperature:out[2],temperatureEstimated:provider===2&&Number.isFinite(out[2])&&!Number.isFinite(actualT)};});}
   function replayFrame(tail,head,alpha){ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;ctx.drawImage(tail,0,0);ctx.globalAlpha=alpha;ctx.drawImage(head,0,0);ctx.globalAlpha=1;
     if(alpha<1){const q=Math.min(1,Math.sin(Math.PI*alpha)*3),options=cfg.clock||{},x=(options.x??78)*S,y=(options.y??220)*S;ctx.save();ctx.globalAlpha=q;ctx.fillStyle=cfg.background||'#020607';ctx.fillRect(x-5*S,y-20*S,(options.width??320)*S+12*S,46*S);clock(ctx,0,true);ctx.restore();}return out;
   }
-  return {step,frame,replayFrame,probes,sampleAt,clock,metadata:{width:W,height:H,gridCell:cell,validGridCells:valid.length,providerCounts,particles:count,bounds:bbox,projection:'Web Mercator',mapRect,temperatureRange:[temperatureMin,temperatureMax],missingTemperatureColor,lakeMotionBoost:1,riverMinDisplaySpeed:cfg.riverMinDisplaySpeed??12,maxDisplayBoost:cfg.maxDisplayBoost||1024,secondsPerVideoSecond,seedDensityCompensation,seedProbabilities,metrics,thermalCoverage}};
+  return {step,frame,replayFrame,probes,sampleAt,clock,metadata:{width:W,height:H,gridCell:cell,validGridCells:valid.length,providerCounts,particles:count,bounds:bbox,projection:'Web Mercator',mapRect,temperatureRange:[temperatureMin,temperatureMax],riverTemperatureEstimate:riverThermal.metadata,estimatedRiverWetGridCells,missingTemperatureColor,lakeMotionBoost:1,riverMinDisplaySpeed:cfg.riverMinDisplaySpeed??12,maxDisplayBoost:cfg.maxDisplayBoost||1024,secondsPerVideoSecond,seedDensityCompensation,seedProbabilities,metrics,thermalCoverage}};
 
 }
 

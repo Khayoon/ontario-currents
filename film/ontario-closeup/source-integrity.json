@@ -1,16 +1,19 @@
 {
-  "edition": "169-endpoint chronological 12-18 October 2026 UTC Lake Ontario film",
+  "edition": "Hourly Lake Ontario film with separately estimated river currents and passive temperature",
   "intended_repository_location": "film/ontario-closeup",
-  "source_renderer_sha256": "05fe498736ce609319629d9fb8be14512e21f0a5a1956d3d78bdea99815cca1a",
-  "source_config_sha256": "4c4411cdddd1f0a5d9a232ac704baf56d803dbc2f47472d67d7e9c91826c6702",
+  "source_renderer_sha256": "50daacf14113daddc7b6222deecacd1716a3c0bd1b7e4a9edc4c9b86484f0365",
+  "source_config_sha256": "d1f57badf09a4dce842f7348c66fa27920764e30f0e11cd6b96044100aa2c16a",
   "portable_changes": [
     "Canvas dependency and FFmpeg executable resolution",
     "relative input/output paths",
     "review snapshots/probes omitted from portable config",
-    "LF normalization"
+    "LF normalization",
+    "Python preparation paths adapted to repository layout; numerical method unchanged"
   ],
   "render_logic_copied_without_changes": true,
   "dataset_manifest_sha256": "66ff440910a4cb9822c12d59271f70f1ad2d4a6bfc393c9f914230afcb9b7e4e",
+  "river_temperature_manifest_sha256": "260c470549ae83670b686c82b787de048040a18b968d390ad66ee5bc9a04cf73",
+  "river_temperature_method": "Implicit passive tracer using frozen hydraulic fluxes/volumes and hourly NOAA lake inlet temperatures; assumed first-hour initial condition; no heat exchange.",
   "source_protection_check": "All 169-hour binary source hashes match; original mean renderer/config, mesh, river and helper unchanged.",
   "external_inputs": [
     {
@@ -20,6 +23,10 @@
     {
       "path": "../../model/upper-river/display-field.json",
       "sha256": "653d31ac284a724bd83d000064f19d375d5e6a8dd14a320fb48a4f0eef3904bb"
+    },
+    {
+      "path": "../../model/upper-river/dwe-calibrated-50m.npz",
+      "sha256": "948c22f163b9a4a24e7af2a1be2daabe652060f34906a65d2be35fdc43b818dc"
     }
   ],
   "lake_period": {
@@ -43,9 +50,9 @@
   "final_encoded_review_status": "passed; actual full-resolution encoded visual review and clock/loop checks accepted",
   "final_encoded_video": {
     "passed": true,
-    "video": "work\\hourly-render\\ontario-hourly-master.mp4",
-    "sha256": "b6da3ba744ee3a5e50f6d8319d9d81cd2d24c8244d2df9370c0c30491c91b303",
-    "bytes": 102976638,
+    "video": "work\\river-color-render\\ontario-colored-river-master.mp4",
+    "sha256": "5c57c348290d527c350ecba138517da96803dce5254ba2926282e4bc5a932458",
+    "bytes": 103544787,
     "width": 2560,
     "height": 1440,
     "seconds": 25,
@@ -78,7 +85,12 @@
       }
     ],
     "river_uv_fixed": true,
-    "river_missing_temperature_neutral": true,
+    "river_missing_noaa_temperature_estimated": true,
+    "lake_probes_identical_to_prior_hourly_edition": true,
+    "river_temperature_range_c": [
+      13.547342300415039,
+      15.935142771402996
+    ],
     "segment_metrics": {
       "segments": 85682121,
       "maximumSegmentPixels": 0.200000000019727,
@@ -91,11 +103,11 @@
       640,
       360
     ],
-    "decoded_active_delta_mean": 0.530083215821872,
-    "decoded_active_delta_median": 0.5295558449074074,
-    "decoded_active_delta_min": 0.3541594328703704,
-    "decoded_last_to_first_mae": 0.46304398148148146,
-    "full_resolution_actual_visual_review": "separate independent report required"
+    "decoded_active_delta_mean": 0.5320293565362129,
+    "decoded_active_delta_median": 0.5311009837962963,
+    "decoded_active_delta_min": 0.3570703125,
+    "decoded_last_to_first_mae": 0.4671368634259259,
+    "full_resolution_actual_visual_review": "Passed; actual decoded image review in scientific/final-encoded-review.json"
   },
   "files": [
     {
@@ -105,13 +117,13 @@
     },
     {
       "path": "config.json",
-      "bytes": 6590,
-      "sha256": "2222ea635ee903cdd24eec07defed8fdf448b07d4a992b670ada88d5a72ffca2"
+      "bytes": 6700,
+      "sha256": "6644ac2b153fca95a6adb84110e10cc241bac94154307be480277e3c78adf02e"
     },
     {
       "path": "DATA-SOURCES.md",
-      "bytes": 5829,
-      "sha256": "7c9c447c1f1fb186525ad35f58dbe5cd6a5e3670a63f1091ba843f4a7f7e633c"
+      "bytes": 8919,
+      "sha256": "bd548ea89c38a33e5b2b8e2851050be3f246774c06548e1f7efcb9f6555df7f1"
     },
     {
       "path": "history/pre-hourly/config.json",
@@ -137,6 +149,26 @@
       "path": "history/pre-hourly/source-integrity.json",
       "bytes": 17672,
       "sha256": "97b81a2400b50f67c5b2b0b9cf25e0601a45befc196ce3847ec0a3d1606d5bb3"
+    },
+    {
+      "path": "history/pre-river-temperature/config.json",
+      "bytes": 6590,
+      "sha256": "2222ea635ee903cdd24eec07defed8fdf448b07d4a992b670ada88d5a72ffca2"
+    },
+    {
+      "path": "history/pre-river-temperature/README.md",
+      "bytes": 354,
+      "sha256": "18c71f0280a3e347531c1322a67432a26d1a56a6e4eaabf0b99bbbe1665f8aec"
+    },
+    {
+      "path": "history/pre-river-temperature/render.mjs",
+      "bytes": 31647,
+      "sha256": "24a594c0d0db0d16429718b8c6ae9daa5423e2ceb6ffa7f235cc5b1116889932"
+    },
+    {
+      "path": "history/pre-river-temperature/source-integrity.json",
+      "bytes": 18630,
+      "sha256": "207e72e68cb8f75bd48e6c4c11cc033c6c9dff3039f2bfcd611b876527e3b1aa"
     },
     {
       "path": "inputs/geography.geojson",
@@ -204,6 +236,76 @@
       "sha256": "307c30517b8d8d54c6987157a128625039318e160c3a384ebe4ddd0dfa909c15"
     },
     {
+      "path": "inputs/river-temperature/boundary-source-spatial-audit.json",
+      "bytes": 804,
+      "sha256": "ad6024d23747ca6a58a4c673deb48e56d3b0e150f91886284e6a45f2053ed8a7"
+    },
+    {
+      "path": "inputs/river-temperature/display-native-index.i32",
+      "bytes": 486576,
+      "sha256": "c42780bf791f5290ca8ab7abe056f0b7975b0b1ed191f498082cd776435f1e77"
+    },
+    {
+      "path": "inputs/river-temperature/index-map.i32",
+      "bytes": 3958240,
+      "sha256": "5d317ec5e0bc03f34710a5036324f6aaf3fc2a2d1de7000deb9c9d5e4ba4247d"
+    },
+    {
+      "path": "inputs/river-temperature/inlet-temperature.npz",
+      "bytes": 141972,
+      "sha256": "e98b01ef592fecde16db52e2ef4a099cb1c534183db10f85c2e0f23c7e013894"
+    },
+    {
+      "path": "inputs/river-temperature/input-audit.json",
+      "bytes": 2404,
+      "sha256": "f7a86065d2f6a3d60d8fc4c650348ffd1fa01ce0d8d10009241e1d6a3020ffe4"
+    },
+    {
+      "path": "inputs/river-temperature/manifest.json",
+      "bytes": 12530,
+      "sha256": "260c470549ae83670b686c82b787de048040a18b968d390ad66ee5bc9a04cf73"
+    },
+    {
+      "path": "inputs/river-temperature/prepare_tracer.py",
+      "bytes": 25532,
+      "sha256": "23382c2af995c01b987a8e29dc0c15b302b967bdf0db4698c5bb117324902b6c"
+    },
+    {
+      "path": "inputs/river-temperature/README.md",
+      "bytes": 5495,
+      "sha256": "0fb74e9b665e52c2560ccf0e57eff16d118f00f6d1f75effdf9a3544ea8b18e5"
+    },
+    {
+      "path": "inputs/river-temperature/temperature.f32",
+      "bytes": 82231344,
+      "sha256": "b3af9090431602573b2eaf6496e5754915aefd58fb0eefeced3e50bd23a2d98e"
+    },
+    {
+      "path": "inputs/river-temperature/timestep-sensitivity.json",
+      "bytes": 542,
+      "sha256": "854c883f951aee7628f898126c5b4453f901d8ed34a3183b36f4ae559c91f87f"
+    },
+    {
+      "path": "inputs/river-temperature/tracer-150s-audit.json",
+      "bytes": 147542,
+      "sha256": "cea1ebcd75b6a40f3e6fe16c6476a4ade5debc7bf6d071df291e4e77c92cd3ec"
+    },
+    {
+      "path": "inputs/river-temperature/tracer-300s-audit.json",
+      "bytes": 147759,
+      "sha256": "53bd641d1d0136bc2563c7960735e2c9046a606a189b4329fd50b88cbda02045"
+    },
+    {
+      "path": "inputs/river-temperature/uncovered-boundary.json",
+      "bytes": 343,
+      "sha256": "9be1e2cde5acf9d1f42bbc7b4d09cc9f088b41698b4dbf907fc06bab6db986a9"
+    },
+    {
+      "path": "inputs/river-temperature/uniform-300s-audit.json",
+      "bytes": 77413,
+      "sha256": "ab040365e797675fbac75e790f40c1bbe080d700d8bc29cfbe90ad9d0ebdfba2"
+    },
+    {
       "path": "inputs/source-manifest.json",
       "bytes": 25081,
       "sha256": "16dd5b65e086b8f9e3c032d34861c30fa8df8f180c39a835231f598ba62ae50f"
@@ -215,8 +317,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 413,
-      "sha256": "4beb9990b587e7bd07badb88057450c81e07d31b77a28defd9d3dedd5d48bf35"
+      "bytes": 478,
+      "sha256": "856130a353c0b45c46756c902e8e33f534e49b1fe486f3dea36b3e1fde122db0"
     },
     {
       "path": "qa/before-temperature/ARCHIVE.json",
@@ -444,6 +546,71 @@
       "sha256": "d07cd496ca9a4639a53a64cff46b1c2d96e4e13180cd7969c437647841856b65"
     },
     {
+      "path": "qa/river-temperature/actual-source-tests.json",
+      "bytes": 5042,
+      "sha256": "3c931b1b74cdd5fe64f5c0db5479bc3399efe06fc9868061e899f6aba27fdf1f"
+    },
+    {
+      "path": "qa/river-temperature/display-sampler-review.json",
+      "bytes": 1947,
+      "sha256": "a1edbef5cf414a461c2eb4186ca189a7490ea8a2a31f6cff623aefd4c908eee8"
+    },
+    {
+      "path": "qa/river-temperature/encoded-check.json",
+      "bytes": 1786,
+      "sha256": "522ad3e6019a3e52bbc13966d52dd61e8ee14ea07d85e833d5e3e1c6ca766c18"
+    },
+    {
+      "path": "qa/river-temperature/ffprobe.json",
+      "bytes": 2399,
+      "sha256": "116ee0fdfdc35cbfaefb745508e12d8746f02b71984ffb61a1d42c9dd3a34f7a"
+    },
+    {
+      "path": "qa/river-temperature/final-encoded-review.json",
+      "bytes": 13398,
+      "sha256": "ca983ac1b5ec6144e077e50c2708d7b45a0bb5981eba553a9cd8e6700027f6eb"
+    },
+    {
+      "path": "qa/river-temperature/final-numerical-review.json",
+      "bytes": 1069,
+      "sha256": "cc5b23b4883cd0a8397ab0da11482e72652b8712d56ad1fd66b34caa6c5af48e"
+    },
+    {
+      "path": "qa/river-temperature/inlet-source-review.json",
+      "bytes": 1614,
+      "sha256": "e1ab0f78a024f09c5346077ae0d584647df697f991908e5ca77db350364aa176"
+    },
+    {
+      "path": "qa/river-temperature/method-design-review.json",
+      "bytes": 6568,
+      "sha256": "9da5646c73b4397f6e282752d79f1316df2e1cbd848bf5058d43a2731f77d1e5"
+    },
+    {
+      "path": "qa/river-temperature/native-transport-input-review.json",
+      "bytes": 3145,
+      "sha256": "80258579fbd1075c7fecc8dea97396a956c9d7cf64ee0236f773a83ea42647eb"
+    },
+    {
+      "path": "qa/river-temperature/portable-source-check.json",
+      "bytes": 548,
+      "sha256": "36fe90d184638a2a91f4b29e5c794104a86ea0bdb0dbc0cb5f7c269c18a52f3e"
+    },
+    {
+      "path": "qa/river-temperature/render-manifest.json",
+      "bytes": 1188343,
+      "sha256": "fbe718c42b9e49d8ef34f51df41efbf236d9f18bbf865c284e1670177aa813c9"
+    },
+    {
+      "path": "qa/river-temperature/renderer-integration-tests.json",
+      "bytes": 3289,
+      "sha256": "63a493457ec9aca7ccec2baf8ad102118aceeb8a718797896d4247444d804cf4"
+    },
+    {
+      "path": "qa/river-temperature/river-temperature-tests.json",
+      "bytes": 1941,
+      "sha256": "78b5c3368bf9e1794c2ae6e24d45e9c30d0c43a1507945c6a467b946dd17e115"
+    },
+    {
       "path": "qa/temperature-preview-review.json",
       "bytes": 5199,
       "sha256": "328ffc809e1b050c6bed589e563e7ccb9243e2fb064cdc011f4a872efe89bb14"
@@ -505,13 +672,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 5559,
-      "sha256": "2bf0cba5e827cc1b823cfa83e628438074e1504be0ca381134c018df605873ec"
+      "bytes": 7231,
+      "sha256": "776ee4011c7a5d081a764b5b39e672bfcf849aa14259691e1a2a1b7f8d4ff14a"
     },
     {
       "path": "render.mjs",
-      "bytes": 31647,
-      "sha256": "24a594c0d0db0d16429718b8c6ae9daa5423e2ceb6ffa7f235cc5b1116889932"
+      "bytes": 33131,
+      "sha256": "1ade0b6319e1df9530e53d6528f76b029f43e5e798242ae4aafe3678a399828c"
+    },
+    {
+      "path": "river-temperature.mjs",
+      "bytes": 7972,
+      "sha256": "34ba04849f8eb568c658b87c5fdcc5b220f234f9716a78505dcec00cb442e40e"
     },
     {
       "path": "temporal-field.mjs",

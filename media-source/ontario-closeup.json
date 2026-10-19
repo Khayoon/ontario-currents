@@ -1,7 +1,7 @@
 {
-  "bytes": 102976638,
-  "sha256": "b6da3ba744ee3a5e50f6d8319d9d81cd2d24c8244d2df9370c0c30491c91b303",
-  "edition": "12-18 October 2026 hourly lake currents and temperatures; fixed labelled river estimate",
+  "bytes": 103544787,
+  "sha256": "5c57c348290d527c350ecba138517da96803dce5254ba2926282e4bc5a932458",
+  "edition": "12-18 October 2026 hourly lake fields; separately estimated river currents and passive temperature",
   "seconds": 25,
   "chronologicalSeconds": 24,
   "replaySeconds": 1,
@@ -14,27 +14,27 @@
     {
       "file": "ontario-closeup.part0",
       "bytes": 22000000,
-      "sha256": "17e8b95a03754f3f53367241e749a920c4c4201aa2908a5f5a954dc322f58574"
+      "sha256": "286a3537ae955141059a8623f67a9e58678c06e1dcb1251e31b678cf4dba22c3"
     },
     {
       "file": "ontario-closeup.part1",
       "bytes": 22000000,
-      "sha256": "3f15db15079cd0490aec5521e00522a9c5f68a58b745a42b9ca220555905151c"
+      "sha256": "dad6b5c4981ddeec4f218030e02fcb2f134f643e88f18076f535249fff0446b8"
     },
     {
       "file": "ontario-closeup.part2",
       "bytes": 22000000,
-      "sha256": "78e0391d1f2bb1dd793bd085a18e7b12cccbe1a5ebfc716fb1059210721f3236"
+      "sha256": "6b61361d11b7e3a6145de8dff7a7d395533dd63dd2b70096067b181fba692229"
     },
     {
       "file": "ontario-closeup.part3",
       "bytes": 22000000,
-      "sha256": "1a077c60559a458020e49bd9f07a915675053a535105deff89be10ec12289e7b"
+      "sha256": "1332c188c988c3dfe04e3d2437ba85c388907aeb0a658a4a6253a79b9aa607a7"
     },
     {
       "file": "ontario-closeup.part4",
-      "bytes": 14976638,
-      "sha256": "8015e204ad847668e5fb55ce49967323ee2cea1b0cb540b8837d1696e03e9978"
+      "bytes": 15544787,
+      "sha256": "3accc6e75888e1dd42876d83378a5fd696e0a55930b316bf3095703793ef7e8c"
     }
   ]
 }

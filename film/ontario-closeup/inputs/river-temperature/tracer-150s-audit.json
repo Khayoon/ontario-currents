@@ -1,0 +1,3078 @@
+{
+  "label": "tracer-150s",
+  "timestep_seconds": 150,
+  "steps": 4032,
+  "method": "Implicit first-order upwind finite-volume passive transport with explicit hydraulic continuity-residual compensation.",
+  "residual_sign_definition": "outgoing + external_outgoing - incoming - external_incoming",
+  "residual_term": "residual*T_new, included explicitly in the inventory ledger; raw hydraulic face discharges unchanged",
+  "no_clipping": true,
+  "source_boundary_and_initial_range_c": [
+    12.052933723443404,
+    16.902953449976497
+  ],
+  "native_all_step_temperature_range_c": [
+    12.057059207849875,
+    16.777390821133476
+  ],
+  "maximum_principle_excess_c": 0,
+  "maximum_absolute_step_ledger_error": [
+    0.004643367836251855,
+    8.795782923698425e-05
+  ],
+  "cumulative_signed_ledger_error": [
+    6.949074901285712e-06,
+    5.60703338123858e-05
+  ],
+  "cumulative_boundary_flux_integral": [
+    -2854757318.9053082,
+    -3700550218.9360104
+  ],
+  "cumulative_continuity_compensation_integral": [
+    -15053.511817554576,
+    -602.9158014118408
+  ],
+  "final_inventory": [
+    63304969297.95588,
+    695460363.3525457
+  ],
+  "wall_seconds": 248.40720729999884,
+  "uniform_16c_maximum_error_c": null,
+  "celsius_kelvin_offset_maximum_error_c": null,
+  "initial_water": [
+    {
+      "hour": 0,
+      "native_volume_weighted_initial_water_fraction": 0.9999999999999993,
+      "native_cell_fraction_above_0_5": 1.0,
+      "display_cell_mean_initial_water_fraction": 1.0,
+      "display_cell_fraction_above_0_5": 1.0,
+      "native_minimum_initial_water_fraction": 1.0,
+      "native_maximum_initial_water_fraction": 1.0
+    },
+    {
+      "hour": 1,
+      "native_volume_weighted_initial_water_fraction": 0.9939583216206858,
+      "native_cell_fraction_above_0_5": 0.9962255660244691,
+      "display_cell_mean_initial_water_fraction": 0.9961079035085508,
+      "display_cell_fraction_above_0_5": 0.996251356417086,
+      "native_minimum_initial_water_fraction": 5.265790419374104e-08,
+      "native_maximum_initial_water_fraction": 1.0000000000000053
+    },
+    {
+      "hour": 2,
+      "native_volume_weighted_initial_water_fraction": 0.987916643409314,
+      "native_cell_fraction_above_0_5": 0.9925805090704543,
+      "display_cell_mean_initial_water_fraction": 0.9924395153845632,
+      "display_cell_fraction_above_0_5": 0.9926753477360166,
+      "native_minimum_initial_water_fraction": 2.7728548740772102e-15,
+      "native_maximum_initial_water_fraction": 1.0000000000000107
+    },
+    {
+      "hour": 3,
+      "native_volume_weighted_initial_water_fraction": 0.9818749650389128,
+      "native_cell_fraction_above_0_5": 0.9890367036984953,
+      "display_cell_mean_initial_water_fraction": 0.9888983931025178,
+      "display_cell_fraction_above_0_5": 0.9890993390549472,
+      "native_minimum_initial_water_fraction": 1.460127263023056e-22,
+      "native_maximum_initial_water_fraction": 1.000000000000016
+    },
+    {
+      "hour": 4,
+      "native_volume_weighted_initial_water_fraction": 0.9758332864872257,
+      "native_cell_fraction_above_0_5": 0.9855885248207004,
+      "display_cell_mean_initial_water_fraction": 0.9854795203444374,
+      "display_cell_fraction_above_0_5": 0.985663082437276,
+      "native_minimum_initial_water_fraction": 7.688724152693741e-30,
+      "native_maximum_initial_water_fraction": 1.0000000000000213
+    },
+    {
+      "hour": 5,
+      "native_volume_weighted_initial_water_fraction": 0.9697916077710195,
+      "native_cell_fraction_above_0_5": 0.9823203487554493,
+      "display_cell_mean_initial_water_fraction": 0.9821524170562893,
+      "display_cell_fraction_above_0_5": 0.9824241228502845,
+      "native_minimum_initial_water_fraction": 4.048720998046496e-37,
+      "native_maximum_initial_water_fraction": 1.0000000000000266
+    },
+    {
+      "hour": 6,
+      "native_volume_weighted_initial_water_fraction": 0.9637499289650501,
+      "native_cell_fraction_above_0_5": 0.9789621712839263,
+      "display_cell_mean_initial_water_fraction": 0.9787243763244983,
+      "display_cell_fraction_above_0_5": 0.9790454111998947,
+      "native_minimum_initial_water_fraction": 2.1319716242232e-44,
+      "native_maximum_initial_water_fraction": 1.000000000000032
+    },
+    {
+      "hour": 7,
+      "native_volume_weighted_initial_water_fraction": 0.9577082501284204,
+      "native_cell_fraction_above_0_5": 0.9752439881873154,
+      "display_cell_mean_initial_water_fraction": 0.9750928270527655,
+      "display_cell_fraction_above_0_5": 0.9753214297458157,
+      "native_minimum_initial_water_fraction": 1.1226515753211973e-51,
+      "native_maximum_initial_water_fraction": 1.0000000000000373
+    },
+    {
+      "hour": 8,
+      "native_volume_weighted_initial_water_fraction": 0.9516665712896196,
+      "native_cell_fraction_above_0_5": 0.9713795528055126,
+      "display_cell_mean_initial_water_fraction": 0.9713040209986177,
+      "display_cell_fraction_above_0_5": 0.9714741376475617,
+      "native_minimum_initial_water_fraction": 5.911647909621606e-59,
+      "native_maximum_initial_water_fraction": 1.0000000000000426
+    },
+    {
+      "hour": 9,
+      "native_volume_weighted_initial_water_fraction": 0.9456248924651358,
+      "native_cell_fraction_above_0_5": 0.9676219940936577,
+      "display_cell_mean_initial_water_fraction": 0.9673497432274389,
+      "display_cell_fraction_above_0_5": 0.967741935483871,
+      "native_minimum_initial_water_fraction": 3.11294989251984e-66,
+      "native_maximum_initial_water_fraction": 1.000000000000048
+    },
+    {
+      "hour": 10,
+      "native_volume_weighted_initial_water_fraction": 0.9395832136491505,
+      "native_cell_fraction_above_0_5": 0.9635381802840669,
+      "display_cell_mean_initial_water_fraction": 0.9631823339760038,
+      "display_cell_fraction_above_0_5": 0.9635493735819276,
+      "native_minimum_initial_water_fraction": 1.639214172002262e-73,
+      "native_maximum_initial_water_fraction": 1.0000000000000533
+    },
+    {
+      "hour": 11,
+      "native_volume_weighted_initial_water_fraction": 0.9335415348356793,
+      "native_cell_fraction_above_0_5": 0.9592349880466883,
+      "display_cell_mean_initial_water_fraction": 0.9587888320350278,
+      "display_cell_fraction_above_0_5": 0.9593650323895959,
+      "native_minimum_initial_water_fraction": 8.631758282231764e-81,
+      "native_maximum_initial_water_fraction": 1.0000000000000586
+    },
+    {
+      "hour": 12,
+      "native_volume_weighted_initial_water_fraction": 0.9274998560297417,
+      "native_cell_fraction_above_0_5": 0.9545267894810856,
+      "display_cell_mean_initial_water_fraction": 0.9542061081491361,
+      "display_cell_fraction_above_0_5": 0.954687448620565,
+      "native_minimum_initial_water_fraction": 4.545303006492908e-88,
+      "native_maximum_initial_water_fraction": 1.000000000000064
+    },
+    {
+      "hour": 13,
+      "native_volume_weighted_initial_water_fraction": 0.9214581772377807,
+      "native_cell_fraction_above_0_5": 0.9493235831809872,
+      "display_cell_mean_initial_water_fraction": 0.949499751757462,
+      "display_cell_fraction_above_0_5": 0.9494837394363882,
+      "native_minimum_initial_water_fraction": 2.3934613024742662e-95,
+      "native_maximum_initial_water_fraction": 1.0000000000000693
+    },
+    {
+      "hour": 14,
+      "native_volume_weighted_initial_water_fraction": 0.9154164984611498,
+      "native_cell_fraction_above_0_5": 0.9442891295176488,
+      "display_cell_mean_initial_water_fraction": 0.94473868541344,
+      "display_cell_fraction_above_0_5": 0.944501989411726,
+      "native_minimum_initial_water_fraction": 1.260346559571166e-102,
+      "native_maximum_initial_water_fraction": 1.0000000000000746
+    },
+    {
+      "hour": 15,
+      "native_volume_weighted_initial_water_fraction": 0.9093748196941523,
+      "native_cell_fraction_above_0_5": 0.9394178034031782,
+      "display_cell_mean_initial_water_fraction": 0.9399886583854228,
+      "display_cell_fraction_above_0_5": 0.9395695636447338,
+      "native_minimum_initial_water_fraction": 6.636720838480956e-110,
+      "native_maximum_initial_water_fraction": 1.00000000000008
+    },
+    {
+      "hour": 16,
+      "native_volume_weighted_initial_water_fraction": 0.903333140928003,
+      "native_cell_fraction_above_0_5": 0.9348108564196316,
+      "display_cell_mean_initial_water_fraction": 0.9352973471852288,
+      "display_cell_fraction_above_0_5": 0.935056394067936,
+      "native_minimum_initial_water_fraction": 3.4947581007333474e-117,
+      "native_maximum_initial_water_fraction": 1.0000000000000853
+    },
+    {
+      "hour": 17,
+      "native_volume_weighted_initial_water_fraction": 0.8972914621571604,
+      "native_cell_fraction_above_0_5": 0.9304851638306848,
+      "display_cell_mean_initial_water_fraction": 0.9306787481993174,
+      "display_cell_fraction_above_0_5": 0.9307980664890994,
+      "native_minimum_initial_water_fraction": 1.8402663724871697e-124,
+      "native_maximum_initial_water_fraction": 1.0000000000000906
+    },
+    {
+      "hour": 18,
+      "native_volume_weighted_initial_water_fraction": 0.891249783378761,
+      "native_cell_fraction_above_0_5": 0.9258838419350303,
+      "display_cell_mean_initial_water_fraction": 0.9261192919369957,
+      "display_cell_fraction_above_0_5": 0.9260218342047285,
+      "native_minimum_initial_water_fraction": 9.690457033339274e-132,
+      "native_maximum_initial_water_fraction": 1.000000000000096
+    },
+    {
+      "hour": 19,
+      "native_volume_weighted_initial_water_fraction": 0.885208104589317,
+      "native_cell_fraction_above_0_5": 0.9213556461819716,
+      "display_cell_mean_initial_water_fraction": 0.9215947901368357,
+      "display_cell_fraction_above_0_5": 0.9216237545624938,
+      "native_minimum_initial_water_fraction": 5.1027915805514336e-139,
+      "native_maximum_initial_water_fraction": 1.0000000000001013
+    },
+    {
+      "hour": 20,
+      "native_volume_weighted_initial_water_fraction": 0.8791664257846035,
+      "native_cell_fraction_above_0_5": 0.916557446210097,
+      "display_cell_mean_initial_water_fraction": 0.9170827512706244,
+      "display_cell_fraction_above_0_5": 0.9169297293742396,
+      "native_minimum_initial_water_fraction": 2.6870231016930583e-146,
+      "native_maximum_initial_water_fraction": 1.0000000000001066
+    },
+    {
+      "hour": 21,
+      "native_volume_weighted_initial_water_fraction": 0.8731247469614621,
+      "native_cell_fraction_above_0_5": 0.9117817465897905,
+      "display_cell_mean_initial_water_fraction": 0.9125664615968258,
+      "display_cell_fraction_above_0_5": 0.9120384071553056,
+      "native_minimum_initial_water_fraction": 1.4149300505532191e-153,
+      "native_maximum_initial_water_fraction": 1.000000000000112
+    },
+    {
+      "hour": 22,
+      "native_volume_weighted_initial_water_fraction": 0.867083068118595,
+      "native_cell_fraction_above_0_5": 0.9070791731120799,
+      "display_cell_mean_initial_water_fraction": 0.9080342804566401,
+      "display_cell_fraction_above_0_5": 0.9073937062247213,
+      "native_minimum_initial_water_fraction": 7.45072510428766e-161,
+      "native_maximum_initial_water_fraction": 1.0000000000001172
+    },
+    {
+      "hour": 23,
+      "native_volume_weighted_initial_water_fraction": 0.861041389255467,
+      "native_cell_fraction_above_0_5": 0.9023653494585853,
+      "display_cell_mean_initial_water_fraction": 0.9034795151904645,
+      "display_cell_fraction_above_0_5": 0.9028805366479234,
+      "native_minimum_initial_water_fraction": 3.9233956871548077e-168,
+      "native_maximum_initial_water_fraction": 1.0000000000001226
+    },
+    {
+      "hour": 24,
+      "native_volume_weighted_initial_water_fraction": 0.8549997103708792,
+      "native_cell_fraction_above_0_5": 0.8975221487835747,
+      "display_cell_mean_initial_water_fraction": 0.8989021481673153,
+      "display_cell_fraction_above_0_5": 0.897882345204038,
+      "native_minimum_initial_water_fraction": 2.065977942083346e-175,
+      "native_maximum_initial_water_fraction": 1.000000000000128
+    },
+    {
+      "hour": 25,
+      "native_volume_weighted_initial_water_fraction": 0.8489580314631985,
+      "native_cell_fraction_above_0_5": 0.8927858247785122,
+      "display_cell_mean_initial_water_fraction": 0.8943094424508095,
+      "display_cell_fraction_above_0_5": 0.8930814507908322,
+      "native_minimum_initial_water_fraction": 1.0879006854060712e-182,
+      "native_maximum_initial_water_fraction": 1.0000000000001332
+    },
+    {
+      "hour": 26,
+      "native_volume_weighted_initial_water_fraction": 0.8429163525322295,
+      "native_cell_fraction_above_0_5": 0.8879651244550696,
+      "display_cell_mean_initial_water_fraction": 0.8897136704931891,
+      "display_cell_fraction_above_0_5": 0.8882805563776265,
+      "native_minimum_initial_water_fraction": 5.728657006441809e-190,
+      "native_maximum_initial_water_fraction": 1.0000000000001386
+    },
+    {
+      "hour": 27,
+      "native_volume_weighted_initial_water_fraction": 0.8368746735809814,
+      "native_cell_fraction_above_0_5": 0.883268176065251,
+      "display_cell_mean_initial_water_fraction": 0.8851284213869949,
+      "display_cell_fraction_above_0_5": 0.8834221169971392,
+      "native_minimum_initial_water_fraction": 3.0165907180401604e-197,
+      "native_maximum_initial_water_fraction": 1.0000000000001439
+    },
+    {
+      "hour": 28,
+      "native_volume_weighted_initial_water_fraction": 0.8308329946158723,
+      "native_cell_fraction_above_0_5": 0.8785487273238645,
+      "display_cell_mean_initial_water_fraction": 0.8805654679178971,
+      "display_cell_fraction_above_0_5": 0.8788185196146131,
+      "native_minimum_initial_water_fraction": 1.5884734502228722e-204,
+      "native_maximum_initial_water_fraction": 1.0000000000001492
+    },
+    {
+      "hour": 29,
+      "native_volume_weighted_initial_water_fraction": 0.8247913156454625,
+      "native_cell_fraction_above_0_5": 0.8736661510336099,
+      "display_cell_mean_initial_water_fraction": 0.8760329436201861,
+      "display_cell_fraction_above_0_5": 0.8739518595245142,
+      "native_minimum_initial_water_fraction": 8.364568275613727e-212,
+      "native_maximum_initial_water_fraction": 1.0000000000001545
+    },
+    {
+      "hour": 30,
+      "native_volume_weighted_initial_water_fraction": 0.8187496366787305,
+      "native_cell_fraction_above_0_5": 0.8690029531711433,
+      "display_cell_mean_initial_water_fraction": 0.871534823302504,
+      "display_cell_fraction_above_0_5": 0.8694962349149978,
+      "native_minimum_initial_water_fraction": 4.4046063487927345e-219,
+      "native_maximum_initial_water_fraction": 1.0000000000001599
+    },
+    {
+      "hour": 31,
+      "native_volume_weighted_initial_water_fraction": 0.8127079577236327,
+      "native_cell_fraction_above_0_5": 0.8641710026719167,
+      "display_cell_mean_initial_water_fraction": 0.8670712081924724,
+      "display_cell_fraction_above_0_5": 0.864555588438394,
+      "native_minimum_initial_water_fraction": 2.319373391258713e-226,
+      "native_maximum_initial_water_fraction": 1.0000000000001652
+    },
+    {
+      "hour": 32,
+      "native_volume_weighted_initial_water_fraction": 0.8066662787860217,
+      "native_cell_fraction_above_0_5": 0.8595246800731261,
+      "display_cell_mean_initial_water_fraction": 0.862638683754831,
+      "display_cell_fraction_above_0_5": 0.8599355496366446,
+      "native_minimum_initial_water_fraction": 1.2213334182641356e-233,
+      "native_maximum_initial_water_fraction": 1.0000000000001705
+    },
+    {
+      "hour": 33,
+      "native_volume_weighted_initial_water_fraction": 0.8006245998687898,
+      "native_cell_fraction_above_0_5": 0.8551539867810435,
+      "display_cell_mean_initial_water_fraction": 0.8582306972936578,
+      "display_cell_fraction_above_0_5": 0.8556032356713031,
+      "native_minimum_initial_water_fraction": 6.43128581275671e-241,
+      "native_maximum_initial_water_fraction": 1.0000000000001759
+    },
+    {
+      "hour": 34,
+      "native_volume_weighted_initial_water_fraction": 0.7945829209713792,
+      "native_cell_fraction_above_0_5": 0.8508226691042048,
+      "display_cell_mean_initial_water_fraction": 0.8538386132748981,
+      "display_cell_fraction_above_0_5": 0.851238038867515,
+      "native_minimum_initial_water_fraction": 3.386580321707088e-248,
+      "native_maximum_initial_water_fraction": 1.0000000000001812
+    },
+    {
+      "hour": 35,
+      "native_volume_weighted_initial_water_fraction": 0.7885412420901023,
+      "native_cell_fraction_above_0_5": 0.846553227394178,
+      "display_cell_mean_initial_water_fraction": 0.8494536518335236,
+      "display_cell_fraction_above_0_5": 0.8471523461905232,
+      "native_minimum_initial_water_fraction": 1.7833022212486054e-255,
+      "native_maximum_initial_water_fraction": 1.0000000000001865
+    },
+    {
+      "hour": 36,
+      "native_volume_weighted_initial_water_fraction": 0.7824995632194756,
+      "native_cell_fraction_above_0_5": 0.8423794121783152,
+      "display_cell_mean_initial_water_fraction": 0.8450688991600163,
+      "display_cell_fraction_above_0_5": 0.8429762257078031,
+      "native_minimum_initial_water_fraction": 9.390495751499463e-263,
+      "native_maximum_initial_water_fraction": 1.0000000000001918
+    },
+    {
+      "hour": 37,
+      "native_volume_weighted_initial_water_fraction": 0.7764578843542005,
+      "native_cell_fraction_above_0_5": 0.8378568415131487,
+      "display_cell_mean_initial_water_fraction": 0.8406803305500785,
+      "display_cell_fraction_above_0_5": 0.8384137318733353,
+      "native_minimum_initial_water_fraction": 4.94483825614191e-270,
+      "native_maximum_initial_water_fraction": 1.0000000000001972
+    },
+    {
+      "hour": 38,
+      "native_volume_weighted_initial_water_fraction": 0.7704162054908938,
+      "native_cell_fraction_above_0_5": 0.8337336520883138,
+      "display_cell_mean_initial_water_fraction": 0.8362865353195732,
+      "display_cell_fraction_above_0_5": 0.8341389628752754,
+      "native_minimum_initial_water_fraction": 2.6038481914546615e-277,
+      "native_maximum_initial_water_fraction": 1.0000000000002025
+    },
+    {
+      "hour": 39,
+      "native_volume_weighted_initial_water_fraction": 0.7643745266287622,
+      "native_cell_fraction_above_0_5": 0.8291773308957953,
+      "display_cell_mean_initial_water_fraction": 0.8318877549501958,
+      "display_cell_fraction_above_0_5": 0.8296915589753707,
+      "native_minimum_initial_water_fraction": 1.371131886006655e-284,
+      "native_maximum_initial_water_fraction": 1.0000000000002078
+    },
+    {
+      "hour": 40,
+      "native_volume_weighted_initial_water_fraction": 0.7583328477689696,
+      "native_cell_fraction_above_0_5": 0.8244128814512727,
+      "display_cell_mean_initial_water_fraction": 0.8274851393856139,
+      "display_cell_fraction_above_0_5": 0.8249235474006116,
+      "native_minimum_initial_water_fraction": 7.220093149032189e-292,
+      "native_maximum_initial_water_fraction": 1.0000000000002132
+    },
+    {
+      "hour": 41,
+      "native_volume_weighted_initial_water_fraction": 0.7522911689131796,
+      "native_cell_fraction_above_0_5": 0.8194740542820982,
+      "display_cell_mean_initial_water_fraction": 0.8230806697864056,
+      "display_cell_fraction_above_0_5": 0.8202624050508039,
+      "native_minimum_initial_water_fraction": 3.80194973311623e-299,
+      "native_maximum_initial_water_fraction": 1.0000000000002185
+    },
+    {
+      "hour": 42,
+      "native_volume_weighted_initial_water_fraction": 0.7462494900621218,
+      "native_cell_fraction_above_0_5": 0.8149289832653636,
+      "display_cell_mean_initial_water_fraction": 0.8186774958159521,
+      "display_cell_fraction_above_0_5": 0.8156505869586663,
+      "native_minimum_initial_water_fraction": 2.0020270479585373e-306,
+      "native_maximum_initial_water_fraction": 1.0000000000002238
+    },
+    {
+      "hour": 43,
+      "native_volume_weighted_initial_water_fraction": 0.7402078112149089,
+      "native_cell_fraction_above_0_5": 0.8103445366333849,
+      "display_cell_mean_initial_water_fraction": 0.8142800872840392,
+      "display_cell_fraction_above_0_5": 0.8109976653184703,
+      "native_minimum_initial_water_fraction": 1.05422548486e-313,
+      "native_maximum_initial_water_fraction": 1.0000000000002292
+    },
+    {
+      "hour": 44,
+      "native_volume_weighted_initial_water_fraction": 0.7341661323693446,
+      "native_cell_fraction_above_0_5": 0.8057432147377303,
+      "display_cell_mean_initial_water_fraction": 0.8098937700882926,
+      "display_cell_fraction_above_0_5": 0.806278978001381,
+      "native_minimum_initial_water_fraction": 5.553e-321,
+      "native_maximum_initial_water_fraction": 1.0000000000002345
+    },
+    {
+      "hour": 45,
+      "native_volume_weighted_initial_water_fraction": 0.7281244535229402,
+      "native_cell_fraction_above_0_5": 0.8009787652932077,
+      "display_cell_mean_initial_water_fraction": 0.8055236326593244,
+      "display_cell_fraction_above_0_5": 0.8015027457170103,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000002398
+    },
+    {
+      "hour": 46,
+      "native_volume_weighted_initial_water_fraction": 0.7220827746740466,
+      "native_cell_fraction_above_0_5": 0.7965124455069611,
+      "display_cell_mean_initial_water_fraction": 0.8011731306107244,
+      "display_cell_fraction_above_0_5": 0.7970635625267173,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000002451
+    },
+    {
+      "hour": 47,
+      "native_volume_weighted_initial_water_fraction": 0.7160410958225196,
+      "native_cell_fraction_above_0_5": 0.7919898748417944,
+      "display_cell_mean_initial_water_fraction": 0.7968428708384404,
+      "display_cell_fraction_above_0_5": 0.7926737035940943,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000002505
+    },
+    {
+      "hour": 48,
+      "native_volume_weighted_initial_water_fraction": 0.7099994169696245,
+      "native_cell_fraction_above_0_5": 0.7874673041766278,
+      "display_cell_mean_initial_water_fraction": 0.7925300327960082,
+      "display_cell_fraction_above_0_5": 0.78793035414817,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000002558
+    },
+    {
+      "hour": 49,
+      "native_volume_weighted_initial_water_fraction": 0.703957738117278,
+      "native_cell_fraction_above_0_5": 0.7830684854450851,
+      "display_cell_mean_initial_water_fraction": 0.7882286777716877,
+      "display_cell_fraction_above_0_5": 0.7835815987636052,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000002611
+    },
+    {
+      "hour": 50,
+      "native_volume_weighted_initial_water_fraction": 0.6979160592671066,
+      "native_cell_fraction_above_0_5": 0.7789677963718183,
+      "display_cell_mean_initial_water_fraction": 0.7839308329564387,
+      "display_cell_fraction_above_0_5": 0.7796274374403999,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000002665
+    },
+    {
+      "hour": 51,
+      "native_volume_weighted_initial_water_fraction": 0.6918743804198614,
+      "native_cell_fraction_above_0_5": 0.7749571087048235,
+      "display_cell_mean_initial_water_fraction": 0.7796278893644462,
+      "display_cell_fraction_above_0_5": 0.7756568346979711,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000002718
+    },
+    {
+      "hour": 52,
+      "native_volume_weighted_initial_water_fraction": 0.6858327015755309,
+      "native_cell_fraction_above_0_5": 0.7709126705104767,
+      "display_cell_mean_initial_water_fraction": 0.7753117674574357,
+      "display_cell_fraction_above_0_5": 0.7714231692479695,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000002771
+    },
+    {
+      "hour": 53,
+      "native_volume_weighted_initial_water_fraction": 0.6797910227340345,
+      "native_cell_fraction_above_0_5": 0.766688229503586,
+      "display_cell_mean_initial_water_fraction": 0.770975557855611,
+      "display_cell_fraction_above_0_5": 0.7673128144421426,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000002824
+    },
+    {
+      "hour": 54,
+      "native_volume_weighted_initial_water_fraction": 0.6737493438960548,
+      "native_cell_fraction_above_0_5": 0.7624019125298833,
+      "display_cell_mean_initial_water_fraction": 0.7666137266156979,
+      "display_cell_fraction_above_0_5": 0.7629393969287429,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000002878
+    },
+    {
+      "hour": 55,
+      "native_volume_weighted_initial_water_fraction": 0.6677076650635276,
+      "native_cell_fraction_above_0_5": 0.7579637181830966,
+      "display_cell_mean_initial_water_fraction": 0.7622221731052203,
+      "display_cell_fraction_above_0_5": 0.7585659794153431,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000293
+    },
+    {
+      "hour": 56,
+      "native_volume_weighted_initial_water_fraction": 0.6616659862395854,
+      "native_cell_fraction_above_0_5": 0.753587399803122,
+      "display_cell_mean_initial_water_fraction": 0.7577983244836088,
+      "display_cell_fraction_above_0_5": 0.7542665482884483,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000002984
+    },
+    {
+      "hour": 57,
+      "native_volume_weighted_initial_water_fraction": 0.6556243074281172,
+      "native_cell_fraction_above_0_5": 0.7491604556321193,
+      "display_cell_mean_initial_water_fraction": 0.7533412058151263,
+      "display_cell_fraction_above_0_5": 0.7499506757423301,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003038
+    },
+    {
+      "hour": 58,
+      "native_volume_weighted_initial_water_fraction": 0.6495826286332721,
+      "native_cell_fraction_above_0_5": 0.7445253832091127,
+      "display_cell_mean_initial_water_fraction": 0.7488512949745999,
+      "display_cell_fraction_above_0_5": 0.7451662227483477,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000309
+    },
+    {
+      "hour": 59,
+      "native_volume_weighted_initial_water_fraction": 0.6435409498591461,
+      "native_cell_fraction_above_0_5": 0.7396315567430741,
+      "display_cell_mean_initial_water_fraction": 0.7443300669972811,
+      "display_cell_fraction_above_0_5": 0.7403406662063069,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003144
+    },
+    {
+      "hour": 60,
+      "native_volume_weighted_initial_water_fraction": 0.6374992711096583,
+      "native_cell_fraction_above_0_5": 0.7345071016734637,
+      "display_cell_mean_initial_water_fraction": 0.7397793483948881,
+      "display_cell_fraction_above_0_5": 0.7352438262470816,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003197
+    },
+    {
+      "hour": 61,
+      "native_volume_weighted_initial_water_fraction": 0.6314575923884462,
+      "native_cell_fraction_above_0_5": 0.7294220222190971,
+      "display_cell_mean_initial_water_fraction": 0.7352007420021928,
+      "display_cell_fraction_above_0_5": 0.7301387655782448,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000325
+    },
+    {
+      "hour": 62,
+      "native_volume_weighted_initial_water_fraction": 0.6254159136986372,
+      "native_cell_fraction_above_0_5": 0.7246125720714386,
+      "display_cell_mean_initial_water_fraction": 0.7305953349343621,
+      "display_cell_fraction_above_0_5": 0.7252474433593108,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003304
+    },
+    {
+      "hour": 63,
+      "native_volume_weighted_initial_water_fraction": 0.6193742350424638,
+      "native_cell_fraction_above_0_5": 0.7196512445506961,
+      "display_cell_mean_initial_water_fraction": 0.7259637154486104,
+      "display_cell_fraction_above_0_5": 0.7202492519154253,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003357
+    },
+    {
+      "hour": 64,
+      "native_volume_weighted_initial_water_fraction": 0.6133325564208809,
+      "native_cell_fraction_above_0_5": 0.7143974124595697,
+      "display_cell_mean_initial_water_fraction": 0.7213061470126135,
+      "display_cell_fraction_above_0_5": 0.7150455427312485,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000341
+    },
+    {
+      "hour": 65,
+      "native_volume_weighted_initial_water_fraction": 0.6072908778333481,
+      "native_cell_fraction_above_0_5": 0.7090704542258472,
+      "display_cell_mean_initial_water_fraction": 0.716622699456801,
+      "display_cell_fraction_above_0_5": 0.7098911578047417,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003464
+    },
+    {
+      "hour": 66,
+      "native_volume_weighted_initial_water_fraction": 0.6012491992779089,
+      "native_cell_fraction_above_0_5": 0.7039684995078048,
+      "display_cell_mean_initial_water_fraction": 0.7119132291641213,
+      "display_cell_fraction_above_0_5": 0.7047614350070698,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003517
+    },
+    {
+      "hour": 67,
+      "native_volume_weighted_initial_water_fraction": 0.5952075207515487,
+      "native_cell_fraction_above_0_5": 0.6987371677682463,
+      "display_cell_mean_initial_water_fraction": 0.7071772515233592,
+      "display_cell_fraction_above_0_5": 0.6994837394363882,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000357
+    },
+    {
+      "hour": 68,
+      "native_volume_weighted_initial_water_fraction": 0.5891658422507183,
+      "native_cell_fraction_above_0_5": 0.6936689635775559,
+      "display_cell_mean_initial_water_fraction": 0.7024138566579394,
+      "display_cell_fraction_above_0_5": 0.6944691065732794,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003624
+    },
+    {
+      "hour": 69,
+      "native_volume_weighted_initial_water_fraction": 0.5831241637718595,
+      "native_cell_fraction_above_0_5": 0.6887863872873013,
+      "display_cell_mean_initial_water_fraction": 0.6976218214919158,
+      "display_cell_fraction_above_0_5": 0.6896353293216271,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003677
+    },
+    {
+      "hour": 70,
+      "native_volume_weighted_initial_water_fraction": 0.5770824853118075,
+      "native_cell_fraction_above_0_5": 0.6838081845028828,
+      "display_cell_mean_initial_water_fraction": 0.6927999696380114,
+      "display_cell_fraction_above_0_5": 0.6846371378777416,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000373
+    },
+    {
+      "hour": 71,
+      "native_volume_weighted_initial_water_fraction": 0.57104080686802,
+      "native_cell_fraction_above_0_5": 0.6790549852341443,
+      "display_cell_mean_initial_water_fraction": 0.6879476840545518,
+      "display_cell_fraction_above_0_5": 0.6798937884318175,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003784
+    },
+    {
+      "hour": 72,
+      "native_volume_weighted_initial_water_fraction": 0.5649991284386359,
+      "native_cell_fraction_above_0_5": 0.6744761636900577,
+      "display_cell_mean_initial_water_fraction": 0.6830653703015566,
+      "display_cell_fraction_above_0_5": 0.6753477360165729,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003837
+    },
+    {
+      "hour": 73,
+      "native_volume_weighted_initial_water_fraction": 0.5589574500224215,
+      "native_cell_fraction_above_0_5": 0.6703135986499789,
+      "display_cell_mean_initial_water_fraction": 0.6781546644643242,
+      "display_cell_fraction_above_0_5": 0.6712291605011345,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000389
+    },
+    {
+      "hour": 74,
+      "native_volume_weighted_initial_water_fraction": 0.5529157716186419,
+      "native_cell_fraction_above_0_5": 0.6662860357193081,
+      "display_cell_mean_initial_water_fraction": 0.6732182836511782,
+      "display_cell_fraction_above_0_5": 0.6671845713722009,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003944
+    },
+    {
+      "hour": 75,
+      "native_volume_weighted_initial_water_fraction": 0.5468740932269256,
+      "native_cell_fraction_above_0_5": 0.6609590774855857,
+      "display_cell_mean_initial_water_fraction": 0.6682595695603198,
+      "display_cell_fraction_above_0_5": 0.6618904343822959,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000003997
+    },
+    {
+      "hour": 76,
+      "native_volume_weighted_initial_water_fraction": 0.5408324148471086,
+      "native_cell_fraction_above_0_5": 0.6554183659119673,
+      "display_cell_mean_initial_water_fraction": 0.6632818934060841,
+      "display_cell_fraction_above_0_5": 0.6561523790733617,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000405
+    },
+    {
+      "hour": 77,
+      "native_volume_weighted_initial_water_fraction": 0.5347907364791081,
+      "native_cell_fraction_above_0_5": 0.6497707776684011,
+      "display_cell_mean_initial_water_fraction": 0.6582881177312588,
+      "display_cell_fraction_above_0_5": 0.6504800894413206,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004103
+    },
+    {
+      "hour": 78,
+      "native_volume_weighted_initial_water_fraction": 0.5287490581228456,
+      "native_cell_fraction_above_0_5": 0.6437294332723948,
+      "display_cell_mean_initial_water_fraction": 0.6532802483899244,
+      "display_cell_fraction_above_0_5": 0.64451185426326,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004157
+    },
+    {
+      "hour": 79,
+      "native_volume_weighted_initial_water_fraction": 0.5227073797784557,
+      "native_cell_fraction_above_0_5": 0.6376093376459007,
+      "display_cell_mean_initial_water_fraction": 0.6482593061236196,
+      "display_cell_fraction_above_0_5": 0.6383627634737431,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000421
+    },
+    {
+      "hour": 80,
+      "native_volume_weighted_initial_water_fraction": 0.5166657014478119,
+      "native_cell_fraction_above_0_5": 0.6317536211503305,
+      "display_cell_mean_initial_water_fraction": 0.6432253609672253,
+      "display_cell_fraction_above_0_5": 0.6324027490052941,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004263
+    },
+    {
+      "hour": 81,
+      "native_volume_weighted_initial_water_fraction": 0.5106240231420447,
+      "native_cell_fraction_above_0_5": 0.6261341583462242,
+      "display_cell_mean_initial_water_fraction": 0.63817764103894,
+      "display_cell_fraction_above_0_5": 0.6267469007924764,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004317
+    },
+    {
+      "hour": 82,
+      "native_volume_weighted_initial_water_fraction": 0.504582344913501,
+      "native_cell_fraction_above_0_5": 0.6204696948389818,
+      "display_cell_mean_initial_water_fraction": 0.6331146506813343,
+      "display_cell_fraction_above_0_5": 0.6208773141297557,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000437
+    },
+    {
+      "hour": 83,
+      "native_volume_weighted_initial_water_fraction": 0.4985406669770203,
+      "native_cell_fraction_above_0_5": 0.6144621009703276,
+      "display_cell_mean_initial_water_fraction": 0.6280342840495116,
+      "display_cell_fraction_above_0_5": 0.6148350925651902,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004423
+    },
+    {
+      "hour": 84,
+      "native_volume_weighted_initial_water_fraction": 0.4924989901226368,
+      "native_cell_fraction_above_0_5": 0.6074307411053298,
+      "display_cell_mean_initial_water_fraction": 0.6229339637263565,
+      "display_cell_fraction_above_0_5": 0.6079050343625662,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004476
+    },
+    {
+      "hour": 85,
+      "native_volume_weighted_initial_water_fraction": 0.4864573169780478,
+      "native_cell_fraction_above_0_5": 0.6011868935452116,
+      "display_cell_mean_initial_water_fraction": 0.617810845299915,
+      "display_cell_fraction_above_0_5": 0.6016161915096511,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000453
+    },
+    {
+      "hour": 86,
+      "native_volume_weighted_initial_water_fraction": 0.4804156554881969,
+      "native_cell_fraction_above_0_5": 0.5956799324989452,
+      "display_cell_mean_initial_water_fraction": 0.6126621040629986,
+      "display_cell_fraction_above_0_5": 0.5961905231659597,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004583
+    },
+    {
+      "hour": 87,
+      "native_volume_weighted_initial_water_fraction": 0.4743740275731886,
+      "native_cell_fraction_above_0_5": 0.5905667276051189,
+      "display_cell_mean_initial_water_fraction": 0.6074852743255458,
+      "display_cell_fraction_above_0_5": 0.5909292690145014,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004636
+    },
+    {
+      "hour": 88,
+      "native_volume_weighted_initial_water_fraction": 0.46833248860796084,
+      "native_cell_fraction_above_0_5": 0.5859766558852482,
+      "display_cell_mean_initial_water_fraction": 0.6022785706011606,
+      "display_cell_fraction_above_0_5": 0.5864654236953734,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000469
+    },
+    {
+      "hour": 89,
+      "native_volume_weighted_initial_water_fraction": 0.46229116709314905,
+      "native_cell_fraction_above_0_5": 0.5815947124173815,
+      "display_cell_mean_initial_water_fraction": 0.5970411063146621,
+      "display_cell_fraction_above_0_5": 0.582108447601197,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004743
+    },
+    {
+      "hour": 90,
+      "native_volume_weighted_initial_water_fraction": 0.45625033779599866,
+      "native_cell_fraction_above_0_5": 0.5772240191252989,
+      "display_cell_mean_initial_water_fraction": 0.5917729501171123,
+      "display_cell_fraction_above_0_5": 0.5777268093781855,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004796
+    },
+    {
+      "hour": 91,
+      "native_volume_weighted_initial_water_fraction": 0.45021054370199637,
+      "native_cell_fraction_above_0_5": 0.5728983265363521,
+      "display_cell_mean_initial_water_fraction": 0.586475015117578,
+      "display_cell_fraction_above_0_5": 0.5735095853474071,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000485
+    },
+    {
+      "hour": 92,
+      "native_volume_weighted_initial_water_fraction": 0.4441727793545498,
+      "native_cell_fraction_above_0_5": 0.5686795106173534,
+      "display_cell_mean_initial_water_fraction": 0.5811488400499584,
+      "display_cell_fraction_above_0_5": 0.5691854920916773,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004903
+    },
+    {
+      "hour": 93,
+      "native_volume_weighted_initial_water_fraction": 0.43813873782671886,
+      "native_cell_fraction_above_0_5": 0.5641119392490508,
+      "display_cell_mean_initial_water_fraction": 0.5757963658234979,
+      "display_cell_fraction_above_0_5": 0.5646312189668212,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000004956
+    },
+    {
+      "hour": 94,
+      "native_volume_weighted_initial_water_fraction": 0.43211110512178996,
+      "native_cell_fraction_above_0_5": 0.5588637322458163,
+      "display_cell_mean_initial_water_fraction": 0.5704198153533818,
+      "display_cell_fraction_above_0_5": 0.5595014961691493,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000501
+    },
+    {
+      "hour": 95,
+      "native_volume_weighted_initial_water_fraction": 0.4260938626709478,
+      "native_cell_fraction_above_0_5": 0.5541555336802138,
+      "display_cell_mean_initial_water_fraction": 0.5650217451701697,
+      "display_cell_fraction_above_0_5": 0.5547499260136135,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005063
+    },
+    {
+      "hour": 96,
+      "native_volume_weighted_initial_water_fraction": 0.42009253834157556,
+      "native_cell_fraction_above_0_5": 0.5495317114329912,
+      "display_cell_mean_initial_water_fraction": 0.5596052692044109,
+      "display_cell_fraction_above_0_5": 0.5502778599848739,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005116
+    },
+    {
+      "hour": 97,
+      "native_volume_weighted_initial_water_fraction": 0.4141143382849663,
+      "native_cell_fraction_above_0_5": 0.5447278863732246,
+      "display_cell_mean_initial_water_fraction": 0.5541743857262902,
+      "display_cell_fraction_above_0_5": 0.5452221235737069,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000517
+    },
+    {
+      "hour": 98,
+      "native_volume_weighted_initial_water_fraction": 0.408168102782865,
+      "native_cell_fraction_above_0_5": 0.539997187456054,
+      "display_cell_mean_initial_water_fraction": 0.5487342949247017,
+      "display_cell_fraction_above_0_5": 0.540544539804676,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005222
+    },
+    {
+      "hour": 99,
+      "native_volume_weighted_initial_water_fraction": 0.4022640591707856,
+      "native_cell_fraction_above_0_5": 0.5355308676698073,
+      "display_cell_mean_initial_water_fraction": 0.5432915922711002,
+      "display_cell_fraction_above_0_5": 0.5363437571931209,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005276
+    },
+    {
+      "hour": 100,
+      "native_volume_weighted_initial_water_fraction": 0.39641338629165096,
+      "native_cell_fraction_above_0_5": 0.5310420475319927,
+      "display_cell_mean_initial_water_fraction": 0.537854259326278,
+      "display_cell_fraction_above_0_5": 0.5317483805202065,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000533
+    },
+    {
+      "hour": 101,
+      "native_volume_weighted_initial_water_fraction": 0.39062764500765706,
+      "native_cell_fraction_above_0_5": 0.5269188581071579,
+      "display_cell_mean_initial_water_fraction": 0.5324314320689946,
+      "display_cell_fraction_above_0_5": 0.5276215842951564,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005382
+    },
+    {
+      "hour": 102,
+      "native_volume_weighted_initial_water_fraction": 0.38491815555450043,
+      "native_cell_fraction_above_0_5": 0.5227562930670792,
+      "display_cell_mean_initial_water_fraction": 0.5270329845446421,
+      "display_cell_fraction_above_0_5": 0.5235358916181645,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005436
+    },
+    {
+      "hour": 103,
+      "native_volume_weighted_initial_water_fraction": 0.3792954078866389,
+      "native_cell_fraction_above_0_5": 0.5186274785543524,
+      "display_cell_mean_initial_water_fraction": 0.5216690043181483,
+      "display_cell_fraction_above_0_5": 0.5193844332642794,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000549
+    },
+    {
+      "hour": 104,
+      "native_volume_weighted_initial_water_fraction": 0.37376857637068184,
+      "native_cell_fraction_above_0_5": 0.5146449163268176,
+      "display_cell_mean_initial_water_fraction": 0.5163492479943584,
+      "display_cell_fraction_above_0_5": 0.5154878169083555,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005542
+    },
+    {
+      "hour": 105,
+      "native_volume_weighted_initial_water_fraction": 0.3683451824338581,
+      "native_cell_fraction_above_0_5": 0.5105611025172269,
+      "display_cell_mean_initial_water_fraction": 0.5110826529796295,
+      "display_cell_fraction_above_0_5": 0.5112870342968004,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005596
+    },
+    {
+      "hour": 106,
+      "native_volume_weighted_initial_water_fraction": 0.36303091787965197,
+      "native_cell_fraction_above_0_5": 0.506758543102236,
+      "display_cell_mean_initial_water_fraction": 0.5058769555962052,
+      "display_cell_fraction_above_0_5": 0.5074397421985466,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005649
+    },
+    {
+      "hour": 107,
+      "native_volume_weighted_initial_water_fraction": 0.35782961589371015,
+      "native_cell_fraction_above_0_5": 0.5027141049078891,
+      "display_cell_mean_initial_water_fraction": 0.5007384368096102,
+      "display_cell_fraction_above_0_5": 0.5035020222945644,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005702
+    },
+    {
+      "hour": 108,
+      "native_volume_weighted_initial_water_fraction": 0.35274334071823227,
+      "native_cell_fraction_above_0_5": 0.4986471663619744,
+      "display_cell_mean_initial_water_fraction": 0.4956717933789732,
+      "display_cell_fraction_above_0_5": 0.4995067574233008,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005755
+    },
+    {
+      "hour": 109,
+      "native_volume_weighted_initial_water_fraction": 0.3477725608702598,
+      "native_cell_fraction_above_0_5": 0.49481648150752355,
+      "display_cell_mean_initial_water_fraction": 0.4906801177202648,
+      "display_cell_fraction_above_0_5": 0.49559369964815364,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005809
+    },
+    {
+      "hour": 110,
+      "native_volume_weighted_initial_water_fraction": 0.3429163721567241,
+      "native_cell_fraction_above_0_5": 0.49120517508086065,
+      "display_cell_mean_initial_water_fraction": 0.485764963722225,
+      "display_cell_fraction_above_0_5": 0.49202591167669596,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005862
+    },
+    {
+      "hour": 111,
+      "native_volume_weighted_initial_water_fraction": 0.3381727422384003,
+      "native_cell_fraction_above_0_5": 0.4874701167205738,
+      "display_cell_mean_initial_water_fraction": 0.48092647556374085,
+      "display_cell_fraction_above_0_5": 0.48827726809378186,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005915
+    },
+    {
+      "hour": 112,
+      "native_volume_weighted_initial_water_fraction": 0.3335387552834005,
+      "native_cell_fraction_above_0_5": 0.4840950639853748,
+      "display_cell_mean_initial_water_fraction": 0.476163559306994,
+      "display_cell_fraction_above_0_5": 0.48481634934727563,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000005969
+    },
+    {
+      "hour": 113,
+      "native_volume_weighted_initial_water_fraction": 0.32901084163118754,
+      "native_cell_fraction_above_0_5": 0.4802475038672479,
+      "display_cell_mean_initial_water_fraction": 0.4714740805185384,
+      "display_cell_fraction_above_0_5": 0.4810841471835849,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006022
+    },
+    {
+      "hour": 114,
+      "native_volume_weighted_initial_water_fraction": 0.32458498271727426,
+      "native_cell_fraction_above_0_5": 0.4764843200675011,
+      "display_cell_mean_initial_water_fraction": 0.4668550743166649,
+      "display_cell_fraction_above_0_5": 0.4771382065699911,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006075
+    },
+    {
+      "hour": 115,
+      "native_volume_weighted_initial_water_fraction": 0.32025688578062805,
+      "native_cell_fraction_above_0_5": 0.4722992546758543,
+      "display_cell_mean_initial_water_fraction": 0.46230295681392153,
+      "display_cell_fraction_above_0_5": 0.47303607247377594,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006128
+    },
+    {
+      "hour": 116,
+      "native_volume_weighted_initial_water_fraction": 0.3160221262949007,
+      "native_cell_fraction_above_0_5": 0.46719729995781184,
+      "display_cell_mean_initial_water_fraction": 0.4578137290868699,
+      "display_cell_fraction_above_0_5": 0.46790634967610406,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006182
+    },
+    {
+      "hour": 117,
+      "native_volume_weighted_initial_water_fraction": 0.31187625878830705,
+      "native_cell_fraction_above_0_5": 0.46142595978062156,
+      "display_cell_mean_initial_water_fraction": 0.45338316678619234,
+      "display_cell_fraction_above_0_5": 0.4623244878497912,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006235
+    },
+    {
+      "hour": 118,
+      "native_volume_weighted_initial_water_fraction": 0.307814898785753,
+      "native_cell_fraction_above_0_5": 0.45479398115595554,
+      "display_cell_mean_initial_water_fraction": 0.44900699040185976,
+      "display_cell_fraction_above_0_5": 0.4556163888066818,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006288
+    },
+    {
+      "hour": 119,
+      "native_volume_weighted_initial_water_fraction": 0.30383377999400224,
+      "native_cell_fraction_above_0_5": 0.4482070032344255,
+      "display_cell_mean_initial_water_fraction": 0.44468101298179824,
+      "display_cell_fraction_above_0_5": 0.4492700009864852,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006342
+    },
+    {
+      "hour": 120,
+      "native_volume_weighted_initial_water_fraction": 0.29992879154434093,
+      "native_cell_fraction_above_0_5": 0.4426662916608072,
+      "display_cell_mean_initial_water_fraction": 0.4404012636583709,
+      "display_cell_fraction_above_0_5": 0.44347440071026933,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006395
+    },
+    {
+      "hour": 121,
+      "native_volume_weighted_initial_water_fraction": 0.2960960001648665,
+      "native_cell_fraction_above_0_5": 0.43773871466741665,
+      "display_cell_mean_initial_water_fraction": 0.4361640865683913,
+      "display_cell_fraction_above_0_5": 0.4384679885567722,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006448
+    },
+    {
+      "hour": 122,
+      "native_volume_weighted_initial_water_fraction": 0.2923316617107524,
+      "native_cell_fraction_above_0_5": 0.4326536352130502,
+      "display_cell_mean_initial_water_fraction": 0.4319662156311111,
+      "display_cell_fraction_above_0_5": 0.4332149551149255,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006501
+    },
+    {
+      "hour": 123,
+      "native_volume_weighted_initial_water_fraction": 0.28863222571790637,
+      "native_cell_fraction_above_0_5": 0.4277091829559837,
+      "display_cell_mean_initial_water_fraction": 0.4278048262256845,
+      "display_cell_fraction_above_0_5": 0.42847160566900133,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006555
+    },
+    {
+      "hour": 124,
+      "native_volume_weighted_initial_water_fraction": 0.28499433575002076,
+      "native_cell_fraction_above_0_5": 0.4227478554352412,
+      "display_cell_mean_initial_water_fraction": 0.4236775651902636,
+      "display_cell_fraction_above_0_5": 0.4235556213212324,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006608
+    },
+    {
+      "hour": 125,
+      "native_volume_weighted_initial_water_fraction": 0.28141482743479823,
+      "native_cell_fraction_above_0_5": 0.4176121501898467,
+      "display_cell_mean_initial_water_fraction": 0.41958256086618556,
+      "display_cell_fraction_above_0_5": 0.41839301568511394,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006661
+    },
+    {
+      "hour": 126,
+      "native_volume_weighted_initial_water_fraction": 0.27789072533303316,
+      "native_cell_fraction_above_0_5": 0.4125608212628322,
+      "display_cell_mean_initial_water_fraction": 0.4155184152205602,
+      "display_cell_fraction_above_0_5": 0.4133454999835586,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006715
+    },
+    {
+      "hour": 127,
+      "native_volume_weighted_initial_water_fraction": 0.2744192392007025,
+      "native_cell_fraction_above_0_5": 0.40755449303895375,
+      "display_cell_mean_initial_water_fraction": 0.41148418043216156,
+      "display_cell_fraction_above_0_5": 0.40828976357239155,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006768
+    },
+    {
+      "hour": 128,
+      "native_volume_weighted_initial_water_fraction": 0.2709977597932493,
+      "native_cell_fraction_above_0_5": 0.4019462804106314,
+      "display_cell_mean_initial_water_fraction": 0.40747932269338755,
+      "display_cell_fraction_above_0_5": 0.40255992897306897,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006821
+    },
+    {
+      "hour": 129,
+      "native_volume_weighted_initial_water_fraction": 0.26762385410156775,
+      "native_cell_fraction_above_0_5": 0.3959443116298692,
+      "display_cell_mean_initial_water_fraction": 0.4035036762971025,
+      "display_cell_fraction_above_0_5": 0.3965012659892802,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006875
+    },
+    {
+      "hour": 130,
+      "native_volume_weighted_initial_water_fraction": 0.26429525977098867,
+      "native_cell_fraction_above_0_5": 0.38946983546617914,
+      "display_cell_mean_initial_water_fraction": 0.39955739125913636,
+      "display_cell_fraction_above_0_5": 0.39015487816908356,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000006928
+    },
+    {
+      "hour": 131,
+      "native_volume_weighted_initial_water_fraction": 0.26100987841032086,
+      "native_cell_fraction_above_0_5": 0.383383490367037,
+      "display_cell_mean_initial_water_fraction": 0.39564087770876644,
+      "display_cell_fraction_above_0_5": 0.38415376015257635,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000698
+    },
+    {
+      "hour": 132,
+      "native_volume_weighted_initial_water_fraction": 0.2577657675272578,
+      "native_cell_fraction_above_0_5": 0.37780902826606666,
+      "display_cell_mean_initial_water_fraction": 0.3917547500322253,
+      "display_cell_fraction_above_0_5": 0.37874453322810825,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007034
+    },
+    {
+      "hour": 133,
+      "native_volume_weighted_initial_water_fraction": 0.25456113091437177,
+      "native_cell_fraction_above_0_5": 0.3723470679229363,
+      "display_cell_mean_initial_water_fraction": 0.3878997732958126,
+      "display_cell_fraction_above_0_5": 0.3734257341093683,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007088
+    },
+    {
+      "hour": 134,
+      "native_volume_weighted_initial_water_fraction": 0.25139430744308044,
+      "native_cell_fraction_above_0_5": 0.36709323583180986,
+      "display_cell_mean_initial_water_fraction": 0.38407681386293624,
+      "display_cell_fraction_above_0_5": 0.36795896221761865,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000714
+    },
+    {
+      "hour": 135,
+      "native_volume_weighted_initial_water_fraction": 0.24826375838513123,
+      "native_cell_fraction_above_0_5": 0.36145689776402756,
+      "display_cell_mean_initial_water_fraction": 0.38028679543437066,
+      "display_cell_fraction_above_0_5": 0.3623359968432475,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007194
+    },
+    {
+      "hour": 136,
+      "native_volume_weighted_initial_water_fraction": 0.24516805355116977,
+      "native_cell_fraction_above_0_5": 0.35428491070172974,
+      "display_cell_mean_initial_water_fraction": 0.37653066106816907,
+      "display_cell_fraction_above_0_5": 0.3549949031600408,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007248
+    },
+    {
+      "hour": 137,
+      "native_volume_weighted_initial_water_fraction": 0.242105856689256,
+      "native_cell_fraction_above_0_5": 0.34363661932217693,
+      "display_cell_mean_initial_water_fraction": 0.37280934114720343,
+      "display_cell_fraction_above_0_5": 0.3442586564072211,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.00000000000073
+    },
+    {
+      "hour": 138,
+      "native_volume_weighted_initial_water_fraction": 0.23907591069878517,
+      "native_cell_fraction_above_0_5": 0.33492335817747154,
+      "display_cell_mean_initial_water_fraction": 0.36912372680758304,
+      "display_cell_fraction_above_0_5": 0.33551182138042157,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007354
+    },
+    {
+      "hour": 139,
+      "native_volume_weighted_initial_water_fraction": 0.23607702326884256,
+      "native_cell_fraction_above_0_5": 0.32942764730698915,
+      "display_cell_mean_initial_water_fraction": 0.3654746480438711,
+      "display_cell_fraction_above_0_5": 0.33001216665022526,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007407
+    },
+    {
+      "hour": 140,
+      "native_volume_weighted_initial_water_fraction": 0.23310805353611772,
+      "native_cell_fraction_above_0_5": 0.3240444381943468,
+      "display_cell_mean_initial_water_fraction": 0.3618628555679696,
+      "display_cell_fraction_above_0_5": 0.32445496695274734,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000746
+    },
+    {
+      "hour": 141,
+      "native_volume_weighted_initial_water_fraction": 0.2301679002791961,
+      "native_cell_fraction_above_0_5": 0.3193868654197722,
+      "display_cell_mean_initial_water_fraction": 0.3582890055015098,
+      "display_cell_fraction_above_0_5": 0.31978560389332805,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007514
+    },
+    {
+      "hour": 142,
+      "native_volume_weighted_initial_water_fraction": 0.2272554920368338,
+      "native_cell_fraction_above_0_5": 0.3149992968640135,
+      "display_cell_mean_initial_water_fraction": 0.35475364609924864,
+      "display_cell_fraction_above_0_5": 0.3154286277991516,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007567
+    },
+    {
+      "hour": 143,
+      "native_volume_weighted_initial_water_fraction": 0.2243697793780862,
+      "native_cell_fraction_above_0_5": 0.3102742230347349,
+      "display_cell_mean_initial_water_fraction": 0.3512572058998816,
+      "display_cell_fraction_above_0_5": 0.31109631383381015,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000762
+    },
+    {
+      "hour": 144,
+      "native_volume_weighted_initial_water_fraction": 0.221509729384723,
+      "native_cell_fraction_above_0_5": 0.3060104064126002,
+      "display_cell_mean_initial_water_fraction": 0.3477999829447826,
+      "display_cell_fraction_above_0_5": 0.30681332412613854,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007674
+    },
+    {
+      "hour": 145,
+      "native_volume_weighted_initial_water_fraction": 0.21867432225194855,
+      "native_cell_fraction_above_0_5": 0.30221909717339335,
+      "display_cell_mean_initial_water_fraction": 0.344382134958482,
+      "display_cell_fraction_above_0_5": 0.3029742527374963,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007727
+    },
+    {
+      "hour": 146,
+      "native_volume_weighted_initial_water_fraction": 0.2158625497876773,
+      "native_cell_fraction_above_0_5": 0.29841091267051045,
+      "display_cell_mean_initial_water_fraction": 0.34100367061374853,
+      "display_cell_fraction_above_0_5": 0.29895432573739766,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000778
+    },
+    {
+      "hour": 147,
+      "native_volume_weighted_initial_water_fraction": 0.2130734155024667,
+      "native_cell_fraction_above_0_5": 0.29474898045281955,
+      "display_cell_mean_initial_water_fraction": 0.33766444218067465,
+      "display_cell_fraction_above_0_5": 0.2953043306698234,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007834
+    },
+    {
+      "hour": 148,
+      "native_volume_weighted_initial_water_fraction": 0.21030593593398683,
+      "native_cell_fraction_above_0_5": 0.2906932920826888,
+      "display_cell_mean_initial_water_fraction": 0.3343641399629795,
+      "display_cell_fraction_above_0_5": 0.29111176876788003,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007887
+    },
+    {
+      "hour": 149,
+      "native_volume_weighted_initial_water_fraction": 0.20755914283871818,
+      "native_cell_fraction_above_0_5": 0.28690198284348195,
+      "display_cell_mean_initial_water_fraction": 0.3311022889460358,
+      "display_cell_fraction_above_0_5": 0.2873055802176844,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000794
+    },
+    {
+      "hour": 150,
+      "native_volume_weighted_initial_water_fraction": 0.20483208590279706,
+      "native_cell_fraction_above_0_5": 0.28311067360427505,
+      "display_cell_mean_initial_water_fraction": 0.3278782480219589,
+      "display_cell_fraction_above_0_5": 0.2834993916674887,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000007994
+    },
+    {
+      "hour": 151,
+      "native_volume_weighted_initial_water_fraction": 0.20212383566534156,
+      "native_cell_fraction_above_0_5": 0.2795893685838841,
+      "display_cell_mean_initial_water_fraction": 0.3246912120309862,
+      "display_cell_fraction_above_0_5": 0.2799727072440893,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008047
+    },
+    {
+      "hour": 152,
+      "native_volume_weighted_initial_water_fraction": 0.19943348640269393,
+      "native_cell_fraction_above_0_5": 0.27656869638588105,
+      "display_cell_mean_initial_water_fraction": 0.32154021668825683,
+      "display_cell_fraction_above_0_5": 0.27699681036467066,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.00000000000081
+    },
+    {
+      "hour": 153,
+      "native_volume_weighted_initial_water_fraction": 0.19676015878332656,
+      "native_cell_fraction_above_0_5": 0.2738236534945859,
+      "display_cell_mean_initial_water_fraction": 0.31842414627944504,
+      "display_cell_fraction_above_0_5": 0.2742264312255434,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008153
+    },
+    {
+      "hour": 154,
+      "native_volume_weighted_initial_water_fraction": 0.194103002164663,
+      "native_cell_fraction_above_0_5": 0.27088173252707076,
+      "display_cell_mean_initial_water_fraction": 0.3153417438369298,
+      "display_cell_fraction_above_0_5": 0.27141494853835785,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008207
+    },
+    {
+      "hour": 155,
+      "native_volume_weighted_initial_water_fraction": 0.19146119646068474,
+      "native_cell_fraction_above_0_5": 0.26786106032906765,
+      "display_cell_mean_initial_water_fraction": 0.31229162337575217,
+      "display_cell_fraction_above_0_5": 0.2682992995955411,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000826
+    },
+    {
+      "hour": 156,
+      "native_volume_weighted_initial_water_fraction": 0.1888339535605754,
+      "native_cell_fraction_above_0_5": 0.26493601462522853,
+      "display_cell_mean_initial_water_fraction": 0.30927228369316,
+      "display_cell_fraction_above_0_5": 0.2653891683930157,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008313
+    },
+    {
+      "hour": 157,
+      "native_volume_weighted_initial_water_fraction": 0.1862205183230408,
+      "native_cell_fraction_above_0_5": 0.2619884685698214,
+      "display_cell_mean_initial_water_fraction": 0.306282123224469,
+      "display_cell_fraction_above_0_5": 0.26250369931932527,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008367
+    },
+    {
+      "hour": 158,
+      "native_volume_weighted_initial_water_fraction": 0.18362016920887117,
+      "native_cell_fraction_above_0_5": 0.2589565461960343,
+      "display_cell_mean_initial_water_fraction": 0.30331945549797484,
+      "display_cell_fraction_above_0_5": 0.25923185689388706,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000842
+    },
+    {
+      "hour": 159,
+      "native_volume_weighted_initial_water_fraction": 0.18103221864696376,
+      "native_cell_fraction_above_0_5": 0.2560427506679792,
+      "display_cell_mean_initial_water_fraction": 0.30038252483028094,
+      "display_cell_fraction_above_0_5": 0.2563710499490316,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008473
+    },
+    {
+      "hour": 160,
+      "native_volume_weighted_initial_water_fraction": 0.17845601325801758,
+      "native_cell_fraction_above_0_5": 0.25278019969062016,
+      "display_cell_mean_initial_water_fraction": 0.2974695220318848,
+      "display_cell_fraction_above_0_5": 0.2531403110716517,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008527
+    },
+    {
+      "hour": 161,
+      "native_volume_weighted_initial_water_fraction": 0.17589093408669634,
+      "native_cell_fraction_above_0_5": 0.2493320208128252,
+      "display_cell_mean_initial_water_fraction": 0.2945786000299286,
+      "display_cell_fraction_above_0_5": 0.24972871658281542,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000858
+    },
+    {
+      "hour": 162,
+      "native_volume_weighted_initial_water_fraction": 0.1733363970178317,
+      "native_cell_fraction_above_0_5": 0.2459513429897342,
+      "display_cell_mean_initial_water_fraction": 0.2917078894405402,
+      "display_cell_fraction_above_0_5": 0.2463828877708724,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008633
+    },
+    {
+      "hour": 163,
+      "native_volume_weighted_initial_water_fraction": 0.17079185357461985,
+      "native_cell_fraction_above_0_5": 0.2423400365630713,
+      "display_cell_mean_initial_water_fraction": 0.28885551422116734,
+      "display_cell_fraction_above_0_5": 0.24267534773601657,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008686
+    },
+    {
+      "hour": 164,
+      "native_volume_weighted_initial_water_fraction": 0.16825679231486226,
+      "native_cell_fraction_above_0_5": 0.2383349739839685,
+      "display_cell_mean_initial_water_fraction": 0.28601960759365114,
+      "display_cell_fraction_above_0_5": 0.23862253789747132,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.000000000000874
+    },
+    {
+      "hour": 165,
+      "native_volume_weighted_initial_water_fraction": 0.1657307410518131,
+      "native_cell_fraction_above_0_5": 0.23494304598509352,
+      "display_cell_mean_initial_water_fraction": 0.28319832844767784,
+      "display_cell_fraction_above_0_5": 0.23524382624708165,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008793
+    },
+    {
+      "hour": 166,
+      "native_volume_weighted_initial_water_fraction": 0.1632132701248996,
+      "native_cell_fraction_above_0_5": 0.23188299817184643,
+      "display_cell_mean_initial_water_fraction": 0.28038987841345964,
+      "display_cell_fraction_above_0_5": 0.2323254743349446,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008846
+    },
+    {
+      "hour": 167,
+      "native_volume_weighted_initial_water_fraction": 0.1607039969276933,
+      "native_cell_fraction_above_0_5": 0.22841794403037546,
+      "display_cell_mean_initial_water_fraction": 0.2775925197377956,
+      "display_cell_fraction_above_0_5": 0.22884811416921508,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.00000000000089
+    },
+    {
+      "hour": 168,
+      "native_volume_weighted_initial_water_fraction": 0.15820259186173843,
+      "native_cell_fraction_above_0_5": 0.22491351427366052,
+      "display_cell_mean_initial_water_fraction": 0.2748045940170946,
+      "display_cell_fraction_above_0_5": 0.22530498832659235,
+      "native_minimum_initial_water_fraction": 0.0,
+      "native_maximum_initial_water_fraction": 1.0000000000008953
+    }
+  ],
+  "hourly_inventory_ledger": [
+    {
+      "hour": 1,
+      "temperature_inventory_c_m3": 66159134910.73657,
+      "initial_water_inventory_m3": 4369451899.47152,
+      "cumulative_boundary_temperature_proxy_c_m3": -606670.3628790623,
+      "cumulative_continuity_compensation_c_m3": -89.27353614102451,
+      "cumulative_temperature_ledger_error_c_m3": -1.362967077511712e-05,
+      "cumulative_initial_water_ledger_error_m3": 4.342757165431976e-06
+    },
+    {
+      "hour": 2,
+      "temperature_inventory_c_m3": 66157176025.2584,
+      "initial_water_inventory_m3": 4342892614.476949,
+      "cumulative_boundary_temperature_proxy_c_m3": -2565466.358414498,
+      "cumulative_continuity_compensation_c_m3": -178.75616132145421,
+      "cumulative_temperature_ledger_error_c_m3": -2.5315571747341892e-05,
+      "cumulative_initial_water_ledger_error_m3": 2.88388691842556e-05
+    },
+    {
+      "hour": 3,
+      "temperature_inventory_c_m3": 66153804474.40344,
+      "initial_water_inventory_m3": 4316333328.783275,
+      "cumulative_boundary_temperature_proxy_c_m3": -5936927.5990232425,
+      "cumulative_continuity_compensation_c_m3": -268.37044988678446,
+      "cumulative_temperature_ledger_error_c_m3": -8.55865341691242e-05,
+      "cumulative_initial_water_ledger_error_m3": 4.543992690742016e-05
+    },
+    {
+      "hour": 4,
+      "temperature_inventory_c_m3": 66149376490.65366,
+      "initial_water_inventory_m3": 4289774042.292641,
+      "cumulative_boundary_temperature_proxy_c_m3": -10364821.702311857,
+      "cumulative_continuity_compensation_c_m3": -358.01697715631263,
+      "cumulative_temperature_ledger_error_c_m3": -4.844978457185789e-05,
+      "cumulative_initial_water_ledger_error_m3": 3.864639438688755e-05
+    },
+    {
+      "hour": 5,
+      "temperature_inventory_c_m3": 66144807951.486046,
+      "initial_water_inventory_m3": 4263214755.078781,
+      "cumulative_boundary_temperature_proxy_c_m3": -14933271.203759067,
+      "cumulative_continuity_compensation_c_m3": -447.68316242364364,
+      "cumulative_temperature_ledger_error_c_m3": -3.3770219943107804e-05,
+      "cumulative_initial_water_ledger_error_m3": 3.2837968319654465e-05
+    },
+    {
+      "hour": 6,
+      "temperature_inventory_c_m3": 66141240847.06584,
+      "initial_water_inventory_m3": 4236655467.4703336,
+      "cumulative_boundary_temperature_proxy_c_m3": -18500285.89678037,
+      "cumulative_continuity_compensation_c_m3": -537.4102902655062,
+      "cumulative_temperature_ledger_error_c_m3": -8.878524886313244e-05,
+      "cumulative_initial_water_ledger_error_m3": 3.9228470996022224e-05
+    },
+    {
+      "hour": 7,
+      "temperature_inventory_c_m3": 66139835561.88552,
+      "initial_water_inventory_m3": 4210096179.727102,
+      "cumulative_boundary_temperature_proxy_c_m3": -19905481.198279858,
+      "cumulative_continuity_compensation_c_m3": -627.289202706348,
+      "cumulative_temperature_ledger_error_c_m3": 2.396994204900693e-06,
+      "cumulative_initial_water_ledger_error_m3": 4.451582208275795e-05
+    },
+    {
+      "hour": 8,
+      "temperature_inventory_c_m3": 66141319866.52762,
+      "initial_water_inventory_m3": 4183536891.974321,
+      "cumulative_boundary_temperature_proxy_c_m3": -18421086.441575,
+      "cumulative_continuity_compensation_c_m3": -717.4037032586677,
+      "cumulative_temperature_ledger_error_c_m3": -0.00010443597375342506,
+      "cumulative_initial_water_ledger_error_m3": 4.5182183384895325e-05
+    },
+    {
+      "hour": 9,
+      "temperature_inventory_c_m3": 66145613697.05177,
+      "initial_water_inventory_m3": 4156977604.2844677,
+      "cumulative_boundary_temperature_proxy_c_m3": -14127165.629900316,
+      "cumulative_continuity_compensation_c_m3": -807.6912901442076,
+      "cumulative_temperature_ledger_error_c_m3": -3.757088370548445e-05,
+      "cumulative_initial_water_ledger_error_m3": 3.540609031915665e-05
+    },
+    {
+      "hour": 10,
+      "temperature_inventory_c_m3": 66151847863.13449,
+      "initial_water_inventory_m3": 4130418316.6319966,
+      "cumulative_boundary_temperature_proxy_c_m3": -7892909.2273224415,
+      "cumulative_continuity_compensation_c_m3": -898.0111168526107,
+      "cumulative_temperature_ledger_error_c_m3": -7.084299386406201e-05,
+      "cumulative_initial_water_ledger_error_m3": 4.8280926421284676e-05
+    },
+    {
+      "hour": 11,
+      "temperature_inventory_c_m3": 66158775711.638214,
+      "initial_water_inventory_m3": 4103859028.9905615,
+      "cumulative_boundary_temperature_proxy_c_m3": -964970.567024475,
+      "cumulative_continuity_compensation_c_m3": -988.167721213283,
+      "cumulative_temperature_ledger_error_c_m3": -4.1303188027086435e-05,
+      "cumulative_initial_water_ledger_error_m3": 4.5976368710398674e-05
+    },
+    {
+      "hour": 12,
+      "temperature_inventory_c_m3": 66165852392.64266,
+      "initial_water_inventory_m3": 4077299741.3822446,
+      "cumulative_boundary_temperature_proxy_c_m3": 6111800.386633923,
+      "cumulative_continuity_compensation_c_m3": -1078.116934690067,
+      "cumulative_temperature_ledger_error_c_m3": -3.828861326837796e-05,
+      "cumulative_initial_water_ledger_error_m3": 4.2007071897387505e-05
+    },
+    {
+      "hour": 13,
+      "temperature_inventory_c_m3": 66173469404.99168,
+      "initial_water_inventory_m3": 4050740453.8353705,
+      "cumulative_boundary_temperature_proxy_c_m3": 13728902.670188624,
+      "cumulative_continuity_compensation_c_m3": -1168.0514859691446,
+      "cumulative_temperature_ledger_error_c_m3": -2.742456081250566e-05,
+      "cumulative_initial_water_ledger_error_m3": 4.1036633774638176e-05
+    },
+    {
+      "hour": 14,
+      "temperature_inventory_c_m3": 66182084229.760414,
+      "initial_water_inventory_m3": 4024181166.355881,
+      "cumulative_boundary_temperature_proxy_c_m3": 22343817.63983721,
+      "cumulative_continuity_compensation_c_m3": -1258.2523588583138,
+      "cumulative_temperature_ledger_error_c_m3": -6.532909856105107e-05,
+      "cumulative_initial_water_ledger_error_m3": 3.390153869986534e-05
+    },
+    {
+      "hour": 15,
+      "temperature_inventory_c_m3": 66191692278.315186,
+      "initial_water_inventory_m3": 3997621878.9187417,
+      "cumulative_boundary_temperature_proxy_c_m3": 31951956.825392373,
+      "cumulative_continuity_compensation_c_m3": -1348.883213021519,
+      "cumulative_temperature_ledger_error_c_m3": 5.084417807665886e-06,
+      "cumulative_initial_water_ledger_error_m3": 2.678344026207924e-05
+    },
+    {
+      "hour": 16,
+      "temperature_inventory_c_m3": 66202671377.550156,
+      "initial_water_inventory_m3": 3971062591.485346,
+      "cumulative_boundary_temperature_proxy_c_m3": 42931147.20803239,
+      "cumulative_continuity_compensation_c_m3": -1440.0308485183762,
+      "cumulative_temperature_ledger_error_c_m3": -2.9331618407013593e-05,
+      "cumulative_initial_water_ledger_error_m3": 3.510434180498123e-05
+    },
+    {
+      "hour": 17,
+      "temperature_inventory_c_m3": 66215872333.35064,
+      "initial_water_inventory_m3": 3944503304.031311,
+      "cumulative_boundary_temperature_proxy_c_m3": 56132194.792946294,
+      "cumulative_continuity_compensation_c_m3": -1531.815362621315,
+      "cumulative_temperature_ledger_error_c_m3": 5.456308326756698e-05,
+      "cumulative_initial_water_ledger_error_m3": 3.7143006920814514e-05
+    },
+    {
+      "hour": 18,
+      "temperature_inventory_c_m3": 66231577068.952866,
+      "initial_water_inventory_m3": 3917944016.544079,
+      "cumulative_boundary_temperature_proxy_c_m3": 71837022.84503756,
+      "cumulative_continuity_compensation_c_m3": -1624.265054805274,
+      "cumulative_temperature_ledger_error_c_m3": -0.00011826221407318371,
+      "cumulative_initial_water_ledger_error_m3": 6.07222318649292e-05
+    },
+    {
+      "hour": 19,
+      "temperature_inventory_c_m3": 66249339822.43889,
+      "initial_water_inventory_m3": 3891384729.0082507,
+      "cumulative_boundary_temperature_proxy_c_m3": 89599869.36781791,
+      "cumulative_continuity_compensation_c_m3": -1717.3019125312455,
+      "cumulative_temperature_ledger_error_c_m3": -1.7951671452465234e-05,
+      "cumulative_initial_water_ledger_error_m3": 4.057842306792736e-05
+    },
+    {
+      "hour": 20,
+      "temperature_inventory_c_m3": 66268523886.79005,
+      "initial_water_inventory_m3": 3864825441.405333,
+      "cumulative_boundary_temperature_proxy_c_m3": 108784027.13777894,
+      "cumulative_continuity_compensation_c_m3": -1810.7205534548073,
+      "cumulative_temperature_ledger_error_c_m3": -0.00017990983133131522,
+      "cumulative_initial_water_ledger_error_m3": 5.6647928431630135e-05
+    },
+    {
+      "hour": 21,
+      "temperature_inventory_c_m3": 66288491855.24476,
+      "initial_water_inventory_m3": 3838266153.7213945,
+      "cumulative_boundary_temperature_proxy_c_m3": 128752089.1743187,
+      "cumulative_continuity_compensation_c_m3": -1904.3024294623776,
+      "cumulative_temperature_ledger_error_c_m3": -0.00013177256141716498,
+      "cumulative_initial_water_ledger_error_m3": 6.0260994359850883e-05
+    },
+    {
+      "hour": 22,
+      "temperature_inventory_c_m3": 66308602110.65805,
+      "initial_water_inventory_m3": 3811706865.950742,
+      "cumulative_boundary_temperature_proxy_c_m3": 148862438.1808004,
+      "cumulative_continuity_compensation_c_m3": -1997.8955777973315,
+      "cumulative_temperature_ledger_error_c_m3": -0.00017323224847132224,
+      "cumulative_initial_water_ledger_error_m3": 6.457720883190632e-05
+    },
+    {
+      "hour": 23,
+      "temperature_inventory_c_m3": 66328338902.56609,
+      "initial_water_inventory_m3": 3785147578.0910068,
+      "cumulative_boundary_temperature_proxy_c_m3": 168599323.58630082,
+      "cumulative_continuity_compensation_c_m3": -2091.3931130158,
+      "cumulative_temperature_ledger_error_c_m3": -9.549940978104132e-05,
+      "cumulative_initial_water_ledger_error_m3": 5.501811392605305e-05
+    },
+    {
+      "hour": 24,
+      "temperature_inventory_c_m3": 66347378976.93103,
+      "initial_water_inventory_m3": 3758588290.1369543,
+      "cumulative_boundary_temperature_proxy_c_m3": 187639491.30311176,
+      "cumulative_continuity_compensation_c_m3": -2184.7450269261158,
+      "cumulative_temperature_ledger_error_c_m3": -5.5675474413874326e-05,
+      "cumulative_initial_water_ledger_error_m3": 6.29243440926075e-05
+    },
+    {
+      "hour": 25,
+      "temperature_inventory_c_m3": 66365419404.18186,
+      "initial_water_inventory_m3": 3732029002.081368,
+      "cumulative_boundary_temperature_proxy_c_m3": 205680011.71623603,
+      "cumulative_continuity_compensation_c_m3": -2277.907350236086,
+      "cumulative_temperature_ledger_error_c_m3": -2.4944390588643728e-05,
+      "cumulative_initial_water_ledger_error_m3": 5.48770185559988e-05
+    },
+    {
+      "hour": 26,
+      "temperature_inventory_c_m3": 66382227414.102684,
+      "initial_water_inventory_m3": 3705469713.9234233,
+      "cumulative_boundary_temperature_proxy_c_m3": 222488114.5673646,
+      "cumulative_continuity_compensation_c_m3": -2370.837390504279,
+      "cumulative_temperature_ledger_error_c_m3": -0.0002910553807851102,
+      "cumulative_initial_water_ledger_error_m3": 6.296834908425808e-05
+    },
+    {
+      "hour": 27,
+      "temperature_inventory_c_m3": 66397958641.20391,
+      "initial_water_inventory_m3": 3678910425.6763225,
+      "cumulative_boundary_temperature_proxy_c_m3": 238219434.3710054,
+      "cumulative_continuity_compensation_c_m3": -2463.5400865234374,
+      "cumulative_temperature_ledger_error_c_m3": -8.95404764378327e-06,
+      "cumulative_initial_water_ledger_error_m3": 6.274087354540825e-05
+    },
+    {
+      "hour": 28,
+      "temperature_inventory_c_m3": 66412889632.97294,
+      "initial_water_inventory_m3": 3652351137.3682804,
+      "cumulative_boundary_temperature_proxy_c_m3": 253150518.65676427,
+      "cumulative_continuity_compensation_c_m3": -2556.056752551689,
+      "cumulative_temperature_ledger_error_c_m3": -7.408376359308022e-05,
+      "cumulative_initial_water_ledger_error_m3": 5.565187893807888e-05
+    },
+    {
+      "hour": 29,
+      "temperature_inventory_c_m3": 66427659694.83293,
+      "initial_water_inventory_m3": 3625791849.036957,
+      "cumulative_boundary_temperature_proxy_c_m3": 267920672.88723576,
+      "cumulative_continuity_compensation_c_m3": -2648.427460569523,
+      "cumulative_temperature_ledger_error_c_m3": 0.0001554149571347807,
+      "cumulative_initial_water_ledger_error_m3": 6.793555803596973e-05
+    },
+    {
+      "hour": 30,
+      "temperature_inventory_c_m3": 66442777063.93268,
+      "initial_water_inventory_m3": 3599232560.721802,
+      "cumulative_boundary_temperature_proxy_c_m3": 283038134.2719277,
+      "cumulative_continuity_compensation_c_m3": -2740.7123085826875,
+      "cumulative_temperature_ledger_error_c_m3": 5.828360053783399e-05,
+      "cumulative_initial_water_ledger_error_m3": 8.035101927816868e-05
+    },
+    {
+      "hour": 31,
+      "temperature_inventory_c_m3": 66458346638.45583,
+      "initial_water_inventory_m3": 3572673272.457778,
+      "cumulative_boundary_temperature_proxy_c_m3": 298607800.9217799,
+      "cumulative_continuity_compensation_c_m3": -2832.838855302974,
+      "cumulative_temperature_ledger_error_c_m3": -9.181393352264422e-05,
+      "cumulative_initial_water_ledger_error_m3": 8.081458508968353e-05
+    },
+    {
+      "hour": 32,
+      "temperature_inventory_c_m3": 66474414632.043365,
+      "initial_water_inventory_m3": 3546113984.2706165,
+      "cumulative_boundary_temperature_proxy_c_m3": 314675886.4289311,
+      "cumulative_continuity_compensation_c_m3": -2924.7584445446423,
+      "cumulative_temperature_ledger_error_c_m3": -0.0001217072926920082,
+      "cumulative_initial_water_ledger_error_m3": 7.072114385664463e-05
+    },
+    {
+      "hour": 33,
+      "temperature_inventory_c_m3": 66490637798.4533,
+      "initial_water_inventory_m3": 3519554696.1730514,
+      "cumulative_boundary_temperature_proxy_c_m3": 330899144.48493767,
+      "cumulative_continuity_compensation_c_m3": -3016.4044104167638,
+      "cumulative_temperature_ledger_error_c_m3": -0.00022735582706445712,
+      "cumulative_initial_water_ledger_error_m3": 7.243617437779903e-05
+    },
+    {
+      "hour": 34,
+      "temperature_inventory_c_m3": 66506519692.640305,
+      "initial_water_inventory_m3": 3492995408.1626024,
+      "cumulative_boundary_temperature_proxy_c_m3": 346781129.96863323,
+      "cumulative_continuity_compensation_c_m3": -3107.7013036107396,
+      "cumulative_temperature_ledger_error_c_m3": -2.5654058390500722e-05,
+      "cumulative_initial_water_ledger_error_m3": 5.235057324171066e-05
+    },
+    {
+      "hour": 35,
+      "temperature_inventory_c_m3": 66521493543.41235,
+      "initial_water_inventory_m3": 3466436120.223087,
+      "cumulative_boundary_temperature_proxy_c_m3": 361755071.68664104,
+      "cumulative_continuity_compensation_c_m3": -3198.6470693282286,
+      "cumulative_temperature_ledger_error_c_m3": -0.00021891257301831502,
+      "cumulative_initial_water_ledger_error_m3": 4.450022242963314e-05
+    },
+    {
+      "hour": 36,
+      "temperature_inventory_c_m3": 66534828515.20605,
+      "initial_water_inventory_m3": 3439876832.3303895,
+      "cumulative_boundary_temperature_proxy_c_m3": 375090134.0383492,
+      "cumulative_continuity_compensation_c_m3": -3289.2049480688966,
+      "cumulative_temperature_ledger_error_c_m3": -0.00035480476026350516,
+      "cumulative_initial_water_ledger_error_m3": 3.448082134127617e-05
+    },
+    {
+      "hour": 37,
+      "temperature_inventory_c_m3": 66546120128.26209,
+      "initial_water_inventory_m3": 3413317544.4612336,
+      "cumulative_boundary_temperature_proxy_c_m3": 386381837.22655857,
+      "cumulative_continuity_compensation_c_m3": -3379.3371646881587,
+      "cumulative_temperature_ledger_error_c_m3": -0.00030202053994798916,
+      "cumulative_initial_water_ledger_error_m3": 4.211091436445713e-05
+    },
+    {
+      "hour": 38,
+      "temperature_inventory_c_m3": 66555429094.02155,
+      "initial_water_inventory_m3": 3386758256.600729,
+      "cumulative_boundary_temperature_proxy_c_m3": 395690892.77233404,
+      "cumulative_continuity_compensation_c_m3": -3469.123629045217,
+      "cumulative_temperature_ledger_error_c_m3": -0.0001526640476186003,
+      "cumulative_initial_water_ledger_error_m3": 4.5144231989979744e-05
+    },
+    {
+      "hour": 39,
+      "temperature_inventory_c_m3": 66561881906.4746,
+      "initial_water_inventory_m3": 3360198968.7453694,
+      "cumulative_boundary_temperature_proxy_c_m3": 402143794.6325249,
+      "cumulative_continuity_compensation_c_m3": -3558.5304701730092,
+      "cumulative_temperature_ledger_error_c_m3": -0.0004536674164228316,
+      "cumulative_initial_water_ledger_error_m3": 2.893991768360138e-05
+    },
+    {
+      "hour": 40,
+      "temperature_inventory_c_m3": 66565343035.8489,
+      "initial_water_inventory_m3": 3333639680.90031,
+      "cumulative_boundary_temperature_proxy_c_m3": 405605012.9555875,
+      "cumulative_continuity_compensation_c_m3": -3647.479448703295,
+      "cumulative_temperature_ledger_error_c_m3": -0.00023956536415425944,
+      "cumulative_initial_water_ledger_error_m3": 3.162655048072338e-05
+    },
+    {
+      "hour": 41,
+      "temperature_inventory_c_m3": 66567271769.72777,
+      "initial_water_inventory_m3": 3307080393.0728455,
+      "cumulative_boundary_temperature_proxy_c_m3": 407533835.6374546,
+      "cumulative_continuity_compensation_c_m3": -3736.2824137677308,
+      "cumulative_temperature_ledger_error_c_m3": -0.00027302336047796416,
+      "cumulative_initial_water_ledger_error_m3": 3.348337486386299e-05
+    },
+    {
+      "hour": 42,
+      "temperature_inventory_c_m3": 66569679854.80381,
+      "initial_water_inventory_m3": 3280521105.2661886,
+      "cumulative_boundary_temperature_proxy_c_m3": 409942009.711595,
+      "cumulative_continuity_compensation_c_m3": -3825.2806274193335,
+      "cumulative_temperature_ledger_error_c_m3": -0.00015759631742184865,
+      "cumulative_initial_water_ledger_error_m3": 3.940099850296974e-05
+    },
+    {
+      "hour": 43,
+      "temperature_inventory_c_m3": 66574939909.910286,
+      "initial_water_inventory_m3": 3253961817.476421,
+      "cumulative_boundary_temperature_proxy_c_m3": 415202154.37149256,
+      "cumulative_continuity_compensation_c_m3": -3914.8341314100994,
+      "cumulative_temperature_ledger_error_c_m3": -7.528518426624942e-05,
+      "cumulative_initial_water_ledger_error_m3": 3.270478919148445e-05
+    },
+    {
+      "hour": 44,
+      "temperature_inventory_c_m3": 66584495499.91568,
+      "initial_water_inventory_m3": 3227402529.693883,
+      "cumulative_boundary_temperature_proxy_c_m3": 424757834.66278434,
+      "cumulative_continuity_compensation_c_m3": -4005.1197112028212,
+      "cumulative_temperature_ledger_error_c_m3": -0.00039320186579061556,
+      "cumulative_initial_water_ledger_error_m3": 8.630333468317986e-06
+    },
+    {
+      "hour": 45,
+      "temperature_inventory_c_m3": 66597656523.72214,
+      "initial_water_inventory_m3": 3200843241.9076905,
+      "cumulative_boundary_temperature_proxy_c_m3": 437918949.2405131,
+      "cumulative_continuity_compensation_c_m3": -4095.8910847869474,
+      "cumulative_temperature_ledger_error_c_m3": -0.000290821575163136,
+      "cumulative_initial_water_ledger_error_m3": 2.3295637220144272e-05
+    },
+    {
+      "hour": 46,
+      "temperature_inventory_c_m3": 66612023034.08049,
+      "initial_water_inventory_m3": 3174283954.110539,
+      "cumulative_boundary_temperature_proxy_c_m3": 452285550.30640787,
+      "cumulative_continuity_compensation_c_m3": -4186.5987027845595,
+      "cumulative_temperature_ledger_error_c_m3": -0.0002149718707187276,
+      "cumulative_initial_water_ledger_error_m3": 2.23678071051836e-05
+    },
+    {
+      "hour": 47,
+      "temperature_inventory_c_m3": 66625279464.27572,
+      "initial_water_inventory_m3": 3147724666.301824,
+      "cumulative_boundary_temperature_proxy_c_m3": 465542070.69238126,
+      "cumulative_continuity_compensation_c_m3": -4276.789998357517,
+      "cumulative_temperature_ledger_error_c_m3": 0.00033573348673598957,
+      "cumulative_initial_water_ledger_error_m3": 3.1313858926296234e-05
+    },
+    {
+      "hour": 48,
+      "temperature_inventory_c_m3": 66635717426.245285,
+      "initial_water_inventory_m3": 3121165378.487066,
+      "cumulative_boundary_temperature_proxy_c_m3": 475980122.1505802,
+      "cumulative_continuity_compensation_c_m3": -4366.278418125913,
+      "cumulative_temperature_ledger_error_c_m3": 0.00012272191133888555,
+      "cumulative_initial_water_ledger_error_m3": 1.4207791537046432e-05
+    },
+    {
+      "hour": 49,
+      "temperature_inventory_c_m3": 66642298320.97744,
+      "initial_water_inventory_m3": 3094606090.67472,
+      "cumulative_boundary_temperature_proxy_c_m3": 482561105.7168573,
+      "cumulative_continuity_compensation_c_m3": -4455.111877454376,
+      "cumulative_temperature_ledger_error_c_m3": -0.0005399111901169817,
+      "cumulative_initial_water_ledger_error_m3": -4.021450877189636e-06
+    },
+    {
+      "hour": 50,
+      "temperature_inventory_c_m3": 66644638536.66602,
+      "initial_water_inventory_m3": 3068046802.871965,
+      "cumulative_boundary_temperature_proxy_c_m3": 484901409.76362133,
+      "cumulative_continuity_compensation_c_m3": -4543.470434825074,
+      "cumulative_temperature_ledger_error_c_m3": -0.00016316277606165386,
+      "cumulative_initial_water_ledger_error_m3": 8.693430572748184e-06
+    },
+    {
+      "hour": 51,
+      "temperature_inventory_c_m3": 66642993129.067726,
+      "initial_water_inventory_m3": 3041487515.08207,
+      "cumulative_boundary_temperature_proxy_c_m3": 483256090.2540532,
+      "cumulative_continuity_compensation_c_m3": -4631.558815945124,
+      "cumulative_temperature_ledger_error_c_m3": -0.0005109385897412722,
+      "cumulative_initial_water_ledger_error_m3": 1.5043653547763824e-05
+    },
+    {
+      "hour": 52,
+      "temperature_inventory_c_m3": 66638171143.509995,
+      "initial_water_inventory_m3": 3014928227.3049912,
+      "cumulative_boundary_temperature_proxy_c_m3": 478434192.70449287,
+      "cumulative_continuity_compensation_c_m3": -4719.567285021272,
+      "cumulative_temperature_ledger_error_c_m3": -0.00021298186811691266,
+      "cumulative_initial_water_ledger_error_m3": 2.599344588816166e-05
+    },
+    {
+      "hour": 53,
+      "temperature_inventory_c_m3": 66631109070.54071,
+      "initial_water_inventory_m3": 2988368939.540382,
+      "cumulative_boundary_temperature_proxy_c_m3": 471372207.79066455,
+      "cumulative_continuity_compensation_c_m3": -4807.62306521897,
+      "cumulative_temperature_ledger_error_c_m3": 0.00011139510706925648,
+      "cumulative_initial_water_ledger_error_m3": 4.916219040751457e-05
+    },
+    {
+      "hour": 54,
+      "temperature_inventory_c_m3": 66622653622.40054,
+      "initial_water_inventory_m3": 2961809651.7912087,
+      "cumulative_boundary_temperature_proxy_c_m3": 462916847.8448615,
+      "cumulative_continuity_compensation_c_m3": -4895.816870505398,
+      "cumulative_temperature_ledger_error_c_m3": -0.00044750664574166876,
+      "cumulative_initial_water_ledger_error_m3": 4.757009446620941e-05
+    },
+    {
+      "hour": 55,
+      "temperature_inventory_c_m3": 66614202553.18093,
+      "initial_water_inventory_m3": 2935250364.065976,
+      "cumulative_boundary_temperature_proxy_c_m3": 454465867.08013225,
+      "cumulative_continuity_compensation_c_m3": -4984.272280523206,
+      "cumulative_temperature_ledger_error_c_m3": 7.981285261848825e-05,
+      "cumulative_initial_water_ledger_error_m3": 1.69223640114069e-05
+    },
+    {
+      "hour": 56,
+      "temperature_inventory_c_m3": 66606940607.507996,
+      "initial_water_inventory_m3": 2908691076.378531,
+      "cumulative_boundary_temperature_proxy_c_m3": 447204010.2878895,
+      "cumulative_continuity_compensation_c_m3": -5073.152535110994,
+      "cumulative_temperature_ledger_error_c_m3": -0.0003582388530958269,
+      "cumulative_initial_water_ledger_error_m3": 3.351503983139992e-05
+    },
+    {
+      "hour": 57,
+      "temperature_inventory_c_m3": 66601480040.31879,
+      "initial_water_inventory_m3": 2882131788.7459097,
+      "cumulative_boundary_temperature_proxy_c_m3": 441743532.42804193,
+      "cumulative_continuity_compensation_c_m3": -5162.4822473930035,
+      "cumulative_temperature_ledger_error_c_m3": -7.387345704046311e-06,
+      "cumulative_initial_water_ledger_error_m3": 3.9249658584594727e-05
+    },
+    {
+      "hour": 58,
+      "temperature_inventory_c_m3": 66598262950.900734,
+      "initial_water_inventory_m3": 2855572501.1863403,
+      "cumulative_boundary_temperature_proxy_c_m3": 438526532.76221323,
+      "cumulative_continuity_compensation_c_m3": -5252.234367655017,
+      "cumulative_temperature_ledger_error_c_m3": -0.00011100875462943804,
+      "cumulative_initial_water_ledger_error_m3": 2.2272812202572823e-05
+    },
+    {
+      "hour": 59,
+      "temperature_inventory_c_m3": 66596791723.5046,
+      "initial_water_inventory_m3": 2829013213.7179017,
+      "cumulative_boundary_temperature_proxy_c_m3": 437055395.3966289,
+      "cumulative_continuity_compensation_c_m3": -5342.265103760591,
+      "cumulative_temperature_ledger_error_c_m3": 7.59837125769991e-05,
+      "cumulative_initial_water_ledger_error_m3": 5.285325460135937e-05
+    },
+    {
+      "hour": 60,
+      "temperature_inventory_c_m3": 66596365695.87735,
+      "initial_water_inventory_m3": 2802453926.3577247,
+      "cumulative_boundary_temperature_proxy_c_m3": 436629457.86095613,
+      "cumulative_continuity_compensation_c_m3": -5432.357197264428,
+      "cumulative_temperature_ledger_error_c_m3": 0.0005915361400923302,
+      "cumulative_initial_water_ledger_error_m3": 3.723963163793087e-05
+    },
+    {
+      "hour": 61,
+      "temperature_inventory_c_m3": 66596605486.18812,
+      "initial_water_inventory_m3": 2775894639.1218686,
+      "cumulative_boundary_temperature_proxy_c_m3": 436869338.2150914,
+      "cumulative_continuity_compensation_c_m3": -5522.399677829988,
+      "cumulative_temperature_ledger_error_c_m3": -0.0002955090229477264,
+      "cumulative_initial_water_ledger_error_m3": 3.971601836383343e-05
+    },
+    {
+      "hour": 62,
+      "temperature_inventory_c_m3": 66597400160.911476,
+      "initial_water_inventory_m3": 2749335352.0240583,
+      "cumulative_boundary_temperature_proxy_c_m3": 437664102.92159295,
+      "cumulative_continuity_compensation_c_m3": -5612.382932934585,
+      "cumulative_temperature_ledger_error_c_m3": -0.0001837618100068994,
+      "cumulative_initial_water_ledger_error_m3": 4.408974200487137e-05
+    },
+    {
+      "hour": 63,
+      "temperature_inventory_c_m3": 66598517645.091225,
+      "initial_water_inventory_m3": 2722776065.074101,
+      "cumulative_boundary_temperature_proxy_c_m3": 438781677.07512677,
+      "cumulative_continuity_compensation_c_m3": -5702.3563041937905,
+      "cumulative_temperature_ledger_error_c_m3": -0.0005977782192019276,
+      "cumulative_initial_water_ledger_error_m3": 3.5121338441967964e-05
+    },
+    {
+      "hour": 64,
+      "temperature_inventory_c_m3": 66599625508.79328,
+      "initial_water_inventory_m3": 2696216778.276202,
+      "cumulative_boundary_temperature_proxy_c_m3": 439889630.76585263,
+      "cumulative_continuity_compensation_c_m3": -5792.345612013052,
+      "cumulative_temperature_ledger_error_c_m3": 4.092430131663605e-05,
+      "cumulative_initial_water_ledger_error_m3": 2.4564331397414207e-05
+    },
+    {
+      "hour": 65,
+      "temperature_inventory_c_m3": 66600897113.15328,
+      "initial_water_inventory_m3": 2669657491.628036,
+      "cumulative_boundary_temperature_proxy_c_m3": 441161325.28381294,
+      "cumulative_continuity_compensation_c_m3": -5882.502915409313,
+      "cumulative_temperature_ledger_error_c_m3": -0.0006150581310464531,
+      "cumulative_initial_water_ledger_error_m3": 6.19315542280674e-05
+    },
+    {
+      "hour": 66,
+      "temperature_inventory_c_m3": 66602590300.49808,
+      "initial_water_inventory_m3": 2643098205.120876,
+      "cumulative_boundary_temperature_proxy_c_m3": 442854603.05235326,
+      "cumulative_continuity_compensation_c_m3": -5972.927492240248,
+      "cumulative_temperature_ledger_error_c_m3": 0.00021672002290529235,
+      "cumulative_initial_water_ledger_error_m3": 2.2996915504336357e-05
+    },
+    {
+      "hour": 67,
+      "temperature_inventory_c_m3": 66604092932.73646,
+      "initial_water_inventory_m3": 2616538918.741588,
+      "cumulative_boundary_temperature_proxy_c_m3": 444357325.9001941,
+      "cumulative_continuity_compensation_c_m3": -6063.536630018002,
+      "cumulative_temperature_ledger_error_c_m3": -0.00010591995564368517,
+      "cumulative_initial_water_ledger_error_m3": 2.3792730644345284e-05
+    },
+    {
+      "hour": 68,
+      "temperature_inventory_c_m3": 66604714249.05105,
+      "initial_water_inventory_m3": 2589979632.474501,
+      "cumulative_boundary_temperature_proxy_c_m3": 444978732.86525714,
+      "cumulative_continuity_compensation_c_m3": -6154.187191336122,
+      "cumulative_temperature_ledger_error_c_m3": -1.7345029704074477e-05,
+      "cumulative_initial_water_ledger_error_m3": -4.2729079723358154e-06
+    },
+    {
+      "hour": 69,
+      "temperature_inventory_c_m3": 66604445343.32405,
+      "initial_water_inventory_m3": 2563420346.304058,
+      "cumulative_boundary_temperature_proxy_c_m3": 444709917.86507446,
+      "cumulative_continuity_compensation_c_m3": -6244.913152887387,
+      "cumulative_temperature_ledger_error_c_m3": -0.0008705563990076826,
+      "cumulative_initial_water_ledger_error_m3": 2.6420224457979202e-05
+    },
+    {
+      "hour": 70,
+      "temperature_inventory_c_m3": 66603215255.142166,
+      "initial_water_inventory_m3": 2536861060.2162704,
+      "cumulative_boundary_temperature_proxy_c_m3": 443479920.50671905,
+      "cumulative_continuity_compensation_c_m3": -6335.737813162674,
+      "cumulative_temperature_ledger_error_c_m3": 0.0002604228908751338,
+      "cumulative_initial_water_ledger_error_m3": 3.621308133006096e-05
+    },
+    {
+      "hour": 71,
+      "temperature_inventory_c_m3": 66600905196.20129,
+      "initial_water_inventory_m3": 2510301774.1999965,
+      "cumulative_boundary_temperature_proxy_c_m3": 441169952.50762063,
+      "cumulative_continuity_compensation_c_m3": -6426.678732637397,
+      "cumulative_temperature_ledger_error_c_m3": -0.0006015658758258269,
+      "cumulative_initial_water_ledger_error_m3": 6.0161808505654335e-05
+    },
+    {
+      "hour": 72,
+      "temperature_inventory_c_m3": 66597233567.261955,
+      "initial_water_inventory_m3": 2483742488.246997,
+      "cumulative_boundary_temperature_proxy_c_m3": 437498414.6587883,
+      "cumulative_continuity_compensation_c_m3": -6517.7699138152175,
+      "cumulative_temperature_ledger_error_c_m3": 8.080458488279874e-05,
+      "cumulative_initial_water_ledger_error_m3": 3.837700933218002e-05
+    },
+    {
+      "hour": 73,
+      "temperature_inventory_c_m3": 66591802534.84781,
+      "initial_water_inventory_m3": 2457183202.351938,
+      "cumulative_boundary_temperature_proxy_c_m3": 432067473.4587591,
+      "cumulative_continuity_compensation_c_m3": -6608.984217436415,
+      "cumulative_temperature_ledger_error_c_m3": 0.0002671576336581438,
+      "cumulative_initial_water_ledger_error_m3": 6.992276757955551e-05
+    },
+    {
+      "hour": 74,
+      "temperature_inventory_c_m3": 66584663132.19357,
+      "initial_water_inventory_m3": 2430623916.5115047,
+      "cumulative_boundary_temperature_proxy_c_m3": 424928162.15145916,
+      "cumulative_continuity_compensation_c_m3": -6700.329688243358,
+      "cumulative_temperature_ledger_error_c_m3": -0.0011979334406930775,
+      "cumulative_initial_water_ledger_error_m3": 5.835690535604954e-05
+    },
+    {
+      "hour": 75,
+      "temperature_inventory_c_m3": 66575879931.26767,
+      "initial_water_inventory_m3": 2404064630.724107,
+      "cumulative_boundary_temperature_proxy_c_m3": 416145052.73342323,
+      "cumulative_continuity_compensation_c_m3": -6791.8385819511,
+      "cumulative_temperature_ledger_error_c_m3": -0.00017162021262606686,
+      "cumulative_initial_water_ledger_error_m3": 5.525536835193634e-05
+    },
+    {
+      "hour": 76,
+      "temperature_inventory_c_m3": 66565532026.24895,
+      "initial_water_inventory_m3": 2377505344.988999,
+      "cumulative_boundary_temperature_proxy_c_m3": 405797239.3721461,
+      "cumulative_continuity_compensation_c_m3": -6883.496211954292,
+      "cumulative_temperature_ledger_error_c_m3": 1.2996967285516803e-05,
+      "cumulative_initial_water_ledger_error_m3": 2.988707274198532e-05
+    },
+    {
+      "hour": 77,
+      "temperature_inventory_c_m3": 66553671810.56864,
+      "initial_water_inventory_m3": 2350946059.305849,
+      "cumulative_boundary_temperature_proxy_c_m3": 393937115.4809895,
+      "cumulative_continuity_compensation_c_m3": -6975.28363454716,
+      "cumulative_temperature_ledger_error_c_m3": -0.0017131650705266566,
+      "cumulative_initial_water_ledger_error_m3": 1.9367551431059837e-05
+    },
+    {
+      "hour": 78,
+      "temperature_inventory_c_m3": 66539965669.72858,
+      "initial_water_inventory_m3": 2324386773.6743555,
+      "cumulative_boundary_temperature_proxy_c_m3": 380231066.4684018,
+      "cumulative_continuity_compensation_c_m3": -7067.113418786952,
+      "cumulative_temperature_ledger_error_c_m3": 0.0005939038352664738,
+      "cumulative_initial_water_ledger_error_m3": 6.223609670996666e-05
+    },
+    {
+      "hour": 79,
+      "temperature_inventory_c_m3": 66524143838.53526,
+      "initial_water_inventory_m3": 2297827488.0949826,
+      "cumulative_boundary_temperature_proxy_c_m3": 364409327.0055561,
+      "cumulative_continuity_compensation_c_m3": -7158.8428808919525,
+      "cumulative_temperature_ledger_error_c_m3": -0.00041199707206374114,
+      "cumulative_initial_water_ledger_error_m3": 3.589363768696785e-05
+    },
+    {
+      "hour": 80,
+      "temperature_inventory_c_m3": 66506269213.419655,
+      "initial_water_inventory_m3": 2271268202.576092,
+      "cumulative_boundary_temperature_proxy_c_m3": 346534793.4194074,
+      "cumulative_continuity_compensation_c_m3": -7250.372883823319,
+      "cumulative_temperature_ledger_error_c_m3": 0.00013150345753842885,
+      "cumulative_initial_water_ledger_error_m3": 6.152852438390255e-05
+    },
+    {
+      "hour": 81,
+      "temperature_inventory_c_m3": 66486610804.951614,
+      "initial_water_inventory_m3": 2244708917.166491,
+      "cumulative_boundary_temperature_proxy_c_m3": 326876476.2423143,
+      "cumulative_continuity_compensation_c_m3": -7341.6631362476555,
+      "cumulative_temperature_ledger_error_c_m3": -0.0005633426947895259,
+      "cumulative_initial_water_ledger_error_m3": 1.932564191520214e-05
+    },
+    {
+      "hour": 82,
+      "temperature_inventory_c_m3": 66465410156.80656,
+      "initial_water_inventory_m3": 2218149632.096448,
+      "cumulative_boundary_temperature_proxy_c_m3": 305675919.13716036,
+      "cumulative_continuity_compensation_c_m3": -7432.7032275315305,
+      "cumulative_temperature_ledger_error_c_m3": -0.0003758483684066505,
+      "cumulative_initial_water_ledger_error_m3": 6.217579357326031e-05
+    },
+    {
+      "hour": 83,
+      "temperature_inventory_c_m3": 66442718611.016785,
+      "initial_water_inventory_m3": 2191590348.3102303,
+      "cumulative_boundary_temperature_proxy_c_m3": 282984464.1289482,
+      "cumulative_continuity_compensation_c_m3": -7523.485289974212,
+      "cumulative_temperature_ledger_error_c_m3": 0.00012679597116971308,
+      "cumulative_initial_water_ledger_error_m3": 1.3988465070724487e-05
+    },
+    {
+      "hour": 84,
+      "temperature_inventory_c_m3": 66418781325.07144,
+      "initial_water_inventory_m3": 2165031069.280995,
+      "cumulative_boundary_temperature_proxy_c_m3": 259047268.708714,
+      "cumulative_continuity_compensation_c_m3": -7614.010877138689,
+      "cumulative_temperature_ledger_error_c_m3": 0.0006050997295972138,
+      "cumulative_initial_water_ledger_error_m3": 4.025222733616829e-05
+    },
+    {
+      "hour": 85,
+      "temperature_inventory_c_m3": 66394280301.217896,
+      "initial_water_inventory_m3": 2138471806.5600476,
+      "cumulative_boundary_temperature_proxy_c_m3": 234546335.193435,
+      "cumulative_continuity_compensation_c_m3": -7704.349189741041,
+      "cumulative_temperature_ledger_error_c_m3": 0.0006505538591738969,
+      "cumulative_initial_water_ledger_error_m3": 5.4679811000823975e-05
+    },
+    {
+      "hour": 86,
+      "temperature_inventory_c_m3": 66369835890.91544,
+      "initial_water_inventory_m3": 2111912595.073429,
+      "cumulative_boundary_temperature_proxy_c_m3": 210102015.120428,
+      "cumulative_continuity_compensation_c_m3": -7794.577174149308,
+      "cumulative_temperature_ledger_error_c_m3": -0.0008101024316999883,
+      "cumulative_initial_water_ledger_error_m3": 4.193023778498173e-05
+    },
+    {
+      "hour": 87,
+      "temperature_inventory_c_m3": 66345959046.31169,
+      "initial_water_inventory_m3": 2085353531.1822004,
+      "cumulative_boundary_temperature_proxy_c_m3": 186225260.68595713,
+      "cumulative_continuity_compensation_c_m3": -7884.746483864857,
+      "cumulative_temperature_ledger_error_c_m3": -0.0007815908059853882,
+      "cumulative_initial_water_ledger_error_m3": 3.1201401725411415e-05
+    },
+    {
+      "hour": 88,
+      "temperature_inventory_c_m3": 66323097802.573524,
+      "initial_water_inventory_m3": 2058794858.3151681,
+      "cumulative_boundary_temperature_proxy_c_m3": 163364107.0881884,
+      "cumulative_continuity_compensation_c_m3": -7974.888194133619,
+      "cumulative_temperature_ledger_error_c_m3": 0.0005305904311683207,
+      "cumulative_initial_water_ledger_error_m3": -1.0552583262324333e-05
+    },
+    {
+      "hour": 89,
+      "temperature_inventory_c_m3": 66301523580.61547,
+      "initial_water_inventory_m3": 2032237141.3626719,
+      "cumulative_boundary_temperature_proxy_c_m3": 141789975.23415795,
+      "cumulative_continuity_compensation_c_m3": -8064.991087664682,
+      "cumulative_temperature_ledger_error_c_m3": -0.0005990568200502366,
+      "cumulative_initial_water_ledger_error_m3": 2.193218097090721e-05
+    },
+    {
+      "hour": 90,
+      "temperature_inventory_c_m3": 66281226127.55906,
+      "initial_water_inventory_m3": 2005681588.2044525,
+      "cumulative_boundary_temperature_proxy_c_m3": 121492612.2037233,
+      "cumulative_continuity_compensation_c_m3": -8155.0175616211745,
+      "cumulative_temperature_ledger_error_c_m3": -0.0001022280078757376,
+      "cumulative_initial_water_ledger_error_m3": -1.5072524547576904e-05
+    },
+    {
+      "hour": 91,
+      "temperature_inventory_c_m3": 66261980212.62778,
+      "initial_water_inventory_m3": 1979130585.8109548,
+      "cumulative_boundary_temperature_proxy_c_m3": 102246787.16290617,
+      "cumulative_continuity_compensation_c_m3": -8244.908249636012,
+      "cumulative_temperature_ledger_error_c_m3": 0.00012087846394592816,
+      "cumulative_initial_water_ledger_error_m3": 5.377200432121754e-05
+    },
+    {
+      "hour": 92,
+      "temperature_inventory_c_m3": 66243314865.6479,
+      "initial_water_inventory_m3": 1952588506.205952,
+      "cumulative_boundary_temperature_proxy_c_m3": 83581529.87863927,
+      "cumulative_continuity_compensation_c_m3": -8334.603406959235,
+      "cumulative_temperature_ledger_error_c_m3": -0.0003285338055718512,
+      "cumulative_initial_water_ledger_error_m3": 5.396897904574871e-05
+    },
+    {
+      "hour": 93,
+      "temperature_inventory_c_m3": 66224498494.517456,
+      "initial_water_inventory_m3": 1926062792.157568,
+      "cumulative_boundary_temperature_proxy_c_m3": 64765248.1792407,
+      "cumulative_continuity_compensation_c_m3": -8424.034881422605,
+      "cumulative_temperature_ledger_error_c_m3": 9.707234553957278e-05,
+      "cumulative_initial_water_ledger_error_m3": 2.6507768779993057e-06
+    },
+    {
+      "hour": 94,
+      "temperature_inventory_c_m3": 66204825889.103905,
+      "initial_water_inventory_m3": 1899565251.3663998,
+      "cumulative_boundary_temperature_proxy_c_m3": 45092731.87977911,
+      "cumulative_continuity_compensation_c_m3": -8513.150134167045,
+      "cumulative_temperature_ledger_error_c_m3": 0.0012600841115784078,
+      "cumulative_initial_water_ledger_error_m3": 7.907627150416374e-06
+    },
+    {
+      "hour": 95,
+      "temperature_inventory_c_m3": 66183954372.354706,
+      "initial_water_inventory_m3": 1873113386.248453,
+      "cumulative_boundary_temperature_proxy_c_m3": 24221303.926498353,
+      "cumulative_continuity_compensation_c_m3": -8601.94483703861,
+      "cumulative_temperature_ledger_error_c_m3": 4.479569602722222e-05,
+      "cumulative_initial_water_ledger_error_m3": 4.828954115509987e-05
+    },
+    {
+      "hour": 96,
+      "temperature_inventory_c_m3": 66162082089.81699,
+      "initial_water_inventory_m3": 1846731497.3704906,
+      "cumulative_boundary_temperature_proxy_c_m3": 2349109.9416577434,
+      "cumulative_continuity_compensation_c_m3": -8690.496234955246,
+      "cumulative_temperature_ledger_error_c_m3": -0.0014287774568799705,
+      "cumulative_initial_water_ledger_error_m3": 4.6097440645098686e-05
+    },
+    {
+      "hour": 97,
+      "temperature_inventory_c_m3": 66139459278.96308,
+      "initial_water_inventory_m3": 1820451263.0542495,
+      "cumulative_boundary_temperature_proxy_c_m3": -20273612.497623403,
+      "cumulative_continuity_compensation_c_m3": -8778.912716453315,
+      "cumulative_temperature_ledger_error_c_m3": 0.0004215079940479427,
+      "cumulative_initial_water_ledger_error_m3": 4.713237285614014e-05
+    },
+    {
+      "hour": 98,
+      "temperature_inventory_c_m3": 66116258453.26146,
+      "initial_water_inventory_m3": 1794311545.2771428,
+      "cumulative_boundary_temperature_proxy_c_m3": -43474349.84888658,
+      "cumulative_continuity_compensation_c_m3": -8867.263343066537,
+      "cumulative_temperature_ledger_error_c_m3": 0.0006892898933585911,
+      "cumulative_initial_water_ledger_error_m3": 3.9658043533563614e-05
+    },
+    {
+      "hour": 99,
+      "temperature_inventory_c_m3": 66092603968.80687,
+      "initial_water_inventory_m3": 1768357303.5205016,
+      "cumulative_boundary_temperature_proxy_c_m3": -67128745.98115326,
+      "cumulative_continuity_compensation_c_m3": -8955.586092050436,
+      "cumulative_temperature_ledger_error_c_m3": 0.0011151272452991634,
+      "cumulative_initial_water_ledger_error_m3": 3.417045809328556e-05
+    },
+    {
+      "hour": 100,
+      "temperature_inventory_c_m3": 66068537734.18624,
+      "initial_water_inventory_m3": 1742637680.102881,
+      "cumulative_boundary_temperature_proxy_c_m3": -91194892.29868953,
+      "cumulative_continuity_compensation_c_m3": -9043.88823246742,
+      "cumulative_temperature_ledger_error_c_m3": 0.00016344351448083216,
+      "cumulative_initial_water_ledger_error_m3": 6.330525502562523e-05
+    },
+    {
+      "hour": 101,
+      "temperature_inventory_c_m3": 66044401366.45413,
+      "initial_water_inventory_m3": 1717203496.7037282,
+      "cumulative_boundary_temperature_proxy_c_m3": -115331171.73538996,
+      "cumulative_continuity_compensation_c_m3": -9132.182621359672,
+      "cumulative_temperature_ledger_error_c_m3": -0.0008563405020538539,
+      "cumulative_initial_water_ledger_error_m3": 4.685530439019203e-05
+    },
+    {
+      "hour": 102,
+      "temperature_inventory_c_m3": 66020456120.67192,
+      "initial_water_inventory_m3": 1692104517.205847,
+      "cumulative_boundary_temperature_proxy_c_m3": -139276329.2057922,
+      "cumulative_continuity_compensation_c_m3": -9220.495352165537,
+      "cumulative_temperature_ledger_error_c_m3": 6.537943832540805e-05,
+      "cumulative_initial_water_ledger_error_m3": 4.786334466189146e-05
+    },
+    {
+      "hour": 103,
+      "temperature_inventory_c_m3": 65996841998.46759,
+      "initial_water_inventory_m3": 1667386855.5663354,
+      "cumulative_boundary_temperature_proxy_c_m3": -162890363.07704598,
+      "cumulative_continuity_compensation_c_m3": -9308.828774467736,
+      "cumulative_temperature_ledger_error_c_m3": 0.0004111272398006349,
+      "cumulative_initial_water_ledger_error_m3": 3.8124388083815575e-05
+    },
+    {
+      "hour": 104,
+      "temperature_inventory_c_m3": 65973442640.83456,
+      "initial_water_inventory_m3": 1643090842.4034498,
+      "cumulative_boundary_temperature_proxy_c_m3": -186289632.34891006,
+      "cumulative_continuity_compensation_c_m3": -9397.189581280869,
+      "cumulative_temperature_ledger_error_c_m3": 4.8228201791289393e-05,
+      "cumulative_initial_water_ledger_error_m3": 3.981729969382286e-05
+    },
+    {
+      "hour": 105,
+      "temperature_inventory_c_m3": 65949827299.85972,
+      "initial_water_inventory_m3": 1619249541.9954057,
+      "cumulative_boundary_temperature_proxy_c_m3": -209904884.9906259,
+      "cumulative_continuity_compensation_c_m3": -9485.522170104674,
+      "cumulative_temperature_ledger_error_c_m3": -0.0004853997264433474,
+      "cumulative_initial_water_ledger_error_m3": 4.301837179809809e-05
+    },
+    {
+      "hour": 106,
+      "temperature_inventory_c_m3": 65925580952.47676,
+      "initial_water_inventory_m3": 1595887975.5739772,
+      "cumulative_boundary_temperature_proxy_c_m3": -234151144.0843725,
+      "cumulative_continuity_compensation_c_m3": -9573.812867468396,
+      "cumulative_temperature_ledger_error_c_m3": 0.0010011468663435608,
+      "cumulative_initial_water_ledger_error_m3": 3.958260640501976e-05
+    },
+    {
+      "hour": 107,
+      "temperature_inventory_c_m3": 65900354017.7338,
+      "initial_water_inventory_m3": 1573022993.8661473,
+      "cumulative_boundary_temperature_proxy_c_m3": -259377990.5651582,
+      "cumulative_continuity_compensation_c_m3": -9662.07427688544,
+      "cumulative_temperature_ledger_error_c_m3": 0.0002382024073597222,
+      "cumulative_initial_water_ledger_error_m3": 3.5159639082849026e-05
+    },
+    {
+      "hour": 108,
+      "temperature_inventory_c_m3": 65873948743.80184,
+      "initial_water_inventory_m3": 1550663671.3037245,
+      "cumulative_boundary_temperature_proxy_c_m3": -285783176.2205416,
+      "cumulative_continuity_compensation_c_m3": -9750.350060068971,
+      "cumulative_temperature_ledger_error_c_m3": -0.0005563640619072885,
+      "cumulative_initial_water_ledger_error_m3": 4.095584154129028e-05
+    },
+    {
+      "hour": 109,
+      "temperature_inventory_c_m3": 65846368767.47962,
+      "initial_water_inventory_m3": 1528812067.4928284,
+      "cumulative_boundary_temperature_proxy_c_m3": -313363064.2078848,
+      "cumulative_continuity_compensation_c_m3": -9838.685107539417,
+      "cumulative_temperature_ledger_error_c_m3": -0.00038547754533624357,
+      "cumulative_initial_water_ledger_error_m3": 2.250878605991602e-05
+    },
+    {
+      "hour": 110,
+      "temperature_inventory_c_m3": 65817916979.18334,
+      "initial_water_inventory_m3": 1507464207.590676,
+      "cumulative_boundary_temperature_proxy_c_m3": -341814764.0793649,
+      "cumulative_continuity_compensation_c_m3": -9927.110295422826,
+      "cumulative_temperature_ledger_error_c_m3": 2.450670450571124e-06,
+      "cumulative_initial_water_ledger_error_m3": 3.525672946125269e-05
+    },
+    {
+      "hour": 111,
+      "temperature_inventory_c_m3": 65789249541.95241,
+      "initial_water_inventory_m3": 1486611157.4112723,
+      "cumulative_boundary_temperature_proxy_c_m3": -370482112.7752413,
+      "cumulative_continuity_compensation_c_m3": -10015.645026919232,
+      "cumulative_temperature_ledger_error_c_m3": -0.0003238179372999639,
+      "cumulative_initial_water_ledger_error_m3": 5.2877236157655716e-05
+    },
+    {
+      "hour": 112,
+      "temperature_inventory_c_m3": 65761281164.27635,
+      "initial_water_inventory_m3": 1466240098.9250062,
+      "cumulative_boundary_temperature_proxy_c_m3": -398450401.7761632,
+      "cumulative_continuity_compensation_c_m3": -10104.319670011275,
+      "cumulative_temperature_ledger_error_c_m3": -0.0008147942020002574,
+      "cumulative_initial_water_ledger_error_m3": 5.74685400351882e-05
+    },
+    {
+      "hour": 113,
+      "temperature_inventory_c_m3": 65735080953.72094,
+      "initial_water_inventory_m3": 1446335339.864221,
+      "cumulative_boundary_temperature_proxy_c_m3": -424650523.47767496,
+      "cumulative_continuity_compensation_c_m3": -10193.174428742179,
+      "cumulative_temperature_ledger_error_c_m3": 4.334911923820073e-05,
+      "cumulative_initial_water_ledger_error_m3": 4.058878403156996e-05
+    },
+    {
+      "hour": 114,
+      "temperature_inventory_c_m3": 65710991789.644226,
+      "initial_water_inventory_m3": 1426879214.574534,
+      "cumulative_boundary_temperature_proxy_c_m3": -448739598.53051484,
+      "cumulative_continuity_compensation_c_m3": -10282.197777003337,
+      "cumulative_temperature_ledger_error_c_m3": -0.00048214242573862975,
+      "cumulative_initial_water_ledger_error_m3": 5.2813789807260036e-05
+    },
+    {
+      "hour": 115,
+      "temperature_inventory_c_m3": 65687724285.3336,
+      "initial_water_inventory_m3": 1407852852.030361,
+      "cumulative_boundary_temperature_proxy_c_m3": -472007013.8653531,
+      "cumulative_continuity_compensation_c_m3": -10371.173893968122,
+      "cumulative_temperature_ledger_error_c_m3": -0.00015014502000099128,
+      "cumulative_initial_water_ledger_error_m3": 2.631929237395525e-05
+    },
+    {
+      "hour": 116,
+      "temperature_inventory_c_m3": 65663619417.46081,
+      "initial_water_inventory_m3": 1389236801.9644675,
+      "cumulative_boundary_temperature_proxy_c_m3": -496111793.1671192,
+      "cumulative_continuity_compensation_c_m3": -10459.745586526722,
+      "cumulative_temperature_ledger_error_c_m3": 0.0005133625933524399,
+      "cumulative_initial_water_ledger_error_m3": 4.084012471139431e-05
+    },
+    {
+      "hour": 117,
+      "temperature_inventory_c_m3": 65637742062.6075,
+      "initial_water_inventory_m3": 1371011522.0331287,
+      "cumulative_boundary_temperature_proxy_c_m3": -521989059.99092025,
+      "cumulative_continuity_compensation_c_m3": -10547.77440635483,
+      "cumulative_temperature_ledger_error_c_m3": -0.0001753750142086119,
+      "cumulative_initial_water_ledger_error_m3": 6.315880455076694e-05
+    },
+    {
+      "hour": 118,
+      "temperature_inventory_c_m3": 65609643756.25296,
+      "initial_water_inventory_m3": 1353157738.0347154,
+      "cumulative_boundary_temperature_proxy_c_m3": -550087278.7587595,
+      "cumulative_continuity_compensation_c_m3": -10635.361294208278,
+      "cumulative_temperature_ledger_error_c_m3": 1.377031426841313e-05,
+      "cumulative_initial_water_ledger_error_m3": 1.969106961041689e-05
+    },
+    {
+      "hour": 119,
+      "temperature_inventory_c_m3": 65579290886.97993,
+      "initial_water_inventory_m3": 1335656695.2965822,
+      "cumulative_boundary_temperature_proxy_c_m3": -580440060.6608372,
+      "cumulative_continuity_compensation_c_m3": -10722.73276836916,
+      "cumulative_temperature_ledger_error_c_m3": 0.0005325933567803531,
+      "cumulative_initial_water_ledger_error_m3": 4.986615385860205e-05
+    },
+    {
+      "hour": 120,
+      "temperature_inventory_c_m3": 65546928837.47499,
+      "initial_water_inventory_m3": 1318490322.393745,
+      "cumulative_boundary_temperature_proxy_c_m3": -612802022.7552261,
+      "cumulative_continuity_compensation_c_m3": -10810.142124023927,
+      "cumulative_temperature_ledger_error_c_m3": -0.0006588983700055451,
+      "cumulative_initial_water_ledger_error_m3": 1.8263235688209534e-05
+    },
+    {
+      "hour": 121,
+      "temperature_inventory_c_m3": 65512806489.87769,
+      "initial_water_inventory_m3": 1301641328.6190567,
+      "cumulative_boundary_temperature_proxy_c_m3": -646924282.7193,
+      "cumulative_continuity_compensation_c_m3": -10897.776348937106,
+      "cumulative_temperature_ledger_error_c_m3": 0.0003423900458585649,
+      "cumulative_initial_water_ledger_error_m3": 5.484139546751976e-05
+    },
+    {
+      "hour": 122,
+      "temperature_inventory_c_m3": 65477064039.15034,
+      "initial_water_inventory_m3": 1285093254.6698737,
+      "cumulative_boundary_temperature_proxy_c_m3": -682666645.4846491,
+      "cumulative_continuity_compensation_c_m3": -10985.73657325027,
+      "cumulative_temperature_ledger_error_c_m3": -0.0014401336551088662,
+      "cumulative_initial_water_ledger_error_m3": 5.2982824854552746e-05
+    },
+    {
+      "hour": 123,
+      "temperature_inventory_c_m3": 65439690858.80668,
+      "initial_water_inventory_m3": 1268830492.6663725,
+      "cumulative_boundary_temperature_proxy_c_m3": -720039737.5048629,
+      "cumulative_continuity_compensation_c_m3": -11074.060499618847,
+      "cumulative_temperature_ledger_error_c_m3": -0.000958411011509952,
+      "cumulative_initial_water_ledger_error_m3": 4.9613649025559425e-05
+    },
+    {
+      "hour": 124,
+      "temperature_inventory_c_m3": 65400723622.15558,
+      "initial_water_inventory_m3": 1252838287.6770031,
+      "cumulative_boundary_temperature_proxy_c_m3": -759006885.4732258,
+      "cumulative_continuity_compensation_c_m3": -11162.74291552084,
+      "cumulative_temperature_ledger_error_c_m3": -0.0012799412828314871,
+      "cumulative_initial_water_ledger_error_m3": 4.846497904509306e-05
+    },
+    {
+      "hour": 125,
+      "temperature_inventory_c_m3": 65360231483.65574,
+      "initial_water_inventory_m3": 1237102729.0857615,
+      "cumulative_boundary_temperature_proxy_c_m3": -799498934.9389945,
+      "cumulative_continuity_compensation_c_m3": -11251.777690509385,
+      "cumulative_temperature_ledger_error_c_m3": -0.0005759051885831923,
+      "cumulative_initial_water_ledger_error_m3": 5.7585304602980614e-05
+    },
+    {
+      "hour": 126,
+      "temperature_inventory_c_m3": 65318196835.8318,
+      "initial_water_inventory_m3": 1221610736.8285744,
+      "cumulative_boundary_temperature_proxy_c_m3": -841533493.4102759,
+      "cumulative_continuity_compensation_c_m3": -11341.131411950855,
+      "cumulative_temperature_ledger_error_c_m3": 0.0004903338964652448,
+      "cumulative_initial_water_ledger_error_m3": 3.3292919397354126e-05
+    },
+    {
+      "hour": 127,
+      "temperature_inventory_c_m3": 65274647054.87658,
+      "initial_water_inventory_m3": 1206350044.9615867,
+      "cumulative_boundary_temperature_proxy_c_m3": -885083184.7299504,
+      "cumulative_continuity_compensation_c_m3": -11430.766887622032,
+      "cumulative_temperature_ledger_error_c_m3": 0.0004176742046695381,
+      "cumulative_initial_water_ledger_error_m3": 5.190551746636629e-05
+    },
+    {
+      "hour": 128,
+      "temperature_inventory_c_m3": 65229583700.59699,
+      "initial_water_inventory_m3": 1191309183.2164674,
+      "cumulative_boundary_temperature_proxy_c_m3": -930146449.125039,
+      "cumulative_continuity_compensation_c_m3": -11520.649816336654,
+      "cumulative_temperature_ledger_error_c_m3": -0.0011516734842587084,
+      "cumulative_initial_water_ledger_error_m3": 4.3278676457703114e-05
+    },
+    {
+      "hour": 129,
+      "temperature_inventory_c_m3": 65183000478.005615,
+      "initial_water_inventory_m3": 1176477456.0580037,
+      "cumulative_boundary_temperature_proxy_c_m3": -976729581.6384747,
+      "cumulative_continuity_compensation_c_m3": -11610.730437140388,
+      "cumulative_temperature_ledger_error_c_m3": 0.0015276952296119362,
+      "cumulative_initial_water_ledger_error_m3": 3.6637065932154655e-05
+    },
+    {
+      "hour": 130,
+      "temperature_inventory_c_m3": 65134992530.54104,
+      "initial_water_inventory_m3": 1161844918.1497633,
+      "cumulative_boundary_temperature_proxy_c_m3": -1024737438.873822,
+      "cumulative_continuity_compensation_c_m3": -11700.959031561488,
+      "cumulative_temperature_ledger_error_c_m3": 0.000892875494770351,
+      "cumulative_initial_water_ledger_error_m3": 2.9946560971438885e-05
+    },
+    {
+      "hour": 131,
+      "temperature_inventory_c_m3": 65085676691.5869,
+      "initial_water_inventory_m3": 1147402344.940599,
+      "cumulative_boundary_temperature_proxy_c_m3": -1074053187.4909189,
+      "cumulative_continuity_compensation_c_m3": -11791.294976745588,
+      "cumulative_temperature_ledger_error_c_m3": -0.00020470981266385024,
+      "cumulative_initial_water_ledger_error_m3": 2.405792474746704e-05
+    },
+    {
+      "hour": 132,
+      "temperature_inventory_c_m3": 65035360531.11113,
+      "initial_water_inventory_m3": 1133141197.2126122,
+      "cumulative_boundary_temperature_proxy_c_m3": -1124369257.5552495,
+      "cumulative_continuity_compensation_c_m3": -11881.707021805294,
+      "cumulative_temperature_ledger_error_c_m3": 0.000401088979430142,
+      "cumulative_initial_water_ledger_error_m3": 2.5486224330961704e-05
+    },
+    {
+      "hour": 133,
+      "temperature_inventory_c_m3": 64984516200.31973,
+      "initial_water_inventory_m3": 1119053578.8178751,
+      "cumulative_boundary_temperature_proxy_c_m3": -1175213497.856927,
+      "cumulative_continuity_compensation_c_m3": -11972.196486359297,
+      "cumulative_temperature_ledger_error_c_m3": 0.00014648727361077363,
+      "cumulative_initial_water_ledger_error_m3": 5.094311200082302e-05
+    },
+    {
+      "hour": 134,
+      "temperature_inventory_c_m3": 64933427347.616875,
+      "initial_water_inventory_m3": 1105132187.4165094,
+      "cumulative_boundary_temperature_proxy_c_m3": -1226302260.017111,
+      "cumulative_continuity_compensation_c_m3": -12062.738958726033,
+      "cumulative_temperature_ledger_error_c_m3": -5.471425842529243e-05,
+      "cumulative_initial_water_ledger_error_m3": 5.0381175242364407e-05
+    },
+    {
+      "hour": 135,
+      "temperature_inventory_c_m3": 64882336096.11492,
+      "initial_water_inventory_m3": 1091370258.741921,
+      "cumulative_boundary_temperature_proxy_c_m3": -1277393420.9769835,
+      "cumulative_continuity_compensation_c_m3": -12153.280025619131,
+      "cumulative_temperature_ledger_error_c_m3": -0.0010685860064256758,
+      "cumulative_initial_water_ledger_error_m3": 3.751763142645359e-05
+    },
+    {
+      "hour": 136,
+      "temperature_inventory_c_m3": 64831550659.8176,
+      "initial_water_inventory_m3": 1077761505.6657605,
+      "cumulative_boundary_temperature_proxy_c_m3": -1328178766.7917037,
+      "cumulative_continuity_compensation_c_m3": -12243.763390944292,
+      "cumulative_temperature_ledger_error_c_m3": -0.0003079455230761141,
+      "cumulative_initial_water_ledger_error_m3": 6.283109541982412e-05
+    },
+    {
+      "hour": 137,
+      "temperature_inventory_c_m3": 64781380952.94051,
+      "initial_water_inventory_m3": 1064300054.009468,
+      "cumulative_boundary_temperature_proxy_c_m3": -1378348383.3090415,
+      "cumulative_continuity_compensation_c_m3": -12334.123240544772,
+      "cumulative_temperature_ledger_error_c_m3": -0.00020340572822874492,
+      "cumulative_initial_water_ledger_error_m3": 4.1158986277878284e-05
+    },
+    {
+      "hour": 138,
+      "temperature_inventory_c_m3": 64731944144.5873,
+      "initial_water_inventory_m3": 1050980377.5447917,
+      "cumulative_boundary_temperature_proxy_c_m3": -1427785101.4844635,
+      "cumulative_continuity_compensation_c_m3": -12424.301958770746,
+      "cumulative_temperature_ledger_error_c_m3": 0.0007260213721167474,
+      "cumulative_initial_water_ledger_error_m3": 4.012568388134241e-05
+    },
+    {
+      "hour": 139,
+      "temperature_inventory_c_m3": 64683200749.89674,
+      "initial_water_inventory_m3": 1037797234.8595918,
+      "cumulative_boundary_temperature_proxy_c_m3": -1476528406.2398272,
+      "cumulative_continuity_compensation_c_m3": -12514.236523443515,
+      "cumulative_temperature_ledger_error_c_m3": 9.517815183812672e-05,
+      "cumulative_initial_water_ledger_error_m3": 3.6312732845544815e-05
+    },
+    {
+      "hour": 140,
+      "temperature_inventory_c_m3": 64634821414.884186,
+      "initial_water_inventory_m3": 1024745610.7060204,
+      "cumulative_boundary_temperature_proxy_c_m3": -1524907651.6071258,
+      "cumulative_continuity_compensation_c_m3": -12603.880746064233,
+      "cumulative_temperature_ledger_error_c_m3": -0.0009413538385558695,
+      "cumulative_initial_water_ledger_error_m3": 5.7271216064691544e-05
+    },
+    {
+      "hour": 141,
+      "temperature_inventory_c_m3": 64586369164.25029,
+      "initial_water_inventory_m3": 1011820664.1023548,
+      "cumulative_boundary_temperature_proxy_c_m3": -1573359812.9400983,
+      "cumulative_continuity_compensation_c_m3": -12693.182252515844,
+      "cumulative_temperature_ledger_error_c_m3": -0.00035796941969579166,
+      "cumulative_initial_water_ledger_error_m3": 3.4204451367259026e-05
+    },
+    {
+      "hour": 142,
+      "temperature_inventory_c_m3": 64537259492.91392,
+      "initial_water_inventory_m3": 999017684.8930651,
+      "cumulative_boundary_temperature_proxy_c_m3": -1622469395.339762,
+      "cumulative_continuity_compensation_c_m3": -12782.1200436306,
+      "cumulative_temperature_ledger_error_c_m3": 0.0007243107653778225,
+      "cumulative_initial_water_ledger_error_m3": 5.129596684128046e-05
+    },
+    {
+      "hour": 143,
+      "temperature_inventory_c_m3": 64487334365.31631,
+      "initial_water_inventory_m3": 986332059.7679261,
+      "cumulative_boundary_temperature_proxy_c_m3": -1672394434.3296323,
+      "cumulative_continuity_compensation_c_m3": -12870.727039975574,
+      "cumulative_temperature_ledger_error_c_m3": -1.9558926709351e-05,
+      "cumulative_initial_water_ledger_error_m3": 5.2976771257817745e-05
+    },
+    {
+      "hour": 144,
+      "temperature_inventory_c_m3": 64436806109.57476,
+      "initial_water_inventory_m3": 973759248.0068451,
+      "cumulative_boundary_temperature_proxy_c_m3": -1722922601.64158,
+      "cumulative_continuity_compensation_c_m3": -12959.157255246862,
+      "cumulative_temperature_ledger_error_c_m3": 0.0005967433213811546,
+      "cumulative_initial_water_ledger_error_m3": 3.8679863791912794e-05
+    },
+    {
+      "hour": 145,
+      "temperature_inventory_c_m3": 64385687374.73121,
+      "initial_water_inventory_m3": 961294766.5365664,
+      "cumulative_boundary_temperature_proxy_c_m3": -1774041248.1595206,
+      "cumulative_continuity_compensation_c_m3": -13047.482497841831,
+      "cumulative_temperature_ledger_error_c_m3": 0.00022890908863359982,
+      "cumulative_initial_water_ledger_error_m3": 4.6426604967564344e-05
+    },
+    {
+      "hour": 146,
+      "temperature_inventory_c_m3": 64333942877.85406,
+      "initial_water_inventory_m3": 948934183.3333787,
+      "cumulative_boundary_temperature_proxy_c_m3": -1825785656.7618206,
+      "cumulative_continuity_compensation_c_m3": -13135.757895447665,
+      "cumulative_temperature_ledger_error_c_m3": 0.0007749430484693676,
+      "cumulative_initial_water_ledger_error_m3": 4.523753887042403e-05
+    },
+    {
+      "hour": 147,
+      "temperature_inventory_c_m3": 64281857519.14488,
+      "initial_water_inventory_m3": 936673117.8185557,
+      "cumulative_boundary_temperature_proxy_c_m3": -1877870927.2067697,
+      "cumulative_continuity_compensation_c_m3": -13224.021063556753,
+      "cumulative_temperature_ledger_error_c_m3": -0.00028338305432384914,
+      "cumulative_initial_water_ledger_error_m3": 4.4765358325093985e-05
+    },
+    {
+      "hour": 148,
+      "temperature_inventory_c_m3": 64229917927.894295,
+      "initial_water_inventory_m3": 924507246.6806885,
+      "cumulative_boundary_temperature_proxy_c_m3": -1929810430.150194,
+      "cumulative_continuity_compensation_c_m3": -13312.328086615129,
+      "cumulative_temperature_ledger_error_c_m3": -0.0004232239328700871,
+      "cumulative_initial_water_ledger_error_m3": 3.900617593899369e-05
+    },
+    {
+      "hour": 149,
+      "temperature_inventory_c_m3": 64178561499.69777,
+      "initial_water_inventory_m3": 912432313.5104508,
+      "cumulative_boundary_temperature_proxy_c_m3": -1981166770.0000825,
+      "cumulative_continuity_compensation_c_m3": -13400.676103792577,
+      "cumulative_temperature_ledger_error_c_m3": 0.0009566249906640678,
+      "cumulative_initial_water_ledger_error_m3": 4.5542430598288774e-05
+    },
+    {
+      "hour": 150,
+      "temperature_inventory_c_m3": 64127930969.97737,
+      "initial_water_inventory_m3": 900444140.7174432,
+      "cumulative_boundary_temperature_proxy_c_m3": -2031797211.3626106,
+      "cumulative_continuity_compensation_c_m3": -13489.03175278167,
+      "cumulative_temperature_ledger_error_c_m3": -0.0012646701537448735,
+      "cumulative_initial_water_ledger_error_m3": 3.6414479836821556e-05
+    },
+    {
+      "hour": 151,
+      "temperature_inventory_c_m3": 64078170643.3386,
+      "initial_water_inventory_m3": 888538642.3812608,
+      "cumulative_boundary_temperature_proxy_c_m3": -2081557449.732724,
+      "cumulative_continuity_compensation_c_m3": -13577.301497666502,
+      "cumulative_temperature_ledger_error_c_m3": -0.00017644580233877605,
+      "cumulative_initial_water_ledger_error_m3": 4.153948975726962e-05
+    },
+    {
+      "hour": 152,
+      "temperature_inventory_c_m3": 64029272594.78269,
+      "initial_water_inventory_m3": 876711836.9305669,
+      "cumulative_boundary_temperature_proxy_c_m3": -2130455410.1152222,
+      "cumulative_continuity_compensation_c_m3": -13665.474806628901,
+      "cumulative_temperature_ledger_error_c_m3": -0.00027764890123194164,
+      "cumulative_initial_water_ledger_error_m3": 5.2576069720089436e-05
+    },
+    {
+      "hour": 153,
+      "temperature_inventory_c_m3": 63981032686.1437,
+      "initial_water_inventory_m3": 864959858.8141057,
+      "cumulative_boundary_temperature_proxy_c_m3": -2178695230.759707,
+      "cumulative_continuity_compensation_c_m3": -13753.468965228467,
+      "cumulative_temperature_ledger_error_c_m3": -0.0006253211643922896,
+      "cumulative_initial_water_ledger_error_m3": 4.61065792478621e-05
+    },
+    {
+      "hour": 154,
+      "temperature_inventory_c_m3": 63933383447.622665,
+      "initial_water_inventory_m3": 853278968.5976253,
+      "cumulative_boundary_temperature_proxy_c_m3": -2226344381.495171,
+      "cumulative_continuity_compensation_c_m3": -13841.254906086187,
+      "cumulative_temperature_ledger_error_c_m3": -0.0002543490730602116,
+      "cumulative_initial_water_ledger_error_m3": 5.206681089475751e-05
+    },
+    {
+      "hour": 155,
+      "temperature_inventory_c_m3": 63886147356.459465,
+      "initial_water_inventory_m3": 841665561.1737852,
+      "cumulative_boundary_temperature_proxy_c_m3": -2273580385.112907,
+      "cumulative_continuity_compensation_c_m3": -13928.801023474398,
+      "cumulative_temperature_ledger_error_c_m3": 0.0003973629906397491,
+      "cumulative_initial_water_ledger_error_m3": 3.6214885767549276e-05
+    },
+    {
+      "hour": 156,
+      "temperature_inventory_c_m3": 63839137687.98321,
+      "initial_water_inventory_m3": 830116171.9986615,
+      "cumulative_boundary_temperature_proxy_c_m3": -2320589966.3048477,
+      "cumulative_continuity_compensation_c_m3": -14016.08518831706,
+      "cumulative_temperature_ledger_error_c_m3": 0.00024390734020585114,
+      "cumulative_initial_water_ledger_error_m3": 4.2383093386888504e-05
+    },
+    {
+      "hour": 157,
+      "temperature_inventory_c_m3": 63792407243.774124,
+      "initial_water_inventory_m3": 818627481.4626521,
+      "cumulative_boundary_temperature_proxy_c_m3": -2367320323.4858704,
+      "cumulative_continuity_compensation_c_m3": -14103.114486782782,
+      "cumulative_temperature_ledger_error_c_m3": 0.0014819605391096502,
+      "cumulative_initial_water_ledger_error_m3": 4.2186875361949205e-05
+    },
+    {
+      "hour": 158,
+      "temperature_inventory_c_m3": 63746170165.34931,
+      "initial_water_inventory_m3": 807196317.6713281,
+      "cumulative_boundary_temperature_proxy_c_m3": -2413557315.0753126,
+      "cumulative_continuity_compensation_c_m3": -14189.949148528029,
+      "cumulative_temperature_ledger_error_c_m3": 0.0007747500318657785,
+      "cumulative_initial_water_ledger_error_m3": 4.4449290726333857e-05
+    },
+    {
+      "hour": 159,
+      "temperature_inventory_c_m3": 63700603176.70151,
+      "initial_water_inventory_m3": 795819658.0544165,
+      "cumulative_boundary_temperature_proxy_c_m3": -2459124217.015214,
+      "cumulative_continuity_compensation_c_m3": -14276.656141107002,
+      "cumulative_temperature_ledger_error_c_m3": -0.0001362028882283539,
+      "cumulative_initial_water_ledger_error_m3": 3.387132892385125e-05
+    },
+    {
+      "hour": 160,
+      "temperature_inventory_c_m3": 63655918495.07727,
+      "initial_water_inventory_m3": 784494630.3492293,
+      "cumulative_boundary_temperature_proxy_c_m3": -2503808812.0069175,
+      "cumulative_continuity_compensation_c_m3": -14363.289924910105,
+      "cumulative_temperature_ledger_error_c_m3": 0.0011143810230862528,
+      "cumulative_initial_water_ledger_error_m3": 3.790209302678704e-05
+    },
+    {
+      "hour": 161,
+      "temperature_inventory_c_m3": 63612229214.80861,
+      "initial_water_inventory_m3": 773218513.6211774,
+      "cumulative_boundary_temperature_proxy_c_m3": -2547498005.6758895,
+      "cumulative_continuity_compensation_c_m3": -14449.888088630154,
+      "cumulative_temperature_ledger_error_c_m3": -0.000412254815586266,
+      "cumulative_initial_water_ledger_error_m3": 4.8262299969792366e-05
+    },
+    {
+      "hour": 162,
+      "temperature_inventory_c_m3": 63569370097.68493,
+      "initial_water_inventory_m3": 761988740.0934343,
+      "cumulative_boundary_temperature_proxy_c_m3": -2590357036.243103,
+      "cumulative_continuity_compensation_c_m3": -14536.445032496933,
+      "cumulative_temperature_ledger_error_c_m3": 6.478560376876885e-05,
+      "cumulative_initial_water_ledger_error_m3": 5.430291639640927e-05
+    },
+    {
+      "hour": 163,
+      "temperature_inventory_c_m3": 63526921445.73891,
+      "initial_water_inventory_m3": 750802898.6558281,
+      "cumulative_boundary_temperature_proxy_c_m3": -2632805601.7172713,
+      "cumulative_continuity_compensation_c_m3": -14622.91692203775,
+      "cumulative_temperature_ledger_error_c_m3": 0.00010094280574435288,
+      "cumulative_initial_water_ledger_error_m3": 4.522153176367283e-05
+    },
+    {
+      "hour": 164,
+      "temperature_inventory_c_m3": 63484300768.880486,
+      "initial_water_inventory_m3": 739658741.0027548,
+      "cumulative_boundary_temperature_proxy_c_m3": -2675426192.2341037,
+      "cumulative_continuity_compensation_c_m3": -14709.257521479121,
+      "cumulative_temperature_ledger_error_c_m3": -0.0008874731023240656,
+      "cumulative_initial_water_ledger_error_m3": 4.5166583731770515e-05
+    },
+    {
+      "hour": 165,
+      "temperature_inventory_c_m3": 63440972768.34741,
+      "initial_water_inventory_m3": 728554191.3959856,
+      "cumulative_boundary_temperature_proxy_c_m3": -2718754106.5824733,
+      "cumulative_continuity_compensation_c_m3": -14795.443557388695,
+      "cumulative_temperature_ledger_error_c_m3": 0.0004446369245272308,
+      "cumulative_initial_water_ledger_error_m3": 4.046992398798466e-05
+    },
+    {
+      "hour": 166,
+      "temperature_inventory_c_m3": 63396629047.40901,
+      "initial_water_inventory_m3": 717487361.0428523,
+      "cumulative_boundary_temperature_proxy_c_m3": -2763097741.464717,
+      "cumulative_continuity_compensation_c_m3": -14881.498560125017,
+      "cumulative_temperature_ledger_error_c_m3": -0.0007090500906485886,
+      "cumulative_initial_water_ledger_error_m3": 4.536425694823265e-05
+    },
+    {
+      "hour": 167,
+      "temperature_inventory_c_m3": 63351225169.54101,
+      "initial_water_inventory_m3": 706456568.001195,
+      "cumulative_boundary_temperature_proxy_c_m3": -2808501533.3413115,
+      "cumulative_continuity_compensation_c_m3": -14967.491067017645,
+      "cumulative_temperature_ledger_error_c_m3": 0.00038823742639237935,
+      "cumulative_initial_water_ledger_error_m3": 4.0742335841059685e-05
+    },
+    {
+      "hour": 168,
+      "temperature_inventory_c_m3": 63304969297.95588,
+      "initial_water_inventory_m3": 695460363.3525457,
+      "cumulative_boundary_temperature_proxy_c_m3": -2854757318.9053082,
+      "cumulative_continuity_compensation_c_m3": -15053.511817554576,
+      "cumulative_temperature_ledger_error_c_m3": 6.949074901285712e-06,
+      "cumulative_initial_water_ledger_error_m3": 5.60703338123858e-05
+    }
+  ]
+}

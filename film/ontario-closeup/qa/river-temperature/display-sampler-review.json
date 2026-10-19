@@ -1,0 +1,21 @@
+{
+  "review_type": "Independent read-only inspection, not a rerun of the implementation author's focused tests or final film acceptance.",
+  "passed_source_review": true,
+  "blocking_findings": [],
+  "helper_file": "work/river-color-render/river-temperature.mjs",
+  "helper_sha256": "34ba04849f8eb568c658b87c5fdcc5b220f234f9716a78505dcec00cb442e40e",
+  "renderer_file": "work/river-color-render/render.mjs",
+  "renderer_sha256": "50daacf14113daddc7b6222deecacd1716a3c0bd1b7e4a9edc4c9b86484f0365",
+  "accepted_properties": [
+    "Finite original NOAA model temperature always takes precedence, including legitimate zero. Estimated temperature supplements only missing temperature in provider2.",
+    "Exact hourly endpoint uses itself; intermediate scalar interpolation requires both finite endpoints. Time wrap and extrapolation are rejected.",
+    "Compact temperature indices map one-to-one onto the original regular display grid, with no unrepresented or duplicate compact index.",
+    "Loader checks binary hashes, dimensions, little-endian Float32/Int32 layout and frozen velocity-field hash.",
+    "Renderer additionally requires identical absolute ISO UTC axes between lake and river temperature, identical regular-grid geometry, and an estimated-temperature index for every valid provider2 display cell.",
+    "Estimated T is sampled independently from U/V, then mapped through the same temperature palette for base water and trails. This helper never supplies or modifies velocity."
+  ],
+  "scientific_interpretation": "Original NOAA temperature and the new passive river tracer are both model-derived quantities with different physical scope. The custom river tracer must remain explicitly labelled as an unvalidated estimate; internal variable names such as actualTemperature do not imply observations.",
+  "final_data_hash_mapping_review_pending": true,
+  "assessment_pending_actual_visual_review": true,
+  "production_edits": false
+}

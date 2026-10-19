@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "manifestSHA256": "260c470549ae83670b686c82b787de048040a18b968d390ad66ee5bc9a04cf73",
+  "all121644riverCellsFiniteAt169Times": true,
+  "temperatureRangeC": [
+    12.060072898864746,
+    16.77464485168457
+  ],
+  "uniformTemperatureErrorC": 7.16227077646181e-12,
+  "celsiusKelvinOffsetErrorC": 2.25611529458547e-10,
+  "heatProxyLedgerResidual": [
+    6.949074901285712e-06,
+    5.60703338123858e-05
+  ],
+  "maxTimeStepDifferenceC": 0.04532623291015625,
+  "initialWaterAtClosingEndpoint": {
+    "hour": 168,
+    "native_volume_weighted_initial_water_fraction": 0.15820259186173843,
+    "native_cell_fraction_above_0_5": 0.22491351427366052,
+    "display_cell_mean_initial_water_fraction": 0.2748045940170946,
+    "display_cell_fraction_above_0_5": 0.22530498832659235,
+    "native_minimum_initial_water_fraction": 0.0,
+    "native_maximum_initial_water_fraction": 1.0000000000008953
+  },
+  "scope": "Numerical consistency and source-derived initial/boundary checks; not validation against river temperature observations."
+}
