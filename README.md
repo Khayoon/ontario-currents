@@ -2,13 +2,13 @@
 
 An interactive atlas of modelled water currents from Lake Ontario into the St. Lawrence, with Lake Simcoe and the Montréal archipelago included in the shoreline geography. A companion MP4 presents a fixed October lake average and a labelled river estimate for sharing.
 
-**[Explore the live atlas](https://khayoon.github.io/ontario-currents/)** · **[Watch the Lake Ontario close-up](https://khayoon.github.io/ontario-currents/media/lake-ontario-closeup.mp4?v=carleton-continuity-20261019)** · **[Data and methods](docs/data-and-methods.txt)**
+**[Explore the live atlas](https://khayoon.github.io/ontario-currents/)** · **[Watch the Lake Ontario close-up](https://khayoon.github.io/ontario-currents/media/lake-ontario-closeup.mp4?v=smooth-mesh-20261019)** · **[Data and methods](docs/data-and-methods.txt)**
 
 [![The live atlas showing Lake Ontario currents, Lake Simcoe and the St. Lawrence shorelines](docs/atlas-preview.jpg)](https://khayoon.github.io/ontario-currents/)
 
 ## What this project demonstrates
 
-- **Scientific data visualization:** rasterizes NOAA's native unstructured mesh of 34,395 nodes and 64,453 triangles, retaining face-centred current vectors and interpolating node temperatures within triangles.
+- **Scientific data visualization:** retains NOAA's native 34,395-node / 64,453-triangle source mesh and reconstructs continuous display velocities with exact source vectors at triangle centres. Missing wet triangles stay missing; node temperatures remain separately interpolated. See the [mesh display method](docs/mesh-display.md).
 - **Interactive graphics:** Canvas particle animation, geographic pan and zoom, source-aware cursor readouts, temperature/speed layers and Lake Ontario forecast playback.
 - **Numerical modelling:** separate experimental Simcoe wind-response and upper-river hydraulic solvers use public bathymetry and boundary records, with conservation and sensitivity checks. Their unvalidated depth averages are identified separately from retrieved current products.
 - **Data engineering:** adapts multiple public model products with different layers, grids and valid times; preserves missing-data masks and reports the dates behind the display.
@@ -30,6 +30,8 @@ The close-up uses finer current sampling to preserve narrow island passages, sma
 The Carleton–Wolfe revision uses the regional **depth-averaged estimate throughout its solved river domain**, with the NOAA surface mean elsewhere. Overlapping source vectors previously sometimes opposed one another and starved the drawn trails near Cape Vincent. This explicit source selection removes the internal source mosaic; it does not establish a physically matched surface/depth-average boundary. The artificial model inlet is now 3 km upstream of the original cut, restoring water omitted from the western approach without changing retrieved depths or shoreline geometry. The local-stage wet/dry correction remains in place.
 
 Weak nonzero trails receive stronger display acceleration while speed colours retain the numerical values. The sourced water background is also lighter, so sparse trails do not resemble a land gap. The film footer states that motion is enhanced. Actual trajectory checks and encoded trail coverage are reviewed separately from background brightness. Exact-zero vectors remain stationary and do not paint flickering dots. These display choices do not validate the model's local current speeds.
+
+The lake display now removes triangular velocity jumps that created an artificial sawtooth trail gap near 43.53°N, 78.51°W. The live atlas and fixed film share the same bounded, centre-preserving interpolation; original NOAA fields and river estimates remain unchanged. The broad modeled shear remains. This is a display reconstruction, not a higher-resolution or flux-conserving simulation.
 
 The earlier [broader Ontario–St. Lawrence film](https://khayoon.github.io/ontario-currents/media/october-current-map.mp4) remains available. It includes Montréal and the estuary, plus a separately labelled experimental Simcoe inset. The live atlas retains that broader geographic scope.
 

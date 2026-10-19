@@ -1,0 +1,12 @@
+{
+  "provider_mask_differences": 0,
+  "river_cells": 328696,
+  "lake_cells": 13787300,
+  "helper_sha256": "1a9ff1f31c1338bab4423a7152e664c96b10fc0fb51b5e7a36c386741f26f4f4",
+  "river_u_max_abs_difference_mps": 0.0,
+  "lake_u_changed_cells": 13787290,
+  "river_v_max_abs_difference_mps": 0.0,
+  "lake_v_changed_cells": 13787295,
+  "passed": true,
+  "interpretation": "Only valid lake display vectors are reconstructed. Entire exact production provider/water raster is unchanged; all328,696river raster vectors remain exact. This is display regression, not hydrodynamic validation."
+}

@@ -1,0 +1,51 @@
+{
+  "video_sha256": "54e2541a2f6cd6c014227d4f4c10c9b7a01c8ea51e150451506153bf2d953782",
+  "before_video_sha256": "cb69e2e24851e1f195a3b062a19c5c69fa3f3c44fe793c9301a6405a60a112c5",
+  "helper_sha256": "1a9ff1f31c1338bab4423a7152e664c96b10fc0fb51b5e7a36c386741f26f4f4",
+  "original_pixel_crop": [
+    716,
+    815,
+    1126,
+    1043
+  ],
+  "frame_indices": [
+    0,
+    150,
+    300,
+    450
+  ],
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "30/1",
+        "nb_read_frames": "600"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "57212577"
+    }
+  },
+  "assessment_pending_actual_visual_review": false,
+  "method": "Actual encoded full-map crops, same projection and outputpixel scale; enlarged with nearest pixels for inspection. This is not the separate controlled ROI simulation.",
+  "passed": true,
+  "independent_visual_assessment": {
+    "verdict": "PASS: repeated sharp mesh teeth are absent in reviewed actual whole-map encoded samples.",
+    "observations": [
+      "Matched actual whole-map frames0,150,300,450 show the old vertical/angular sawtooth row replaced by continuous curving trails.",
+      "The broad weak and reversing shear lane remains visible; it has not been filled with uniform flow or painted over.",
+      "The actual full encoded movie agrees with the controlled same-scale preview and numerical continuity/trajectory checks."
+    ],
+    "limitations": [
+      "Display interpolation preserves original source centres and masks, not native element means or transport.",
+      "The broad feature is from a sampled model vector mean, not directly observed local current measurements.",
+      "Trail motion is enhanced and has no single physical time scale."
+    ]
+  }
+}

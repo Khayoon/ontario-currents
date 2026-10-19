@@ -1,9 +1,11 @@
 /* The display is rasterized from source geometry, never a made-up flow field. */
+const meshDisplayCache=new WeakMap();
 function makeDisplay(mesh,field,river,project,invert,width,height,estuary,simcoe=null,outerEstuary=null){
   const cell=2,nx=Math.ceil(width/cell),ny=Math.ceil(height/cell),n=nx*ny;
   const u=new Float32Array(n),v=new Float32Array(n),t=new Float32Array(n),provider=new Uint8Array(n);u.fill(NaN);t.fill(NaN);
   const px=new Float64Array(mesh.lon.length),py=new Float64Array(mesh.lon.length);
   for(let i=0;i<px.length;i++){const p=project(mesh.lon[i],mesh.lat[i]);px[i]=p[0]/cell;py[i]=p[1]/cell;}
+  let vectors=null;if(field?.kind==='mesh'){let cached=meshDisplayCache.get(mesh);if(!cached||cached.field!==field){cached={field,vectors:MeshFlow.reconstruct(mesh,field)};meshDisplayCache.set(mesh,cached);}vectors=cached.vectors;}
   if(field?.kind==='mesh')for(let f=0;f<mesh.triangles.length;f++){
     if(field.u[f]===null||field.v[f]===null)continue;
     const [a,b,c]=mesh.triangles[f],ax=px[a],ay=py[a],bx=px[b],by=py[b],cx=px[c],cy=py[c];
@@ -14,7 +16,11 @@ function makeDisplay(mesh,field,river,project,invert,width,height,estuary,simcoe
     for(let j=y0;j<=y1;j++)for(let i=x0;i<=x1;i++){
       const x=i+.5,y=j+.5,wa=((by-cy)*(x-cx)+(cx-bx)*(y-cy))/den,wb=((cy-ay)*(x-cx)+(ax-cx)*(y-cy))/den,wc=1-wa-wb;
       if(wa<-.00001||wb<-.00001||wc<-.00001)continue;
-      const k=j*nx+i;u[k]=field.u[f];v[k]=field.v[f];provider[k]=1;
+      const k=j*nx+i,q=3*f,ra=Math.max(0,wa),rb=Math.max(0,wb),rc=Math.max(0,wc),sum=ra+rb+rc,m=Math.min(ra,rb,rc);
+      // Continuous centroid-fan display interpolation. The original wet
+      // triangle gate above is retained; no source values or gaps are edited.
+      u[k]=(3*m*vectors.faceU[f]+(ra-m)*vectors.cornerU[q]+(rb-m)*vectors.cornerU[q+1]+(rc-m)*vectors.cornerU[q+2])/sum;
+      v[k]=(3*m*vectors.faceV[f]+(ra-m)*vectors.cornerV[q]+(rb-m)*vectors.cornerV[q+1]+(rc-m)*vectors.cornerV[q+2])/sum;provider[k]=1;
       if(field.t[a]!==null&&field.t[b]!==null&&field.t[c]!==null)t[k]=field.t[a]*wa+field.t[b]*wb+field.t[c]*wc;
     }
   }

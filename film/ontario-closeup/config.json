@@ -323,5 +323,7 @@
       "weight": 24
     }
   ],
-  "riverSourcePriority": "model"
+  "riverSourcePriority": "model",
+  "meshInterpolation": "centroid-fan",
+  "meshFlowModule": "inputs/mesh-flow.js"
 }

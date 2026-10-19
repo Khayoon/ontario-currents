@@ -67,7 +67,8 @@ function buildGrid(){if(!state.mesh)return;const key=[state.mesh,state.field,sta
   const g=screenGrid,pixels=waterMask(g,projectedGeography());g.valid=g.valid.filter(k=>{if(g.provider[k]!==1&&pixels[k*4+3]<16){g.provider[k]=0;g.u[k]=NaN;return false;}return true;});g.simcoeVisibleCells=0;g.outerEstuaryVisibleCells=0;for(const k of g.valid){if(g.provider[k]===4)g.simcoeVisibleCells++;if(g.provider[k]===5)g.outerEstuaryVisibleCells++;}const outerStatus=$('#outer-estuary-status');outerStatus.hidden=!g.outerEstuaryVisibleCells;outerStatus.textContent=g.outerEstuaryVisibleCells?'Outer estuary · archived 12–17 Oct 2026 vector mean':'';
   // One shared visual clock preserves relative velocities. At close zooms it
   // slows the entire field so its fastest trace travels about 270 CSS px/s.
-  // Source vectors, scalar colours and cursor values remain untouched.
+  // The shared visual clock does not alter interpolated SI velocities,
+  // scalar colours or cursor values. Raw source samples remain untouched.
   let fastest=0;for(const k of g.valid)fastest=Math.max(fastest,Math.hypot(g.u[k],g.v[k]));
   const centreLatitude=invert(state.w/2,state.h/2)[1],pixelsPerMetre=state.k/(360*111320*Math.cos(centreLatitude*Math.PI/180));
   g.motionMultiplier=Math.min(nominalMotionMultiplier,maxScreenMotion/Math.max(1e-12,fastest*pixelsPerMetre));gridKey=key;

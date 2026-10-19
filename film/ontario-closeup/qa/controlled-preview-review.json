@@ -1,0 +1,14 @@
+{
+  "before_sha256": "1c0a240d90a0c8b29deb11ef79052eca5bcd0f9542aaab27b901dd9f7d764ccb",
+  "after_sha256": "2d450761fa26f3321244091f857a3f9eb34eac61a00dccfa3d28e2b0278c4406",
+  "helper_sha256": "1a9ff1f31c1338bab4423a7152e664c96b10fc0fb51b5e7a36c386741f26f4f4",
+  "inspected_frame_indices": [
+    0,
+    60,
+    120,
+    179
+  ],
+  "setup": "controlled-preview-setup.json",
+  "assessment": "Matched actual encoded previews remove the repeated angular/vertical mesh teeth while retaining the broad curved shear and reversing/weak-flow lane. Source data, original water mask and source centre values remain unchanged. This is a display-interpolation review, not physical validation.",
+  "passed": true
+}

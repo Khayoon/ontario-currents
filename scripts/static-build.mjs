@@ -28,7 +28,7 @@ const filmManifestPath=path.join(root,'media-source/ontario-closeup.json');
   await writeFile(path.join(dist,'media/lake-ontario-closeup.mp4'),film);
 }
 try{await cp(path.join(root,'CNAME'),path.join(dist,'CNAME'));}catch(e){if(e.code!=='ENOENT')throw e;}
-const version=createHash('sha256').update(await readFile(path.join(dist,'app.js'))).update(await readFile(path.join(dist,'field.js'))).update(await readFile(path.join(dist,'style.css'))).digest('hex').slice(0,12);
-const html=(await readFile(path.join(dist,'index.html'),'utf8')).replace(/(src|href)="\.\/(app\.js|field\.js|style\.css)"/g,(_,attr,file)=>`${attr}="./${file}?v=${version}"`);
+const version=createHash('sha256').update(await readFile(path.join(dist,'app.js'))).update(await readFile(path.join(dist,'field.js'))).update(await readFile(path.join(dist,'mesh-flow.js'))).update(await readFile(path.join(dist,'style.css'))).digest('hex').slice(0,12);
+const html=(await readFile(path.join(dist,'index.html'),'utf8')).replace(/(src|href)="\.\/(app\.js|field\.js|mesh-flow\.js|style\.css)"/g,(_,attr,file)=>`${attr}="./${file}?v=${version}"`);
 await writeFile(path.join(dist,'index.html'),html);await writeFile(path.join(dist,'.nojekyll'),'');
 console.log('Built static GitHub Pages artifact in dist/; no server or private deployment metadata.');

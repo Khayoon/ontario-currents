@@ -1,12 +1,14 @@
 {
-  "source_renderer_sha256": "fb4122951aa91806d9cd9e0dd7d3c382751b971572ddb3d9c075f982b1716f9f",
-  "source_config_sha256": "26edc44cbbe176a89d51f7378c06ee9e9f544cbc09ee6e731b4927a51af32a50",
+  "source_renderer_sha256": "60022e64d777779c4b2cedcb1d49695b454002b784f8e5905a97cbb763495a93",
+  "source_config_sha256": "999316866bc809cf4f753f920f34285afc5678d782cf34a2844e6260900ca08d",
+  "shared_live_helper_sha256": "1a9ff1f31c1338bab4423a7152e664c96b10fc0fb51b5e7a36c386741f26f4f4",
+  "frozen_helper_identical_to_live": true,
   "portable_changes": [
     "Canvas dependency and FFmpeg executable resolution",
-    "LF normalization"
+    "LF normalization",
+    "Relative frozen-helper input path"
   ],
   "render_logic_copied_without_changes": true,
-  "field_selection": "Regional hydraulic estimate throughout solved river domain; NOAA surface mean elsewhere.",
   "external_inputs": [
     {
       "path": "../../src/mesh.json",
@@ -20,13 +22,18 @@
   "files": [
     {
       "path": "config.json",
-      "bytes": 5874,
-      "sha256": "6385b428f023e579d2a00553a907c2fd630ae5686e422ab27481bd86303e8bc1"
+      "bytes": 5956,
+      "sha256": "6a87674ddfe91be99fecd342ec486f5a13dc9c55f1d92cdfac3a50514f709435"
     },
     {
       "path": "finish.py",
       "bytes": 3551,
       "sha256": "b510f8caa2e300efbcd2f663807bb7c956bd1fbdd3b5238749a86d2c5b4d289a"
+    },
+    {
+      "path": "inputs/mesh-flow.js",
+      "bytes": 6651,
+      "sha256": "1a9ff1f31c1338bab4423a7152e664c96b10fc0fb51b5e7a36c386741f26f4f4"
     },
     {
       "path": "inputs/noaa-week-mean.json",
@@ -44,69 +51,119 @@
       "sha256": "d9c50b7225dff859b31ef971959f01232b3f634f781e03517067dd49cec9048d"
     },
     {
-      "path": "qa/candidate-encoded-report.json",
+      "path": "qa/before-mesh-interpolation/candidate-encoded-report.json",
       "bytes": 91371,
       "sha256": "e46fbe5003fecf85dffc90b00e15e86cd207e07e7d2c3c41333315962e60c9b5"
     },
     {
-      "path": "qa/candidate-package-review.json",
+      "path": "qa/before-mesh-interpolation/candidate-package-review.json",
       "bytes": 2024,
       "sha256": "f8770947a51c4d1a0ef2eb55c461bad0430b7d771a95e020a46e9be7226b97d1"
     },
     {
-      "path": "qa/candidate-raster-mouth-review.json",
+      "path": "qa/before-mesh-interpolation/candidate-raster-mouth-review.json",
       "bytes": 16090,
       "sha256": "fb36e398b1df4a81b13444759424aac438a5d886ab0dbc0252995bd4ab4c5b50"
     },
     {
-      "path": "qa/candidate-seam-review.json",
+      "path": "qa/before-mesh-interpolation/candidate-seam-review.json",
       "bytes": 1148,
       "sha256": "971eb813024cb3b44f5e6afa7ee9254bc61b1315b821c26d7d5bb0c4bbf34846"
     },
     {
-      "path": "qa/candidate-trace-result.json",
+      "path": "qa/before-mesh-interpolation/candidate-trace-result.json",
       "bytes": 4854014,
       "sha256": "765b952f08830ddc658e481d11e1673f3a576a54fb9036754969251d52a09f20"
     },
     {
-      "path": "qa/geometry-expanded-final-audit.json",
+      "path": "qa/before-mesh-interpolation/geometry-expanded-final-audit.json",
       "bytes": 3112,
       "sha256": "d1406d2d6fb2f2083a618160ce45920b1089efd6c9e131e978c7d70744aac99d"
     },
     {
-      "path": "qa/geometry-expanded-source-audit.json",
+      "path": "qa/before-mesh-interpolation/geometry-expanded-source-audit.json",
       "bytes": 4067,
       "sha256": "7c097b988716453d48bd4a3365dd4af9115471b17ddd9d55a3275a4d5808d427"
     },
     {
-      "path": "qa/geometry-native-report.json",
+      "path": "qa/before-mesh-interpolation/geometry-native-report.json",
       "bytes": 39206,
       "sha256": "efa98b46cb6aecb2edf28c7a670b7c63b69d4118b150c15cda67f46d8f570e6c"
     },
     {
-      "path": "qa/interface-kernel.txt",
+      "path": "qa/before-mesh-interpolation/interface-kernel.txt",
       "bytes": 1978,
       "sha256": "531987864b4a930baa516f354b1125d9ddf74966cf8cd7105014b1208acdb4e6"
     },
     {
-      "path": "qa/interface-trace-result.json",
+      "path": "qa/before-mesh-interpolation/interface-trace-result.json",
       "bytes": 972555,
       "sha256": "3066d471135f14dbbb4a449dbf8125b6ed2b09a1dd38681f50bc83052803f25e"
     },
     {
-      "path": "qa/README.md",
+      "path": "qa/before-mesh-interpolation/README.md",
       "bytes": 2367,
       "sha256": "0bd2829d38b0642f083eb57617c4ee2f3531d866440ae973cba3911bb6c53735"
     },
     {
+      "path": "qa/controlled-preview-review.json",
+      "bytes": 714,
+      "sha256": "7aa57d25b8aa7feba36f81be13e4b1b9e68f5f8e1dad82b8261480469aa98d0a"
+    },
+    {
+      "path": "qa/display-integration-regression.json",
+      "bytes": 593,
+      "sha256": "70b47fd0a5eb02d4c9fd92e1f677b3e1f4a56368f053c7b0273f63120eebe33f"
+    },
+    {
+      "path": "qa/final-band-review.json",
+      "bytes": 1946,
+      "sha256": "f593bdbe1bc1b8acf8f62ae9c50a3985568fe297d6321e7e08ab96aa53ddb1b1"
+    },
+    {
+      "path": "qa/final-carleton-review.json",
+      "bytes": 88900,
+      "sha256": "aab0bb6b5fca4afd61af93af4df6cddd32aadcac132832b14990e26f31f919b6"
+    },
+    {
+      "path": "qa/final-seam-review.json",
+      "bytes": 1141,
+      "sha256": "16c5a6d3ecfda5a51e074d348bd8f3087bf01c69ac64ac6c2a7d7b12f3fbb5c2"
+    },
+    {
+      "path": "qa/independent-reconstruction-review.json",
+      "bytes": 1426,
+      "sha256": "a0fc00ed0cbce3f497a911a0d416ff585a721d087d00827477b51ef576a045a6"
+    },
+    {
+      "path": "qa/README.md",
+      "bytes": 1957,
+      "sha256": "e6b55a0e70d967d7cbf9573518460c96cfd77718fa4bb3f2eae12cb73e7ad58f"
+    },
+    {
+      "path": "qa/SCIENTIFIC-INTERPRETATION.md",
+      "bytes": 3386,
+      "sha256": "e1a8cb651d1f1051ee1fa4cda1a824093966fe4147b13899fbc150215815c442"
+    },
+    {
+      "path": "qa/source-neighbour-audit.json",
+      "bytes": 1887998,
+      "sha256": "04c40ac6165ca93937c4b07c3143d65ce86cce5689e6168892275a7342e921ea"
+    },
+    {
+      "path": "qa/targeted-band-trajectory-review.json",
+      "bytes": 1112841,
+      "sha256": "a97892b4d67064121f0688a9be2cacff86721d6cf727e728440a7b721ed0e695"
+    },
+    {
       "path": "README.md",
-      "bytes": 3875,
-      "sha256": "aa04cd4ee52728faf8543dce91cb238428dff3d0930409be049195147a983b60"
+      "bytes": 5292,
+      "sha256": "a57f37a58c5d2124e9a27688c96601e1f351b3e6792e49f05fc7a815ee6ae86d"
     },
     {
       "path": "render.mjs",
-      "bytes": 25085,
-      "sha256": "1c7ab5fda5d0c6e16c07a2e171e16f3e4c07f663c3efabed6962030bf4882300"
+      "bytes": 25824,
+      "sha256": "ad6a23a43352b80c5b0982f202a55a02670cd0b682c2fd144ed4af2a442b07bc"
     }
   ]
 }

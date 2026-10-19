@@ -11,6 +11,7 @@ class Surface{
   getContext(){return this.context;}addEventListener(){}setAttribute(name,value){this.attributes[name]=value;}focus(){this.focused=true;}
 }
 const elements=new Map(),context=vm.createContext({console,Math,Date,Intl,Uint8Array,Uint8ClampedArray,Float32Array,Float64Array,Path2D:TestPath,document:{querySelector(s){if(!elements.has(s))elements.set(s,new Surface());return elements.get(s);},querySelectorAll(){return [];},createElement(){return new Surface();},addEventListener(){}},window:{addEventListener(){}},matchMedia(){return {matches:false};},requestAnimationFrame(){},setTimeout(){},clearTimeout(){}});
+vm.runInContext(await readFile(new URL('../src/mesh-flow.js',import.meta.url),'utf8'),context);
 vm.runInContext(await readFile(new URL('../src/field.js',import.meta.url),'utf8'),context);
 context.recordGrid=()=>count.grids++;
 vm.runInContext('const actualMakeDisplay=makeDisplay;makeDisplay=(...args)=>{recordGrid();return actualMakeDisplay(...args);};const actualRaster=displayRaster;displayRaster=(...args)=>{globalThis.lastRasterMaximum=args[3];return actualRaster(...args);};',context);
@@ -25,7 +26,9 @@ state.tx+=2;redraw();assert.equal(count.grids,first.grids+2,'Pan must rebuild sc
 const shifted={...count};state.w+=4;redraw();assert.equal(count.grids,shifted.grids+1,'Resize must rebuild screen velocities');assert(count.vertices>shifted.vertices,'Resize must invalidate projected shores');assert.equal(count.masks,shifted.masks+1);
 const resized={...count};state.river={west:-180,south:-85,dx:360,dy:170,width:2,height:2,u:[.1,.1,.1,.1],v:[.2,.2,.2,.2]};redraw();assert.equal(count.grids,resized.grids+1,'River source updates must invalidate velocity cache');assert.equal(count.vertices,resized.vertices);assert.equal(count.masks,resized.masks);
 assert.equal(grid().motionMultiplier,90000,'Wide views with slow screen velocities keep nominal acceleration');
-Object.assign(state,{w:64,h:64,k:1e6,tx:32-.5e6,ty:32-.5e6,river:null,mesh:{lon:[-180,180,180,-180],lat:[85,85,-85,-85],triangles:[[0,1,2],[0,2,3]]},field:{kind:'mesh',u:[.7,.35],v:[0,0],t:[10,10,10,10]}});
+// Separate uniform patches isolate the shared motion clock here.
+// Interpolation across connected wet edges is tested in test-mesh-flow.mjs.
+Object.assign(state,{w:64,h:64,k:1e6,tx:32-.5e6,ty:32-.5e6,river:null,mesh:{lon:[-180,180,180,-180,180,-180],lat:[85,85,-85,85,-85,-85],triangles:[[0,1,2],[3,4,5]]},field:{kind:'mesh',u:[.7,.35],v:[0,0],t:[10,10,10,10]}});
 const sourceBefore=JSON.stringify(state.field);redraw();const firstZoomScale=grid().motionMultiplier;assert(firstZoomScale>0&&firstZoomScale<90000,'Close zoom must adapt the shared visual clock');
 const centrePixelsPerMetre=state.k/(360*111320);assert(Math.abs(firstZoomScale*.7*centrePixelsPerMetre-270)<1e-4,'Fastest centre-projected trace must be capped at 270 CSS px/s');
 const beforeColourMultiplier=grid().motionMultiplier;state.layer='temperature';redraw();assert.equal(grid().motionMultiplier,beforeColourMultiplier,'Changing scalar colour cannot change motion scale');

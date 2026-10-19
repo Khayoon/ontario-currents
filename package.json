@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node scripts/static-build.mjs",
     "refresh-data": "node scripts/refresh-data.mjs",
-    "check": "node scripts/check-pages.mjs && node scripts/test-redraw-cache.mjs",
+    "check": "node scripts/check-pages.mjs && node scripts/test-redraw-cache.mjs && node scripts/test-mesh-flow.mjs",
     "preview": "node scripts/preview.mjs"
   }
 }

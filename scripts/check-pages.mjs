@@ -106,7 +106,7 @@ async function inspectTree(directory, label) {
       }
     }
   }
-  const required = ['index.html', 'app.js', 'field.js', 'style.css', 'geography.json', 'mesh.json',
+  const required = ['index.html', 'app.js', 'field.js', 'mesh-flow.js', 'style.css', 'geography.json', 'mesh.json',
     ...['manifest', 'catalog', 'snapshot', 'average', 'river', 'river-average', 'estuary', 'estuary-average'].map(n => `data/${n}.json`)];
   for (const name of required) check(nameSet.has(name), `${label}: missing ${name}`);
   const base = new URL('https://example.invalid/owner/project/');
@@ -191,6 +191,7 @@ async function inspectTree(directory, label) {
 async function fieldFixtures(directory, label) {
   try {
     const context = vm.createContext({});
+    vm.runInContext(await readFile(path.join(directory, 'mesh-flow.js'), 'utf8'), context, { timeout: 5000 });
     vm.runInContext(await readFile(path.join(directory, 'field.js'), 'utf8'), context, { timeout: 5000 });
     const mesh = { lon: [0, 8, 0], lat: [0, 0, 8], triangles: [[0, 1, 2]] };
     const field = { kind: 'mesh', u: [1], v: [-1], t: [10, 20, 30] };
@@ -246,7 +247,7 @@ try {
       const src = path.join(root, 'src', name);
       if (await exists(src)) {
         const current = await readFile(src), built = await readFile(path.join(root, 'dist', name));
-        const normalize = html => html.replace(/((?:src|href)="\.\/(?:app\.js|field\.js|style\.css))\?v=[a-f0-9]+"/g, '$1"');
+        const normalize = html => html.replace(/((?:src|href)="\.\/(?:app\.js|field\.js|mesh-flow\.js|style\.css))\?v=[a-f0-9]+"/g, '$1"');
         const same = name === 'index.html' ? normalize(current.toString()) === normalize(built.toString()) : current.equals(built);
         check(same, `dist/${name} differs from current src; rebuild before publication`);
       } else if (name.startsWith('media/')) {

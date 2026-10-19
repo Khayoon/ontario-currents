@@ -1,0 +1,27 @@
+{
+  "helper_sha256": "1a9ff1f31c1338bab4423a7152e664c96b10fc0fb51b5e7a36c386741f26f4f4",
+  "source_mesh_sha256": "d5720f28802855db79f088946e359e75554ad64f432a048e7df06f45832471cf",
+  "source_field_sha256": "bd13fb67dcae1b11828bf8efc31b60dca4059265fea63978811cfda5c0a9c7c0",
+  "runtime": {
+    "sourceObjectsUnchanged": true,
+    "validFaces": 64453,
+    "centroidTests": 64453,
+    "maximumCentreError": 0,
+    "disconnectedInvalidFanPass": true,
+    "disconnectedFanError": 0,
+    "invalidFacesRejected": true,
+    "outsideRejected": true
+  },
+  "validity_exact": true,
+  "original_face_values_exact": true,
+  "independent_spherical_area_graph_corner_error_mps": 5.102585021177219e-13,
+  "global_split_valid_vertex_fans": 0,
+  "global_shared_edge_sample_tests": 661528,
+  "maximum_shared_edge_disagreement_mps": 0.0,
+  "roi_grid_queries": 128000,
+  "roi_convex_component_overshoot_mps": 0.0,
+  "roi_strong_eastwest_sign_agreement": 0.9999914013998521,
+  "roi_grid_rms_vector_change_mps": 0.003628289780355724,
+  "interpretation": "The broad mean shear/reversal remains: source-centroid vectors remain exact, and strong east/west directions agree over99%of sampled area. Continuous interpolation removes artificial mesh-edge jumps. It changes displayed interior values, native element means and inferred transport; it is not a new physical simulation or a conservative remapping.",
+  "passed": true
+}

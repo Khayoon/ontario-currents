@@ -3,6 +3,7 @@ import path from 'node:path';
 import {createRequire} from 'node:module';
 import {spawn} from 'node:child_process';
 import {once} from 'node:events';
+import {pathToFileURL} from 'node:url';
 
 // This is a standalone, deterministic map renderer. It does not load the website.
 // Native Canvas pixel buffers need regular collection during long, large exports.
@@ -20,6 +21,7 @@ for(const f of cfg.fontFiles||[])GlobalFonts.registerFromPath(resolve(f.path),f.
 const json=p=>JSON.parse(fs.readFileSync(resolve(p),'utf8'));
 const mesh=json(cfg.mesh), field=json(cfg.field), geo=json(cfg.geography), sources=(cfg.rivers||[]).map(json), drainage=cfg.drainage?json(cfg.drainage):null;
 if(field.u.length!==mesh.triangles.length||field.v.length!==mesh.triangles.length)throw new Error('Lake vector field length does not match native mesh triangles');
+let meshVectors=null;if(cfg.meshInterpolation==='centroid-fan'){if(!cfg.meshFlowModule)throw new Error('meshFlowModule is required for centroid-fan interpolation');await import(pathToFileURL(resolve(cfg.meshFlowModule)).href);meshVectors=globalThis.MeshFlow.reconstruct(mesh,field);}
 const lake=geo.features.find(f=>f.properties?.name==='Lake Ontario');
 if(lake&&cfg.useNativeOntarioCoast!==false)lake.geometry={type:'Polygon',coordinates:mesh.rings.map(r=>r.map(i=>[mesh.lon[i],mesh.lat[i]]))};
 const seeded=(seed=cfg.seed||74129)=>()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};
@@ -61,7 +63,11 @@ function renderer(W,H,cfg=globalConfig){
     for(let j=y0;j<=y1;j++)for(let i=x0;i<=x1;i++){
       const x=i+.5,y=j+.5,wa=((by-cy)*(x-cx)+(cx-bx)*(y-cy))/den,wb=((cy-ay)*(x-cx)+(ax-cx)*(y-cy))/den,wc=1-wa-wb;
       if(wa<-.00001||wb<-.00001||wc<-.00001)continue;
-      const z=j*nx+i;U[z]=field.u[f];V[z]=field.v[f];P[z]=1;
+      const z=j*nx+i;
+      if(meshVectors){const q=3*f,ra=Math.max(0,wa),rb=Math.max(0,wb),rc=Math.max(0,wc),sum=ra+rb+rc,m=Math.min(ra,rb,rc);
+        U[z]=(3*m*meshVectors.faceU[f]+(ra-m)*meshVectors.cornerU[q]+(rb-m)*meshVectors.cornerU[q+1]+(rc-m)*meshVectors.cornerU[q+2])/sum;
+        V[z]=(3*m*meshVectors.faceV[f]+(ra-m)*meshVectors.cornerV[q]+(rb-m)*meshVectors.cornerV[q+1]+(rc-m)*meshVectors.cornerV[q+2])/sum;
+      }else{U[z]=field.u[f];V[z]=field.v[f];}P[z]=1;
       if(field.t&&field.t[aa]!==null&&field.t[bb]!==null&&field.t[cc]!==null)T[z]=field.t[aa]*wa+field.t[bb]*wb+field.t[cc]*wc;
     }
   }
