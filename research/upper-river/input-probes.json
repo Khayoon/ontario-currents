@@ -1,0 +1,42 @@
+[
+  [
+    {
+      "file": "13988-water-levels.json",
+      "url": "https://api-iwls.dfo-mpo.gc.ca/api/v1/stations/5cebf1e43d0f4a073c4bc3f1/data?time-series-code=wlo&from=2026-10-12T00%3A00%3A00Z&to=2026-10-17T12%3A00%3A00Z&resolution=SIXTY_MINUTES",
+      "status": 200,
+      "bytes": 16747
+    },
+    {
+      "file": "13988-metadata.json",
+      "url": "https://api-iwls.dfo-mpo.gc.ca/api/v1/stations/5cebf1e43d0f4a073c4bc3f1/metadata",
+      "status": 200,
+      "bytes": 1334
+    }
+  ],
+  [
+    {
+      "file": "14400-water-levels.json",
+      "url": "https://api-iwls.dfo-mpo.gc.ca/api/v1/stations/5cebf1e43d0f4a073c4bc3f7/data?time-series-code=wlo&from=2026-10-12T00%3A00%3A00Z&to=2026-10-17T12%3A00%3A00Z&resolution=SIXTY_MINUTES",
+      "status": 200,
+      "bytes": 16743
+    },
+    {
+      "file": "14400-metadata.json",
+      "url": "https://api-iwls.dfo-mpo.gc.ca/api/v1/stations/5cebf1e43d0f4a073c4bc3f7/metadata",
+      "status": 200,
+      "bytes": 1338
+    }
+  ],
+  {
+    "file": "nonna10-description.xml",
+    "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=DescribeCoverage&coverage=nonna%3ANONNA+10+Coverage",
+    "status": 200,
+    "bytes": 2596
+  },
+  {
+    "file": "nonna-main.js",
+    "url": "https://data.chs-shc.ca/main.db5ab7ca03025952.js",
+    "status": 200,
+    "bytes": 1969279
+  }
+]

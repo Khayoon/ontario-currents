@@ -1,0 +1,21 @@
+{
+  "bytes": 45828711,
+  "sha256": "c2cb95e5dd756e4eb96390fc805529e4bd01c07c72b46e57d99d948b6d45db6f",
+  "parts": [
+    {
+      "file": "ontario-closeup.part0",
+      "bytes": 22000000,
+      "sha256": "12ac4cbd2a7a93495d91e3f54c192d50c1cf22da42e1faf9183cb9cbd0bd1d35"
+    },
+    {
+      "file": "ontario-closeup.part1",
+      "bytes": 22000000,
+      "sha256": "332338a2c395ddd27af16cb20c62b5f04e45bd8db610ad16e3c9f4357dd844ea"
+    },
+    {
+      "file": "ontario-closeup.part2",
+      "bytes": 1828711,
+      "sha256": "9c03801f127fde4564b694447ca1c3e4b7a7bfdab0da22cffbd56f69b0b294ac"
+    }
+  ]
+}

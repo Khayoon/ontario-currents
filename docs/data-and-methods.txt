@@ -173,3 +173,12 @@ The static drainage overlay uses the official LSRCA scientific Simcoe watershed 
 Drainage sources and licences: https://gis.lsrca.on.ca/gis/rest/services/OpenData/MapServer/20 ; https://gis.lsrca.on.ca/gis/rest/services/OpenData/MapServer/8 ; https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/MOE/GreatLakes_WS_Bnd/MapServer/1
 Contains Information made available under Lake Simcoe Region Conservation Authority Open Data Licence v1.0.
 Contains information licensed under the Open Government Licence – Ontario.
+
+
+9. Lake Ontario close-up film, 19 October 2026
+
+The featured film is now media/lake-ontario-closeup.mp4: a silent 20-second H.264/yuv420p loop, 2560 × 1440 at 30 fps. It frames Lake Ontario through Brockville, with no Simcoe, estuary, drainage layer, insets, timeline or interactive controls. The broader atlas and earlier media/october-current-map.mp4 remain available with the scope described above.
+
+This close-up uses the unchanged 23-sample NOAA LOOFS native surface vector mean for 12 October 2026 00:00 UTC–17 October 2026 12:00 UTC. There are no additional river vectors. Complete shorelines preserve island holes; currents are clipped to those water polygons and to valid model cells. The logarithmic speed legend is unchanged. Brighter trails, increased visual particle density and a nominal motion acceleration of 70,000 improve full-frame legibility; these drawing settings do not change vector direction, speed or geographic coverage. A bounded two-second crossfade joins the 20-second loop.
+
+Kingston–Brockville is explicitly labelled as lacking a retrieved current field. Research verified existing ELCOM and ECCC H2D2 model applications covering that reach, as well as actual CHS water-level records and bathymetry downloads. These are reconstruction inputs and model-asset leads, not a downloaded velocity field or a newly validated simulation. Exact evidence, retrieval examples, model limitations and the remaining work are recorded in docs/kingston-brockville.md.

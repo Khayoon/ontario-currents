@@ -1,0 +1,102 @@
+[
+  {
+    "name": "kingston",
+    "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8516327.850777496%2C5496031.99113384%2C-8513327.850777496%2C5499031.99113384&width=300&height=300&format=GeoTIFF&interpolation=nearest+neighbor",
+    "bytes": 370082,
+    "size": [
+      300,
+      300
+    ],
+    "mode": "F",
+    "dtype": "float32",
+    "nodata_tag": "3.4028234663852886E38",
+    "min": -20.216110229492188,
+    "max": 3.4028234663852886e+38,
+    "reasonable_count": 89326,
+    "reasonable_min": -20.216110229492188,
+    "reasonable_max": -3.413530111312866,
+    "sample_values": [
+      -16.576168060302734,
+      -17.746536254882812,
+      -17.849193572998047,
+      -16.42936134338379,
+      -7.531173229217529,
+      -4.742381572723389
+    ]
+  },
+  {
+    "name": "gananoque",
+    "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8478479.223907784%2C5512041.3982585035%2C-8475479.223907784%2C5515041.3982585035&width=300&height=300&format=GeoTIFF&interpolation=nearest+neighbor",
+    "bytes": 370082,
+    "size": [
+      300,
+      300
+    ],
+    "mode": "F",
+    "dtype": "float32",
+    "nodata_tag": "3.4028234663852886E38",
+    "min": -18.5,
+    "max": 3.4028234663852886e+38,
+    "reasonable_count": 24778,
+    "reasonable_min": -18.5,
+    "reasonable_max": 0.6095960736274719,
+    "sample_values": [
+      -7.914870262145996,
+      -9.318429946899414,
+      -4.8045759201049805,
+      -9.893211364746094,
+      -13.87346363067627,
+      -16.45919418334961
+    ]
+  },
+  {
+    "name": "alexandria-bay",
+    "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8453432.338479295%2C5516709.613531223%2C-8450432.338479295%2C5519709.613531223&width=300&height=300&format=GeoTIFF&interpolation=nearest+neighbor",
+    "bytes": 389554,
+    "size": [
+      300,
+      300
+    ],
+    "mode": "F",
+    "dtype": "float32",
+    "nodata_tag": "3.4028234663852886E38",
+    "min": -75.94403076171875,
+    "max": 3.4028234663852886e+38,
+    "reasonable_count": 13739,
+    "reasonable_min": -75.94403076171875,
+    "reasonable_max": 0.800000011920929,
+    "sample_values": [
+      -0.6000000238418579,
+      -44.10177230834961,
+      -33.45785140991211,
+      -25.699901580810547,
+      -14.43572998046875,
+      -30.95197868347168
+    ]
+  },
+  {
+    "name": "brockville",
+    "url": "https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=nonna%3ANONNA+10+Coverage&crs=EPSG%3A3857&response_crs=EPSG%3A3857&bbox=-8426270.382725736%2C5554454.242935519%2C-8423270.382725736%2C5557454.242935519&width=300&height=300&format=GeoTIFF&interpolation=nearest+neighbor",
+    "bytes": 389554,
+    "size": [
+      300,
+      300
+    ],
+    "mode": "F",
+    "dtype": "float32",
+    "nodata_tag": "3.4028234663852886E38",
+    "min": -39.0,
+    "max": 3.4028234663852886e+38,
+    "reasonable_count": 24703,
+    "reasonable_min": -39.0,
+    "reasonable_max": 0.5,
+    "sample_values": [
+      -9.699999809265137,
+      -24.490232467651367,
+      -11.077315330505371,
+      -11.039481163024902,
+      -0.5,
+      -11.199999809265137
+    ]
+  }
+]

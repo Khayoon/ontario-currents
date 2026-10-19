@@ -2,7 +2,7 @@
 
 An interactive atlas of modelled water currents from Lake Ontario into the St. Lawrence, with Lake Simcoe and the Montréal archipelago included in the shoreline geography. A companion MP4 presents a fixed October average for sharing.
 
-**[Explore the live atlas](https://khayoon.github.io/ontario-currents/)** · **[Watch the 20-second loop](https://khayoon.github.io/ontario-currents/media/october-current-map.mp4)** · **[Data and methods](docs/data-and-methods.txt)**
+**[Explore the live atlas](https://khayoon.github.io/ontario-currents/)** · **[Watch the Lake Ontario close-up](https://khayoon.github.io/ontario-currents/media/lake-ontario-closeup.mp4)** · **[Data and methods](docs/data-and-methods.txt)**
 
 [![The live atlas showing Lake Ontario currents, Lake Simcoe and the St. Lawrence shorelines](docs/atlas-preview.jpg)](https://khayoon.github.io/ontario-currents/)
 
@@ -23,7 +23,9 @@ The **website** supports live-source exploration and sampled 24-hour vector mean
 
 The map fills the main view. The Ontario timeline, playback and refresh tools open through a compact **Time controls** disclosure.
 
-The **MP4** is a silent 2560 × 1920 H.264 loop at 30 fps. It traces a fixed vector mean for **12 October 2026 00:00 UTC–17 October 2026 12:00 UTC**, using 23 six-hourly samples for each retrieved government current product. The Simcoe experiment uses a timestep-integrated vector mean over the same period. The overview, Montréal detail and enlarged Simcoe close-up animate. Simcoe uses brighter, thicker flowing trails and its own linear 0–5 cm/s colour legend to remain readable in the full composition. Motion is accelerated for visibility. The colour scale shows the magnitude of the mean current vector, with a logarithmic scale capped at 150+ cm/s. It is a week-to-date mean, not an October climatology or a replay of the week's changing conditions.
+The featured **MP4** is a silent 2560 × 1440 H.264 loop at 30 fps, lasting 20 seconds. Its close-up frames the whole of Lake Ontario and the upper river through Brockville, without insets, a timeline or controls. Bright trails trace the NOAA LOOFS surface vector mean for **12 October 2026 00:00 UTC–17 October 2026 12:00 UTC**, using 23 six-hourly samples. Motion is accelerated for visibility; the logarithmic colour scale shows the magnitude of the mean vector, capped at 150+ cm/s. This is a sampled week-to-date mean, not an October climatology or a replay of changing conditions. The Kingston–Brockville reach remains visible and explicitly labelled as lacking a retrieved current field. See the [verified upper-river research and reconstruction route](docs/kingston-brockville.md).
+
+The earlier [broader Ontario–St. Lawrence film](https://khayoon.github.io/ontario-currents/media/october-current-map.mp4) remains available. It includes Montréal and the estuary, plus a separately labelled experimental Simcoe inset. The live atlas retains that broader geographic scope.
 
 **Lake Simcoe's experimental layer** is a fixed-date, unvalidated depth-averaged wind response, present in both website modes and labelled in the film. It is not measured circulation or a surface-current forecast. Its physical assumptions, source data, solver and sensitivity checks are described in the [Simcoe model notes](docs/simcoe-model.md).
 

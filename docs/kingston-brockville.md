@@ -1,0 +1,80 @@
+# Kingston–Brockville currents: a concrete reconstruction route
+
+This is the research companion to the Lake Ontario close-up film. No public corridor u/v download was verified, so the movie labels the gap rather than drawing unsupported currents.
+
+The [frozen input records and retrieval scripts](../research/upper-river/) are published with SHA-256 records. Larger bathymetry tiles, the original thesis and ECCC report were downloaded and inspected locally; they are not redistributed here. The links and scripts below retrieve the original sources. Cached local filenames in the evidence tables identify what was actually inspected.
+
+CHS's public November 2025 S-111 sample catalogue was also downloaded and inspected: its four current tiles are at Québec City, not Kingston–Brockville. That sample therefore cannot fill the gap. This does not establish that a separate operational corridor product is unavailable. [Official S-100 products and sample](https://shc.gc.ca/data-gestion/s-100/products-services-produits-eng.html).
+
+
+Verified 19 October 2026. Target interval: 12 October 2026 00:00 UTC–17 October 2026 12:00 UTC. No hydrodynamic simulation was run for this note, and none of the bathymetry or water-level observations below is being presented as a measured velocity field.
+
+## What was actually retrieved
+
+| Input | Verified access and contents | Local evidence |
+|---|---|---|
+| CHS Kingston water levels, station 13988 | 133 hourly observations covering the target interval, all `qcFlagCode=1` and `reviewed=true`. Chart-datum observations in metres. | `13988-water-levels.json`, `13988-metadata.json` |
+| CHS Brockville water levels, station 14400 | Same 133 timestamps and quality flags. | `14400-water-levels.json`, `14400-metadata.json` |
+| Common-datum boundary series | Kingston metadata gives +74.20 m and Brockville +73.95 m to IGLD85. Converted observations are saved as a ready-to-use CSV; interval means are 74.801744 m at Kingston and 74.521707 m at Brockville, a mean endpoint difference of 0.280038 m. | `hourly-stage-boundaries-igld85.csv` |
+| NOAA Alexandria Bay water levels, station 8311062 | 1,322 six-minute records from 12 October 00:00 to 17 October 12:06 UTC, already requested in metres IGLD; reported `q=p` means preliminary. This is an intermediate-stage check, not a current meter. | `alexandria-bay-water-levels.json` |
+| CHS NONNA numerical bathymetry | Four actual 300×300 float32 GeoTIFF samples from the official NONNA10 WCS at Kingston, Gananoque, Alexandria Bay and Brockville. These are elevation values, not coloured WMS imagery. | Four `*-nonna10.tif` files; exact URLs and statistics in `bathymetry-probes.json` |
+| IJC Lake Ontario outflow-change records | Direct CSV downloaded, 10,990 bytes. Records include 10/10/2026 00:01: 7,380 m³/s and 10/17/2026 00:01: 7,340 m³/s. The CSV does not specify a timezone: resolve that before making UTC forcing. These are regulation/change records, not a continuous independently observed discharge series. | `ijc-flow-changes.csv` |
+| Queen’s existing Kingston–Brockville ELCOM model documentation | Original Paturi 2013 PhD PDF downloaded from Queen’s Scholaris, 16,909,953 bytes, 159 pages. Original bundle contains the PDF only; no mesh, forcing archive or numerical outputs are attached. | `paturi-2013-thesis.pdf`, extracted `.txt`, `paturi-original-files.json` |
+
+Reproduce the verified downloads from the project root:
+
+```powershell
+python research/upper-river/probe_inputs.py
+python research/upper-river/probe_bathymetry.py
+python research/upper-river/fetch_thesis_and_validation.py
+python research/upper-river/prepare_boundary_inputs.py
+```
+
+The bathymetry probe script needs NumPy and Pillow; the thesis extraction needs PyMuPDF. These were present in the environment used here.
+
+## Exact data endpoints
+
+**Water levels.** The [official CHS IWLS API documentation](https://api-iwls.dfo-mpo.gc.ca/swagger-ui/index.html) defines station search, metadata, time-series retrieval and QC flags. The station IDs are Kingston `5cebf1e43d0f4a073c4bc3f1` and Brockville `5cebf1e43d0f4a073c4bc3f7`.
+
+- [Kingston target-period hourly observations](https://api-iwls.dfo-mpo.gc.ca/api/v1/stations/5cebf1e43d0f4a073c4bc3f1/data?time-series-code=wlo&from=2026-10-12T00:00:00Z&to=2026-10-17T12:00:00Z&resolution=SIXTY_MINUTES)
+- [Brockville target-period hourly observations](https://api-iwls.dfo-mpo.gc.ca/api/v1/stations/5cebf1e43d0f4a073c4bc3f7/data?time-series-code=wlo&from=2026-10-12T00:00:00Z&to=2026-10-17T12:00:00Z&resolution=SIXTY_MINUTES)
+- [Kingston datum metadata](https://api-iwls.dfo-mpo.gc.ca/api/v1/stations/5cebf1e43d0f4a073c4bc3f1/metadata), [Brockville datum metadata](https://api-iwls.dfo-mpo.gc.ca/api/v1/stations/5cebf1e43d0f4a073c4bc3f7/metadata)
+- [Alexandria Bay, target-period preliminary levels in metres IGLD and UTC](https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=water_level&application=OntarioCurrentsResearch&begin_date=20261012%2000:00&end_date=20261017%2012:06&datum=IGLD&station=8311062&time_zone=gmt&units=metric&format=json)
+
+**Discharge.** Download [IJC outflow changes CSV](https://ijc.org/sites/default/files/ChangementDebit_FlowChanges.csv), alongside the [explanatory notices](https://ijc.org/en/loslrb/watershed/outflow-changes). For measured/coordinated historical discharge, the named route is [USGS 04264331 at Cornwall/Moses–Saunders](https://water.usgs.gov/nwc/NWC/sw/man/S04264331.html). USGS explains that this is a sum of dam, diversion, supply and canal flows rather than an ordinary gauged cross-section; storage adjustment matters when transferring the discharge upstream. A target-week daily/hourly measured series was **not** recovered here. Request the coordinated series from the IJC regulation representatives/ECCC/USACE, or retrieve a compatible historical period through USGS before labelling it observed forcing.
+
+**Bathymetry.** [Official NONNA catalogue](https://open.canada.ca/data/en/dataset/d3881c4c-650d-4070-bf9b-1e00aabf0a1d) and [WCS capabilities](https://nonna-geoserver.data.chs-shc.ca/geoserver/wcs?service=WCS&version=1.0.0&request=GetCapabilities) expose `nonna:NONNA 10 Coverage`. The WCS description advertises EPSG:3857 and GeoTIFF. `probe_bathymetry.py` computes the Web Mercator bounding boxes and saves the exact reproducible requests. Export sampling is 10 projected metres; that does **not** establish 10 m independent source resolution. The service mosaic advertises approximately 19.1 projected metre cells, and survey quality varies. Native portal packages additionally provide source metadata in CSAR/ASCII forms.
+
+Real finite bathymetry counts in the 90,000-pixel windows were: Kingston 89,326; Gananoque 24,778; Alexandria Bay 13,739; Brockville 24,703. Other pixels include land and/or unavailable coverage. These samples demonstrate numeric availability at four reaches; they do **not** prove seamless bank-to-bank coverage, especially on the US side. Nodata is `3.4028234663852886E38`. Sampled elevations run down to −75.944 m near Alexandria Bay. Values must be checked against their source metadata before treating them as a consistent bed surface.
+
+## Three existing models worth recovering first
+
+1. **ECCC H2D2 Upper St. Lawrence model: strongest modern hydraulic asset route.** Section 3.5.1 of ECCC’s [2022 CWRM report](https://publications.gc.ca/collections/collection_2022/eccc/CW66-778-2-2022-eng.pdf), printed pp.146–149, describes a Kingston/Cape Vincent–Iroquois domain covering the requested corridor, with 748,000 nodes and 370,000 quadratic elements. Its parent Seaway model was calibrated and validated for operational use in 2020; the USLR derivative was calibrated against legacy RMA2 results and April/October 2019 observations with discharge measurements. Reported station validation concerns water levels and does not establish surface-current accuracy in every channel. Direct wind forcing was excluded, so storm reversals can be missed. Request native mesh, bed/roughness and calibrated velocity scenarios indexed by lake level/discharge from ECCC’s Hydrodynamic and Ecohydraulic Section; the report identifies Jean Morin and the research team. The official PDF is retained as `eccc-2022-cwrm-report.pdf`, with the relevant extracted section in `eccc-2022-uslr-section.txt`. No H2D2 mesh or u/v output was retrieved. 
+
+2. **Paturi, Boegman and Rao, eastern Lake Ontario–upper St. Lawrence ELCOM.** The [2012 paper](https://doi.org/10.1016/j.jglr.2011.09.008) simulated April–October 2006 and reports current RMSE of approximately 5–8 cm/s. The model reaches Brockville and was used for drinking-water intake protection. The authors found that wind and hydraulics both matter; near-Kingston reversals can occur in strong easterly storms. This supports a genuine 3D reconstruction route rather than prescribing downstream arrows.
+
+   Verified original [Queen’s thesis record](https://queensu.scholaris.ca/items/08a33f0f-782e-4faa-b4ad-059ef956b8c1), handle `1974/8115`, and [direct PDF](https://queensu.scholaris.ca/server/api/core/bitstreams/114013f4-f715-4fc5-ad6b-e50b80f13b11/content). Printed pp.17–19 specify a 300 m horizontal grid, 73 vertical layers, 331,706 soundings from Environment Canada between Kingston and Cornwall plus NOAA gridded depths, UTM17 NAD83/IGLD85, Kingston stage and temperature profiles, and Cornwall outflow/Brockville stage. Current observations included ADCP profiles. The PDF provides methods and comparisons, not reusable u/v arrays.
+
+   Asset-request custodians: Queen’s Environmental Fluid Dynamics laboratory/Leon Boegman and Cataraqui Conservation source-water protection program; Environment and Climate Change Canada for Aaron Thompson’s bathymetry and Bob Rowsell’s 2006 observations. [Verified Queen’s contact page](https://www.queensu.ca/contaminants-emerging-concern-network/people-search/boegman-leon). No one has been contacted.
+
+3. **Upper St. Lawrence River Forecasting System / River2D.** A [2026 primary paper](https://www.frontiersin.org/journals/water/articles/10.3389/frwa.2026.1712263/full) documents three-hourly depth-averaged velocities generated with historical flow and water-level boundary conditions. It was formerly part of NOAA’s Great Lakes Coastal Forecasting System. The paper offers supporting raw data through the authors, but an open numerical archive was not verified here. Request the bed/roughness mesh, boundary files, run configuration and vector outputs for the actual desired corridor, then verify the mesh extent rather than assuming it covers every Thousand Islands channel. The [iRIC River2D solver page](https://i-ric.org/en/solvers/river2d/) documents the solver and examples. Older institutional reports use the FVCOM name; resolve that model/provenance difference with custodians before mixing assets from the two descriptions.
+
+## A new, reproducible calculation if those assets cannot be obtained
+
+This is a proposed engineering workflow, not a completed or calibrated model.
+
+1. **Build the bed and channel network.** Download NONNA coverage across a continuous computational domain extending from an open eastern-Lake-Ontario boundary through a buffer downstream of Brockville. Mosaic with suitable NOAA hydrographic survey data where the NONNA wet coverage is missing; the [NOAA NCEI bathymetry viewer](https://www.ncei.noaa.gov/maps/bathymetry/) is the official survey discovery route. Resolve real gaps before running; a land mask is not a bathymetric survey. Preserve island holes, channel connections, bridge piers and narrow passages. Use UTM18N or another suitable local metric CRS consistently; convert true east/north components correctly on export.
+
+2. **Resolve vertical datums before deriving slopes.** For CHS gauge observations use `stage_IGLD85 = observation_CD + station_offset`; the saved CSV implements the two verified offsets. For a negative bed elevation relative to local chart datum, `bed_IGLD85 = bed_CD + local_CD_IGLD85`. For a positive depth below chart datum, use `local_CD_IGLD85 - depth`. The NONNA CD surface varies along the river: do not add Kingston’s offset everywhere. Audit source dates/datums and apply the appropriate local chart-datum separation surface, survey transformations and benchmark control. [CHS explicitly warns](https://www.chs.gc.ca/help-aide/faq-eng.html) that mixed source datums can prevent assigning one definitive vertical datum to an entire NONNA cell. An unresolved source datum is a real modeling uncertainty, not a reason to assume a flat reference plane.
+
+3. **Solve, rather than draw, the current.** A full-momentum unsteady 2D shallow-water solver (River2D or [HEC-RAS SWE](https://www.hec.usace.army.mil/confluence/rasdocs/r2dum/6.4/running-a-model-with-2d-flow-areas/shallow-water-or-diffusion-wave-equations)) can estimate depth-averaged hydraulics through the island channels. Mesh resolution must be fine enough for individual active passages, with convergence checks. Specify compatible upstream flow and downstream stage, or coupled open-boundary stages/fluxes, plus no-normal-flow land boundaries, bathymetry, bed resistance and lateral mixing. Do not independently prescribe both stage and discharge at every boundary without the solver’s intended formulation. Use the second endpoint stage and Alexandria Bay as checks/calibration constraints where they are not imposed.
+
+4. **Treat lake coupling and the surface honestly.** A constant-Q river experiment can show a hydraulic scenario, but cannot reproduce all wind-driven lake/river exchange, stratification and surface shear. For a surface-current product use a 3D model such as the documented ELCOM setup or a suitable modern lake model nested to valid NOAA LOOFS velocity, stage and temperature fields. Add spatial wind, pressure, heat exchange, mixing and initial thermal structure. Spin up before 12 October, retain actual time-varying fields, and average vector components over precisely the target interval. A 2D result must retain a depth-averaged label rather than inherit the surface label of LOOFS.
+
+5. **Calibrate and validate.** Match water levels, measured discharge and independently observed velocity profiles/flow splits across several hydraulic conditions; keep some observations out of calibration. Seek the Paturi/Rowsell 2006 ADCP series and the original River2D calibration transects. Report u/v RMSE, direction error, flux conservation through channel sections, stage residuals, grid/time-step convergence and roughness/bathymetry sensitivity. Historical calibration does not prove 2026 local accuracy; report what observations actually support. Endpoint stage plus depth alone does not uniquely identify resistance, every island-channel flow split, eddies or surface-layer velocities. A simple head-drop/width rule cannot fill that gap.
+
+## Prioritized next step
+
+The immediately executable input-retrieval step is complete: numerical depths and target-week stages are retained above. Next, extend the NONNA WCS download as tiled numeric rasters and audit wet/channel coverage and source datums, while retrieving a coordinated discharge time series. In parallel, recover one of these existing models’ actual mesh/roughness/calibration archive; this is materially stronger than starting from undocumented resistance guesses. Until a velocity field has been recovered or a solver calibrated, the video should show the honest coverage boundary rather than fabricated upper-river currents.
+
+Suggested unsent asset request: “For a documented visualization of Lake Ontario and the upper St. Lawrence through Brockville, could you share the calibrated Kingston–Brockville hydrodynamic mesh/bed elevations and datums, shoreline/structures, roughness, boundary and meteorological forcing, executable/source version and control files, calibration/validation current profiles, and October u/v outputs? Our preferred interval is 12–17 October 2026; a documented October 2006 or other historical run is also useful if its dates and velocity layer are retained. Please identify redistribution/attribution terms and any masked or unresolved channels.”
