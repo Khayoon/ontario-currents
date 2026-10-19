@@ -1,3 +1,5 @@
+> Updated selected domain: the current 50 m solve relocates the inlet 1,000 m upstream, adds 3,118 genuinely solved wet cells and retains all prior wet cells. Raw bathymetry/water geometry/source values are unchanged. The current selected grid has 169,950 wet cells, effective n=0.02891666, zero depth-floor cells and held-out Alexandria stage residual +2.37 cm. Earlier source-preparation counts below describe the original cut and are retained as source history. Current checks are in model-report.json; grid/roughness/bed sensitivities inherited from the earlier domain are explicitly labelled prior-domain.
+
 # Kingston–Brockville current estimates: sources and reproduction
 
 Prepared 19 October 2026. Target forcing interval: **12 October 2026 00:00 UTC–17 October 2026 12:00 UTC**.
@@ -50,17 +52,17 @@ The existing map's omitted Thousand Islands sectors were restored from **actual 
 - [NOAA Alexandria Bay 8311062, exact water-level request in metres IGLD and UTC](https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=water_level&application=OntarioCurrentsResearch&begin_date=20261012%2000:00&end_date=20261017%2012:06&datum=IGLD&station=8311062&time_zone=gmt&units=metric&format=json).
 - [NOAA Great Lakes low-water datums](https://www.tidesandcurrents.noaa.gov/gldatums.html).
 
-Alexandria Bay was not an imposed stage boundary or a velocity-calibration target. Its observations are preliminary. One missing six-minute value was interpolated only to calculate the time-weighted stage mean over the exact target interval. The 50 m estimate is approximately **2.4 cm above** that independent mean stage. This checks one water level; it does **not validate island-channel velocities or flow splits**.
+Alexandria Bay was not an imposed stage boundary or a velocity-calibration target. Its observations are preliminary. One missing six-minute value was interpolated only to calculate the time-weighted stage mean over the exact target interval. The 50 m estimate is approximately **2.37 cm above** that independent mean stage. This checks one water level; it does **not validate island-channel velocities or flow splits**.
 
 ## Coverage and model interpretation
 
-The proposed 50 m active corridor has **169,860 connected cells** between a Kingston–Cape Vincent inlet cross-section and a Brockville outlet cross-section. **82.0417% have numerical source-depth support; 30,504 cells, or 17.9583%, lack source bed.** Those bank/bay-margin cells are explicitly estimated by harmonic interpolation constrained by adjacent source bed and a 0.20 m shoreline-depth assumption. Their raw input bed remains NaN, and their estimated-bed mask is retained. For unknown cells, nearest source distance has median 70.7 m, 95th percentile 282.8 m, 99th percentile 500 m and maximum about 1,005 m. The broader retrieval box contains unrelated inland water that is excluded from the active solve.
+The proposed 50 m active corridor has **173,036 connected cells** between an inlet cut relocated 1,000 m upstream of the original Kingston–Cape Vincent cross-section and the unchanged Brockville outlet cut. **82.3488% have numerical source-depth support; 30,543 cells, or 17.6512%, lack source bed.** Missing bank/bay-margin bed is explicitly estimated by harmonic interpolation, with a 0.20 m depth constraint only at actual mapped shoreline. Artificial open cuts use adjoining retrieved bed when available or a zero-gradient continuation. Raw source-bed NaNs and the estimated-bed mask remain distinct. Of the 3,118 newly solved wet cells, 3,082 (98.8454%) have retrieved bed support. The broader source box also contains unrelated inland water excluded from the hydraulic solve.
 
-After the solver excludes dry/unsupported disconnected cells, **166,832 cells** remain in the final hydraulic domain; **17.44%** of that solved area uses estimated bank bed. Global area coverage does not measure its hydraulic importance: some transects carry a substantial fraction of their modelled flux through estimated-bed cells.
+After the solver excludes dry/unsupported disconnected cells, **169,950 cells** remain in the final hydraulic domain; **17.15%** of that solved area uses estimated bank bed. Global area coverage does not measure its hydraulic importance: some transects carry a substantial fraction of their modelled flux through estimated-bed cells.
 
-The selected calculation is a steady nonlinear Manning **diffusion-wave approximation** on wet faces, with impermeable island/land faces. Effective uniform Manning roughness is calibrated to the explicit regulation-flow scenario; the final 50 m value is approximately **0.02894 s/m^(1/3)**. Uniform roughness rescales the conservative field's flux magnitude, rather than adding currents by hand.
+The selected calculation is a steady nonlinear Manning **diffusion-wave approximation** on wet faces, with impermeable island/land faces. Effective uniform Manning roughness is calibrated to the explicit regulation-flow scenario; the final 50 m value is approximately **0.02891666 s/m^(1/3)**. Uniform roughness rescales the conservative field's flux magnitude, rather than adding currents by hand.
 
-The field conserves its numerical discharge: final inlet/outlet differ by about **0.0018 m³/s**, roughly **0.0000244%** of inflow. No final cell requires the numerical minimum-depth floor. These are numerical checks, not accuracy bounds. A 100 m comparison supports broad directional consistency but is a grid-sensitivity exercise, not formal convergence or field-current validation.
+The field conserves its numerical discharge: final inlet/outlet differ by about **0.001974 m³/s**, roughly **0.00002676%** of inflow. No final cell requires the numerical minimum-depth floor. These are numerical checks, not accuracy bounds. A retained prior-domain 100 m comparison supports broad directional consistency but is a grid-sensitivity exercise, not formal convergence or field-current validation.
 
 This approximation omits local and advective momentum acceleration, inertial eddies, wind forcing, density stratification and vertical surface shear. It is unsuitable for quantitatively interpreting local jets. The failed or unsettled more complex experimental runs are not substituted into the film. [USACE's equation-choice guidance](https://www.hec.usace.army.mil/confluence/rasdocs/r2dum/latest/running-a-model-with-2d-flow-areas/shallow-water-or-diffusion-wave-equations) explains why momentum terms matter in constrictions, bends and detailed local flow.
 
@@ -71,21 +73,18 @@ The forcing uses interval-mean endpoint levels and a representative flow target.
 From the published model-package directory, which contains the scripts at its root and compact inputs under `inputs/`:
 
 ```powershell
-python -m pip install numpy scipy pyproj pyamg
-python estimate_bank_bed.py inputs/bathymetry-grid-50m.npz --method harmonic --out bank-bed-native-harmonic-50m.npz
-python solve_hydraulics.py bank-bed-native-harmonic-50m.npz --n 0.03 --out dwe-native-harmonic-50m.npz
-python calibrate_uniform_roughness.py dwe-native-harmonic-50m.npz --target 7377.58 --out dwe-calibrated-50m.npz
-python export_display.py dwe-calibrated-50m.npz --out display-field.json
+python -m pip install -r requirements.txt
+python solve_inlet_extension.py --inlet-pad-m 1000 --input inputs/bathymetry-grid-50m.npz --out-dir regenerated
 ```
 
-The portable solver reads `inputs/hourly-stage-boundaries-igld85.csv`. The second grid can be run by replacing `50m` with `100m` in input/output names. The NPZs use lossless ZIP-LZMA compression supported by standard Python/NumPy; no additional compression library is required in a normal Python distribution. Re-running can change iteration timing, numerical last bits and output-container hashes across dependency/platform versions. The packaged input arrays themselves are exact, with no rounding or downcasting. The package's requirements and final run report record the actual solver environment.
+The portable solver reads `inputs/hourly-stage-boundaries-igld85.csv`. The 100 m dataset is retained for the explicitly labelled prior-domain sensitivity. Running a new padded 100 m experiment would require its own checks and is not claimed as completed here. The selected 50 m NPZ uses lossless ZIP-DEFLATE, while the retained 100 m input uses ZIP-LZMA; both are readable with standard Python/NumPy. Re-running can change iteration timing, numerical last bits and output-container hashes across dependency/platform versions. The packaged input arrays themselves are exact, with no rounding or downcasting. The package's requirements and final run report record the actual solver environment.
 
 | Compact input | Bytes | SHA-256 |
 |---|---:|---|
-| `inputs/bathymetry-grid-50m.npz` | 9,319,829 | `d89c0763202ffc4229dd243480285a3670451e45f64cbc82b1575a12f9341b44` |
+| `inputs/bathymetry-grid-50m.npz` | 14,171,483 | `d0c2b6ae3ec44203cda5ff2318b8399566abce300795c1b7348a8501c88731b9` |
 | `inputs/bathymetry-grid-100m.npz` | 2,747,179 | `b0c6b56f9ba28f9aea40e585e9fa53c0c1c55b3759d945b6731c342e6bbf0843` |
 
-`inputs/array-integrity-manifest.json` records per-array hashes and verifies every retained array's shape, dtype and C-order bytes against the original full inputs. An actual compact-input 100 m bank-bed run also reproduced the corresponding full-input bed and masks byte-for-byte on the development platform. Its README explains omitted raw source files and cache-path references in the preparation note.
+`inputs/array-integrity-manifest.json` records current per-array hashes. Every retained raw source array is byte-identical to the prior compact input; `proposed_active_corridor` intentionally changes to the expanded cut and is identified as changed. An actual compact-input 100 m bank-bed run also reproduced the corresponding full-input bed and masks byte-for-byte on the development platform. Its README explains omitted raw source files and cache-path references in the preparation note.
 
 ## Attribution and data licences
 

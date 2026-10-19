@@ -1,0 +1,15 @@
+{
+  "name": "ontario-currents-film-source",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Portable deterministic Canvas renderer for the Lake Ontario current-map loop.",
+  "scripts": {
+    "preview": "node render.mjs config.json --no-video",
+    "render": "node render.mjs config.json --no-poster",
+    "finish": "python finish.py"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  }
+}

@@ -3,3 +3,5 @@ dist/
 node_modules/
 *.log
 media/lake-ontario-closeup.mp4
+**/__pycache__/
+model/upper-river/regenerated/

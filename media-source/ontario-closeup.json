@@ -1,22 +1,22 @@
 {
-  "bytes": 48687548,
-  "sha256": "1c499e5112826402555492c581f999f82b22c514975b21cfd9b1ecdb86a5b69c",
-  "edition": "Lake Ontario + Kingston\u2013Brockville illustrative estimates, 19 October 2026",
+  "bytes": 47762576,
+  "sha256": "e802a0f72fb171ae42eece94d163b12c66dfdb89110c917caa883a81b46ec87c",
+  "edition": "Finer channels and visible slow trails, 19 October 2026",
   "parts": [
     {
       "file": "ontario-closeup.part0",
       "bytes": 22000000,
-      "sha256": "fe7ff3d3cc282529c0c7c9bfb6ff84fbf8dbfcd295cac3b5da613c90619af954"
+      "sha256": "25e82fb8a61670f39cd0193308bea8bf4001fb6a6116820d1a4b041fc14c42b8"
     },
     {
       "file": "ontario-closeup.part1",
       "bytes": 22000000,
-      "sha256": "d9604fabf67a69be6bcc5a3eedcb9d4cd0cdb9ff80431721ea4ff9b7582dcb11"
+      "sha256": "da6406ec8ee2dbfde5cb8a6d3bcd1e88677dc7a90ed2588deb8f490fa0f0103f"
     },
     {
       "file": "ontario-closeup.part2",
-      "bytes": 4687548,
-      "sha256": "39b9d4da7fc14b961e36f8030e3dc09cccc5adf43c8e84df892582802eca3d48"
+      "bytes": 3762576,
+      "sha256": "46535b22c9291486ebc078265768d43b6e177f827143dba3e1c8f23df384ac4b"
     }
   ]
 }

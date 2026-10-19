@@ -1,309 +1,96 @@
 {
-  "format": "NumPy NPZ, lossless ZIP-LZMA; load with numpy.load as usual",
-  "retained_keys": [
-    "x",
-    "y",
-    "wet_geometry",
-    "proposed_active_corridor",
-    "bed_igld85_estimated",
-    "mean_stage_igld85_estimated",
-    "measured_bathy",
-    "bathy_source_product",
-    "source_subsample_count"
+  "scope": "Current expanded input. Raw source arrays are unchanged; proposed_active_corridor intentionally follows the new inlet cut.",
+  "intentionally_changed_arrays": [
+    "proposed_active_corridor"
   ],
-  "omitted": "Redundant 2D geographic coordinates, raw nearest-neighbour arrays, source alternate beds/std, original source mosaics and TIFF tiles.",
-  "verification": "Every retained array has the same shape, dtype.str and C-order bytes as its full original input; no dtype conversions or quantization.",
-  "files": [
+  "arrays": [
     {
-      "name": "bathymetry-grid-50m.npz",
-      "bytes": 9319829,
-      "sha256": "d89c0763202ffc4229dd243480285a3670451e45f64cbc82b1575a12f9341b44",
-      "source_bytes": 65424444,
-      "source_sha256": "c60aad31ac7703c6275323651af09c2dfad318c556fd4c1bcf64c6c1d0bf3447",
-      "compression": "ZIP_LZMA",
-      "numpy_default_compression_bytes": 14171323,
-      "all_retained_arrays_byte_identical": true,
-      "arrays": [
-        {
-          "key": "x",
-          "shape": [
-            1644
-          ],
-          "dtype": "<f8",
-          "uncompressed_bytes": 13152,
-          "c_order_sha256": "6b4c6c2a7c392b99c2f456c5c9b40721b957164cb2807919f3c4f6e066d90d90"
-        },
-        {
-          "key": "y",
-          "shape": [
-            1297
-          ],
-          "dtype": "<f8",
-          "uncompressed_bytes": 10376,
-          "c_order_sha256": "397d9d5228b08935beec2e17fcae78778adaff07ff23e9223d321b56dbf551e5"
-        },
-        {
-          "key": "wet_geometry",
-          "shape": [
-            1297,
-            1644
-          ],
-          "dtype": "|b1",
-          "uncompressed_bytes": 2132268,
-          "c_order_sha256": "a3518470602d93dfb9db17950088e12c0b492016ee2272500a4a8c1930479c8e"
-        },
-        {
-          "key": "proposed_active_corridor",
-          "shape": [
-            1297,
-            1644
-          ],
-          "dtype": "|b1",
-          "uncompressed_bytes": 2132268,
-          "c_order_sha256": "84a8fd1b41c84bc45bcee4c3a0851620a4d2055fadfbff5dd29203af50f2ed17"
-        },
-        {
-          "key": "bed_igld85_estimated",
-          "shape": [
-            1297,
-            1644
-          ],
-          "dtype": "<f8",
-          "uncompressed_bytes": 17058144,
-          "c_order_sha256": "89af99815e33d20001fefbaa60bf0a348b2d0b6374d33cf5e6c47b0c04196d32"
-        },
-        {
-          "key": "mean_stage_igld85_estimated",
-          "shape": [
-            1297,
-            1644
-          ],
-          "dtype": "<f8",
-          "uncompressed_bytes": 17058144,
-          "c_order_sha256": "f0abfbe5b96e53c4b958d9e85a9bb9ec377c6e19dc8875f4ea4682bd10e2949c"
-        },
-        {
-          "key": "measured_bathy",
-          "shape": [
-            1297,
-            1644
-          ],
-          "dtype": "|b1",
-          "uncompressed_bytes": 2132268,
-          "c_order_sha256": "963e83f19646aab57e9588d03a4b6034e5b5466118a19c2e3032590fbbd5b4e8"
-        },
-        {
-          "key": "bathy_source_product",
-          "shape": [
-            1297,
-            1644
-          ],
-          "dtype": "|u1",
-          "uncompressed_bytes": 2132268,
-          "c_order_sha256": "9d1c446dc32a3b2247e73d92de069a7e72cbb78fd47888d60fdb4bfbd28a1b9f"
-        },
-        {
-          "key": "source_subsample_count",
-          "shape": [
-            1297,
-            1644
-          ],
-          "dtype": "<u2",
-          "uncompressed_bytes": 4264536,
-          "c_order_sha256": "e48a3737e3fb64ccf9f4f16e5e687c557e9556ec6833b3e2ba0b17331cc95010"
-        }
-      ]
+      "key": "x",
+      "shape": [
+        1644
+      ],
+      "dtype": "float64",
+      "sha256_c_order": "6b4c6c2a7c392b99c2f456c5c9b40721b957164cb2807919f3c4f6e066d90d90",
+      "unchanged_vs_prior": true
     },
     {
-      "name": "bathymetry-grid-100m.npz",
-      "bytes": 2747179,
-      "sha256": "b0c6b56f9ba28f9aea40e585e9fa53c0c1c55b3759d945b6731c342e6bbf0843",
-      "source_bytes": 16086168,
-      "source_sha256": "7bc9066804b2c99b6478ad7e8e99403d73b88d052bfa6d026df3fa7ecdc92678",
-      "compression": "ZIP_LZMA",
-      "numpy_default_compression_bytes": 3502671,
-      "all_retained_arrays_byte_identical": true,
-      "arrays": [
-        {
-          "key": "x",
-          "shape": [
-            823
-          ],
-          "dtype": "<f8",
-          "uncompressed_bytes": 6584,
-          "c_order_sha256": "75c69d674b1a60b8ed2ec8bcda0d8556baef0efad08eb03f49f4049f69fabe69"
-        },
-        {
-          "key": "y",
-          "shape": [
-            649
-          ],
-          "dtype": "<f8",
-          "uncompressed_bytes": 5192,
-          "c_order_sha256": "35193d7d4d64f626673e016ddb14d3d2472747c37759344db7251debb05b8209"
-        },
-        {
-          "key": "wet_geometry",
-          "shape": [
-            649,
-            823
-          ],
-          "dtype": "|b1",
-          "uncompressed_bytes": 534127,
-          "c_order_sha256": "16aad8f69675586d73139c90271ddfd1f9849ad735efe3cf02a78c6702e8995f"
-        },
-        {
-          "key": "proposed_active_corridor",
-          "shape": [
-            649,
-            823
-          ],
-          "dtype": "|b1",
-          "uncompressed_bytes": 534127,
-          "c_order_sha256": "c9f12278b5fd08be12ec436e84e94c56581f85e42af8ef7877e8fd9e2ae045bd"
-        },
-        {
-          "key": "bed_igld85_estimated",
-          "shape": [
-            649,
-            823
-          ],
-          "dtype": "<f8",
-          "uncompressed_bytes": 4273016,
-          "c_order_sha256": "42b823d1b56ff67382915a7a5ee530c375ca14cc42df0dc44041c37e32387840"
-        },
-        {
-          "key": "mean_stage_igld85_estimated",
-          "shape": [
-            649,
-            823
-          ],
-          "dtype": "<f8",
-          "uncompressed_bytes": 4273016,
-          "c_order_sha256": "7fed165b9bef35e4e3bcecc7f5aa03160db1fb0630a04a1dcce92d47b5d9e823"
-        },
-        {
-          "key": "measured_bathy",
-          "shape": [
-            649,
-            823
-          ],
-          "dtype": "|b1",
-          "uncompressed_bytes": 534127,
-          "c_order_sha256": "b0a17a66651dd522bab40e21313dc3acb84d8889e98e59dda541a2e7500a4fc3"
-        },
-        {
-          "key": "bathy_source_product",
-          "shape": [
-            649,
-            823
-          ],
-          "dtype": "|u1",
-          "uncompressed_bytes": 534127,
-          "c_order_sha256": "17cabb1eda35793a13306c1178a833c770ee40141ab4d42bd4dbd234cd4accdc"
-        },
-        {
-          "key": "source_subsample_count",
-          "shape": [
-            649,
-            823
-          ],
-          "dtype": "<u2",
-          "uncompressed_bytes": 1068254,
-          "c_order_sha256": "34d300ebf12f7bddfc8bd118588d165905cd3c56b45cffafd05efe62e02f5654"
-        }
-      ]
+      "key": "y",
+      "shape": [
+        1297
+      ],
+      "dtype": "float64",
+      "sha256_c_order": "397d9d5228b08935beec2e17fcae78778adaff07ff23e9223d321b56dbf551e5",
+      "unchanged_vs_prior": true
+    },
+    {
+      "key": "bed_igld85_estimated",
+      "shape": [
+        1297,
+        1644
+      ],
+      "dtype": "float64",
+      "sha256_c_order": "89af99815e33d20001fefbaa60bf0a348b2d0b6374d33cf5e6c47b0c04196d32",
+      "unchanged_vs_prior": true
+    },
+    {
+      "key": "wet_geometry",
+      "shape": [
+        1297,
+        1644
+      ],
+      "dtype": "bool",
+      "sha256_c_order": "a3518470602d93dfb9db17950088e12c0b492016ee2272500a4a8c1930479c8e",
+      "unchanged_vs_prior": true
+    },
+    {
+      "key": "measured_bathy",
+      "shape": [
+        1297,
+        1644
+      ],
+      "dtype": "bool",
+      "sha256_c_order": "963e83f19646aab57e9588d03a4b6034e5b5466118a19c2e3032590fbbd5b4e8",
+      "unchanged_vs_prior": true
+    },
+    {
+      "key": "mean_stage_igld85_estimated",
+      "shape": [
+        1297,
+        1644
+      ],
+      "dtype": "float64",
+      "sha256_c_order": "f0abfbe5b96e53c4b958d9e85a9bb9ec377c6e19dc8875f4ea4682bd10e2949c",
+      "unchanged_vs_prior": true
+    },
+    {
+      "key": "bathy_source_product",
+      "shape": [
+        1297,
+        1644
+      ],
+      "dtype": "uint8",
+      "sha256_c_order": "9d1c446dc32a3b2247e73d92de069a7e72cbb78fd47888d60fdb4bfbd28a1b9f",
+      "unchanged_vs_prior": true
+    },
+    {
+      "key": "source_subsample_count",
+      "shape": [
+        1297,
+        1644
+      ],
+      "dtype": "uint16",
+      "sha256_c_order": "e48a3737e3fb64ccf9f4f16e5e687c557e9556ec6833b3e2ba0b17331cc95010",
+      "unchanged_vs_prior": true
+    },
+    {
+      "key": "proposed_active_corridor",
+      "shape": [
+        1297,
+        1644
+      ],
+      "dtype": "bool",
+      "sha256_c_order": "061b81fa0bc310fb0c36b2d0aebec4eeab292e292c662081bfa879ac75af7d87",
+      "unchanged_vs_prior": false
     }
-  ],
-  "source_documents": [
-    {
-      "name": "nonna10-download-manifest.json",
-      "bytes": 7478,
-      "sha256": "2d9974b47a95ade8b047a220a5541906c51886e55a691fa74db89a311ee870b4",
-      "byte_identical_copy": true
-    },
-    {
-      "name": "nonna100-download-manifest.json",
-      "bytes": 7551,
-      "sha256": "c3db64356ebce168c81dfc7bb702a8541fba6157a70d16d3c51b99ecfe2bd252",
-      "byte_identical_copy": true
-    },
-    {
-      "name": "nonna10-20m-download-manifest.json",
-      "bytes": 37467,
-      "sha256": "be9fde2f6a65b6a08316fa4b7375b960048a25b8a798b6ac51357649c900cd63",
-      "byte_identical_copy": true
-    },
-    {
-      "name": "water-repair-manifest.json",
-      "bytes": 61012,
-      "sha256": "89dbc163d815a4e5a73e51e8839bab91c8f7edf292cdf0c9c1c79debbd4d9d26",
-      "byte_identical_copy": true
-    },
-    {
-      "name": "nonna-catalog-metadata.json",
-      "bytes": 34931,
-      "sha256": "6093ae39086d6c95db7a2f879de19371d508d0b4ce298879a613ddf5e9e990c0",
-      "byte_identical_copy": true
-    },
-    {
-      "name": "bathymetry-grid-50m-audit.json",
-      "bytes": 2043,
-      "sha256": "a2a6d8d9844178e4253f34a60584d1de1f950c0a198d91bcc13a53e42296848c",
-      "byte_identical_copy": true
-    },
-    {
-      "name": "bathymetry-grid-100m-audit.json",
-      "bytes": 2029,
-      "sha256": "bd5bf836b5b7032a6c7765b67494d61e9909502d8633d3545350451b302584dd",
-      "byte_identical_copy": true
-    },
-    {
-      "name": "BATHYMETRY-INPUTS.md",
-      "bytes": 9363,
-      "sha256": "fbdb20d05c8a547744510d3937f98aac7205efc40583b8615ed5bb498f747fdd",
-      "byte_identical_copy": true
-    },
-    {
-      "name": "hourly-stage-boundaries-igld85.csv",
-      "bytes": 5627,
-      "sha256": "3180c0f1bf2e515b13efd89853538e859e9884ec3eb45c6d010b22c01ca0aba0",
-      "byte_identical_copy": true
-    },
-    {
-      "name": "13988-metadata.json",
-      "bytes": 1334,
-      "sha256": "bef994d02a816840417202de1f25b8248d9718189d744a448e39e987f3196bc0",
-      "byte_identical_copy": true
-    },
-    {
-      "name": "14400-metadata.json",
-      "bytes": 1338,
-      "sha256": "bc6ec35e96aea2f5d06c373735e7857c15bc4f22b170f56b24082a4bace00485",
-      "byte_identical_copy": true
-    }
-  ],
-  "bank_bed_integration_verification": {
-    "grid": "100m",
-    "command": "python estimate_bank_bed.py bathymetry-grid-100m.npz --method harmonic --out compact-bank.npz",
-    "comparison": "Compared actual compact-input computation against full native-input bank-bed output on the same platform.",
-    "arrays": {
-      "bed_igld85_estimated": {
-        "byte_identical": true,
-        "sha256": "ed9cc341d9f1f8e7ddaf5eb042b4e86e9cf88fff1f1448997b1a317f7c55f3ee"
-      },
-      "bed_igld85_estimated_raw": {
-        "byte_identical": true,
-        "sha256": "42b823d1b56ff67382915a7a5ee530c375ca14cc42df0dc44041c37e32387840"
-      },
-      "estimated_bank_bed": {
-        "byte_identical": true,
-        "sha256": "eddcb337b5205e0a7d4d444195ded2959203d08e23424eb483f1ac55334b68b0"
-      },
-      "bed_valid": {
-        "byte_identical": true,
-        "sha256": "c9f12278b5fd08be12ec436e84e94c56581f85e42af8ef7877e8fd9e2ae045bd"
-      }
-    }
-  }
+  ]
 }

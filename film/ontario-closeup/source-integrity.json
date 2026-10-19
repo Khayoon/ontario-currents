@@ -1,0 +1,86 @@
+{
+  "frozen_source_renderer_sha256": "b4cf016ea085fae4b971b0288787a92b1d29318f92766440a89e32e89b67dc61",
+  "frozen_source_config_sha256": "925180acb4be31d5d2befca6c1bd109bcb2ab950963c36cb7107a56308b1138c",
+  "portable_renderer_changes": [
+    "Canvas dependency default resolves this bundle package.json; relative override resolved from config directory.",
+    "FFmpeg default is FFMPEG_BINARY environment variable or ffmpeg on PATH.",
+    "Line endings normalized to LF; renderer flow logic otherwise identical."
+  ],
+  "inputs": [
+    {
+      "name": "inputs/noaa-week-mean.json",
+      "source_work_path": "forum-data/ontario-october-week-mean-23.json",
+      "bytes": 2033047,
+      "sha256": "bd13fb67dcae1b11828bf8efc31b60dca4059265fea63978811cfda5c0a9c7c0",
+      "byte_identical_copy": true
+    },
+    {
+      "name": "inputs/water.geojson",
+      "source_work_path": "forum-geography/ontario-estimates-water.geojson",
+      "bytes": 3677177,
+      "sha256": "abba152ec2676c644b9c2c42dba5b5a998b2c7bef15fb22c2891f08b2d33c381",
+      "byte_identical_copy": true
+    }
+  ],
+  "external_inputs": [
+    {
+      "path": "../../src/mesh.json",
+      "sha256": "d5720f28802855db79f088946e359e75554ad64f432a048e7df06f45832471cf",
+      "purpose": "Native NOAA LOOFS mesh; already supplied with repository."
+    },
+    {
+      "path": "../../model/upper-river/display-field.json",
+      "sha256": "576488437490a7c0ddc0387181eb63d8c147ddb6e626c77ae50839316c773654",
+      "purpose": "Selected river-estimate field; model companion remains separate."
+    }
+  ],
+  "render_logic_copied_without_changes": true,
+  "files": [
+    {
+      "name": ".gitignore",
+      "bytes": 37,
+      "sha256": "1df126bfa335ce3735ae86c154a032e9a4fcdc739cbf12868c7778369c459718"
+    },
+    {
+      "name": "config.json",
+      "bytes": 5851,
+      "sha256": "cfc048748871603746a3607228996e99080f4e73f56e3876deb9926ecca13b17"
+    },
+    {
+      "name": "finish.py",
+      "bytes": 3551,
+      "sha256": "f86b7d381c53c43e54e32598d011d323e9220de7407663debcfc7e2e8844352a"
+    },
+    {
+      "name": "package.json",
+      "bytes": 429,
+      "sha256": "d9c50b7225dff859b31ef971959f01232b3f634f781e03517067dd49cec9048d"
+    },
+    {
+      "name": "README.md",
+      "bytes": 6366,
+      "sha256": "22438f8cdba43679f961dd9702e106ba886fc95e974d084ab0301097e3e84510"
+    },
+    {
+      "name": "render.mjs",
+      "bytes": 24646,
+      "sha256": "8e901276b10e7cf794ed99480828439aafc5c01d87f254ac57901cf333704fcc"
+    }
+  ],
+  "verification": {
+    "renderer_syntax": "node --check passed",
+    "finalizer_syntax": "Python ast.parse passed; finish.py --help passed from outside bundle directory",
+    "render_smoke": "One H.264 frame at 320x180 rendered successfully using the own-package Canvas default, NODE_PATH for the installed dependency, and FFMPEG_BINARY. All test configs/media were outside the bundle.",
+    "production_renderer_still_matches_frozen_sha256": true,
+    "config_changes_only_normalized_paths": [
+      "field",
+      "geography",
+      "manifest",
+      "mesh",
+      "poster",
+      "rivers",
+      "video"
+    ],
+    "no_personal_windows_paths_or_authentication_strings": true
+  }
+}

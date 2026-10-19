@@ -1,5 +1,5 @@
 {
-  "format": "SHA256 package manifest, excluding itself",
+  "format": "SHA256 package manifest, excludes itself",
   "files": [
     {
       "path": "audit_solution.py",
@@ -22,109 +22,149 @@
       "sha256": "67b678d7e7addc448f8767dab987db1fc7e1a7a6bbb9428a8fd272adb22a7b43"
     },
     {
-      "path": "diagnostics/dwe-audit-100m.json",
+      "path": "diagnostics/audit.json",
+      "bytes": 3394,
+      "sha256": "42e7abde4484954bda6007665ab48dd1d625e7fc336e558bc9161c6b1d983824"
+    },
+    {
+      "path": "diagnostics/bank-bed-harmonic-50m.json",
+      "bytes": 651,
+      "sha256": "f2baf4fe64c67bb2a1738f88964de879e66530f17b900a8c5223faf220abbf48"
+    },
+    {
+      "path": "diagnostics/dwe-native-50m.json",
+      "bytes": 5986,
+      "sha256": "893e9874d00968443095a6b3ce33b8b685f319c2b27dc3ac04e2d4fba9372eb4"
+    },
+    {
+      "path": "diagnostics/independent-display-review.json",
+      "bytes": 1132,
+      "sha256": "5021f7091b1236680f030fcb13945482ddb2dad52ef4e40c35dad73fadfea4c0"
+    },
+    {
+      "path": "diagnostics/independent-model-review.json",
+      "bytes": 1556,
+      "sha256": "c0575384f4afee9147e65b92b290024fafde2e36cee947d2030bfc90449ea435"
+    },
+    {
+      "path": "diagnostics/inlet-comparison.json",
+      "bytes": 1404,
+      "sha256": "ced1d6fd451a2fe97d4867080a3d747c8f3cb42f02b836910b79bc9e14f45b25"
+    },
+    {
+      "path": "diagnostics/portable-reproduction-check.json",
+      "bytes": 758,
+      "sha256": "330f6a06ac1778d31b74be842d41336e167ce95d5a3b152678991fdef5c9596e"
+    },
+    {
+      "path": "diagnostics/prior-domain/dwe-audit-100m.json",
       "bytes": 3405,
       "sha256": "57c12d3ffe810fa26eb70306f801e22c3ad061314a615f0820f13388985005fb"
     },
     {
-      "path": "diagnostics/dwe-audit-50m.json",
+      "path": "diagnostics/prior-domain/dwe-audit-50m.json",
       "bytes": 3415,
       "sha256": "bc522f0e1872703a4be26915af3b033bfffcffb6dd9ac144daf09896222371d4"
     },
     {
-      "path": "diagnostics/dwe-bed-minus025-100m.json",
+      "path": "diagnostics/prior-domain/dwe-bed-minus025-100m.json",
       "bytes": 5715,
       "sha256": "8217719fd7206a3b703ff81809fc61b327795845a39f3156a0958843e7de94dd"
     },
     {
-      "path": "diagnostics/dwe-bed-plus025-100m.json",
+      "path": "diagnostics/prior-domain/dwe-bed-plus025-100m.json",
       "bytes": 5710,
       "sha256": "c9e70c3cc9923e113fc8a1083420fd075ba8e9134b24ce445d6fc089dcbc64d4"
     },
     {
-      "path": "diagnostics/dwe-head-p05-100m.json",
+      "path": "diagnostics/prior-domain/dwe-head-p05-100m.json",
       "bytes": 5711,
       "sha256": "9a84ea5015b1392b2dd4eba4c993db1585f4f76a54d11c762c5bc4b77c043625"
     },
     {
-      "path": "diagnostics/dwe-head-p95-100m.json",
+      "path": "diagnostics/prior-domain/dwe-head-p95-100m.json",
       "bytes": 5704,
       "sha256": "5db9bd0d5d7029a93d4bcac7ad8bea82dd2315af6badff234e49585bafb46706"
     },
     {
-      "path": "diagnostics/dwe-native-harmonic-100m.json",
+      "path": "diagnostics/prior-domain/dwe-native-harmonic-100m.json",
       "bytes": 5525,
       "sha256": "adb6a2f633bcadbfbd3664745493baba6bd58a8b8bc0f06e44456164f1dae5b8"
     },
     {
-      "path": "diagnostics/dwe-native-harmonic-50m.json",
+      "path": "diagnostics/prior-domain/dwe-native-harmonic-50m.json",
       "bytes": 5515,
       "sha256": "6020e6959226a6e1fd56f65f4df18599ec38c9b4bef38ad9378df08a83c52309"
     },
     {
-      "path": "diagnostics/dwe-native-nearest-100m.json",
+      "path": "diagnostics/prior-domain/dwe-native-nearest-100m.json",
       "bytes": 5703,
       "sha256": "6dfbc7d308e0d8ff4a323324a3f20bae3a2aa0ca7e14379f454d1b75b4229837"
     },
     {
-      "path": "diagnostics/independent-boundary-statistics.json",
+      "path": "diagnostics/prior-domain/independent-boundary-statistics.json",
       "bytes": 1463,
       "sha256": "b742f22fb4ddabc317fd616c8a1538452387757112b6e212e0588edde1da648e"
     },
     {
-      "path": "diagnostics/numerics-check.json",
+      "path": "diagnostics/prior-domain/numerics-check.json",
       "bytes": 271,
       "sha256": "213a66d8ae68dfd17731a4adfc8ee85dfd3449b10601c6d43b8c78874bc432ee"
     },
     {
-      "path": "diagnostics/portable-reproduction-check.json",
+      "path": "diagnostics/prior-domain/portable-reproduction-check.json",
       "bytes": 641,
       "sha256": "edb0d740674028e00ceb721073ae2a1d648875ca4e81b30d5f9b1bb649c22a63"
     },
     {
-      "path": "diagnostics/review-display-field.json",
+      "path": "diagnostics/prior-domain/review-display-field.json",
       "bytes": 885,
       "sha256": "a2de7b159f39a23e53878d5f5f4d7cda4b01f87621d8011c79f470ecbdc0927f"
     },
     {
-      "path": "diagnostics/review-final-estimate.json",
+      "path": "diagnostics/prior-domain/review-final-estimate.json",
       "bytes": 1619,
       "sha256": "fd2ccc752ca2ae1d86fc64a381d1fbe0b8c5c20da6518758a08ff155ed2de77f"
     },
     {
-      "path": "diagnostics/review-grid-comparison.json",
+      "path": "diagnostics/prior-domain/review-grid-comparison.json",
       "bytes": 1020,
       "sha256": "5246c0b6c4ed8beb1cab72193f1a81edf93b7393a7af388f102418ec7031adff"
     },
     {
-      "path": "diagnostics/swe-implicit-100m.json",
+      "path": "diagnostics/prior-domain/swe-implicit-100m.json",
       "bytes": 45589,
       "sha256": "9e01c772c64688bb29c7a0fe06a91a54a7968b8c46d9eb4a30c5bb919fb2eda2"
     },
     {
-      "path": "diagnostics/swe-no-advection-100m.json",
+      "path": "diagnostics/prior-domain/swe-no-advection-100m.json",
       "bytes": 16841,
       "sha256": "08cf3448a23b8caea8d5613e79621881f8dc71bdf1eeee7fccff1525f463cb45"
     },
     {
       "path": "display-field.json",
-      "bytes": 9697249,
-      "sha256": "adb561fe8e65b97433ff22630d9bf24faaa1804b15cc92f2c004c92d25c8489c"
+      "bytes": 9994334,
+      "sha256": "576488437490a7c0ddc0387181eb63d8c147ddb6e626c77ae50839316c773654"
     },
     {
       "path": "dwe-calibrated-50m.json",
-      "bytes": 5960,
-      "sha256": "ec70fa086e4996d6b53af3036db939e40092da973d0409d7eafab487602a95ed"
+      "bytes": 6445,
+      "sha256": "d15f9e2fb6bd6ecd573955eff04a9e0bec0264efff0aebeb155416d9947434ce"
     },
     {
       "path": "dwe-calibrated-50m.npz",
-      "bytes": 8615510,
-      "sha256": "2ca686277af26ffb289c498ae2fd26025c8a262644b165cf3fd0475f404f99d9"
+      "bytes": 8782949,
+      "sha256": "7997df3b41c55f7f33bbdd221d551cd188dcc1c4ff2c4715e21d4f22dfb17431"
     },
     {
       "path": "estimate_bank_bed.py",
       "bytes": 3001,
       "sha256": "58e8e605e0bb0ae5ed792e9ea7f8276562c3b2fd50fe78c865f1e406474dc0b7"
+    },
+    {
+      "path": "estimate_bank_bed_open.py",
+      "bytes": 3221,
+      "sha256": "bb6325fe30c915480ea385426b1e6c62202e8d61faebf76f321216da1b6c93e9"
     },
     {
       "path": "export_display.py",
@@ -143,8 +183,8 @@
     },
     {
       "path": "inputs/array-integrity-manifest.json",
-      "bytes": 10081,
-      "sha256": "fb42c5b27d6a93b6bb6972cb821dfc5947e94a9766560663ef6174d25f126ca5"
+      "bytes": 2532,
+      "sha256": "e1bffa278f27762650314fdb889dabaa417a61eeac52deb7cbed7059d6ed7c0b"
     },
     {
       "path": "inputs/bathymetry-grid-100m-audit.json",
@@ -163,13 +203,13 @@
     },
     {
       "path": "inputs/bathymetry-grid-50m.npz",
-      "bytes": 9319829,
-      "sha256": "d89c0763202ffc4229dd243480285a3670451e45f64cbc82b1575a12f9341b44"
+      "bytes": 14171483,
+      "sha256": "d0c2b6ae3ec44203cda5ff2318b8399566abce300795c1b7348a8501c88731b9"
     },
     {
       "path": "inputs/BATHYMETRY-INPUTS.md",
-      "bytes": 9363,
-      "sha256": "fbdb20d05c8a547744510d3937f98aac7205efc40583b8615ed5bb498f747fdd"
+      "bytes": 9708,
+      "sha256": "7d3a2b125bf059de3fe97bd7e47b7c8eb07699eda4d1baba24ed247abcf6199d"
     },
     {
       "path": "inputs/hourly-stage-boundaries-igld85.csv",
@@ -198,8 +238,8 @@
     },
     {
       "path": "inputs/README.md",
-      "bytes": 5740,
-      "sha256": "7e17dcd19aba368e83d330f01976ba5e5f3725f2176e7c28fb7d00ad55df12ef"
+      "bytes": 1268,
+      "sha256": "5c42209c3932fc4bf91439e32f03851ae6ed5798334212933ea5f7267b333f56"
     },
     {
       "path": "inputs/water-repair-manifest.json",
@@ -208,18 +248,18 @@
     },
     {
       "path": "model-report.json",
-      "bytes": 16299,
-      "sha256": "c4bf630ac54940014d9d0caa61632cfc5a04d7d7904b6552d550b9bd06479ff0"
+      "bytes": 19205,
+      "sha256": "d54d7faf0560b0e480bcc56ce0c328f59bc9a042e81f5e323fa44d60d7e7a482"
     },
     {
       "path": "PUBLICATION-SOURCES.md",
-      "bytes": 12813,
-      "sha256": "51e0ba1c3e1be757aa0f20498b41788f5618102534745c09da8a5441a103a974"
+      "bytes": 13492,
+      "sha256": "5d807355f46831325dd1b199f6286e55480a3c76e33762d3a5d2481d60b65b30"
     },
     {
       "path": "README.md",
-      "bytes": 8116,
-      "sha256": "1a861cff4dd739ec4824c4ff1ca5d1e920aeac586bc084b90fe4db92fac0083c"
+      "bytes": 9464,
+      "sha256": "011c321243eebe518597da659e02437040d36b5074aa608ad2b3b4f522824428"
     },
     {
       "path": "requirements.txt",
@@ -230,6 +270,11 @@
       "path": "solve_hydraulics.py",
       "bytes": 10022,
       "sha256": "bafd2db466192e6243054d35f37db004dddda14a92e2f045c9bf75b419873380"
+    },
+    {
+      "path": "solve_inlet_extension.py",
+      "bytes": 5075,
+      "sha256": "dac7f74c8191eebfa362c4e1b616e1f6a8cd32693294594c5f11be8290d6f394"
     },
     {
       "path": "solve_semiimplicit_momentum.py",

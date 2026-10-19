@@ -1,3 +1,5 @@
+> Historical source-preparation record: its active-corridor counts and original work-folder commands describe the earlier inlet. Current padded-domain reproduction and counts are in the package README and model-report.json. Retrieved source data and their qualifications remain applicable.
+
 # Kingston–Brockville bathymetry and water geometry inputs
 
 Prepared 19 October 2026 for an explicitly estimated, depth-averaged hydraulic visualization. These inputs are **not observed current vectors**, a calibrated hydrodynamic forecast, or navigational data.

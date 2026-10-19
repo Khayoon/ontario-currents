@@ -1,0 +1,43 @@
+{
+  "native_wet_cells": 169950,
+  "newly_solved_cells": 3118,
+  "newly_solved_area_km2": 7.795,
+  "newly_solved_cells_with_retrieved_bed": 3082,
+  "newly_solved_fraction_with_retrieved_bed": 0.9884541372674791,
+  "common_prior_wet_cells": 166832,
+  "removed_prior_wet_cells": 0,
+  "downstream_2km_comparison": {
+    "cells": 159864,
+    "rms_vector_change_mps": 0.0025450366667949934,
+    "vector_change_mps_p50_p95_max": [
+      7.14485765007629e-05,
+      0.002291842527483003,
+      0.04765420530165568
+    ],
+    "stage_change_m_p50_p95_max": [
+      0.0002844775965584745,
+      0.0004184756597361172,
+      0.0006717438158574396
+    ]
+  },
+  "actual_source_bed_change_on_measured_cells_max_m": 0.0,
+  "cape_vincent_gap": {
+    "point": [
+      -76.3441,
+      44.1284
+    ],
+    "prior_wet": false,
+    "new_wet": true,
+    "source_measured": true,
+    "retrieved_bed_igld85_estimated_m": 60.49022140209978,
+    "new_depth_m": 14.311410895014518,
+    "new_utm_velocity_mps": [
+      0.0734941847929547,
+      0.06389355720585449
+    ],
+    "new_speed_mps": 0.09738471055971146
+  },
+  "field_sha256": "576488437490a7c0ddc0387181eb63d8c147ddb6e626c77ae50839316c773654",
+  "solution_sha256": "7997df3b41c55f7f33bbdd221d551cd188dcc1c4ff2c4715e21d4f22dfb17431",
+  "frozen_prior_field_sha256": "adb561fe8e65b97433ff22630d9bf24faaa1804b15cc92f2c004c92d25c8489c"
+}
