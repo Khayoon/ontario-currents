@@ -107,13 +107,14 @@ async function inspectTree(directory, label) {
       }
     }
   }
-  const required = ['index.html', 'app.js', 'field.js', 'mesh-flow.js', 'style.css', 'geography.json', 'mesh.json',
+  const required = ['index.html', 'app.js', 'field.js', 'mesh-flow.js', 'speed-style.js', 'style.css', 'geography.json', 'mesh.json',
     ...['manifest', 'catalog', 'snapshot', 'average', 'river', 'river-average', 'estuary', 'estuary-average'].map(n => `data/${n}.json`)];
   for (const name of required) check(nameSet.has(name), `${label}: missing ${name}`);
   const page = await readFile(path.join(directory, 'index.html'), 'utf8');
   check(page.includes('href="https://khayoon.github.io/lake-ontario-temperature/"'), `${label}: missing related temperature-project link`);
+  check(page.includes('href="./media/october-current-map.mp4"'), `${label}: missing the speed project's own film link`);
   check(/class="selected" data-layer="speed"/.test(page), `${label}: current speed must remain the initial layer`);
-  check(!page.includes('href="./media/lake-ontario-closeup.mp4'), `${label}: featured film must link to its separate project`);
+  check(!page.includes('href="./media/lake-ontario-closeup.mp4'), `${label}: the historical temperature video must not be featured as the speed film`);
   const base = new URL('https://example.invalid/owner/project/');
   async function localAsset(reference, from, partial = false) {
     if (!reference || reference.startsWith('#') || /^(?:https?:|data:|mailto:|tel:|\/\/)/i.test(reference)) return;
@@ -197,6 +198,7 @@ async function fieldFixtures(directory, label) {
   try {
     const context = vm.createContext({});
     vm.runInContext(await readFile(path.join(directory, 'mesh-flow.js'), 'utf8'), context, { timeout: 5000 });
+    vm.runInContext(await readFile(path.join(directory, 'speed-style.js'), 'utf8'), context, { timeout: 5000 });
     vm.runInContext(await readFile(path.join(directory, 'field.js'), 'utf8'), context, { timeout: 5000 });
     const mesh = { lon: [0, 8, 0], lat: [0, 0, 8], triangles: [[0, 1, 2]] };
     const field = { kind: 'mesh', u: [1], v: [-1], t: [10, 20, 30] };
@@ -258,7 +260,7 @@ try {
       const src = path.join(root, 'src', name);
       if (await exists(src)) {
         const current = await readFile(src), built = await readFile(path.join(root, 'dist', name));
-        const normalize = html => html.replace(/((?:src|href)="\.\/(?:app\.js|field\.js|mesh-flow\.js|style\.css))\?v=[a-f0-9]+"/g, '$1"');
+        const normalize = html => html.replace(/((?:src|href)="\.\/(?:app\.js|field\.js|mesh-flow\.js|speed-style\.js|style\.css))\?v=[a-f0-9]+"/g, '$1"');
         const same = name === 'index.html' ? normalize(current.toString()) === normalize(built.toString()) : current.equals(built);
         check(same, `dist/${name} differs from current src; rebuild before publication`);
       } else if (name.startsWith('media/')) {

@@ -1,10 +1,10 @@
 OCTOBER CURRENTS — LAKE ONTARIO & THE ST. LAWRENCE
 
-CURRENT FEATURED FILM: Lake Ontario through Brockville, with the accepted 3,000 m upstream-inlet river estimate (section 13), continuous lake-mesh display interpolation (section 14), and the full-week temperature edition (section 15). The current 50 m solve has 177,775 wet cells, Manning n 0.02889393, 17.12% estimated solved-wet bed, and a 2.24e-7 relative inlet/outlet flux mismatch. This is an illustrative, simplified, unvalidated depth-averaged through-flow calculation. The broader atlas remains available separately. Sections 1–8 and the following caption describe the broader regional export; sections 9–12 retain explicitly superseded film editions. Section 15 supersedes the earlier lake period and speed colour scale; the river estimate and display-continuity methods remain in force.
+CURRENT SPEED PROJECT: the interactive atlas and its regional speed film remain at https://khayoon.github.io/ontario-currents/ . The featured speed film is media/october-current-map.mp4, covering Lake Ontario, the St. Lawrence, a Montreal detail and a separately labelled Simcoe experiment. Its fixed 12-17 October mean is distinct from the updating atlas fields. The hourly temperature film has its own project, linked in section 10. Sections 1-8 document the regional speed export; section 9 explains the continuous lake-mesh display.
 
 Suggested forum caption
 
-(Earlier broader regional export, not the current Lake Ontario close-up film.)
+(Regional speed film; fixed mean fields, with an experimental Simcoe inset.)
 
 A map of mean modelled water motion from Lake Ontario into the St. Lawrence, with a separately labelled experimental Lake Simcoe wind response and a Montréal detail. The fields represent 12 October 2026 at 00:00 UTC through 17 October at 12:00 UTC. The retrieved government products use 23 equally weighted samples, six hours apart; Simcoe uses a time-integrated numerical experiment over the same period. Animated particles follow these fixed average fields, with motion accelerated for visibility; they do not replay changing conditions through the week.
 
@@ -201,3 +201,10 @@ https://github.com/Khayoon/lake-ontario-temperature
 https://khayoon.github.io/lake-ontario-temperature/
 
 The atlas remains an interactive current-speed/direction application with its existing temperature layer and dated source coverage. It does not ingest the film-only river estimate as a live forecast. The old media/lake-ontario-closeup.mp4 URL is a hash-verified compatibility copy of the dated film from the temperature project release. The earlier broader media/october-current-map.mp4 remains historical. Original development and film iterations are preserved in Git history and releases.
+
+
+11. Live speed-display contrast, 21 October 2026
+
+The atlas speed layer now matches the reference film: a fixed logarithmic 0-150+ cm/s ramp, blue through cyan and mint to pale yellow, with correctly positioned ticks at 0, 2, 10, 50 and 150+ cm/s. Its normalized colour position is log(1 + s/0.02) / log(1 + 1.5/0.02), clamped to [0,1], where s is the physical speed in m/s. Values at and above 1.5 m/s share the top colour; cursor values retain their full numerical magnitude. The Simcoe-focused scale remains linear at 0-5 cm/s.
+
+A darker speed-mode water raster and 24 endpoint-inclusive trail colours restore contrast between low-speed circulation and fast channels. Raster and trails use the same normalization. Source arrays, missing-data masks, velocity interpolation, units, shared motion clock and cursor values are unchanged. The atlas temperature layer retains its prior palette, normalization and background brightness. No changes are made to the separate temperature repository, page or film.

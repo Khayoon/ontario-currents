@@ -41,9 +41,9 @@ function makeDisplay(mesh,field,river,project,invert,width,height,estuary,simcoe
   const valid=[];for(let i=0;i<n;i++)if(provider[i])valid.push(i);
   return {cell,nx,ny,u,v,t,provider,valid};
 }
-function displayRaster(g,layer,colour,speedMaximum=.6){
+function displayRaster(g,layer,colour,speedMaximum=1.5){
   const c=document.createElement('canvas');c.width=g.nx;c.height=g.ny;const ctx=c.getContext('2d'),image=ctx.createImageData(g.nx,g.ny);
-  for(const k of g.valid){const speed=Math.hypot(g.u[k],g.v[k]);let rgb;if(layer==='speed')rgb=colour(speed/speedMaximum);else if(Number.isFinite(g.t[k]))rgb=colour(g.t[k]/25);else rgb=[36,133,183];const p=k*4;image.data[p]=rgb[0]*.46;image.data[p+1]=rgb[1]*.46;image.data[p+2]=rgb[2]*.46;image.data[p+3]=255;}
+  for(const k of g.valid){const speed=Math.hypot(g.u[k],g.v[k]),brightness=layer==='speed'?SpeedStyle.rasterBrightness:.46;let rgb;if(layer==='speed')rgb=colour(SpeedStyle.position(speed,speedMaximum));else if(Number.isFinite(g.t[k]))rgb=colour(g.t[k]/25);else rgb=[36,133,183];const p=k*4;image.data[p]=rgb[0]*brightness;image.data[p+1]=rgb[1]*brightness;image.data[p+2]=rgb[2]*brightness;image.data[p+3]=255;}
   ctx.putImageData(image,0,0);return c;
 }
 function displaySample(g,x,y){if(!g)return null;const i=Math.floor(x/g.cell),j=Math.floor(y/g.cell);if(i<0||j<0||i>=g.nx||j>=g.ny)return null;const k=j*g.nx+i;if(!g.provider[k])return null;return [g.u[k],g.v[k],Number.isFinite(g.t[k])?g.t[k]:null,g.provider[k]];}

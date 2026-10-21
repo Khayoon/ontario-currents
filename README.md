@@ -2,7 +2,7 @@
 
 An interactive map of modelled water-current speed and direction, from Lake Ontario into the St. Lawrence. Explore the source fields, inspect local values, and compare the latest published conditions with sampled 24-hour vector means.
 
-**[Explore the atlas](https://khayoon.github.io/ontario-currents/)** · **[Data and methods](docs/data-and-methods.txt)** · **[Related temperature-film project](https://khayoon.github.io/lake-ontario-temperature/)**
+**[Explore the atlas](https://khayoon.github.io/ontario-currents/)** · **[Watch the speed film](https://khayoon.github.io/ontario-currents/media/october-current-map.mp4)** · **[Data and methods](docs/data-and-methods.txt)**
 
 [![The atlas showing Lake Ontario currents, Lake Simcoe and the St. Lawrence shorelines](docs/atlas-preview.jpg)](https://khayoon.github.io/ontario-currents/)
 
@@ -19,6 +19,8 @@ NOAA, ECCC and DFO produce the retrieved government model products. This project
 ## Explore the map
 
 The atlas opens with **current speed** and supports a temperature layer where a source supplies temperature. Particle direction follows the displayed velocity field; motion is accelerated for visibility.
+
+The speed view matches the film's blue–cyan–mint–pale-yellow palette on a fixed **logarithmic 0–150+ cm/s scale**, with ticks at 0, 2, 10, 50 and 150+. Dark water and bright trails preserve contrast in both slower lake circulation and Montréal's faster channels. Speeds above 150 cm/s share the top colour; cursor readouts retain the actual numerical speed. The separately labelled Simcoe view keeps its linear 0–5 cm/s scale. These display choices change neither the source vectors nor the shared animation clock. The temperature layer keeps its previous palette and normalization.
 
 **Live** selects the latest successfully published source fields, retaining their independently reported valid times. **24-hour mean** uses sampled eastward/northward component averages. Opposing currents can cancel, so a weak mean does not establish stationary water. The Lake Ontario timeline and refresh tools open through a compact **Time controls** disclosure; river and estuary fields keep their own source times.
 
