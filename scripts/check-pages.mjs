@@ -5,6 +5,7 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
+import { createHash } from 'node:crypto';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const NODE_COUNT = 34395, CELL_COUNT = 64453;
@@ -109,6 +110,10 @@ async function inspectTree(directory, label) {
   const required = ['index.html', 'app.js', 'field.js', 'mesh-flow.js', 'style.css', 'geography.json', 'mesh.json',
     ...['manifest', 'catalog', 'snapshot', 'average', 'river', 'river-average', 'estuary', 'estuary-average'].map(n => `data/${n}.json`)];
   for (const name of required) check(nameSet.has(name), `${label}: missing ${name}`);
+  const page = await readFile(path.join(directory, 'index.html'), 'utf8');
+  check(page.includes('href="https://khayoon.github.io/lake-ontario-temperature/"'), `${label}: missing related temperature-project link`);
+  check(/class="selected" data-layer="speed"/.test(page), `${label}: current speed must remain the initial layer`);
+  check(!page.includes('href="./media/lake-ontario-closeup.mp4'), `${label}: featured film must link to its separate project`);
   const base = new URL('https://example.invalid/owner/project/');
   async function localAsset(reference, from, partial = false) {
     if (!reference || reference.startsWith('#') || /^(?:https?:|data:|mailto:|tel:|\/\/)/i.test(reference)) return;
@@ -241,6 +246,12 @@ try {
   if (await exists(path.join(root, 'dist'))) {
     await inspectTree(path.join(root, 'dist'), 'dist');
     const distFiles = await files(path.join(root, 'dist'));
+    const legacyPath = path.join(root, 'dist/media/lake-ontario-closeup.mp4');
+    if (check(await exists(legacyPath), 'dist: missing compatibility video for previously shared links')) {
+      const legacy = await readFile(legacyPath);
+      check(legacy.length === 103544787 && createHash('sha256').update(legacy).digest('hex') === '5c57c348290d527c350ecba138517da96803dce5254ba2926282e4bc5a932458', 'dist: compatibility video must retain the accepted film bytes');
+      reports.push('dist: legacy MP4 URL retains the accepted film bytes');
+    }
     check(!distFiles.some(name => /(^|\/)(?:lib|scripts|\.github)(\/|$)|\.(?:zip|tar|gz|mov)$/i.test(name) ||
       (/\.mp4$/i.test(name) && !name.startsWith('media/'))), 'dist includes build/private/archive files or unexpected movies');
     for (const name of distFiles) {
